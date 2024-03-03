@@ -1,14 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="p.parking.SashaRa"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane fx:id="scenePanel" maxHeight="900.0" maxWidth="1920.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1440.0" style="-fx-background-color: D2D2D2;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kur.project0.HelloController">
+    <children>
+        <AnchorPane fx:id="scenePanel1" layoutY="-1.0" maxWidth="1920.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="1440.0" style="-fx-background-color: #121212;">
+            <children>
+                <MenuButton contentDisplay="BOTTOM" graphicTextGap="1.0" layoutX="14.0" mnemonicParsing="false" style="-fx-background-color: #121212;" text="Инструменты" textAlignment="CENTER" textFill="WHITE">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Что-то раз" />
+                        <MenuItem mnemonicParsing="false" text="Что-то два" />
+                    </items>
+                    <font>
+                        <Font name="Calibri" size="16.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </MenuButton>
+                <MenuButton contentDisplay="BOTTOM" graphicTextGap="1.0" layoutX="150.0" mnemonicParsing="false" style="-fx-background-color: #121212;" text="Камеры" textAlignment="CENTER" textFill="WHITE">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Что-то раз" />
+                        <MenuItem mnemonicParsing="false" text="Что-то два" />
+                    </items>
+                    <font>
+                        <Font name="Calibri" size="16.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </MenuButton>
+                <MenuButton contentDisplay="BOTTOM" graphicTextGap="1.0" layoutX="306.0" mnemonicParsing="false" style="-fx-background-color: #121212;" text="Помощь" textAlignment="CENTER" textFill="WHITE">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Что-то раз" />
+                        <MenuItem mnemonicParsing="false" text="Что-то два" />
+                    </items>
+                    <font>
+                        <Font name="Calibri" size="16.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </MenuButton>
+                <Button layoutX="1339.0" layoutY="3.0" mnemonicParsing="false" onAction="#logout" text="Button" />
+                <Button layoutX="1268.0" layoutY="2.0" mnemonicParsing="false" onAction="#MaximizeWindow" text="Button" />
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="scenePanel2" layoutY="29.0" maxHeight="1.7976931348623157E308" maxWidth="1920.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="1440.0" style="-fx-background-color: #A8A7A7;">
+            <effect>
+                <Lighting diffuseConstant="2.0" specularConstant="0.5" surfaceScale="2.0">
+                    <bumpInput>
+                        <Shadow height="40.0" radius="19.5" width="40.0">
+                            <color>
+                                <Color red="0.6549019813537598" green="0.658823549747467" blue="0.658823549747467" />
+                            </color>
+                        </Shadow>
+                    </bumpInput>
+                    <light>
+                        <Light.Distant>
+                            <color>
+                                <Color red="0.8815789222717285" green="0.8693348169326782" blue="0.8693348169326782" />
+                            </color>
+                        </Light.Distant>
+                    </light>
+                </Lighting>
+            </effect></AnchorPane>
+    </children>
 </AnchorPane>
