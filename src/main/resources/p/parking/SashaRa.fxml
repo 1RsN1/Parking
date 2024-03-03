@@ -11,7 +11,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="scenePanel" maxHeight="900.0" maxWidth="1920.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1440.0" style="-fx-background-color: D2D2D2;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kur.project0.HelloController">
+<AnchorPane fx:id="scenePanel" maxHeight="900.0" maxWidth="1920.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1440.0" style="-fx-background-color: D2D2D2;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="p.parking.HelloController">
     <children>
         <AnchorPane fx:id="scenePanel1" layoutY="-1.0" maxWidth="1920.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="1440.0" style="-fx-background-color: #121212;">
             <children>

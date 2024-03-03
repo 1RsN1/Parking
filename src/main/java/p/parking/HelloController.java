@@ -1,4 +1,4 @@
-package kur.project0;
+package p.parking;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
