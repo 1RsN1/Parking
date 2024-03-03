@@ -38,7 +38,5 @@ public class HelloController {
         //stage.setMaximized(true);
         stage.setWidth(1920);
         stage = (Stage) scenePanel.getScene().getWindow();
-
-
     }
 }

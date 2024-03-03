@@ -14,7 +14,7 @@ import java.io.IOException;
 public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws Exception {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("sashaRA.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("sashaRO.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1440, 900);
         stage.initStyle(StageStyle.UNDECORATED);
         stage.setResizable(false);
