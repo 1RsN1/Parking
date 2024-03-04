@@ -160,5 +160,18 @@
             </InnerShadow>
          </effect>
       </AnchorPane>
+      <AnchorPane layoutY="75.0" prefHeight="825.0" prefWidth="1440.0" styleClass="home">
+         <children>
+            <AnchorPane layoutX="12.5" layoutY="12.5" prefHeight="700.0" prefWidth="1237.5" style="-fx-background-color: grey;" />
+            <AnchorPane layoutY="725.0" prefHeight="100.0" prefWidth="1440.0" styleClass="home">
+               <children>
+                  <AnchorPane layoutX="320.0" layoutY="30.0" prefHeight="40.0" prefWidth="600.0" style="-fx-background-color: grey; -fx-background-radius: 20;" />
+                  <AnchorPane layoutX="1070.0" layoutY="30.0" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: grey; -fx-background-radius: 20;" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="1260.0" prefHeight="725.0" prefWidth="180.0" style="-fx-background-color: #A8A7A7; -fx-border-color: black; -fx-border-radius: 5; -fx-background-radius: 5;" />
+            <ImageView fitHeight="725.0" fitWidth="10.0" layoutX="1250.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
