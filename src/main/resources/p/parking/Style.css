@@ -15,9 +15,14 @@
 }
 
 .inputtext {
-    -fx-background-color: #7c7c7c;
+    -fx-background-color: #403d3d;
     -fx-background-radius: 0 0 5 0;
 }
+
 .inputlabel {
-    -fx-text-fill: #cfd1e6;
+    -fx-text-fill: #d4defc;
+}
+
+.inputsubtitle {
+    -fx-text-fill: #303460;
 }

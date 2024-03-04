@@ -1,25 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.effect.InnerShadow?>
-<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="900.0" prefWidth="1440.0" styleClass="home" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="p.parking.HomeSceneController">
    <children>
-      <AnchorPane prefHeight="100.0" prefWidth="1440.0" styleClass="header" stylesheets="@Style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <AnchorPane prefHeight="75.0" prefWidth="1440.0" styleClass="header" stylesheets="@Style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <effect>
-            <Shadow height="20.0" radius="7.0" width="10.0">
+            <InnerShadow height="120.0" radius="59.5" width="120.0">
                <color>
-                  <Color red="0.14901961386203766" green="0.1921568661928177" blue="0.2705882489681244" />
+                  <Color red="0.43529412150382996" green="0.5098039507865906" blue="0.6196078658103943" />
                </color>
-            </Shadow>
+            </InnerShadow>
          </effect>
+         <children>
+            <ImageView fitHeight="75.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
       </AnchorPane>
-      <AnchorPane layoutX="20.0" layoutY="120.0" prefHeight="240.0" prefWidth="1400.0" styleClass="inputbox" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+      <AnchorPane layoutX="20.0" layoutY="95.0" prefHeight="250.0" prefWidth="1400.0" styleClass="inputbox" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
          <children>
             <AnchorPane prefHeight="25.0" prefWidth="75.0" styleClass="inputtext">
                <children>
@@ -30,16 +33,94 @@
                   </Label>
                </children>
             </AnchorPane>
+            <ImageView fitHeight="90.0" fitWidth="90.0" layoutX="50.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="90.0" fitWidth="90.0" layoutX="190.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="90.0" fitWidth="90.0" layoutX="330.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="90.0" fitWidth="90.0" layoutX="470.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="90.0" fitWidth="90.0" layoutX="610.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="90.0" fitWidth="90.0" layoutX="750.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" />
+            <Label alignment="TOP_CENTER" layoutX="50.0" layoutY="174.0" prefWidth="90.0" styleClass="inputsubtitle" text="Просмотр" textAlignment="CENTER">
+               <font>
+                  <Font name="Calibri Bold" size="18.0" />
+               </font>
+               <effect>
+                  <DropShadow height="3.0" radius="1.0" width="3.0">
+                     <color>
+                        <Color red="0.3137255012989044" green="0.5215686559677124" blue="1.0" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Label>
+            <Label layoutX="190.0" layoutY="174.0" prefWidth="90.0" styleClass="inputsubtitle" text="Устройства">
+               <font>
+                  <Font name="Calibri Bold" size="18.0" />
+               </font>
+               <effect>
+                  <DropShadow height="3.0" radius="1.0" width="3.0">
+                     <color>
+                        <Color red="0.3137255012989044" green="0.5215686559677124" blue="1.0" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Label>
+            <Label alignment="TOP_CENTER" layoutX="330.0" layoutY="174.0" prefWidth="90.0" styleClass="inputsubtitle" text="Архив" textAlignment="CENTER">
+               <font>
+                  <Font name="Calibri Bold" size="18.0" />
+               </font>
+               <effect>
+                  <DropShadow height="3.0" radius="1.0" width="3.0">
+                     <color>
+                        <Color red="0.3137255012989044" green="0.5215686559677124" blue="1.0" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Label>
+            <Label alignment="TOP_CENTER" layoutX="457.0" layoutY="174.0" styleClass="inputsubtitle" text="Онлайн запись" textAlignment="CENTER">
+               <font>
+                  <Font name="Calibri Bold" size="18.0" />
+               </font>
+               <effect>
+                  <DropShadow height="3.0" radius="1.0" width="3.0">
+                     <color>
+                        <Color red="0.3137255012989044" green="0.5215686559677124" blue="1.0" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Label>
+            <Label alignment="TOP_CENTER" layoutX="610.0" layoutY="174.0" prefWidth="90.0" styleClass="inputsubtitle" text="Журнал" textAlignment="CENTER">
+               <font>
+                  <Font name="Calibri Bold" size="18.0" />
+               </font>
+               <effect>
+                  <DropShadow height="3.0" radius="1.0" width="3.0">
+                     <color>
+                        <Color red="0.3137255012989044" green="0.5215686559677124" blue="1.0" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Label>
+            <Label alignment="TOP_CENTER" layoutX="737.0" layoutY="174.0" styleClass="inputsubtitle" text="Журнал тревог" textAlignment="CENTER">
+               <font>
+                  <Font name="Calibri Bold" size="18.0" />
+               </font>
+               <effect>
+                  <DropShadow height="3.0" radius="1.0" width="3.0">
+                     <color>
+                        <Color red="0.3137255012989044" green="0.5215686559677124" blue="1.0" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Label>
          </children>
          <effect>
-            <InnerShadow height="20.0" radius="9.5" width="20.0">
+            <InnerShadow height="255.0" radius="127.0" width="255.0">
                <color>
                   <Color red="0.7803921699523926" green="0.7803921699523926" blue="0.7803921699523926" />
                </color>
             </InnerShadow>
          </effect>
       </AnchorPane>
-      <AnchorPane layoutX="20.0" layoutY="375.0" prefHeight="240.0" prefWidth="1400.0" styleClass="inputbox" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+      <AnchorPane layoutX="20.0" layoutY="360.0" prefHeight="250.0" prefWidth="1400.0" styleClass="inputbox" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
          <children>
             <AnchorPane prefHeight="25.0" prefWidth="75.0" styleClass="inputtext">
                <children>
@@ -51,8 +132,15 @@
                </children>
             </AnchorPane>
          </children>
+         <effect>
+            <InnerShadow height="255.0" radius="127.0" width="255.0">
+               <color>
+                  <Color red="0.7803921699523926" green="0.7803921699523926" blue="0.7803921699523926" />
+               </color>
+            </InnerShadow>
+         </effect>
       </AnchorPane>
-      <AnchorPane layoutX="20.0" layoutY="630.0" prefHeight="240.0" prefWidth="1400.0" styleClass="inputbox" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+      <AnchorPane layoutX="20.0" layoutY="625.0" prefHeight="250.0" prefWidth="1400.0" styleClass="inputbox" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
          <children>
             <AnchorPane prefHeight="25.0" prefWidth="75.0" styleClass="inputtext">
                <children>
@@ -64,6 +152,13 @@
                </children>
             </AnchorPane>
          </children>
+         <effect>
+            <InnerShadow height="255.0" radius="127.0" width="255.0">
+               <color>
+                  <Color red="0.7803921699523926" green="0.7803921699523926" blue="0.7803921699523926" />
+               </color>
+            </InnerShadow>
+         </effect>
       </AnchorPane>
    </children>
 </AnchorPane>
