@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="900.0" prefWidth="1440.0" styleClass="home" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="p.parking.HomeSceneController">
+   <children>
+      <AnchorPane prefHeight="100.0" prefWidth="1440.0" styleClass="header" stylesheets="@Style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <effect>
+            <Shadow height="20.0" radius="7.0" width="10.0">
+               <color>
+                  <Color red="0.14901961386203766" green="0.1921568661928177" blue="0.2705882489681244" />
+               </color>
+            </Shadow>
+         </effect>
+      </AnchorPane>
+      <AnchorPane layoutX="20.0" layoutY="120.0" prefHeight="240.0" prefWidth="1400.0" styleClass="inputbox" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+         <children>
+            <AnchorPane prefHeight="25.0" prefWidth="75.0" styleClass="inputtext">
+               <children>
+                  <Label layoutX="7.0" layoutY="4.0" styleClass="inputlabel" text="Основное" textAlignment="CENTER">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+         <effect>
+            <InnerShadow height="20.0" radius="9.5" width="20.0">
+               <color>
+                  <Color red="0.7803921699523926" green="0.7803921699523926" blue="0.7803921699523926" />
+               </color>
+            </InnerShadow>
+         </effect>
+      </AnchorPane>
+      <AnchorPane layoutX="20.0" layoutY="375.0" prefHeight="240.0" prefWidth="1400.0" styleClass="inputbox" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+         <children>
+            <AnchorPane prefHeight="25.0" prefWidth="75.0" styleClass="inputtext">
+               <children>
+                  <Label layoutX="5.0" layoutY="4.0" styleClass="inputlabel" text="Настройки">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="20.0" layoutY="630.0" prefHeight="240.0" prefWidth="1400.0" styleClass="inputbox" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+         <children>
+            <AnchorPane prefHeight="25.0" prefWidth="75.0" styleClass="inputtext">
+               <children>
+                  <Label layoutX="5.0" layoutY="4.0" styleClass="inputlabel" text="Остальное">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
