@@ -8,11 +8,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
-import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.DragEvent;
-import javafx.scene.input.MouseDragEvent;
+import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -32,6 +30,24 @@ public class HomeSceneController {
 
     @FXML
     private URL location;
+
+    @FXML
+    private Button buttonForEightCam;
+
+    @FXML
+    private Button buttonForFourCam;
+
+    @FXML
+    private Button buttonForNineCam;
+
+    @FXML
+    private Button buttonForOneCam;
+
+    @FXML
+    private AnchorPane paneWithFourCam;
+
+    @FXML
+    private AnchorPane paneWithOneCam;
 
     public void initialize() {
         ControllerImage controllerImage = new ControllerImage();
@@ -78,6 +94,18 @@ public class HomeSceneController {
     }
     public void glavnaya(MouseEvent event) {
         anchorPane1.setVisible(false);
+    }
+
+    @FXML
+    void clickedForFourCam(MouseEvent event) {
+        paneWithFourCam.setVisible(true);
+        paneWithOneCam.setVisible(false);
+    }
+
+    @FXML
+    void clickedForOneCam(MouseEvent event) {
+        paneWithOneCam.setVisible(true);
+        paneWithFourCam.setVisible(false);
     }
 
     public void maximizeWindow(ActionEvent event) {
