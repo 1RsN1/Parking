@@ -7,10 +7,11 @@
 <?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="900.0" prefWidth="1440.0" styleClass="home" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="p.parking.HomeSceneController">
+<AnchorPane prefHeight="900.0" prefWidth="1440.0" styleClass="home" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="p.parking.HomeSceneController">
    <children>
       <AnchorPane prefHeight="75.0" prefWidth="1440.0" styleClass="header" stylesheets="@Style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <effect>
@@ -21,7 +22,16 @@
             </InnerShadow>
          </effect>
          <children>
-            <ImageView fx:id="ivProsmotr0" fitHeight="75.0" fitWidth="150.0" onMouseClicked="#glavnaya" pickOnBounds="true" preserveRatio="true" />
+            <HBox fillHeight="false" layoutX="16.0" layoutY="5.0" prefHeight="64.0" prefWidth="1400.0" spacing="30.0">
+               <children>
+                  <ImageView fx:id="ivProsmotr0" fitHeight="64.0" fitWidth="90.0" onMouseClicked="#glavnaya" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="ivGlav" fitHeight="64.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+            </HBox>
          </children>
       </AnchorPane>
       <AnchorPane layoutX="20.0" layoutY="95.0" prefHeight="250.0" prefWidth="1400.0" styleClass="inputbox" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
