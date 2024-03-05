@@ -25,3 +25,9 @@
 .inputsubtitle {
     -fx-text-fill: #2f324f;
 }
+.buttonImage {
+    -fx-background-image: url("./icon/архив.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 100% 100%;
+    -fx-background-color: #c7c7c7;
+}

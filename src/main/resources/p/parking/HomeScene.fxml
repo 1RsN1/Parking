@@ -141,6 +141,7 @@
                   </DropShadow>
                </effect>
             </Label>
+            <Button layoutX="959.0" layoutY="88.0" mnemonicParsing="false" prefHeight="110.0" prefWidth="153.0" styleClass="buttonImage" text="Button" />
          </children>
          <effect>
             <InnerShadow height="255.0" radius="127.0" width="255.0">
@@ -360,7 +361,7 @@
             </InnerShadow>
          </effect>
       </AnchorPane>
-      <AnchorPane fx:id="anchorPane1" layoutY="75.0" prefHeight="825.0" prefWidth="1440.0" styleClass="home">
+      <AnchorPane fx:id="anchorPane1" layoutY="75.0" prefHeight="825.0" prefWidth="1440.0" styleClass="home" visible="false">
          <children>
             <AnchorPane fx:id="paneWithFourCam" layoutX="12.5" layoutY="12.5" prefHeight="700.0" prefWidth="1235.0" style="-fx-background-color: grey;">
                <children>
