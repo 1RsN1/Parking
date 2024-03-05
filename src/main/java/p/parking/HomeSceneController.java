@@ -105,6 +105,16 @@ public class HomeSceneController {
         paneWithFourCam.setVisible(false);
     }
 
+    @FXML
+    void clickedForEightCam(MouseEvent event) {
+
+    }
+
+    @FXML
+    void clickedForNineCam(MouseEvent event) {
+
+    }
+
     public void maximizeWindow(ActionEvent event) {
         stage = (Stage) scenePanel.getScene().getWindow();
         if (stage.getWidth() < 1920) {
