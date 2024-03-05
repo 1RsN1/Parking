@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.DropShadow?>
@@ -9,7 +10,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="900.0" prefWidth="1440.0" styleClass="home" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="p.parking.HomeSceneController">
+<AnchorPane prefHeight="900.0" prefWidth="1440.0" styleClass="home" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="p.parking.HomeSceneController">
    <children>
       <AnchorPane prefHeight="75.0" prefWidth="1440.0" styleClass="header" stylesheets="@Style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <effect>
@@ -34,12 +35,30 @@
                   </Label>
                </children>
             </AnchorPane>
-            <ImageView fx:id="ivProsmotr" fitHeight="90.0" fitWidth="90.0" layoutX="50.0" layoutY="74.0" onMouseClicked="#prosmotr" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="ivUstr" fitHeight="90.0" fitWidth="90.0" layoutX="190.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="ivArh" fitHeight="90.0" fitWidth="90.0" layoutX="330.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="ivZap" fitHeight="90.0" fitWidth="90.0" layoutX="470.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="ivJur" fitHeight="90.0" fitWidth="90.0" layoutX="610.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="ivTrev" fitHeight="90.0" fitWidth="90.0" layoutX="750.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="ivProsmotr" fitHeight="90.0" fitWidth="90.0" layoutX="50.0" layoutY="75.0" onMouseClicked="#prosmotr" pickOnBounds="true" preserveRatio="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></ImageView>
+            <ImageView fx:id="ivUstr" fitHeight="90.0" fitWidth="90.0" layoutX="190.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></ImageView>
+            <ImageView fx:id="ivArh" fitHeight="90.0" fitWidth="90.0" layoutX="330.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></ImageView>
+            <ImageView fx:id="ivZap" fitHeight="90.0" fitWidth="90.0" layoutX="470.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></ImageView>
+            <ImageView fx:id="ivJur" fitHeight="90.0" fitWidth="90.0" layoutX="610.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></ImageView>
+            <ImageView fx:id="ivJurTrev" fitHeight="90.0" fitWidth="90.0" layoutX="750.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></ImageView>
             <Label alignment="TOP_CENTER" layoutX="50.0" layoutY="174.0" prefWidth="90.0" styleClass="inputsubtitle" text="Просмотр" textAlignment="CENTER">
                <font>
                   <Font name="Calibri Bold" size="18.0" />
@@ -132,6 +151,91 @@
                   </Label>
                </children>
             </AnchorPane>
+            <ImageView fx:id="ivKonf" fitHeight="90.0" fitWidth="90.0" layoutX="50.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="ivTrev" fitHeight="90.0" fitWidth="90.0" layoutX="190.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="ivTur" fitHeight="90.0" fitWidth="90.0" layoutX="330.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="ivPolz" fitHeight="90.0" fitWidth="90.0" layoutX="470.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="ivProg" fitHeight="90.0" fitWidth="90.0" layoutX="610.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Label alignment="TOP_CENTER" layoutX="39.0" layoutY="174.0" styleClass="inputsubtitle" text="Конфигуратор" textAlignment="CENTER">
+               <font>
+                  <Font name="Calibri Bold" size="18.0" />
+               </font>
+               <effect>
+                  <DropShadow height="3.0" radius="1.0" width="3.0">
+                     <color>
+                        <Color red="0.3137255012989044" green="0.5215686559677124" blue="1.0" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Label>
+            <Label alignment="TOP_CENTER" layoutX="190.0" layoutY="174.0" prefWidth="90.0" styleClass="inputsubtitle" text="Тревога" textAlignment="CENTER">
+               <font>
+                  <Font name="Calibri Bold" size="18.0" />
+               </font>
+               <effect>
+                  <DropShadow height="3.0" radius="1.0" width="3.0">
+                     <color>
+                        <Color red="0.3137255012989044" green="0.5215686559677124" blue="1.0" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Label>
+            <Label alignment="TOP_CENTER" layoutX="330.0" layoutY="174.0" prefWidth="90.0" styleClass="inputsubtitle" text="Тур" textAlignment="CENTER">
+               <font>
+                  <Font name="Calibri Bold" size="18.0" />
+               </font>
+               <effect>
+                  <DropShadow height="3.0" radius="1.0" width="3.0">
+                     <color>
+                        <Color red="0.3137255012989044" green="0.5215686559677124" blue="1.0" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Label>
+            <Label alignment="TOP_CENTER" layoutX="461.0" layoutY="174.0" styleClass="inputsubtitle" text="Пользователи" textAlignment="CENTER">
+               <font>
+                  <Font name="Calibri Bold" size="18.0" />
+               </font>
+               <effect>
+                  <DropShadow height="3.0" radius="1.0" width="3.0">
+                     <color>
+                        <Color red="0.3137255012989044" green="0.5215686559677124" blue="1.0" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Label>
+            <Label alignment="TOP_CENTER" layoutX="610.0" layoutY="174.0" styleClass="inputsubtitle" text="Программа" textAlignment="CENTER">
+               <font>
+                  <Font name="Calibri Bold" size="18.0" />
+               </font>
+               <effect>
+                  <DropShadow height="3.0" radius="1.0" width="3.0">
+                     <color>
+                        <Color red="0.3137255012989044" green="0.5215686559677124" blue="1.0" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Label>
          </children>
          <effect>
             <InnerShadow height="255.0" radius="127.0" width="255.0">
@@ -152,6 +256,91 @@
                   </Label>
                </children>
             </AnchorPane>
+            <ImageView fx:id="ivMap" fitHeight="90.0" fitWidth="90.0" layoutX="50.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="ivDec" fitHeight="90.0" fitWidth="90.0" layoutX="190.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="ivBek" fitHeight="90.0" fitWidth="90.0" layoutX="330.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="ivProsh" fitHeight="90.0" fitWidth="90.0" layoutX="470.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="ivFonZap" fitHeight="90.0" fitWidth="90.0" layoutX="610.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Label alignment="TOP_CENTER" layoutX="50.0" layoutY="174.0" prefWidth="90.0" styleClass="inputsubtitle" text="Карта" textAlignment="CENTER">
+               <font>
+                  <Font name="Calibri Bold" size="18.0" />
+               </font>
+               <effect>
+                  <DropShadow height="3.0" radius="1.0" width="3.0">
+                     <color>
+                        <Color red="0.3137255012989044" green="0.5215686559677124" blue="1.0" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Label>
+            <Label alignment="TOP_CENTER" layoutX="190.0" layoutY="174.0" prefWidth="90.0" styleClass="inputsubtitle" text="Декодер" textAlignment="CENTER">
+               <font>
+                  <Font name="Calibri Bold" size="18.0" />
+               </font>
+               <effect>
+                  <DropShadow height="3.0" radius="1.0" width="3.0">
+                     <color>
+                        <Color red="0.3137255012989044" green="0.5215686559677124" blue="1.0" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Label>
+            <Label alignment="TOP_CENTER" layoutX="330.0" layoutY="174.0" prefWidth="90.0" styleClass="inputsubtitle" text="Бэкап" textAlignment="CENTER">
+               <font>
+                  <Font name="Calibri Bold" size="18.0" />
+               </font>
+               <effect>
+                  <DropShadow height="3.0" radius="1.0" width="3.0">
+                     <color>
+                        <Color red="0.3137255012989044" green="0.5215686559677124" blue="1.0" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Label>
+            <Label alignment="TOP_CENTER" layoutX="470.0" layoutY="174.0" prefWidth="90.0" styleClass="inputsubtitle" text="Прошивка" textAlignment="CENTER">
+               <font>
+                  <Font name="Calibri Bold" size="18.0" />
+               </font>
+               <effect>
+                  <DropShadow height="3.0" radius="1.0" width="3.0">
+                     <color>
+                        <Color red="0.3137255012989044" green="0.5215686559677124" blue="1.0" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Label>
+            <Label alignment="TOP_CENTER" layoutX="594.0" layoutY="175.0" styleClass="inputsubtitle" text="Фоновая запись" textAlignment="CENTER">
+               <font>
+                  <Font name="Calibri Bold" size="18.0" />
+               </font>
+               <effect>
+                  <DropShadow height="3.0" radius="1.0" width="3.0">
+                     <color>
+                        <Color red="0.3137255012989044" green="0.5215686559677124" blue="1.0" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Label>
          </children>
          <effect>
             <InnerShadow height="255.0" radius="127.0" width="255.0">

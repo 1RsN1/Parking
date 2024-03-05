@@ -8,8 +8,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.DragEvent;
+import javafx.scene.input.MouseDragEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -19,7 +22,7 @@ public class HomeSceneController {
     @FXML
     Stage stage;
     @FXML
-    private ImageView imgV1, imgV41, imgV42, imgV43,imgV44, ivProsmotr, ivProsmotr0, ivUstr, ivArh, ivJur, ivZap, ivTrev;
+    private ImageView imgV1, imgV41, imgV42, imgV43,imgV44, ivProsmotr, ivProsmotr0, ivUstr, ivArh, ivJur, ivZap, ivJurTrev, ivKonf, ivTrev, ivTur, ivPolz, ivProg, ivMap, ivDec, ivBek, ivProsh, ivFonZap;
     @FXML
     private AnchorPane anchorPane1;
     @FXML
@@ -30,7 +33,6 @@ public class HomeSceneController {
     @FXML
     private URL location;
 
-
     public void initialize() {
         ControllerImage controllerImage = new ControllerImage();
         controllerImage.initialize();
@@ -38,9 +40,19 @@ public class HomeSceneController {
         ivProsmotr.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("icon/просмотр камеры.png")));
         ivUstr.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("icon/устройства.png")));
         ivArh.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("icon/архив.png")));
-        ivJur.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("icon/журнал.png")));
         ivZap.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("icon/онлайн запись.png")));
-        ivTrev.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("icon/тревога.png")));
+        ivJur.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("icon/журнал.png")));
+        ivJurTrev.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("icon/тревога.png")));
+        ivKonf.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("icon/конфиг.png")));
+        ivTrev.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("icon/тревога второй вариант.png")));
+        ivTur.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("icon/тур.png")));
+        ivPolz.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("icon/пользователи.png")));
+        ivProg.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("icon/программа.png")));
+        ivMap.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("icon/карта.png")));
+        ivDec.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("icon/декодер.png")));
+        ivBek.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("icon/бэкап.png")));
+        ivProsh.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("icon/прошивка.png")));
+        ivFonZap.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("icon/фоновая запись.png")));
         imgV1.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/1.jpg")));
         imgV41.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/1.jpg")));
         imgV42.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/2.jpg")));
