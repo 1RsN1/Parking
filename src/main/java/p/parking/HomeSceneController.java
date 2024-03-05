@@ -50,8 +50,6 @@ public class HomeSceneController {
     private AnchorPane paneWithOneCam;
 
     public void initialize() {
-        ControllerImage controllerImage = new ControllerImage();
-        controllerImage.initialize();
         ivProsmotr0.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("icon/главная.png")));
         ivProsmotr.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("icon/просмотр камеры.png")));
         ivUstr.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("icon/устройства.png")));
@@ -85,7 +83,6 @@ public class HomeSceneController {
             stage = (Stage) scenePanel.getScene().getWindow();
             System.out.println("Successfully logged out!");
             stage.close();
-
         }
     }
 
