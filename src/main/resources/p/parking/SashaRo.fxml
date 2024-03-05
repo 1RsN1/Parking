@@ -61,22 +61,22 @@
                      <children>
                         <ImageView fitHeight="385.0" fitWidth="612.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../photo/90b5dc5d-6656-4e4b-bd4c-d00717675956.jpg" />
+                              <Image url="@photo/4.jpg" />
                            </image>
                         </ImageView>
                         <ImageView fitHeight="385.0" fitWidth="612.0" layoutX="612.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../photo/8646eead-96d7-4b1b-8271-2819e7a6c0a5%20(1).jpg" />
+                              <Image url="@photo/8646eead-96d7-4b1b-8271-2819e7a6c0a5%20(1).jpg" />
                            </image>
                         </ImageView>
                         <ImageView fitHeight="385.0" fitWidth="612.0" layoutY="385.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../photo/d319868e-1f06-445a-972c-6b907531aeaf.jpg" />
+                              <Image url="@photo/9.jpg" />
                            </image>
                         </ImageView>
                         <ImageView fitHeight="385.0" fitWidth="612.0" layoutX="612.0" layoutY="385.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../photo/8646eead-96d7-4b1b-8271-2819e7a6c0a5.jpg" />
+                              <Image url="@photo/6.jpg" />
                            </image>
                         </ImageView>
                      </children>
@@ -85,7 +85,7 @@
                      <children>
                         <ImageView fitHeight="770.0" fitWidth="1224.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../photo/1aaa772b-6ddb-4f84-a266-18cd116b4742.jpg" />
+                              <Image url="@photo/1.jpg" />
                            </image>
                         </ImageView>
                      </children>
