@@ -20,7 +20,7 @@ public class HomeSceneController {
     @FXML
     Stage stage;
     @FXML
-    private ImageView imgV1, imgV41, imgV42, imgV43,imgV44, ivProsmotr0, ivUstr,ivGlav, ivJur, ivZap, ivJurTrev, ivKonf, ivTrev, ivTur, ivPolz, ivProg, ivMap, ivDec, ivBek, ivProsh, ivFonZap;
+    private ImageView imgV1, imgV41, imgV42, imgV43,imgV44, ivProsmotr0;
     @FXML
     private AnchorPane anchorPane1;
     @FXML
