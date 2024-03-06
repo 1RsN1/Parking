@@ -25,9 +25,158 @@
 .inputsubtitle {
     -fx-text-fill: #2f324f;
 }
-.buttonImage {
-    -fx-background-image: url("./icon/архив.png");
+
+/* ============ Кнопки на главной ========================================================================= */
+
+.buttomHover:hover {
+    -fx-background-color: #6f829e;
+    -fx-background-radius: 15;
+}
+
+.buttonGlav {
+    -fx-background-image: url("icon/главная.png");
+    -fx-background-size: 75% 75%;
     -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-color: #263145;
+}
+.buttonGlav:hover {
+    -fx-background-color: #D81159;
+    -fx-background-radius: 15;
+}
+
+.buttonProsmotr {
+    -fx-background-image: url("icon/просмотр.png");
+    -fx-background-size: 75% 75%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-color: #c7c7c7;
+}
+
+.buttonUstr {
+    -fx-background-image: url("icon/устройства.png");
+    -fx-background-size: 75% 75%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-color: #c7c7c7;
+}
+
+.buttonArh {
+    -fx-background-image: url("./icon/архив.png");
+    -fx-background-size: 85% 85%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-color: #c7c7c7;
+}
+
+.buttonArh {
+    -fx-background-image: url("./icon/архив.png");
+    -fx-background-size: 75% 75%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-color: #c7c7c7;
+}
+
+.buttonZap {
+    -fx-background-image: url("icon/онлайнЗапись.png");
+    -fx-background-size: 75% 75%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-color: #c7c7c7;
+}
+
+.buttonJur {
+    -fx-background-image: url("icon/журнал.png");
+    -fx-background-size: 75% 75%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-color: #c7c7c7;
+}
+
+.buttonJurTrev {
+    -fx-background-image: url("icon/тревога.png");
     -fx-background-size: 100% 100%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-color: #c7c7c7;
+}
+
+.buttonKonf {
+    -fx-background-image: url("icon/конфиг.png");
+    -fx-background-size: 75% 75%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-color: #c7c7c7;
+}
+
+.buttonTrev {
+    -fx-background-image: url("icon/тревогаПросто.png");
+    -fx-background-size: 100% 100%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-color: #c7c7c7;
+}
+
+.buttonTur {
+    -fx-background-image: url("icon/тур.png");
+    -fx-background-size: 85% 85%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-color: #c7c7c7;
+}
+
+.buttonPolz {
+    -fx-background-image: url("icon/пользователи.png");
+    -fx-background-size: 75% 75%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-color: #c7c7c7;
+}
+
+.buttonProg {
+    -fx-background-image: url("icon/программа.png");
+    -fx-background-size: 75% 75%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-color: #c7c7c7;
+}
+
+.buttonMap {
+    -fx-background-image: url("icon/карта.png");
+    -fx-background-size: 75% 75%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-color: #c7c7c7;
+}
+
+.buttonDec {
+    -fx-background-image: url("icon/декодер.png");
+    -fx-background-size: 75% 75%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-color: #c7c7c7;
+}
+
+.buttonBek {
+    -fx-background-image: url("icon/бэкап.png");
+    -fx-background-size: 75% 75%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-color: #c7c7c7;
+}
+
+.buttonProsh {
+    -fx-background-image: url("icon/прошивка.png");
+    -fx-background-size: 75% 75%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-color: #c7c7c7;
+}
+
+.buttonFonZap {
+    -fx-background-image: url("icon/фоноваяЗапись.png");
+    -fx-background-size: 75% 75%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
     -fx-background-color: #c7c7c7;
 }

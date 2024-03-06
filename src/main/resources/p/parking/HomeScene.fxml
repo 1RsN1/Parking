@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -7,11 +8,10 @@
 <?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="900.0" prefWidth="1440.0" styleClass="home" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="p.parking.HomeSceneController">
+<AnchorPane prefHeight="900.0" prefWidth="1440.0" styleClass="home" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="p.parking.HomeSceneController">
    <children>
       <AnchorPane prefHeight="75.0" prefWidth="1440.0" styleClass="header" stylesheets="@Style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <effect>
@@ -22,16 +22,8 @@
             </InnerShadow>
          </effect>
          <children>
-            <HBox fillHeight="false" layoutX="16.0" layoutY="5.0" prefHeight="64.0" prefWidth="1400.0" spacing="30.0">
-               <children>
-                  <ImageView fx:id="ivProsmotr0" fitHeight="64.0" fitWidth="90.0" onMouseClicked="#glavnaya" pickOnBounds="true" preserveRatio="true" />
-                  <ImageView fx:id="ivGlav" fitHeight="64.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </ImageView>
-               </children>
-            </HBox>
+            <Button layoutX="110.0" layoutY="2.5" mnemonicParsing="false" prefHeight="70.0" prefWidth="90.0" styleClass="buttonGlav" />
+            <ImageView fx:id="ivProsmotr0" fitHeight="75.0" fitWidth="90.0" layoutX="10.0" onMouseClicked="#glavnaya" pickOnBounds="true" preserveRatio="true" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="20.0" layoutY="95.0" prefHeight="250.0" prefWidth="1400.0" styleClass="inputbox" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
@@ -45,30 +37,6 @@
                   </Label>
                </children>
             </AnchorPane>
-            <ImageView fx:id="ivProsmotr" fitHeight="90.0" fitWidth="90.0" layoutX="50.0" layoutY="75.0" onMouseClicked="#prosmotr" pickOnBounds="true" preserveRatio="true">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor></ImageView>
-            <ImageView fx:id="ivUstr" fitHeight="90.0" fitWidth="90.0" layoutX="190.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor></ImageView>
-            <ImageView fx:id="ivArh" fitHeight="90.0" fitWidth="90.0" layoutX="330.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor></ImageView>
-            <ImageView fx:id="ivZap" fitHeight="90.0" fitWidth="90.0" layoutX="470.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor></ImageView>
-            <ImageView fx:id="ivJur" fitHeight="90.0" fitWidth="90.0" layoutX="610.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor></ImageView>
-            <ImageView fx:id="ivJurTrev" fitHeight="90.0" fitWidth="90.0" layoutX="750.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor></ImageView>
             <Label alignment="TOP_CENTER" layoutX="50.0" layoutY="174.0" prefWidth="90.0" styleClass="inputsubtitle" text="Просмотр" textAlignment="CENTER">
                <font>
                   <Font name="Calibri Bold" size="18.0" />
@@ -141,7 +109,59 @@
                   </DropShadow>
                </effect>
             </Label>
-            <Button layoutX="959.0" layoutY="88.0" mnemonicParsing="false" prefHeight="110.0" prefWidth="153.0" styleClass="buttonImage" text="Button" />
+            <Button layoutX="330.0" layoutY="75.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <styleClass>
+                  <String fx:value="buttonArh" />
+                  <String fx:value="buttomHover" />
+               </styleClass></Button>
+            <Button layoutX="50.0" layoutY="75.0" mnemonicParsing="false" onMouseClicked="#prosmotr" prefHeight="90.0" prefWidth="90.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <styleClass>
+                  <String fx:value="buttonProsmotr" />
+                  <String fx:value="buttomHover" />
+               </styleClass>
+            </Button>
+            <Button layoutX="190.0" layoutY="75.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <styleClass>
+                  <String fx:value="buttonUstr" />
+                  <String fx:value="buttomHover" />
+               </styleClass>
+            </Button>
+            <Button layoutX="470.0" layoutY="75.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <styleClass>
+                  <String fx:value="buttonZap" />
+                  <String fx:value="buttomHover" />
+               </styleClass>
+            </Button>
+            <Button layoutX="610.0" layoutY="75.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <styleClass>
+                  <String fx:value="buttonJur" />
+                  <String fx:value="buttomHover" />
+               </styleClass>
+            </Button>
+            <Button layoutX="750.0" layoutY="75.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <styleClass>
+                  <String fx:value="buttonJurTrev" />
+                  <String fx:value="buttomHover" />
+               </styleClass>
+            </Button>
          </children>
          <effect>
             <InnerShadow height="255.0" radius="127.0" width="255.0">
@@ -162,31 +182,6 @@
                   </Label>
                </children>
             </AnchorPane>
-            <ImageView fx:id="ivKonf" fitHeight="90.0" fitWidth="90.0" layoutX="50.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </ImageView>
-            <ImageView fx:id="ivTrev" fitHeight="90.0" fitWidth="90.0" layoutX="190.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </ImageView>
-            <ImageView fx:id="ivTur" fitHeight="90.0" fitWidth="90.0" layoutX="330.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </ImageView>
-            <ImageView fx:id="ivPolz" fitHeight="90.0" fitWidth="90.0" layoutX="470.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </ImageView>
-            <ImageView fx:id="ivProg" fitHeight="90.0" fitWidth="90.0" layoutX="610.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </ImageView>
             <Label alignment="TOP_CENTER" layoutX="39.0" layoutY="174.0" styleClass="inputsubtitle" text="Конфигуратор" textAlignment="CENTER">
                <font>
                   <Font name="Calibri Bold" size="18.0" />
@@ -247,6 +242,51 @@
                   </DropShadow>
                </effect>
             </Label>
+            <Button layoutX="50.0" layoutY="75.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <styleClass>
+                  <String fx:value="buttonKonf" />
+                  <String fx:value="buttomHover" />
+               </styleClass>
+            </Button>
+            <Button layoutX="330.0" layoutY="75.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <styleClass>
+                  <String fx:value="buttonTur" />
+                  <String fx:value="buttomHover" />
+               </styleClass>
+            </Button>
+            <Button layoutX="470.0" layoutY="75.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <styleClass>
+                  <String fx:value="buttonPolz" />
+                  <String fx:value="buttomHover" />
+               </styleClass>
+            </Button>
+            <Button layoutX="610.0" layoutY="75.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <styleClass>
+                  <String fx:value="buttonProg" />
+                  <String fx:value="buttomHover" />
+               </styleClass>
+            </Button>
+            <Button layoutX="190.0" layoutY="75.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <styleClass>
+                  <String fx:value="buttonTrev" />
+                  <String fx:value="buttomHover" />
+               </styleClass>
+            </Button>
          </children>
          <effect>
             <InnerShadow height="255.0" radius="127.0" width="255.0">
@@ -267,31 +307,6 @@
                   </Label>
                </children>
             </AnchorPane>
-            <ImageView fx:id="ivMap" fitHeight="90.0" fitWidth="90.0" layoutX="50.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </ImageView>
-            <ImageView fx:id="ivDec" fitHeight="90.0" fitWidth="90.0" layoutX="190.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </ImageView>
-            <ImageView fx:id="ivBek" fitHeight="90.0" fitWidth="90.0" layoutX="330.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </ImageView>
-            <ImageView fx:id="ivProsh" fitHeight="90.0" fitWidth="90.0" layoutX="470.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </ImageView>
-            <ImageView fx:id="ivFonZap" fitHeight="90.0" fitWidth="90.0" layoutX="610.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </ImageView>
             <Label alignment="TOP_CENTER" layoutX="50.0" layoutY="174.0" prefWidth="90.0" styleClass="inputsubtitle" text="Карта" textAlignment="CENTER">
                <font>
                   <Font name="Calibri Bold" size="18.0" />
@@ -352,6 +367,51 @@
                   </DropShadow>
                </effect>
             </Label>
+            <Button layoutX="50.0" layoutY="75.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <styleClass>
+                  <String fx:value="buttonMap" />
+                  <String fx:value="buttomHover" />
+               </styleClass>
+            </Button>
+            <Button layoutX="330.0" layoutY="75.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <styleClass>
+                  <String fx:value="buttonBek" />
+                  <String fx:value="buttomHover" />
+               </styleClass>
+            </Button>
+            <Button layoutX="470.0" layoutY="75.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <styleClass>
+                  <String fx:value="buttonProsh" />
+                  <String fx:value="buttomHover" />
+               </styleClass>
+            </Button>
+            <Button layoutX="610.0" layoutY="75.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <styleClass>
+                  <String fx:value="buttonFonZap" />
+                  <String fx:value="buttomHover" />
+               </styleClass>
+            </Button>
+            <Button layoutX="190.0" layoutY="75.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <styleClass>
+                  <String fx:value="buttonDec" />
+                  <String fx:value="buttomHover" />
+               </styleClass>
+            </Button>
          </children>
          <effect>
             <InnerShadow height="255.0" radius="127.0" width="255.0">
