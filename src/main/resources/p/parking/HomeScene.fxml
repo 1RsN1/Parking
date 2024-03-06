@@ -28,17 +28,17 @@
                </cursor>
             </Button>
             <ImageView fx:id="ivProsmotr0" fitHeight="75.0" fitWidth="90.0" layoutX="10.0" pickOnBounds="true" preserveRatio="true" />
-            <Button layoutX="1430.0" layoutY="19.0" mnemonicParsing="false" onAction="#logout" prefHeight="40.0" prefWidth="40.0" styleClass="closeButton" AnchorPane.rightAnchor="10.0">
+            <Button layoutX="1430.0" layoutY="17.5" mnemonicParsing="false" onAction="#logout" prefHeight="40.0" prefWidth="40.0" styleClass="closeButton" AnchorPane.rightAnchor="10.0">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button layoutX="1380.0" layoutY="18.0" mnemonicParsing="false" onAction="#maximizeWindow" prefHeight="40.0" prefWidth="40.0" styleClass="maximizeButton" AnchorPane.rightAnchor="55.0">
+            <Button layoutX="1380.0" layoutY="17.5" mnemonicParsing="false" onAction="#maximizeWindow" prefHeight="40.0" prefWidth="40.0" styleClass="maximizeButton" AnchorPane.rightAnchor="55.0">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button layoutX="1330.0" layoutY="19.0" mnemonicParsing="false" onAction="#minimizeWindow" prefHeight="40.0" prefWidth="40.0" styleClass="minimizeButton" AnchorPane.rightAnchor="105.0">
+            <Button layoutX="1330.0" layoutY="17.5" mnemonicParsing="false" onAction="#minimizeWindow" prefHeight="40.0" prefWidth="40.0" styleClass="minimizeButton" AnchorPane.rightAnchor="105.0">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>

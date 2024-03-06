@@ -32,7 +32,7 @@
 /* ============ Кнопки на главной ========================================================================= */
 
 .buttomHover:hover {
-    -fx-background-color: #6f829e;
+    -fx-background-color: #7f91b1;
     -fx-background-radius: 15;
 }
 
