@@ -19,7 +19,7 @@ public class HomeSceneController {
     @FXML
     Stage stage;
     @FXML
-    private ImageView imgV1, imgV41, imgV42, imgV43,imgV44, ivProsmotr0;
+    private ImageView imgV1, imgV41, imgV42, imgV43,imgV44, imgV71, imgV72, imgV73, imgV74, imgV75, imgV76, imgV77, imgV91, imgV92, imgV93, imgV94, imgV95, imgV96, imgV97, imgV98, imgV99, ivProsmotr0;
     @FXML
     private AnchorPane anchorPane1;
     @FXML
@@ -30,24 +30,23 @@ public class HomeSceneController {
     @FXML
     private URL location;
 
-
     @FXML
-    private Button buttonForEightCam;
-
+    private Button buttonForSevenCam;
     @FXML
     private Button buttonForFourCam;
-
     @FXML
     private Button buttonForNineCam;
-
     @FXML
     private Button buttonForOneCam;
 
     @FXML
     private AnchorPane paneWithFourCam;
-
     @FXML
     private AnchorPane paneWithOneCam;
+    @FXML
+    private AnchorPane paneWithSevenCam;
+    @FXML
+    private AnchorPane paneWithNineCam;
 
     public void initialize() {
         ivProsmotr0.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("icon/VSTU-logo.png")));
@@ -56,6 +55,22 @@ public class HomeSceneController {
         imgV42.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/2.jpg")));
         imgV43.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/3.jpg")));
         imgV44.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/4.jpg")));
+        imgV71.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/1.jpg")));
+        imgV72.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/2.jpg")));
+        imgV73.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/3.jpg")));
+        imgV74.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/4.jpg")));
+        imgV75.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/5.jpg")));
+        imgV76.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/6.jpg")));
+        imgV77.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/7.jpg")));
+        imgV91.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/1.jpg")));
+        imgV92.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/2.jpg")));
+        imgV93.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/3.jpg")));
+        imgV94.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/4.jpg")));
+        imgV95.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/5.jpg")));
+        imgV96.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/6.jpg")));
+        imgV97.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/7.jpg")));
+        imgV98.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/8.jpg")));
+        imgV99.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/9.jpg")));
     }
 
     public void logout(ActionEvent event) {
@@ -81,22 +96,32 @@ public class HomeSceneController {
     void clickedForFourCam(MouseEvent event) {
         paneWithFourCam.setVisible(true);
         paneWithOneCam.setVisible(false);
+        paneWithSevenCam.setVisible(false);
+        paneWithNineCam.setVisible(false);
     }
 
     @FXML
     void clickedForOneCam(MouseEvent event) {
         paneWithOneCam.setVisible(true);
         paneWithFourCam.setVisible(false);
+        paneWithSevenCam.setVisible(false);
+        paneWithNineCam.setVisible(false);
     }
 
     @FXML
-    void clickedForEightCam(MouseEvent event) {
-
+    void clickedForSevenCam(MouseEvent event) {
+        paneWithSevenCam.setVisible(true);
+        paneWithOneCam.setVisible(false);
+        paneWithFourCam.setVisible(false);
+        paneWithNineCam.setVisible(false);
     }
 
     @FXML
     void clickedForNineCam(MouseEvent event) {
-
+        paneWithNineCam.setVisible(true);
+        paneWithOneCam.setVisible(false);
+        paneWithFourCam.setVisible(false);
+        paneWithSevenCam.setVisible(false);
     }
 
     public void maximizeWindow(ActionEvent event) {

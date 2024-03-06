@@ -11,7 +11,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="scenePanel" prefHeight="900.0" prefWidth="1440.0" styleClass="home" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="p.parking.HomeSceneController">
+<AnchorPane fx:id="scenePanel" prefHeight="900.0" prefWidth="1440.0" styleClass="home" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="p.parking.HomeSceneController">
    <children>
       <AnchorPane prefHeight="75.0" prefWidth="1440.0" styleClass="header" stylesheets="@Style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <effect>
@@ -27,18 +27,18 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <ImageView fx:id="ivProsmotr0" fitHeight="75.0" fitWidth="90.0" layoutX="10.0" onMouseClicked="#glavnaya" pickOnBounds="true" preserveRatio="true" />
-            <Button layoutX="1430.0" layoutY="19.0" mnemonicParsing="false" onAction="#logout" prefHeight="40.0" prefWidth="40.0" styleClass="closeButton" stylesheets="@st.css" AnchorPane.rightAnchor="10.0">
+            <ImageView fx:id="ivProsmotr0" fitHeight="75.0" fitWidth="90.0" layoutX="10.0" pickOnBounds="true" preserveRatio="true" />
+            <Button layoutX="1430.0" layoutY="19.0" mnemonicParsing="false" onAction="#logout" prefHeight="40.0" prefWidth="40.0" styleClass="closeButton" AnchorPane.rightAnchor="10.0">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button layoutX="1380.0" layoutY="18.0" mnemonicParsing="false" onAction="#maximizeWindow" prefHeight="40.0" prefWidth="40.0" styleClass="maximizeButton" stylesheets="@st.css" AnchorPane.rightAnchor="55.0">
+            <Button layoutX="1380.0" layoutY="18.0" mnemonicParsing="false" onAction="#maximizeWindow" prefHeight="40.0" prefWidth="40.0" styleClass="maximizeButton" AnchorPane.rightAnchor="55.0">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button layoutX="1330.0" layoutY="19.0" mnemonicParsing="false" onAction="#minimizeWindow" prefHeight="40.0" prefWidth="40.0" styleClass="minimizeButton" stylesheets="@st.css" AnchorPane.rightAnchor="105.0">
+            <Button layoutX="1330.0" layoutY="19.0" mnemonicParsing="false" onAction="#minimizeWindow" prefHeight="40.0" prefWidth="40.0" styleClass="minimizeButton" AnchorPane.rightAnchor="105.0">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -442,6 +442,29 @@
       </AnchorPane>
       <AnchorPane fx:id="anchorPane1" layoutY="75.0" prefHeight="825.0" prefWidth="1440.0" styleClass="home" visible="false">
          <children>
+            <AnchorPane fx:id="paneWithNineCam" layoutX="12.5" layoutY="12.5" prefHeight="700.0" prefWidth="1235.0" style="-fx-background-color: grey;">
+               <children>
+                  <ImageView fx:id="imgV91" fitHeight="233.0" fitWidth="411.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="imgV92" fitHeight="233.0" fitWidth="411.0" layoutX="412.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="imgV93" fitHeight="233.0" fitWidth="411.0" layoutX="823.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="imgV94" fitHeight="233.0" fitWidth="411.0" layoutY="234.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="imgV95" fitHeight="233.0" fitWidth="411.0" layoutX="412.0" layoutY="234.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="imgV96" fitHeight="233.0" fitWidth="411.0" layoutX="823.0" layoutY="234.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="imgV97" fitHeight="233.0" fitWidth="411.0" layoutY="467.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="imgV98" fitHeight="233.0" fitWidth="411.0" layoutX="412.0" layoutY="467.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="imgV99" fitHeight="233.0" fitWidth="411.0" layoutX="823.0" layoutY="467.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="paneWithSevenCam" layoutX="12.5" layoutY="12.5" prefHeight="700.0" prefWidth="1235.0" style="-fx-background-color: grey;">
+               <children>
+                  <ImageView fx:id="imgV71" fitHeight="500.0" fitWidth="900.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="imgV72" fitHeight="200.0" fitWidth="300.0" layoutY="500.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="imgV73" fitHeight="200.0" fitWidth="300.0" layoutX="300.0" layoutY="500.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="imgV74" fitHeight="200.0" fitWidth="300.0" layoutX="600.0" layoutY="500.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="imgV75" fitHeight="200.0" fitWidth="335.0" layoutX="900.0" layoutY="500.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="imgV76" fitHeight="250.0" fitWidth="335.0" layoutX="900.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="imgV77" fitHeight="250.0" fitWidth="335.0" layoutX="900.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true" />
+               </children></AnchorPane>
             <AnchorPane fx:id="paneWithFourCam" layoutX="12.5" layoutY="12.5" prefHeight="700.0" prefWidth="1235.0" style="-fx-background-color: grey;">
                <children>
                   <ImageView fx:id="imgV41" fitHeight="350.0" fitWidth="617.5" pickOnBounds="true" preserveRatio="true" />
@@ -454,14 +477,13 @@
                <children>
                   <ImageView fx:id="imgV1" fitHeight="700.0" fitWidth="1235.0" pickOnBounds="true" preserveRatio="true" />
                </children></AnchorPane>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0" />
             <AnchorPane layoutY="725.0" prefHeight="100.0" prefWidth="1440.0" styleClass="home">
                <children>
                   <AnchorPane layoutX="270.0" layoutY="30.0" prefHeight="40.0" prefWidth="600.0" style="-fx-background-color: grey; -fx-background-radius: 20;">
                      <children>
                         <Button fx:id="buttonForOneCam" layoutX="41.0" layoutY="8.0" mnemonicParsing="false" onMouseClicked="#clickedForOneCam" text="1" />
                         <Button fx:id="buttonForFourCam" layoutX="111.0" layoutY="8.0" mnemonicParsing="false" onMouseClicked="#clickedForFourCam" text="4" />
-                        <Button fx:id="buttonForEightCam" layoutX="182.0" layoutY="8.0" mnemonicParsing="false" onMouseClicked="#clickedForEightCam" text="1/7" />
+                        <Button fx:id="buttonForSevenCam" layoutX="182.0" layoutY="8.0" mnemonicParsing="false" onMouseClicked="#clickedForSevenCam" text="1/6" />
                         <Button fx:id="buttonForNineCam" layoutX="252.0" layoutY="8.0" mnemonicParsing="false" onMouseClicked="#clickedForNineCam" text="9" />
                      </children></AnchorPane>
                   <AnchorPane layoutX="1050.0" layoutY="30.0" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: grey; -fx-background-radius: 20;" />
