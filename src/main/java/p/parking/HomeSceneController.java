@@ -16,7 +16,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class HomeSceneController {
-
     @FXML
     Stage stage;
     @FXML
