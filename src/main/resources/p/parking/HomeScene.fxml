@@ -11,7 +11,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="900.0" prefWidth="1440.0" styleClass="home" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="p.parking.HomeSceneController">
+<AnchorPane fx:id="scenePanel" prefHeight="900.0" prefWidth="1440.0" styleClass="home" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="p.parking.HomeSceneController">
    <children>
       <AnchorPane prefHeight="75.0" prefWidth="1440.0" styleClass="header" stylesheets="@Style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <effect>
@@ -28,6 +28,21 @@
                </cursor>
             </Button>
             <ImageView fx:id="ivProsmotr0" fitHeight="75.0" fitWidth="90.0" layoutX="10.0" onMouseClicked="#glavnaya" pickOnBounds="true" preserveRatio="true" />
+            <Button layoutX="1430.0" layoutY="19.0" mnemonicParsing="false" onAction="#logout" prefHeight="40.0" prefWidth="40.0" styleClass="closeButton" stylesheets="@st.css" AnchorPane.rightAnchor="10.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="1380.0" layoutY="18.0" mnemonicParsing="false" onAction="#maximizeWindow" prefHeight="40.0" prefWidth="40.0" styleClass="maximizeButton" stylesheets="@st.css" AnchorPane.rightAnchor="55.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="1330.0" layoutY="19.0" mnemonicParsing="false" onAction="#minimizeWindow" prefHeight="40.0" prefWidth="40.0" styleClass="minimizeButton" stylesheets="@st.css" AnchorPane.rightAnchor="105.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
          </children>
       </AnchorPane>
       <AnchorPane layoutX="20.0" layoutY="95.0" prefHeight="250.0" prefWidth="1400.0" styleClass="inputbox" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">

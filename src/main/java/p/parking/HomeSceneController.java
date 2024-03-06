@@ -30,6 +30,7 @@ public class HomeSceneController {
     @FXML
     private URL location;
 
+
     @FXML
     private Button buttonForEightCam;
 
