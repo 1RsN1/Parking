@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
@@ -17,36 +18,22 @@ import javafx.stage.Stage;
 
 public class HomeSceneController {
     @FXML
-    Stage stage;
+    Stage stage, baseStage,settingsStage,othersStage;
     @FXML
-    private ImageView imgV1, imgV41, imgV42, imgV43,imgV44, imgV71, imgV72, imgV73, imgV74, imgV75, imgV76, imgV77, imgV91, imgV92, imgV93, imgV94, imgV95, imgV96, imgV97, imgV98, imgV99, ivProsmotr0;
+    Scene baseScene;
     @FXML
-    private AnchorPane anchorPane1;
+    private ImageView imgV1, imgV41, imgV42, imgV43, imgV44, imgV71, imgV72, imgV73, imgV74, imgV75, imgV76, imgV77, imgV91, imgV92, imgV93, imgV94, imgV95, imgV96, imgV97, imgV98, imgV99, ivProsmotr0;
     @FXML
-    private AnchorPane scenePanel;
+    AnchorPane anchorPane1, scenePanel, baseAnchorPane, othersAnchorPane, settingAP;
     @FXML
     private ResourceBundle resources;
-
     @FXML
     private URL location;
+    @FXML
+    private Button buttonForSevenCam, buttonForFourCam, buttonForNineCam, buttonForOneCam;
+    @FXML
+    private AnchorPane paneWithFourCam,paneWithOneCam,paneWithSevenCam,paneWithNineCam;
 
-    @FXML
-    private Button buttonForSevenCam;
-    @FXML
-    private Button buttonForFourCam;
-    @FXML
-    private Button buttonForNineCam;
-    @FXML
-    private Button buttonForOneCam;
-
-    @FXML
-    private AnchorPane paneWithFourCam;
-    @FXML
-    private AnchorPane paneWithOneCam;
-    @FXML
-    private AnchorPane paneWithSevenCam;
-    @FXML
-    private AnchorPane paneWithNineCam;
 
     public void initialize() {
         ivProsmotr0.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("icon/VSTU-logo.png")));
@@ -88,6 +75,7 @@ public class HomeSceneController {
     public void prosmotr(MouseEvent event) {
         anchorPane1.setVisible(true);
     }
+
     public void glavnaya(MouseEvent event) {
         anchorPane1.setVisible(false);
     }
@@ -131,12 +119,26 @@ public class HomeSceneController {
             stage.setHeight(1079);
             stage.setX(0);
             stage.setY(0);
+            settingAP.setLayoutY(410);
+            settingAP.setPrefHeight(305);
+            othersAnchorPane.setLayoutY(730);
+            othersAnchorPane.setPrefHeight(305);
+            baseAnchorPane.setLayoutY(90);
+            baseAnchorPane.setPrefHeight(305);
+
+
         } else {
             stage.setWidth(1440);
             stage.setHeight(900);
             stage.setX(240);
-
             stage.setY(50);
+            settingAP.setLayoutY(360);
+            settingAP.setPrefHeight(250);
+            othersAnchorPane.setLayoutY(625);
+            othersAnchorPane.setPrefHeight(250);
+            baseAnchorPane.setLayoutY(95);
+            baseAnchorPane.setPrefHeight(250);
+
         }
 
     }
