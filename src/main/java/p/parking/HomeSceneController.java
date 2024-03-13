@@ -1,12 +1,8 @@
 package p.parking;
 
 import java.net.URL;
-import java.util.Objects;
-import java.util.ResourceBundle;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -18,26 +14,28 @@ public class HomeSceneController {
     @FXML
     Stage stage;
     @FXML
-    private ImageView imgV1, imgV41, imgV42, imgV43, imgV44, imgV71, imgV72, imgV73, imgV74, imgV75, imgV76, imgV77, imgV91, imgV92, imgV93, imgV94, imgV95, imgV96, imgV97, imgV98, imgV99, ivProsmotr0;
+    ImageView imgV1, imgV41, imgV42, imgV43, imgV44, imgV71, imgV72, imgV73, imgV74, imgV75, imgV76, imgV77, imgV91, imgV92, imgV93, imgV94, imgV95, imgV96, imgV97, imgV98, imgV99, ivProsmotr0;
     @FXML
     AnchorPane anchorPane1, scenePanel, baseAnchorPane, othersAnchorPane, settingAP, camBtnPane, camRightPane;
     @FXML
-    Pane basePane, basePane1, basePane11, camsPane;
+    Pane basePane, basePane1, basePane11;
     @FXML
     GridPane gp;
+    //ResourceBundle resources; //это че ?
     @FXML
-    FlowPane fp;
-    private ResourceBundle resources;
+    URL location; // а это ?
     @FXML
-    private URL location;
+    Button buttonForSevenCam, buttonForFourCam, buttonForNineCam, buttonForOneCam, jt, maxBtn, prosmotrBtnUp;
     @FXML
-    private Button buttonForSevenCam, buttonForFourCam, buttonForNineCam, buttonForOneCam, jt,j, prosmotrBtnUp;
-    @FXML
-    private AnchorPane paneWithFourCam, paneWithOneCam, paneWithSevenCam, paneWithNineCam;
+    AnchorPane paneWithFourCam, paneWithOneCam, paneWithSevenCam, paneWithNineCam;
+    ImageView mxbtnView = new ImageView(new Image(getClass().getResourceAsStream("icon/mxmz.png")));
 
 
     public void initialize() {
-        int tester = 0;
+      //  ImageView mxbtnView = new ImageView(new Image(getClass().getResourceAsStream("icon/mxmz.png")));
+        mxbtnView.setFitWidth(18);
+        mxbtnView.setFitHeight(18);
+        maxBtn.setGraphic(mxbtnView);
         // ошибка если во время разворачивания / сворачивания окна в / из полноэкранного режима нажать на кнопку домой, пока окно не развернулось до конца
         ivProsmotr0.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("icon/VSTU-logo.png")));
         imgV1.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/1.jpg")));
@@ -135,6 +133,7 @@ public class HomeSceneController {
     public void maximizeWindow(ActionEvent event) {
         stage = (Stage) scenePanel.getScene().getWindow();
         if (stage.getWidth() < 1920) {
+            mxbtnView.setImage(new Image(getClass().getResourceAsStream("icon/rstr.png")));
             stage.setWidth(1920);
             stage.setHeight(1079);
             stage.setX(0);
@@ -153,12 +152,13 @@ public class HomeSceneController {
             camRightPane.setPrefHeight(950);
             camBtnPane.setPrefWidth(1920);
             camBtnPane.setLayoutY(873);
-           // camsPane.setPrefHeight(890);
+            // camsPane.setPrefHeight(890);
             //camsPane.setPrefWidth(1700);
             imgV1.setFitWidth(1700);
             imgV1.setFitHeight(890);
             camsMaximize();
         } else {
+            mxbtnView.setImage(new Image(getClass().getResourceAsStream("icon/mxmz.png")));
             stage.setWidth(1440);
             stage.setHeight(900);
             stage.setX(240);
@@ -178,26 +178,30 @@ public class HomeSceneController {
             camRightPane.setLayoutX(1256);
             camBtnPane.setPrefWidth(1440);
             camBtnPane.setLayoutY(725);
-           // camsPane.setPrefHeight(700);
-           // camsPane.setPrefWidth(1241);
+            // camsPane.setPrefHeight(700);
+            // camsPane.setPrefWidth(1241);
             imgV1.setFitWidth(1235);
             imgV1.setFitHeight(700);
         }
     }
-    public void camsMaximize(){
+
+    public void camsMaximize() {
 
     }
+
     public void prosmotrBtnUpper() {
         System.out.println("test");
-        gp.add(prosmotrBtnUp,gp.getColumnCount()+1, 0);
-       gp.setPrefWidth(gp.getWidth() + 90);
+        gp.add(prosmotrBtnUp, gp.getColumnCount() + 1, 0);
+        gp.setPrefWidth(gp.getWidth() + 90);
         prosmotrBtnUp.setVisible(true);
     }
+
+    /*
     public void test1(ActionEvent event) {
-        gp.add(j,gp.getColumnCount(),0);
+        gp.add(j, gp.getColumnCount(), 0);
         gp.setPrefWidth(gp.getWidth() + 90);
     }
-
+    */
 
 
     public void minimizeWindow(ActionEvent event) {

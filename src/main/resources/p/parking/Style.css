@@ -185,13 +185,12 @@
 }
 
 .minimizeButton {
-    -fx-background-image: url("./icon/icon11.png");
+    -fx-background-image: url("./icon/minimize.png");
     -fx-background-repeat: no-repeat;
     -fx-background-size: 100% 100%;
     -fx-background-color: #263145;
 }
 .maximizeButton {
-    -fx-background-image: url("./icon/icon12.png");
     -fx-background-repeat: no-repeat;
     -fx-background-size: 100% 100%;
     -fx-background-color: #263145;
@@ -201,10 +200,27 @@
     -fx-background-repeat: no-repeat;
     -fx-background-size: 100% 100%;
     -fx-background-color: #263145;
-
 }
 
 .closeButton:hover {
     -fx-background-color: #ff0000;
     -fx-background-radius: 15;
+}
+
+.maximizeButton:hover {
+    -fx-background-color: #ff0000;
+    -fx-background-radius: 15;
+}
+.minimizeButton:hover {
+    -fx-background-color: #ff0000;
+    -fx-background-radius: 15;
+}
+
+
+/* ============ Кнопки камер ========================================================================= */
+.cam1Btn {
+    -fx-background-image: url("./icon/cam1.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 100% 100%;
+    -fx-background-color: rgba(170, 0, 255, 0.27);
 }
