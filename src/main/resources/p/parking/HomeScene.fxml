@@ -11,10 +11,14 @@
 <?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="scenePanel" prefHeight="900.0" prefWidth="1440.0" styleClass="home" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="p.parking.HomeSceneController">
+<AnchorPane fx:id="scenePanel" prefHeight="900.0" prefWidth="1440.0" styleClass="home" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="p.parking.HomeSceneController">
    <children>
       <AnchorPane prefHeight="75.0" prefWidth="1440.0" styleClass="header" stylesheets="@Style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <effect>
@@ -25,7 +29,7 @@
             </InnerShadow>
          </effect>
          <children>
-            <Button layoutX="100.0" layoutY="2.5" mnemonicParsing="false" onMouseClicked="#glavnaya" prefHeight="70.0" prefWidth="90.0" styleClass="buttonGlav">
+            <Button layoutX="100.0" layoutY="2.5" mnemonicParsing="false" onAction="#glavnaya" prefHeight="70.0" prefWidth="90.0" styleClass="buttonGlav">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -46,6 +50,14 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
+            <GridPane fx:id="gp" layoutX="190.0" maxWidth="1084.0" prefHeight="75.0" prefWidth="100.0">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
          </children>
       </AnchorPane>
       <AnchorPane fx:id="baseAnchorPane" layoutX="20.0" layoutY="95.0" prefHeight="250.0" prefWidth="1400.0" styleClass="inputbox" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
@@ -59,131 +71,136 @@
                   </Label>
                </children>
             </AnchorPane>
-            <Label alignment="TOP_CENTER" layoutX="50.0" layoutY="174.0" prefWidth="90.0" styleClass="inputsubtitle" text="Просмотр" textAlignment="CENTER">
-               <font>
-                  <Font name="Calibri Bold" size="18.0" />
-               </font>
-               <effect>
-                  <DropShadow height="3.0" radius="1.0" width="3.0">
-                     <color>
-                        <Color red="0.3137255012989044" green="0.5215686559677124" blue="1.0" />
-                     </color>
-                  </DropShadow>
-               </effect>
-            </Label>
-            <Label layoutX="190.0" layoutY="174.0" prefWidth="90.0" styleClass="inputsubtitle" text="Устройства">
-               <font>
-                  <Font name="Calibri Bold" size="18.0" />
-               </font>
-               <effect>
-                  <DropShadow height="3.0" radius="1.0" width="3.0">
-                     <color>
-                        <Color red="0.3137255012989044" green="0.5215686559677124" blue="1.0" />
-                     </color>
-                  </DropShadow>
-               </effect>
-            </Label>
-            <Label alignment="TOP_CENTER" layoutX="330.0" layoutY="174.0" prefWidth="90.0" styleClass="inputsubtitle" text="Архив" textAlignment="CENTER">
-               <font>
-                  <Font name="Calibri Bold" size="18.0" />
-               </font>
-               <effect>
-                  <DropShadow height="3.0" radius="1.0" width="3.0">
-                     <color>
-                        <Color red="0.3137255012989044" green="0.5215686559677124" blue="1.0" />
-                     </color>
-                  </DropShadow>
-               </effect>
-            </Label>
-            <Label alignment="TOP_CENTER" layoutX="457.0" layoutY="174.0" styleClass="inputsubtitle" text="Онлайн запись" textAlignment="CENTER">
-               <font>
-                  <Font name="Calibri Bold" size="18.0" />
-               </font>
-               <effect>
-                  <DropShadow height="3.0" radius="1.0" width="3.0">
-                     <color>
-                        <Color red="0.3137255012989044" green="0.5215686559677124" blue="1.0" />
-                     </color>
-                  </DropShadow>
-               </effect>
-            </Label>
-            <Label alignment="TOP_CENTER" layoutX="610.0" layoutY="174.0" prefWidth="90.0" styleClass="inputsubtitle" text="Журнал" textAlignment="CENTER">
-               <font>
-                  <Font name="Calibri Bold" size="18.0" />
-               </font>
-               <effect>
-                  <DropShadow height="3.0" radius="1.0" width="3.0">
-                     <color>
-                        <Color red="0.3137255012989044" green="0.5215686559677124" blue="1.0" />
-                     </color>
-                  </DropShadow>
-               </effect>
-            </Label>
-            <Label alignment="TOP_CENTER" layoutX="737.0" layoutY="174.0" styleClass="inputsubtitle" text="Журнал тревог" textAlignment="CENTER">
-               <font>
-                  <Font name="Calibri Bold" size="18.0" />
-               </font>
-               <effect>
-                  <DropShadow height="3.0" radius="1.0" width="3.0">
-                     <color>
-                        <Color red="0.3137255012989044" green="0.5215686559677124" blue="1.0" />
-                     </color>
-                  </DropShadow>
-               </effect>
-            </Label>
-            <Button layoutX="330.0" layoutY="75.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <styleClass>
-                  <String fx:value="buttonArh" />
-                  <String fx:value="buttomHover" />
-               </styleClass></Button>
-            <Button layoutX="50.0" layoutY="75.0" mnemonicParsing="false" onMouseClicked="#prosmotr" prefHeight="90.0" prefWidth="90.0">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <styleClass>
-                  <String fx:value="buttonProsmotr" />
-                  <String fx:value="buttomHover" />
-               </styleClass>
-            </Button>
-            <Button layoutX="190.0" layoutY="75.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <styleClass>
-                  <String fx:value="buttonUstr" />
-                  <String fx:value="buttomHover" />
-               </styleClass>
-            </Button>
-            <Button layoutX="470.0" layoutY="75.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <styleClass>
-                  <String fx:value="buttonZap" />
-                  <String fx:value="buttomHover" />
-               </styleClass>
-            </Button>
-            <Button layoutX="610.0" layoutY="75.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <styleClass>
-                  <String fx:value="buttonJur" />
-                  <String fx:value="buttomHover" />
-               </styleClass>
-            </Button>
-            <Button layoutX="750.0" layoutY="75.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <styleClass>
-                  <String fx:value="buttonJurTrev" />
-                  <String fx:value="buttomHover" />
-               </styleClass>
-            </Button>
+            <Pane fx:id="basePane" layoutY="-2.0" prefHeight="200.0" prefWidth="1000.0">
+               <children>
+                  <Button layoutX="750.0" layoutY="66.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <styleClass>
+                        <String fx:value="buttonJurTrev" />
+                        <String fx:value="buttomHover" />
+                     </styleClass>
+                  </Button>
+                  <Button layoutX="610.0" layoutY="66.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <styleClass>
+                        <String fx:value="buttonJur" />
+                        <String fx:value="buttomHover" />
+                     </styleClass>
+                  </Button>
+                  <Button layoutX="470.0" layoutY="66.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <styleClass>
+                        <String fx:value="buttonZap" />
+                        <String fx:value="buttomHover" />
+                     </styleClass>
+                  </Button>
+                  <Button layoutX="190.0" layoutY="66.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <styleClass>
+                        <String fx:value="buttonUstr" />
+                        <String fx:value="buttomHover" />
+                     </styleClass>
+                  </Button>
+                  <Button layoutX="330.0" layoutY="66.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <styleClass>
+                        <String fx:value="buttonArh" />
+                        <String fx:value="buttomHover" />
+                     </styleClass>
+                  </Button>
+                  <Button layoutX="50.0" layoutY="66.0" mnemonicParsing="false" onAction="#prosmotr" prefHeight="90.0" prefWidth="90.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <styleClass>
+                        <String fx:value="buttonProsmotr" />
+                        <String fx:value="buttomHover" />
+                     </styleClass>
+                  </Button>
+                  <Label alignment="TOP_CENTER" layoutX="52.0" layoutY="166.0" prefWidth="90.0" styleClass="inputsubtitle" text="Просмотр" textAlignment="CENTER">
+                     <font>
+                        <Font name="Calibri Bold" size="18.0" />
+                     </font>
+                     <effect>
+                        <DropShadow height="3.0" radius="1.0" width="3.0">
+                           <color>
+                              <Color red="0.3137255012989044" green="0.5215686559677124" blue="1.0" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Label>
+                  <Label layoutX="194.0" layoutY="166.0" prefWidth="90.0" styleClass="inputsubtitle" text="Устройства">
+                     <font>
+                        <Font name="Calibri Bold" size="18.0" />
+                     </font>
+                     <effect>
+                        <DropShadow height="3.0" radius="1.0" width="3.0">
+                           <color>
+                              <Color red="0.3137255012989044" green="0.5215686559677124" blue="1.0" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Label>
+                  <Label alignment="TOP_CENTER" layoutX="330.0" layoutY="166.0" prefWidth="90.0" styleClass="inputsubtitle" text="Архив" textAlignment="CENTER">
+                     <font>
+                        <Font name="Calibri Bold" size="18.0" />
+                     </font>
+                     <effect>
+                        <DropShadow height="3.0" radius="1.0" width="3.0">
+                           <color>
+                              <Color red="0.3137255012989044" green="0.5215686559677124" blue="1.0" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Label>
+                  <Label alignment="TOP_CENTER" layoutX="457.0" layoutY="166.0" styleClass="inputsubtitle" text="Онлайн запись" textAlignment="CENTER">
+                     <font>
+                        <Font name="Calibri Bold" size="18.0" />
+                     </font>
+                     <effect>
+                        <DropShadow height="3.0" radius="1.0" width="3.0">
+                           <color>
+                              <Color red="0.3137255012989044" green="0.5215686559677124" blue="1.0" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Label>
+                  <Label alignment="TOP_CENTER" layoutX="610.0" layoutY="166.0" prefWidth="90.0" styleClass="inputsubtitle" text="Журнал" textAlignment="CENTER">
+                     <font>
+                        <Font name="Calibri Bold" size="18.0" />
+                     </font>
+                     <effect>
+                        <DropShadow height="3.0" radius="1.0" width="3.0">
+                           <color>
+                              <Color red="0.3137255012989044" green="0.5215686559677124" blue="1.0" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Label>
+                  <Label alignment="TOP_CENTER" layoutX="737.0" layoutY="166.0" styleClass="inputsubtitle" text="Журнал тревог" textAlignment="CENTER">
+                     <font>
+                        <Font name="Calibri Bold" size="18.0" />
+                     </font>
+                     <effect>
+                        <DropShadow height="3.0" radius="1.0" width="3.0">
+                           <color>
+                              <Color red="0.3137255012989044" green="0.5215686559677124" blue="1.0" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Label>
+               </children>
+            </Pane>
          </children>
          <effect>
             <InnerShadow height="255.0" radius="127.0" width="255.0">
@@ -204,111 +221,115 @@
                   </Label>
                </children>
             </AnchorPane>
-            <Label alignment="TOP_CENTER" layoutX="39.0" layoutY="174.0" styleClass="inputsubtitle" text="Конфигуратор" textAlignment="CENTER">
-               <font>
-                  <Font name="Calibri Bold" size="18.0" />
-               </font>
-               <effect>
-                  <DropShadow height="3.0" radius="1.0" width="3.0">
-                     <color>
-                        <Color red="0.3137255012989044" green="0.5215686559677124" blue="1.0" />
-                     </color>
-                  </DropShadow>
-               </effect>
-            </Label>
-            <Label alignment="TOP_CENTER" layoutX="190.0" layoutY="174.0" prefWidth="90.0" styleClass="inputsubtitle" text="Тревога" textAlignment="CENTER">
-               <font>
-                  <Font name="Calibri Bold" size="18.0" />
-               </font>
-               <effect>
-                  <DropShadow height="3.0" radius="1.0" width="3.0">
-                     <color>
-                        <Color red="0.3137255012989044" green="0.5215686559677124" blue="1.0" />
-                     </color>
-                  </DropShadow>
-               </effect>
-            </Label>
-            <Label alignment="TOP_CENTER" layoutX="330.0" layoutY="174.0" prefWidth="90.0" styleClass="inputsubtitle" text="Тур" textAlignment="CENTER">
-               <font>
-                  <Font name="Calibri Bold" size="18.0" />
-               </font>
-               <effect>
-                  <DropShadow height="3.0" radius="1.0" width="3.0">
-                     <color>
-                        <Color red="0.3137255012989044" green="0.5215686559677124" blue="1.0" />
-                     </color>
-                  </DropShadow>
-               </effect>
-            </Label>
-            <Label alignment="TOP_CENTER" layoutX="461.0" layoutY="174.0" styleClass="inputsubtitle" text="Пользователи" textAlignment="CENTER">
-               <font>
-                  <Font name="Calibri Bold" size="18.0" />
-               </font>
-               <effect>
-                  <DropShadow height="3.0" radius="1.0" width="3.0">
-                     <color>
-                        <Color red="0.3137255012989044" green="0.5215686559677124" blue="1.0" />
-                     </color>
-                  </DropShadow>
-               </effect>
-            </Label>
-            <Label alignment="TOP_CENTER" layoutX="610.0" layoutY="174.0" styleClass="inputsubtitle" text="Программа" textAlignment="CENTER">
-               <font>
-                  <Font name="Calibri Bold" size="18.0" />
-               </font>
-               <effect>
-                  <DropShadow height="3.0" radius="1.0" width="3.0">
-                     <color>
-                        <Color red="0.3137255012989044" green="0.5215686559677124" blue="1.0" />
-                     </color>
-                  </DropShadow>
-               </effect>
-            </Label>
-            <Button layoutX="50.0" layoutY="75.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <styleClass>
-                  <String fx:value="buttonKonf" />
-                  <String fx:value="buttomHover" />
-               </styleClass>
-            </Button>
-            <Button layoutX="330.0" layoutY="75.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <styleClass>
-                  <String fx:value="buttonTur" />
-                  <String fx:value="buttomHover" />
-               </styleClass>
-            </Button>
-            <Button layoutX="470.0" layoutY="75.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <styleClass>
-                  <String fx:value="buttonPolz" />
-                  <String fx:value="buttomHover" />
-               </styleClass>
-            </Button>
-            <Button layoutX="610.0" layoutY="75.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <styleClass>
-                  <String fx:value="buttonProg" />
-                  <String fx:value="buttomHover" />
-               </styleClass>
-            </Button>
-            <Button layoutX="190.0" layoutY="75.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <styleClass>
-                  <String fx:value="buttonTrev" />
-                  <String fx:value="buttomHover" />
-               </styleClass>
-            </Button>
+            <Pane fx:id="basePane1" layoutY="-2.0" prefHeight="200.0" prefWidth="1000.0">
+               <children>
+                  <Button layoutX="330.0" layoutY="66.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <styleClass>
+                        <String fx:value="buttonTur" />
+                        <String fx:value="buttomHover" />
+                     </styleClass>
+                  </Button>
+                  <Button layoutX="50.0" layoutY="66.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <styleClass>
+                        <String fx:value="buttonKonf" />
+                        <String fx:value="buttomHover" />
+                     </styleClass>
+                  </Button>
+                  <Button layoutX="190.0" layoutY="66.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <styleClass>
+                        <String fx:value="buttonTrev" />
+                        <String fx:value="buttomHover" />
+                     </styleClass>
+                  </Button>
+                  <Button layoutX="610.0" layoutY="66.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <styleClass>
+                        <String fx:value="buttonProg" />
+                        <String fx:value="buttomHover" />
+                     </styleClass>
+                  </Button>
+                  <Button layoutX="470.0" layoutY="66.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <styleClass>
+                        <String fx:value="buttonPolz" />
+                        <String fx:value="buttomHover" />
+                     </styleClass>
+                  </Button>
+                  <Label alignment="TOP_CENTER" layoutX="39.0" layoutY="166.0" styleClass="inputsubtitle" text="Конфигуратор" textAlignment="CENTER">
+                     <font>
+                        <Font name="Calibri Bold" size="18.0" />
+                     </font>
+                     <effect>
+                        <DropShadow height="3.0" radius="1.0" width="3.0">
+                           <color>
+                              <Color red="0.3137255012989044" green="0.5215686559677124" blue="1.0" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Label>
+                  <Label alignment="TOP_CENTER" layoutX="190.0" layoutY="166.0" prefWidth="90.0" styleClass="inputsubtitle" text="Тревога" textAlignment="CENTER">
+                     <font>
+                        <Font name="Calibri Bold" size="18.0" />
+                     </font>
+                     <effect>
+                        <DropShadow height="3.0" radius="1.0" width="3.0">
+                           <color>
+                              <Color red="0.3137255012989044" green="0.5215686559677124" blue="1.0" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Label>
+                  <Label alignment="TOP_CENTER" layoutX="330.0" layoutY="166.0" prefWidth="90.0" styleClass="inputsubtitle" text="Тур" textAlignment="CENTER">
+                     <font>
+                        <Font name="Calibri Bold" size="18.0" />
+                     </font>
+                     <effect>
+                        <DropShadow height="3.0" radius="1.0" width="3.0">
+                           <color>
+                              <Color red="0.3137255012989044" green="0.5215686559677124" blue="1.0" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Label>
+                  <Label alignment="TOP_CENTER" layoutX="460.0" layoutY="166.0" styleClass="inputsubtitle" text="Пользователи" textAlignment="CENTER">
+                     <font>
+                        <Font name="Calibri Bold" size="18.0" />
+                     </font>
+                     <effect>
+                        <DropShadow height="3.0" radius="1.0" width="3.0">
+                           <color>
+                              <Color red="0.3137255012989044" green="0.5215686559677124" blue="1.0" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Label>
+                  <Label alignment="TOP_CENTER" layoutX="610.0" layoutY="166.0" styleClass="inputsubtitle" text="Программа" textAlignment="CENTER">
+                     <font>
+                        <Font name="Calibri Bold" size="18.0" />
+                     </font>
+                     <effect>
+                        <DropShadow height="3.0" radius="1.0" width="3.0">
+                           <color>
+                              <Color red="0.3137255012989044" green="0.5215686559677124" blue="1.0" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Label>
+               </children>
+            </Pane>
          </children>
          <effect>
             <InnerShadow height="255.0" radius="127.0" width="255.0">
@@ -329,111 +350,115 @@
                   </Label>
                </children>
             </AnchorPane>
-            <Label alignment="TOP_CENTER" layoutX="50.0" layoutY="174.0" prefWidth="90.0" styleClass="inputsubtitle" text="Карта" textAlignment="CENTER">
-               <font>
-                  <Font name="Calibri Bold" size="18.0" />
-               </font>
-               <effect>
-                  <DropShadow height="3.0" radius="1.0" width="3.0">
-                     <color>
-                        <Color red="0.3137255012989044" green="0.5215686559677124" blue="1.0" />
-                     </color>
-                  </DropShadow>
-               </effect>
-            </Label>
-            <Label alignment="TOP_CENTER" layoutX="190.0" layoutY="174.0" prefWidth="90.0" styleClass="inputsubtitle" text="Декодер" textAlignment="CENTER">
-               <font>
-                  <Font name="Calibri Bold" size="18.0" />
-               </font>
-               <effect>
-                  <DropShadow height="3.0" radius="1.0" width="3.0">
-                     <color>
-                        <Color red="0.3137255012989044" green="0.5215686559677124" blue="1.0" />
-                     </color>
-                  </DropShadow>
-               </effect>
-            </Label>
-            <Label alignment="TOP_CENTER" layoutX="330.0" layoutY="174.0" prefWidth="90.0" styleClass="inputsubtitle" text="Бэкап" textAlignment="CENTER">
-               <font>
-                  <Font name="Calibri Bold" size="18.0" />
-               </font>
-               <effect>
-                  <DropShadow height="3.0" radius="1.0" width="3.0">
-                     <color>
-                        <Color red="0.3137255012989044" green="0.5215686559677124" blue="1.0" />
-                     </color>
-                  </DropShadow>
-               </effect>
-            </Label>
-            <Label alignment="TOP_CENTER" layoutX="470.0" layoutY="174.0" prefWidth="90.0" styleClass="inputsubtitle" text="Прошивка" textAlignment="CENTER">
-               <font>
-                  <Font name="Calibri Bold" size="18.0" />
-               </font>
-               <effect>
-                  <DropShadow height="3.0" radius="1.0" width="3.0">
-                     <color>
-                        <Color red="0.3137255012989044" green="0.5215686559677124" blue="1.0" />
-                     </color>
-                  </DropShadow>
-               </effect>
-            </Label>
-            <Label alignment="TOP_CENTER" layoutX="594.0" layoutY="175.0" styleClass="inputsubtitle" text="Фоновая запись" textAlignment="CENTER">
-               <font>
-                  <Font name="Calibri Bold" size="18.0" />
-               </font>
-               <effect>
-                  <DropShadow height="3.0" radius="1.0" width="3.0">
-                     <color>
-                        <Color red="0.3137255012989044" green="0.5215686559677124" blue="1.0" />
-                     </color>
-                  </DropShadow>
-               </effect>
-            </Label>
-            <Button layoutX="50.0" layoutY="75.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <styleClass>
-                  <String fx:value="buttonMap" />
-                  <String fx:value="buttomHover" />
-               </styleClass>
-            </Button>
-            <Button layoutX="330.0" layoutY="75.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <styleClass>
-                  <String fx:value="buttonBek" />
-                  <String fx:value="buttomHover" />
-               </styleClass>
-            </Button>
-            <Button layoutX="470.0" layoutY="75.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <styleClass>
-                  <String fx:value="buttonProsh" />
-                  <String fx:value="buttomHover" />
-               </styleClass>
-            </Button>
-            <Button layoutX="610.0" layoutY="75.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <styleClass>
-                  <String fx:value="buttonFonZap" />
-                  <String fx:value="buttomHover" />
-               </styleClass>
-            </Button>
-            <Button layoutX="190.0" layoutY="75.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <styleClass>
-                  <String fx:value="buttonDec" />
-                  <String fx:value="buttomHover" />
-               </styleClass>
-            </Button>
+            <Pane fx:id="basePane11" layoutY="-2.0" prefHeight="200.0" prefWidth="1000.0">
+               <children>
+                  <Button layoutX="50.0" layoutY="66.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <styleClass>
+                        <String fx:value="buttonMap" />
+                        <String fx:value="buttomHover" />
+                     </styleClass>
+                  </Button>
+                  <Button layoutX="330.0" layoutY="66.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <styleClass>
+                        <String fx:value="buttonBek" />
+                        <String fx:value="buttomHover" />
+                     </styleClass>
+                  </Button>
+                  <Button layoutX="470.0" layoutY="66.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <styleClass>
+                        <String fx:value="buttonProsh" />
+                        <String fx:value="buttomHover" />
+                     </styleClass>
+                  </Button>
+                  <Button layoutX="610.0" layoutY="66.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <styleClass>
+                        <String fx:value="buttonFonZap" />
+                        <String fx:value="buttomHover" />
+                     </styleClass>
+                  </Button>
+                  <Button layoutX="190.0" layoutY="66.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <styleClass>
+                        <String fx:value="buttonDec" />
+                        <String fx:value="buttomHover" />
+                     </styleClass>
+                  </Button>
+                  <Label alignment="TOP_CENTER" layoutX="50.0" layoutY="166.0" prefWidth="90.0" styleClass="inputsubtitle" text="Карта" textAlignment="CENTER">
+                     <font>
+                        <Font name="Calibri Bold" size="18.0" />
+                     </font>
+                     <effect>
+                        <DropShadow height="3.0" radius="1.0" width="3.0">
+                           <color>
+                              <Color red="0.3137255012989044" green="0.5215686559677124" blue="1.0" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Label>
+                  <Label alignment="TOP_CENTER" layoutX="190.0" layoutY="166.0" prefWidth="90.0" styleClass="inputsubtitle" text="Декодер" textAlignment="CENTER">
+                     <font>
+                        <Font name="Calibri Bold" size="18.0" />
+                     </font>
+                     <effect>
+                        <DropShadow height="3.0" radius="1.0" width="3.0">
+                           <color>
+                              <Color red="0.3137255012989044" green="0.5215686559677124" blue="1.0" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Label>
+                  <Label alignment="TOP_CENTER" layoutX="330.0" layoutY="166.0" prefWidth="90.0" styleClass="inputsubtitle" text="Бэкап" textAlignment="CENTER">
+                     <font>
+                        <Font name="Calibri Bold" size="18.0" />
+                     </font>
+                     <effect>
+                        <DropShadow height="3.0" radius="1.0" width="3.0">
+                           <color>
+                              <Color red="0.3137255012989044" green="0.5215686559677124" blue="1.0" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Label>
+                  <Label alignment="TOP_CENTER" layoutX="470.0" layoutY="166.0" prefWidth="90.0" styleClass="inputsubtitle" text="Прошивка" textAlignment="CENTER">
+                     <font>
+                        <Font name="Calibri Bold" size="18.0" />
+                     </font>
+                     <effect>
+                        <DropShadow height="3.0" radius="1.0" width="3.0">
+                           <color>
+                              <Color red="0.3137255012989044" green="0.5215686559677124" blue="1.0" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Label>
+                  <Label alignment="TOP_CENTER" layoutX="592.0" layoutY="166.0" styleClass="inputsubtitle" text="Фоновая запись" textAlignment="CENTER">
+                     <font>
+                        <Font name="Calibri Bold" size="18.0" />
+                     </font>
+                     <effect>
+                        <DropShadow height="3.0" radius="1.0" width="3.0">
+                           <color>
+                              <Color red="0.3137255012989044" green="0.5215686559677124" blue="1.0" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Label>
+               </children>
+            </Pane>
          </children>
          <effect>
             <InnerShadow height="255.0" radius="127.0" width="255.0">
@@ -480,7 +505,7 @@
                <children>
                   <ImageView fx:id="imgV1" fitHeight="700.0" fitWidth="1235.0" pickOnBounds="true" preserveRatio="true" />
                </children></AnchorPane>
-            <AnchorPane layoutY="725.0" prefHeight="100.0" prefWidth="1440.0" styleClass="home">
+            <AnchorPane fx:id="camBtnPane" layoutY="725.0" prefHeight="100.0" prefWidth="1440.0" styleClass="home">
                <children>
                   <AnchorPane layoutX="270.0" layoutY="30.0" prefHeight="40.0" prefWidth="600.0" style="-fx-background-color: grey; -fx-background-radius: 20;">
                      <children>
@@ -492,11 +517,10 @@
                   <AnchorPane layoutX="1050.0" layoutY="30.0" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: grey; -fx-background-radius: 20;" />
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="1257.5" layoutY="12.5" prefHeight="700.0" prefWidth="180.0" style="-fx-background-color: #A8A7A7; -fx-border-color: black; -fx-border-radius: 5; -fx-background-radius: 5;" />
-            <ImageView fitHeight="700.0" fitWidth="10.0" layoutX="1247.5" layoutY="12.5" pickOnBounds="true" preserveRatio="true" />
+            <AnchorPane fx:id="camRightPane" layoutX="1257.5" layoutY="12.5" prefHeight="700.0" prefWidth="180.0" style="-fx-background-color: #A8A7A7; -fx-border-color: black; -fx-border-radius: 5; -fx-background-radius: 5;" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutY="75.0" prefHeight="825.0" prefWidth="1440.0" styleClass="home">
+      <AnchorPane layoutY="75.0" prefHeight="825.0" prefWidth="1440.0" styleClass="home" visible="false">
          <children>
             <Label layoutX="22.0" layoutY="23.0" text="Устройства онлайн:">
                <font>
@@ -611,6 +635,19 @@
                <font>
                   <Font name="Calibri" size="14.0" />
                </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="invisiblePane" layoutX="865.0" layoutY="104.0" prefHeight="759.0" prefWidth="537.0" visible="false">
+         <children>
+            <Button fx:id="prosmotrBtnUp" mnemonicParsing="false" onMouseClicked="#prosmotr" prefHeight="90.0" prefWidth="90.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <styleClass>
+                  <String fx:value="buttonProsmotr" />
+                  <String fx:value="buttomHover" />
+               </styleClass>
             </Button>
          </children>
       </AnchorPane>

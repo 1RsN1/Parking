@@ -40,8 +40,8 @@ public class HomeSceneController {
         int tester = 0;
         // ошибка если во время разворачивания / сворачивания окна в / из полноэкранного режима нажать на кнопку домой, пока окно не развернулось до конца
         ivProsmotr0.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("icon/VSTU-logo.png")));
-        /*imgV1.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/1.jpg")));
-        imgV41.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/1.jpg")));
+        imgV1.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/1.jpg")));
+        /*imgV41.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/1.jpg")));
         imgV42.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/2.jpg")));
         imgV43.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/3.jpg")));
         imgV44.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/4.jpg")));
@@ -76,9 +76,9 @@ public class HomeSceneController {
     }
 
     public void prosmotr(ActionEvent event) {
-       prosmotrBtnUpper();
-        //basePanesVisibleOff();
-        //anchorPane1.setVisible(true);
+        //prosmotrBtnUpper();
+        basePanesVisibleOff();
+        anchorPane1.setVisible(true);
     }
 
     public void glavnaya(ActionEvent event) {
@@ -153,8 +153,8 @@ public class HomeSceneController {
             camRightPane.setPrefHeight(950);
             camBtnPane.setPrefWidth(1920);
             camBtnPane.setLayoutY(873);
-            camsPane.setPrefHeight(890);
-            camsPane.setPrefWidth(1700);
+           // camsPane.setPrefHeight(890);
+            //camsPane.setPrefWidth(1700);
             imgV1.setFitWidth(1700);
             imgV1.setFitHeight(890);
             camsMaximize();
@@ -167,6 +167,7 @@ public class HomeSceneController {
             basePane.setLayoutY(-2);
             settingAP.setLayoutY(360);
             settingAP.setPrefHeight(250);
+            basePane1.setLayoutY(-2);
             othersAnchorPane.setPrefHeight(250);
             othersAnchorPane.setLayoutY(625);
             basePane11.setLayoutY(-2);
@@ -177,8 +178,10 @@ public class HomeSceneController {
             camRightPane.setLayoutX(1256);
             camBtnPane.setPrefWidth(1440);
             camBtnPane.setLayoutY(725);
-            camsPane.setPrefHeight(700);
-            camsPane.setPrefWidth(1241);
+           // camsPane.setPrefHeight(700);
+           // camsPane.setPrefWidth(1241);
+            imgV1.setFitWidth(1235);
+            imgV1.setFitHeight(700);
         }
     }
     public void camsMaximize(){
