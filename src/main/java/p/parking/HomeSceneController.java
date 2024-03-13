@@ -7,14 +7,11 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
 public class HomeSceneController {
@@ -27,19 +24,23 @@ public class HomeSceneController {
     @FXML
     Pane basePane, basePane1, basePane11, camsPane;
     @FXML
+    GridPane gp;
+    @FXML
+    FlowPane fp;
     private ResourceBundle resources;
     @FXML
     private URL location;
     @FXML
-    private Button buttonForSevenCam, buttonForFourCam, buttonForNineCam, buttonForOneCam;
+    private Button buttonForSevenCam, buttonForFourCam, buttonForNineCam, buttonForOneCam, jt,j, prosmotrBtnUp;
     @FXML
     private AnchorPane paneWithFourCam, paneWithOneCam, paneWithSevenCam, paneWithNineCam;
 
 
     public void initialize() {
+        int tester = 0;
         // ошибка если во время разворачивания / сворачивания окна в / из полноэкранного режима нажать на кнопку домой, пока окно не развернулось до конца
         ivProsmotr0.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("icon/VSTU-logo.png")));
-        imgV1.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/1.jpg")));
+        /*imgV1.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/1.jpg")));
         imgV41.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/1.jpg")));
         imgV42.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/2.jpg")));
         imgV43.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/3.jpg")));
@@ -59,7 +60,7 @@ public class HomeSceneController {
         imgV96.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/6.jpg")));
         imgV97.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/7.jpg")));
         imgV98.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/8.jpg")));
-        imgV99.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/9.jpg")));
+        imgV99.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/9.jpg")));*/
     }
 
     public void logout(ActionEvent event) {
@@ -75,8 +76,9 @@ public class HomeSceneController {
     }
 
     public void prosmotr(ActionEvent event) {
-        basePanesVisibleOff();
-        anchorPane1.setVisible(true);
+       prosmotrBtnUpper();
+        //basePanesVisibleOff();
+        //anchorPane1.setVisible(true);
     }
 
     public void glavnaya(ActionEvent event) {
@@ -182,6 +184,18 @@ public class HomeSceneController {
     public void camsMaximize(){
 
     }
+    public void prosmotrBtnUpper() {
+        System.out.println("test");
+        gp.add(prosmotrBtnUp,gp.getColumnCount()+1, 0);
+       gp.setPrefWidth(gp.getWidth() + 90);
+        prosmotrBtnUp.setVisible(true);
+    }
+    public void test1(ActionEvent event) {
+        gp.add(j,gp.getColumnCount(),0);
+        gp.setPrefWidth(gp.getWidth() + 90);
+    }
+
+
 
     public void minimizeWindow(ActionEvent event) {
         stage = (Stage) scenePanel.getScene().getWindow();

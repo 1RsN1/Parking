@@ -11,10 +11,13 @@
 <?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="scenePanel" prefHeight="900.0" prefWidth="1440.0" styleClass="home" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="p.parking.HomeSceneController">
+<AnchorPane fx:id="scenePanel" prefHeight="900.0" prefWidth="1440.0" styleClass="home" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="p.parking.HomeSceneController">
    <children>
       <AnchorPane prefHeight="75.0" prefWidth="1440.0" styleClass="header" stylesheets="@Style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <effect>
@@ -46,6 +49,45 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
+            <GridPane fx:id="gp" layoutX="280.0" layoutY="3.0" maxWidth="1000.0" prefHeight="70.0" prefWidth="397.0">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <styleClass>
+                        <String fx:value="buttonJur" />
+                        <String fx:value="buttomHover" />
+                     </styleClass>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0" GridPane.columnIndex="1">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <styleClass>
+                        <String fx:value="buttonJur" />
+                        <String fx:value="buttomHover" />
+                     </styleClass>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0" GridPane.columnIndex="2">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <styleClass>
+                        <String fx:value="buttonJur" />
+                        <String fx:value="buttomHover" />
+                     </styleClass>
+                  </Button>
+               </children>
+            </GridPane>
          </children>
       </AnchorPane>
       <AnchorPane fx:id="baseAnchorPane" layoutX="20.0" layoutY="95.0" prefHeight="250.0" prefWidth="1400.0" styleClass="inputbox" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
@@ -138,8 +180,9 @@
                <styleClass>
                   <String fx:value="buttonArh" />
                   <String fx:value="buttomHover" />
-               </styleClass></Button>
-            <Button layoutX="50.0" layoutY="75.0" mnemonicParsing="false" onMouseClicked="#prosmotr" prefHeight="90.0" prefWidth="90.0">
+               </styleClass>
+            </Button>
+            <Button layoutX="50.0" layoutY="75.0" mnemonicParsing="false" onAction="#prosmotr" prefHeight="90.0" prefWidth="90.0">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -496,7 +539,7 @@
             <ImageView fitHeight="700.0" fitWidth="10.0" layoutX="1247.5" layoutY="12.5" pickOnBounds="true" preserveRatio="true" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutY="75.0" prefHeight="825.0" prefWidth="1440.0" styleClass="home">
+      <AnchorPane layoutY="75.0" prefHeight="825.0" prefWidth="1440.0" styleClass="home" visible="false">
          <children>
             <Label layoutX="22.0" layoutY="23.0" text="Устройства онлайн:">
                <font>
@@ -611,6 +654,19 @@
                <font>
                   <Font name="Calibri" size="14.0" />
                </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="invisiblePane" layoutX="865.0" layoutY="104.0" prefHeight="759.0" prefWidth="537.0" visible="false">
+         <children>
+            <Button fx:id="prosmotrBtnUp" mnemonicParsing="false" onMouseClicked="#prosmotr" prefHeight="90.0" prefWidth="90.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <styleClass>
+                  <String fx:value="buttonProsmotr" />
+                  <String fx:value="buttomHover" />
+               </styleClass>
             </Button>
          </children>
       </AnchorPane>
