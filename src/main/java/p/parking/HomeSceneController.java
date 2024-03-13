@@ -14,17 +14,18 @@ import javafx.scene.image.ImageView;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class HomeSceneController {
     @FXML
-    Stage stage, baseStage,settingsStage,othersStage;
-    @FXML
-    Scene baseScene;
+    Stage stage;
     @FXML
     private ImageView imgV1, imgV41, imgV42, imgV43, imgV44, imgV71, imgV72, imgV73, imgV74, imgV75, imgV76, imgV77, imgV91, imgV92, imgV93, imgV94, imgV95, imgV96, imgV97, imgV98, imgV99, ivProsmotr0;
     @FXML
-    AnchorPane anchorPane1, scenePanel, baseAnchorPane, othersAnchorPane, settingAP;
+    AnchorPane anchorPane1, scenePanel, baseAnchorPane, othersAnchorPane, settingAP, camBtnPane, camRightPane;
+    @FXML
+    Pane basePane, basePane1, basePane11, camsPane;
     @FXML
     private ResourceBundle resources;
     @FXML
@@ -32,10 +33,11 @@ public class HomeSceneController {
     @FXML
     private Button buttonForSevenCam, buttonForFourCam, buttonForNineCam, buttonForOneCam;
     @FXML
-    private AnchorPane paneWithFourCam,paneWithOneCam,paneWithSevenCam,paneWithNineCam;
+    private AnchorPane paneWithFourCam, paneWithOneCam, paneWithSevenCam, paneWithNineCam;
 
 
     public void initialize() {
+        // ошибка если во время разворачивания / сворачивания окна в / из полноэкранного режима нажать на кнопку домой, пока окно не развернулось до конца
         ivProsmotr0.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("icon/VSTU-logo.png")));
         imgV1.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/1.jpg")));
         imgV41.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/1.jpg")));
@@ -72,12 +74,26 @@ public class HomeSceneController {
         }
     }
 
-    public void prosmotr(MouseEvent event) {
+    public void prosmotr(ActionEvent event) {
+        basePanesVisibleOff();
         anchorPane1.setVisible(true);
     }
 
-    public void glavnaya(MouseEvent event) {
+    public void glavnaya(ActionEvent event) {
         anchorPane1.setVisible(false);
+        basePanesVisibleOn();
+    }
+
+    public void basePanesVisibleOff() {
+        baseAnchorPane.setVisible(false);
+        settingAP.setVisible(false);
+        othersAnchorPane.setVisible(false);
+    }
+
+    public void basePanesVisibleOn() {
+        baseAnchorPane.setVisible(true);
+        settingAP.setVisible(true);
+        othersAnchorPane.setVisible(true);
     }
 
     @FXML
@@ -94,6 +110,8 @@ public class HomeSceneController {
         paneWithFourCam.setVisible(false);
         paneWithSevenCam.setVisible(false);
         paneWithNineCam.setVisible(false);
+
+
     }
 
     @FXML
@@ -119,27 +137,49 @@ public class HomeSceneController {
             stage.setHeight(1079);
             stage.setX(0);
             stage.setY(0);
+            baseAnchorPane.setPrefHeight(300);
+            basePane.setLayoutY(23);
+            settingAP.setPrefHeight(300);
             settingAP.setLayoutY(410);
-            settingAP.setPrefHeight(305);
-            othersAnchorPane.setLayoutY(730);
-            othersAnchorPane.setPrefHeight(305);
-            baseAnchorPane.setLayoutY(90);
-            baseAnchorPane.setPrefHeight(305);
-
-
+            basePane1.setLayoutY(23);
+            othersAnchorPane.setLayoutY(725);
+            othersAnchorPane.setPrefHeight(300);
+            basePane11.setLayoutY(23);
+            anchorPane1.setPrefHeight(1004);
+            anchorPane1.setPrefWidth(1920);
+            camRightPane.setLayoutX(1730);
+            camRightPane.setPrefHeight(950);
+            camBtnPane.setPrefWidth(1920);
+            camBtnPane.setLayoutY(873);
+            camsPane.setPrefHeight(890);
+            camsPane.setPrefWidth(1700);
+            imgV1.setFitWidth(1700);
+            imgV1.setFitHeight(890);
+            camsMaximize();
         } else {
             stage.setWidth(1440);
             stage.setHeight(900);
             stage.setX(240);
             stage.setY(50);
+            baseAnchorPane.setPrefHeight(250);
+            basePane.setLayoutY(-2);
             settingAP.setLayoutY(360);
             settingAP.setPrefHeight(250);
-            othersAnchorPane.setLayoutY(625);
             othersAnchorPane.setPrefHeight(250);
-            baseAnchorPane.setLayoutY(95);
-            baseAnchorPane.setPrefHeight(250);
-
+            othersAnchorPane.setLayoutY(625);
+            basePane11.setLayoutY(-2);
+            anchorPane1.setPrefHeight(900);
+            anchorPane1.setPrefWidth(1440);
+            camRightPane.setPrefHeight(700);
+            camRightPane.setLayoutY(13);
+            camRightPane.setLayoutX(1256);
+            camBtnPane.setPrefWidth(1440);
+            camBtnPane.setLayoutY(725);
+            camsPane.setPrefHeight(700);
+            camsPane.setPrefWidth(1241);
         }
+    }
+    public void camsMaximize(){
 
     }
 
