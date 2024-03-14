@@ -20,6 +20,10 @@ public class HomeSceneController {
     @FXML
     Pane basePane, basePane1, basePane11;
     @FXML
+    Pane prosmotrSmallPane;
+    @FXML
+    Button prosmotrClose;
+    @FXML
     GridPane gp;
     //ResourceBundle resources; //это че ?
     @FXML
@@ -72,9 +76,18 @@ public class HomeSceneController {
             stage.close();
         }
     }
+    public void prosmotrSmallClose(ActionEvent event) {
+        prosmotrSmallPane.setVisible(false);
+    }
+    public void prosmotrCloseOn(MouseEvent event) {
+            prosmotrClose.setVisible(true);
+    }
+     public void prosmotrCloseOff(MouseEvent event) {
+        prosmotrClose.setVisible(false);
+    }
 
     public void prosmotr(ActionEvent event) {
-        //prosmotrBtnUpper();
+        prosmotrBtnUpper();
         basePanesVisibleOff();
         anchorPane1.setVisible(true);
     }
@@ -191,7 +204,8 @@ public class HomeSceneController {
 
     public void prosmotrBtnUpper() {
         System.out.println("test");
-        gp.add(prosmotrBtnUp, gp.getColumnCount() + 1, 0);
+        gp.add(prosmotrSmallPane, gp.getColumnCount() + 1, 0);
+        prosmotrSmallPane.setLayoutY(2);
         gp.setPrefWidth(gp.getWidth() + 90);
         prosmotrBtnUp.setVisible(true);
     }

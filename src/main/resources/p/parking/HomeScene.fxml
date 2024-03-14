@@ -20,7 +20,7 @@
 
 <AnchorPane fx:id="scenePanel" prefHeight="900.0" prefWidth="1440.0" styleClass="home" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="p.parking.HomeSceneController">
    <children>
-      <AnchorPane prefHeight="75.0" prefWidth="1440.0" styleClass="header" stylesheets="@Style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <AnchorPane layoutX="-2.0" layoutY="4.0" prefHeight="75.0" prefWidth="1440.0" styleClass="header" stylesheets="@Style.css" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="2.0">
          <effect>
             <InnerShadow height="120.0" radius="59.5" width="120.0">
                <color>
@@ -29,11 +29,6 @@
             </InnerShadow>
          </effect>
          <children>
-            <Button layoutX="100.0" layoutY="2.5" mnemonicParsing="false" onAction="#glavnaya" prefHeight="70.0" prefWidth="90.0" styleClass="buttonGlav">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
             <ImageView fx:id="ivProsmotr0" fitHeight="75.0" fitWidth="90.0" layoutX="10.0" pickOnBounds="true" preserveRatio="true" />
             <Button layoutX="1430.0" layoutY="17.5" mnemonicParsing="false" onAction="#logout" prefHeight="40.0" prefWidth="40.0" styleClass="closeButton" AnchorPane.rightAnchor="10.0">
                <cursor>
@@ -50,14 +45,35 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <GridPane fx:id="gp" layoutX="190.0" maxWidth="1084.0" prefHeight="75.0" prefWidth="100.0">
+            <GridPane fx:id="gp" layoutX="96.0" layoutY="2.0" maxWidth="1084.0" prefHeight="75.0" prefWidth="100.0">
               <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
+               <children>
+                  <Button mnemonicParsing="false" onAction="#glavnaya" prefHeight="70.0" prefWidth="90.0" styleClass="buttonGlav">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
             </GridPane>
+            <Pane fx:id="prosmotrSmallPane" layoutX="909.0" layoutY="5.0" onMouseEntered="#prosmotrCloseOn" onMouseExited="#prosmotrCloseOff" prefHeight="65.0" prefWidth="86.0">
+               <children>
+                  <Button fx:id="prosmotrBtnUp" mnemonicParsing="false" prefHeight="65.0" prefWidth="65.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <styleClass>
+                        <String fx:value="prosmotrSmall" />
+                        <String fx:value="buttomHover" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="prosmotrClose" layoutX="67.0" layoutY="-1.0" maxHeight="17.0" maxWidth="16.0" minHeight="10.0" minWidth="7.0" mnemonicParsing="false" onAction="#prosmotrSmallClose" prefHeight="16.0" prefWidth="16.0" snapToPixel="false" styleClass="prosmotrClose" visible="false" />
+               </children>
+            </Pane>
          </children>
       </AnchorPane>
       <AnchorPane fx:id="baseAnchorPane" layoutX="20.0" layoutY="95.0" prefHeight="250.0" prefWidth="1400.0" styleClass="inputbox" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
@@ -468,9 +484,9 @@
             </InnerShadow>
          </effect>
       </AnchorPane>
-      <AnchorPane fx:id="anchorPane1" layoutY="75.0" prefHeight="825.0" prefWidth="1440.0" styleClass="home">
+      <AnchorPane fx:id="anchorPane1" layoutY="81.0" prefHeight="816.0" prefWidth="1440.0" styleClass="home" visible="false">
          <children>
-            <AnchorPane fx:id="paneWithNineCam" layoutX="12.5" layoutY="12.5" prefHeight="700.0" prefWidth="1235.0" style="-fx-background-color: grey;">
+            <AnchorPane fx:id="paneWithNineCam" layoutX="12.5" layoutY="16.5" prefHeight="700.0" prefWidth="1235.0" style="-fx-background-color: grey;">
                <children>
                   <ImageView fx:id="imgV91" fitHeight="233.0" fitWidth="411.0" pickOnBounds="true" preserveRatio="true" />
                   <ImageView fx:id="imgV92" fitHeight="233.0" fitWidth="411.0" layoutX="412.0" pickOnBounds="true" preserveRatio="true" />
@@ -483,7 +499,7 @@
                   <ImageView fx:id="imgV99" fitHeight="233.0" fitWidth="411.0" layoutX="823.0" layoutY="467.0" pickOnBounds="true" preserveRatio="true" />
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="paneWithSevenCam" layoutX="12.5" layoutY="12.5" prefHeight="700.0" prefWidth="1235.0" style="-fx-background-color: grey;">
+            <AnchorPane fx:id="paneWithSevenCam" layoutX="12.5" layoutY="16.5" prefHeight="700.0" prefWidth="1235.0" style="-fx-background-color: grey;">
                <children>
                   <ImageView fx:id="imgV71" fitHeight="500.0" fitWidth="900.0" pickOnBounds="true" preserveRatio="true" />
                   <ImageView fx:id="imgV72" fitHeight="200.0" fitWidth="300.0" layoutY="500.0" pickOnBounds="true" preserveRatio="true" />
@@ -493,7 +509,7 @@
                   <ImageView fx:id="imgV76" fitHeight="250.0" fitWidth="335.0" layoutX="900.0" pickOnBounds="true" preserveRatio="true" />
                   <ImageView fx:id="imgV77" fitHeight="250.0" fitWidth="335.0" layoutX="900.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true" />
                </children></AnchorPane>
-            <AnchorPane fx:id="paneWithFourCam" layoutX="12.5" layoutY="12.5" prefHeight="700.0" prefWidth="1235.0" style="-fx-background-color: grey;">
+            <AnchorPane fx:id="paneWithFourCam" layoutX="12.5" layoutY="16.5" prefHeight="700.0" prefWidth="1235.0" style="-fx-background-color: grey;">
                <children>
                   <ImageView fx:id="imgV41" fitHeight="350.0" fitWidth="617.5" pickOnBounds="true" preserveRatio="true" />
                   <ImageView fx:id="imgV42" fitHeight="350.0" fitWidth="617.5" layoutX="617.5" pickOnBounds="true" preserveRatio="true" />
@@ -501,18 +517,18 @@
                   <ImageView fx:id="imgV44" fitHeight="350.0" fitWidth="617.5" layoutX="617.5" layoutY="350.0" pickOnBounds="true" preserveRatio="true" />
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="paneWithOneCam" layoutX="12.5" layoutY="12.5" prefHeight="700.0" prefWidth="1235.0" style="-fx-background-color: grey;">
+            <AnchorPane fx:id="paneWithOneCam" layoutX="12.5" layoutY="16.5" prefHeight="700.0" prefWidth="1235.0" style="-fx-background-color: grey;">
                <children>
                   <ImageView fx:id="imgV1" fitHeight="700.0" fitWidth="1235.0" pickOnBounds="true" preserveRatio="true" />
                </children></AnchorPane>
-            <AnchorPane fx:id="camBtnPane" layoutY="725.0" prefHeight="100.0" prefWidth="1440.0" styleClass="home">
+            <AnchorPane fx:id="camBtnPane" layoutY="734.0" prefHeight="70.0" prefWidth="1440.0" styleClass="home">
                <children>
                   <AnchorPane layoutX="270.0" layoutY="30.0" prefHeight="40.0" prefWidth="600.0" style="-fx-background-color: grey; -fx-background-radius: 20;">
                      <children>
-                        <Button fx:id="buttonForOneCam" layoutX="41.0" layoutY="8.0" mnemonicParsing="false" onMouseClicked="#clickedForOneCam" prefHeight="25.0" prefWidth="50.0" styleClass="cam1Btn" text="1" />
-                        <Button fx:id="buttonForFourCam" layoutX="111.0" layoutY="8.0" mnemonicParsing="false" onMouseClicked="#clickedForFourCam" text="4" />
-                        <Button fx:id="buttonForSevenCam" layoutX="182.0" layoutY="8.0" mnemonicParsing="false" onMouseClicked="#clickedForSevenCam" text="1/6" />
-                        <Button fx:id="buttonForNineCam" layoutX="252.0" layoutY="8.0" mnemonicParsing="false" onMouseClicked="#clickedForNineCam" text="9" />
+                        <Button fx:id="buttonForOneCam" layoutX="40.0" layoutY="5.0" mnemonicParsing="false" onMouseClicked="#clickedForOneCam" pickOnBounds="false" prefHeight="30.0" prefWidth="36.0" styleClass="cam1Btn" />
+                        <Button fx:id="buttonForFourCam" layoutX="110.0" layoutY="5.0" mnemonicParsing="false" onMouseClicked="#clickedForFourCam" prefHeight="30.0" prefWidth="36.0" styleClass="cam4Btn" />
+                        <Button fx:id="buttonForSevenCam" layoutX="180.0" layoutY="5.0" mnemonicParsing="false" onMouseClicked="#clickedForSevenCam" prefHeight="30.0" prefWidth="36.0" styleClass="cam1d6Btn" />
+                        <Button fx:id="buttonForNineCam" layoutX="250.0" layoutY="5.0" mnemonicParsing="false" onMouseClicked="#clickedForNineCam" prefHeight="30.0" prefWidth="36.0" styleClass="cam1d9Btn" />
                      </children></AnchorPane>
                   <AnchorPane layoutX="1050.0" layoutY="30.0" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: grey; -fx-background-radius: 20;" />
                </children>
@@ -638,18 +654,6 @@
             </Button>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="invisiblePane" layoutX="865.0" layoutY="104.0" prefHeight="759.0" prefWidth="537.0" visible="false">
-         <children>
-            <Button fx:id="prosmotrBtnUp" mnemonicParsing="false" onMouseClicked="#prosmotr" prefHeight="90.0" prefWidth="90.0">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <styleClass>
-                  <String fx:value="buttonProsmotr" />
-                  <String fx:value="buttomHover" />
-               </styleClass>
-            </Button>
-         </children>
-      </AnchorPane>
+      <AnchorPane fx:id="invisiblePane" layoutX="882.0" layoutY="104.0" prefHeight="759.0" prefWidth="520.0" />
    </children>
 </AnchorPane>
