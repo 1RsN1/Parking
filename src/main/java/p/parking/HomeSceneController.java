@@ -18,7 +18,7 @@ public class HomeSceneController {
     ImageView imgV1, imgV41, imgV42, imgV43, imgV44, imgV71, imgV72, imgV73, imgV74, imgV75, imgV76,
             imgV77, imgV91, imgV92, imgV93, imgV94, imgV95, imgV96, imgV97, imgV98, imgV99, ivProsmotr0;
     @FXML
-    AnchorPane anchorPane1, scenePanel, baseAnchorPane, othersAnchorPane, settingAP, camBtnPane, camRightPane;
+    AnchorPane anchorPaneProsmotr, anchorPaneUst, scenePanel, baseAnchorPane, othersAnchorPane, settingAP, camBtnPane, camRightPane;
     @FXML
     Pane basePane, basePane1, basePane11;
     @FXML
@@ -82,7 +82,8 @@ public class HomeSceneController {
     public void prosmotrSmallClose(ActionEvent event) {
         gp.getChildren().remove(prosmotrSmallPane);
         gp.setPrefWidth(gp.getWidth() - 90);
-        anchorPane1.setVisible(false);
+        anchorPaneProsmotr.setVisible(false);
+        anchorPaneUst.setVisible(false);
 
     }
 
@@ -96,13 +97,19 @@ public class HomeSceneController {
 
     public void prosmotr(ActionEvent event) {
         prosmotrBtnUpper();
-        anchorPane1.setVisible(true);
+        anchorPaneProsmotr.setVisible(true);
+        anchorPaneUst.setVisible(false);
     }
 
     public void glavnaya(ActionEvent event) {
-        anchorPane1.setVisible(false);
+        anchorPaneProsmotr.setVisible(false);
+        anchorPaneUst.setVisible(false);
     }
 
+    public void ust(ActionEvent event) {
+        anchorPaneUst.setVisible(true);
+        anchorPaneProsmotr.setVisible(false);
+    }
 
     @FXML
     void clickedForFourCam(MouseEvent event) {
@@ -118,8 +125,6 @@ public class HomeSceneController {
         paneWithFourCam.setVisible(false);
         paneWithSevenCam.setVisible(false);
         paneWithNineCam.setVisible(false);
-
-
     }
 
     @FXML
@@ -154,8 +159,8 @@ public class HomeSceneController {
             othersAnchorPane.setLayoutY(725);
             othersAnchorPane.setPrefHeight(300);
             basePane11.setLayoutY(23);
-            anchorPane1.setPrefHeight(1004);
-            anchorPane1.setPrefWidth(1920);
+            anchorPaneProsmotr.setPrefHeight(1004);
+            anchorPaneProsmotr.setPrefWidth(1920);
             camRightPane.setLayoutX(1730);
             camRightPane.setPrefHeight(950);
             camBtnPane.setPrefWidth(1920);
@@ -179,8 +184,8 @@ public class HomeSceneController {
             othersAnchorPane.setPrefHeight(250);
             othersAnchorPane.setLayoutY(625);
             basePane11.setLayoutY(-2);
-            anchorPane1.setPrefHeight(900);
-            anchorPane1.setPrefWidth(1440);
+            anchorPaneProsmotr.setPrefHeight(900);
+            anchorPaneProsmotr.setPrefWidth(1440);
             camRightPane.setPrefHeight(700);
             camRightPane.setLayoutY(13);
             camRightPane.setLayoutX(1256);
