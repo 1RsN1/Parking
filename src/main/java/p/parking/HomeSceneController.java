@@ -1,6 +1,7 @@
 package p.parking;
 
 import java.net.URL;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -14,7 +15,8 @@ public class HomeSceneController {
     @FXML
     Stage stage;
     @FXML
-    ImageView imgV1, imgV41, imgV42, imgV43, imgV44, imgV71, imgV72, imgV73, imgV74, imgV75, imgV76, imgV77, imgV91, imgV92, imgV93, imgV94, imgV95, imgV96, imgV97, imgV98, imgV99, ivProsmotr0;
+    ImageView imgV1, imgV41, imgV42, imgV43, imgV44, imgV71, imgV72, imgV73, imgV74, imgV75, imgV76,
+            imgV77, imgV91, imgV92, imgV93, imgV94, imgV95, imgV96, imgV97, imgV98, imgV99, ivProsmotr0;
     @FXML
     AnchorPane anchorPane1, scenePanel, baseAnchorPane, othersAnchorPane, settingAP, camBtnPane, camRightPane;
     @FXML
@@ -36,7 +38,7 @@ public class HomeSceneController {
 
 
     public void initialize() {
-      //  ImageView mxbtnView = new ImageView(new Image(getClass().getResourceAsStream("icon/mxmz.png")));
+        //  ImageView mxbtnView = new ImageView(new Image(getClass().getResourceAsStream("icon/mxmz.png")));
         mxbtnView.setFitWidth(18);
         mxbtnView.setFitHeight(18);
         maxBtn.setGraphic(mxbtnView);
@@ -76,38 +78,31 @@ public class HomeSceneController {
             stage.close();
         }
     }
+
     public void prosmotrSmallClose(ActionEvent event) {
-        prosmotrSmallPane.setVisible(false);
+        gp.getChildren().remove(prosmotrSmallPane);
+        gp.setPrefWidth(gp.getWidth() - 90);
+        anchorPane1.setVisible(false);
+
     }
+
     public void prosmotrCloseOn(MouseEvent event) {
-            prosmotrClose.setVisible(true);
+        prosmotrClose.setVisible(true);
     }
-     public void prosmotrCloseOff(MouseEvent event) {
+
+    public void prosmotrCloseOff(MouseEvent event) {
         prosmotrClose.setVisible(false);
     }
 
     public void prosmotr(ActionEvent event) {
         prosmotrBtnUpper();
-        basePanesVisibleOff();
         anchorPane1.setVisible(true);
     }
 
     public void glavnaya(ActionEvent event) {
         anchorPane1.setVisible(false);
-        basePanesVisibleOn();
     }
 
-    public void basePanesVisibleOff() {
-        baseAnchorPane.setVisible(false);
-        settingAP.setVisible(false);
-        othersAnchorPane.setVisible(false);
-    }
-
-    public void basePanesVisibleOn() {
-        baseAnchorPane.setVisible(true);
-        settingAP.setVisible(true);
-        othersAnchorPane.setVisible(true);
-    }
 
     @FXML
     void clickedForFourCam(MouseEvent event) {
@@ -204,18 +199,14 @@ public class HomeSceneController {
 
     public void prosmotrBtnUpper() {
         System.out.println("test");
-        gp.add(prosmotrSmallPane, gp.getColumnCount() + 1, 0);
-        prosmotrSmallPane.setLayoutY(2);
-        gp.setPrefWidth(gp.getWidth() + 90);
-        prosmotrBtnUp.setVisible(true);
+        if (gp.getChildren().contains(prosmotrSmallPane)) {
+            System.out.println("noth");
+        } else {
+            gp.add(prosmotrSmallPane, gp.getColumnCount() + 1, 0);
+            gp.setPrefWidth(gp.getWidth() + 90);
+            prosmotrBtnUp.setVisible(true);
+        }
     }
-
-    /*
-    public void test1(ActionEvent event) {
-        gp.add(j, gp.getColumnCount(), 0);
-        gp.setPrefWidth(gp.getWidth() + 90);
-    }
-    */
 
 
     public void minimizeWindow(ActionEvent event) {

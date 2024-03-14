@@ -19,6 +19,7 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("HomeScene.fxml"));
+
         Scene scene = new Scene(fxmlLoader.load(), 1440, 900);
         stage.initStyle(StageStyle.TRANSPARENT);
         scene.setFill(Color.TRANSPARENT);
@@ -29,16 +30,6 @@ public class HelloApplication extends Application {
         stage.show();
     }
 
-    public void logout(Stage stage) {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Logout");
-        alert.setHeaderText("You are about to logout!");
-        alert.setContentText("Do you want to save before exiting?: ");
-        if (alert.showAndWait().get() == ButtonType.OK) {
-            System.out.println("Successfully logged out!");
-            stage.close();
-        }
-    }
 
     public static void main(String[] args) {
         launch();
