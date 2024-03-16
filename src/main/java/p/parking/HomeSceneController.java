@@ -22,16 +22,16 @@ public class HomeSceneController {
     @FXML
     Pane basePane, basePane1, basePane11;
     @FXML
-    Pane prosmotrSmallPane;
+    Pane prosmotrSmallPane, UstSmallPane;
     @FXML
-    Button prosmotrClose;
+    Button prosmotrClose, UstClose;
     @FXML
-    GridPane gp;
+    HBox hBox;
     //ResourceBundle resources; //это че ?
     @FXML
     URL location; // а это ? не знаю, это изначально создается в scene buildere
     @FXML
-    Button buttonForSevenCam, buttonForFourCam, buttonForNineCam, buttonForOneCam, jt, maxBtn, prosmotrBtnUp;
+    Button buttonForSevenCam, buttonForFourCam, buttonForNineCam, buttonForOneCam, jt, maxBtn, prosmotrBtnUp, UstBtnUp;
     @FXML
     AnchorPane paneWithFourCam, paneWithOneCam, paneWithSevenCam, paneWithNineCam;
     ImageView mxbtnView = new ImageView(new Image(getClass().getResourceAsStream("icon/mxmz.png")));
@@ -79,9 +79,16 @@ public class HomeSceneController {
         }
     }
 
+    public void prosmotrBtnUpper() {
+        if (hBox.getChildren().contains(prosmotrSmallPane)) {}
+        else {
+            hBox.getChildren().addFirst(prosmotrSmallPane);
+            prosmotrBtnUp.setVisible(true);
+        }
+    }
+
     public void prosmotrSmallClose(ActionEvent event) {
-        gp.getChildren().remove(prosmotrSmallPane);
-        gp.setPrefWidth(gp.getWidth() - 90);
+        hBox.getChildren().remove(prosmotrSmallPane);
         anchorPaneProsmotr.setVisible(false);
         anchorPaneUst.setVisible(false);
     }
@@ -92,6 +99,28 @@ public class HomeSceneController {
 
     public void prosmotrCloseOff(MouseEvent event) {
         prosmotrClose.setVisible(false);
+    }
+
+    public void UstBtnUpper() {
+        if (hBox.getChildren().contains(UstSmallPane)) {}
+        else {
+            hBox.getChildren().addFirst(UstSmallPane);
+            UstBtnUp.setVisible(true);
+        }
+    }
+
+    public void UstSmallClose(ActionEvent event) {
+        hBox.getChildren().remove(UstSmallPane);
+        anchorPaneProsmotr.setVisible(false);
+        anchorPaneUst.setVisible(false);
+    }
+
+    public void UstCloseOn(MouseEvent event) {
+        UstClose.setVisible(true);
+    }
+
+    public void UstCloseOff(MouseEvent event) {
+        UstClose.setVisible(false);
     }
 
     public void prosmotr(ActionEvent event) {
@@ -106,6 +135,7 @@ public class HomeSceneController {
     }
 
     public void ust(ActionEvent event) {
+        UstBtnUpper();
         anchorPaneUst.setVisible(true);
         anchorPaneProsmotr.setVisible(false);
     }
@@ -202,18 +232,6 @@ public class HomeSceneController {
     public void camsMaximize() {
 
     }
-
-    public void prosmotrBtnUpper() {
-        System.out.println("test");
-        if (gp.getChildren().contains(prosmotrSmallPane)) {
-            System.out.println("noth");
-        } else {
-            gp.add(prosmotrSmallPane, gp.getColumnCount() + 1, 0);
-            gp.setPrefWidth(gp.getWidth() + 90);
-            prosmotrBtnUp.setVisible(true);
-        }
-    }
-
 
     public void minimizeWindow(ActionEvent event) {
         stage = (Stage) scenePanel.getScene().getWindow();

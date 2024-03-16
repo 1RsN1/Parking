@@ -226,6 +226,14 @@
     -fx-background-color: #263145;
 }
 
+.UstSmall {
+    -fx-background-image: url("icon/устройства.png");
+    -fx-background-size: 80% 80%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-color: #263145;
+}
+
 .prosmotrClose{
     -fx-background-image: url("./icon/icon13.png");
     -fx-background-repeat: no-repeat;
