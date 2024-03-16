@@ -29,7 +29,7 @@ public class HomeSceneController {
     GridPane gp;
     //ResourceBundle resources; //это че ?
     @FXML
-    URL location; // а это ?
+    URL location; // а это ? не знаю, это изначально создается в scene buildere
     @FXML
     Button buttonForSevenCam, buttonForFourCam, buttonForNineCam, buttonForOneCam, jt, maxBtn, prosmotrBtnUp;
     @FXML
@@ -84,7 +84,6 @@ public class HomeSceneController {
         gp.setPrefWidth(gp.getWidth() - 90);
         anchorPaneProsmotr.setVisible(false);
         anchorPaneUst.setVisible(false);
-
     }
 
     public void prosmotrCloseOn(MouseEvent event) {
@@ -161,6 +160,8 @@ public class HomeSceneController {
             basePane11.setLayoutY(23);
             anchorPaneProsmotr.setPrefHeight(1004);
             anchorPaneProsmotr.setPrefWidth(1920);
+            anchorPaneUst.setPrefHeight(1004);
+            anchorPaneUst.setPrefWidth(1920);
             camRightPane.setLayoutX(1730);
             camRightPane.setPrefHeight(950);
             camBtnPane.setPrefWidth(1920);
