@@ -234,6 +234,118 @@
     -fx-background-color: #263145;
 }
 
+.ArhSmall {
+    -fx-background-image: url("icon/архив.png");
+    -fx-background-size: 80% 80%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-color: #263145;
+}
+
+.ZapSmall {
+    -fx-background-image: url("icon/онлайнЗапись.png");
+    -fx-background-size: 80% 80%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-color: #263145;
+}
+
+.JurSmall {
+    -fx-background-image: url("icon/журнал.png");
+    -fx-background-size: 80% 80%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-color: #263145;
+}
+
+.JurTrevSmall {
+    -fx-background-image: url("icon/тревога.png");
+    -fx-background-size: 80% 80%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-color: #263145;
+}
+
+.KonfSmall {
+    -fx-background-image: url("icon/конфиг.png");
+    -fx-background-size: 80% 80%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-color: #263145;
+}
+
+.TrevSmall {
+    -fx-background-image: url("icon/тревогаПросто.png");
+    -fx-background-size: 80% 80%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-color: #263145;
+}
+
+.TurSmall {
+    -fx-background-image: url("icon/тур.png");
+    -fx-background-size: 80% 80%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-color: #263145;
+}
+
+.PolzSmall {
+    -fx-background-image: url("icon/пользователи.png");
+    -fx-background-size: 80% 80%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-color: #263145;
+}
+
+.ProgSmall {
+    -fx-background-image: url("icon/программа.png");
+    -fx-background-size: 80% 80%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-color: #263145;
+}
+
+.MapSmall {
+    -fx-background-image: url("icon/карта.png");
+    -fx-background-size: 80% 80%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-color: #263145;
+}
+
+.DecSmall {
+    -fx-background-image: url("icon/декодер.png");
+    -fx-background-size: 80% 80%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-color: #263145;
+}
+
+.BekSmall {
+    -fx-background-image: url("icon/бэкап.png");
+    -fx-background-size: 80% 80%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-color: #263145;
+}
+
+.ProshSmall {
+    -fx-background-image: url("icon/прошивка.png");
+    -fx-background-size: 80% 80%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-color: #263145;
+}
+
+.FonZapSmall {
+    -fx-background-image: url("icon/фоноваяЗапись.png");
+    -fx-background-size: 80% 80%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-color: #263145;
+}
+
 .prosmotrClose{
     -fx-background-image: url("./icon/icon13.png");
     -fx-background-repeat: no-repeat;

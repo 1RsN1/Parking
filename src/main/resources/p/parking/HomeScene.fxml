@@ -692,7 +692,7 @@
       </AnchorPane>
       <AnchorPane fx:id="invisiblePane" layoutX="882.0" layoutY="104.0" prefHeight="759.0" prefWidth="520.0" visible="false">
          <children>
-            <Pane fx:id="prosmotrSmallPane" maxHeight="75.0" maxWidth="90.0" minHeight="75.0" minWidth="90.0" onMouseEntered="#prosmotrCloseOn" onMouseExited="#prosmotrCloseOff" prefHeight="75.0" prefWidth="90.0">
+            <Pane fx:id="prosmotrSmallPane" layoutX="7.0" layoutY="17.0" maxHeight="75.0" maxWidth="90.0" minHeight="75.0" minWidth="90.0" onMouseEntered="#prosmotrCloseOn" onMouseExited="#prosmotrCloseOff" prefHeight="75.0" prefWidth="90.0">
                <children>
                   <Button fx:id="prosmotrBtnUp" layoutX="3.0" layoutY="4.0" mnemonicParsing="false" onAction="#prosmotr" prefHeight="65.0" prefWidth="65.0">
                      <cursor>
@@ -706,7 +706,7 @@
                   <Button fx:id="prosmotrClose" layoutX="70.0" layoutY="1.0" maxHeight="17.0" maxWidth="16.0" minHeight="10.0" minWidth="7.0" mnemonicParsing="false" onAction="#prosmotrSmallClose" prefHeight="16.0" prefWidth="16.0" snapToPixel="false" styleClass="prosmotrClose" visible="false" />
                </children>
             </Pane>
-            <Pane fx:id="UstSmallPane" layoutX="90.0" maxHeight="75.0" maxWidth="90.0" minHeight="75.0" minWidth="90.0" onMouseEntered="#UstCloseOn" onMouseExited="#UstCloseOff" prefHeight="75.0" prefWidth="90.0">
+            <Pane fx:id="UstSmallPane" layoutX="97.0" layoutY="17.0" maxHeight="75.0" maxWidth="90.0" minHeight="75.0" minWidth="90.0" onMouseEntered="#UstCloseOn" onMouseExited="#UstCloseOff" prefHeight="75.0" prefWidth="90.0">
                <children>
                   <Button fx:id="UstBtnUp" layoutX="3.0" layoutY="4.0" mnemonicParsing="false" onAction="#ust" prefHeight="65.0" prefWidth="65.0">
                      <cursor>
@@ -720,7 +720,204 @@
                   <Button fx:id="UstClose" layoutX="70.0" layoutY="1.0" maxHeight="17.0" maxWidth="16.0" minHeight="10.0" minWidth="7.0" mnemonicParsing="false" onAction="#UstSmallClose" prefHeight="16.0" prefWidth="16.0" snapToPixel="false" styleClass="prosmotrClose" visible="false" />
                </children>
             </Pane>
+            <Pane fx:id="ArhSmallPane" layoutX="195.0" layoutY="18.0" maxHeight="75.0" maxWidth="90.0" minHeight="75.0" minWidth="90.0" onMouseEntered="#ArhCloseOn" onMouseExited="#ArhCloseOff" prefHeight="75.0" prefWidth="90.0">
+               <children>
+                  <Button fx:id="ArhBtnUp" layoutX="3.0" layoutY="4.0" mnemonicParsing="false" onAction="#arh" prefHeight="65.0" prefWidth="65.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <styleClass>
+                        <String fx:value="ArhSmall" />
+                        <String fx:value="buttomHover" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="ArhClose" layoutX="70.0" layoutY="1.0" maxHeight="17.0" maxWidth="16.0" minHeight="10.0" minWidth="7.0" mnemonicParsing="false" onAction="#ArhSmallClose" prefHeight="16.0" prefWidth="16.0" snapToPixel="false" styleClass="prosmotrClose" visible="false" />
+               </children>
+            </Pane>
+            <Pane fx:id="ZapSmallPane" layoutX="300.0" layoutY="16.0" maxHeight="75.0" maxWidth="90.0" minHeight="75.0" minWidth="90.0" onMouseEntered="#ZapCloseOn" onMouseExited="#ZapCloseOff" prefHeight="75.0" prefWidth="90.0">
+               <children>
+                  <Button fx:id="ZapBtnUp" layoutX="3.0" layoutY="4.0" mnemonicParsing="false" onAction="#zap" prefHeight="65.0" prefWidth="65.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <styleClass>
+                        <String fx:value="ZapSmall" />
+                        <String fx:value="buttomHover" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="ZapClose" layoutX="70.0" layoutY="1.0" maxHeight="17.0" maxWidth="16.0" minHeight="10.0" minWidth="7.0" mnemonicParsing="false" onAction="#ZapSmallClose" prefHeight="16.0" prefWidth="16.0" snapToPixel="false" styleClass="prosmotrClose" visible="false" />
+               </children>
+            </Pane>
+            <Pane fx:id="JurSmallPane" layoutX="57.0" layoutY="105.0" maxHeight="75.0" maxWidth="90.0" minHeight="75.0" minWidth="90.0" onMouseEntered="#JurCloseOn" onMouseExited="#JurCloseOff" prefHeight="75.0" prefWidth="90.0">
+               <children>
+                  <Button fx:id="JurBtnUp" layoutX="3.0" layoutY="4.0" mnemonicParsing="false" onAction="#jur" prefHeight="65.0" prefWidth="65.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <styleClass>
+                        <String fx:value="JurSmall" />
+                        <String fx:value="buttomHover" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="JurClose" layoutX="70.0" layoutY="1.0" maxHeight="17.0" maxWidth="16.0" minHeight="10.0" minWidth="7.0" mnemonicParsing="false" onAction="#JurSmallClose" prefHeight="16.0" prefWidth="16.0" snapToPixel="false" styleClass="prosmotrClose" visible="false" />
+               </children>
+            </Pane>
+            <Pane fx:id="JurTrevSmallPane" layoutX="246.0" layoutY="105.0" maxHeight="75.0" maxWidth="90.0" minHeight="75.0" minWidth="90.0" onMouseEntered="#JurTrevCloseOn" onMouseExited="#JurTrevCloseOff" prefHeight="75.0" prefWidth="90.0">
+               <children>
+                  <Button fx:id="JurTrevBtnUp" layoutX="3.0" layoutY="4.0" mnemonicParsing="false" onAction="#jurTrev" prefHeight="65.0" prefWidth="65.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <styleClass>
+                        <String fx:value="JurTrevSmall" />
+                        <String fx:value="buttomHover" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="JurTrevClose" layoutX="70.0" layoutY="1.0" maxHeight="17.0" maxWidth="16.0" minHeight="10.0" minWidth="7.0" mnemonicParsing="false" onAction="#JurTrevSmallClose" prefHeight="16.0" prefWidth="16.0" snapToPixel="false" styleClass="prosmotrClose" visible="false" />
+               </children>
+            </Pane>
+            <Pane fx:id="KonfSmallPane" layoutX="21.0" layoutY="347.0" maxHeight="75.0" maxWidth="90.0" minHeight="75.0" minWidth="90.0" onMouseEntered="#KonfCloseOn" onMouseExited="#KonfCloseOff" prefHeight="75.0" prefWidth="90.0">
+               <children>
+                  <Button fx:id="KonfBtnUp" layoutX="3.0" layoutY="4.0" mnemonicParsing="false" onAction="#konf" prefHeight="65.0" prefWidth="65.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <styleClass>
+                        <String fx:value="KonfSmall" />
+                        <String fx:value="buttomHover" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="KonfClose" layoutX="70.0" layoutY="1.0" maxHeight="17.0" maxWidth="16.0" minHeight="10.0" minWidth="7.0" mnemonicParsing="false" onAction="#KonfSmallClose" prefHeight="16.0" prefWidth="16.0" snapToPixel="false" styleClass="prosmotrClose" visible="false" />
+               </children>
+            </Pane>
+            <Pane fx:id="TrevSmallPane" layoutX="126.0" layoutY="345.0" maxHeight="75.0" maxWidth="90.0" minHeight="75.0" minWidth="90.0" onMouseEntered="#TrevCloseOn" onMouseExited="#TrevCloseOff" prefHeight="75.0" prefWidth="90.0">
+               <children>
+                  <Button fx:id="TrevBtnUp" layoutX="3.0" layoutY="4.0" mnemonicParsing="false" onAction="#trev" prefHeight="65.0" prefWidth="65.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <styleClass>
+                        <String fx:value="TrevSmall" />
+                        <String fx:value="buttomHover" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="TrevClose" layoutX="70.0" layoutY="1.0" maxHeight="17.0" maxWidth="16.0" minHeight="10.0" minWidth="7.0" mnemonicParsing="false" onAction="#TrevSmallClose" prefHeight="16.0" prefWidth="16.0" snapToPixel="false" styleClass="prosmotrClose" visible="false" />
+               </children>
+            </Pane>
+            <Pane fx:id="TurSmallPane" layoutX="241.0" layoutY="344.0" maxHeight="75.0" maxWidth="90.0" minHeight="75.0" minWidth="90.0" onMouseEntered="#TurCloseOn" onMouseExited="#TurCloseOff" prefHeight="75.0" prefWidth="90.0">
+               <children>
+                  <Button fx:id="TurBtnUp" layoutX="3.0" layoutY="4.0" mnemonicParsing="false" onAction="#tur" prefHeight="65.0" prefWidth="65.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <styleClass>
+                        <String fx:value="TurSmall" />
+                        <String fx:value="buttomHover" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="TurClose" layoutX="70.0" layoutY="1.0" maxHeight="17.0" maxWidth="16.0" minHeight="10.0" minWidth="7.0" mnemonicParsing="false" onAction="#TurSmallClose" prefHeight="16.0" prefWidth="16.0" snapToPixel="false" styleClass="prosmotrClose" visible="false" />
+               </children>
+            </Pane>
+            <Pane fx:id="PolzSmallPane" layoutX="331.0" layoutY="344.0" maxHeight="75.0" maxWidth="90.0" minHeight="75.0" minWidth="90.0" onMouseEntered="#PolzCloseOn" onMouseExited="#PolzCloseOff" prefHeight="75.0" prefWidth="90.0">
+               <children>
+                  <Button fx:id="PolzBtnUp" layoutX="3.0" layoutY="4.0" mnemonicParsing="false" onAction="#polz" prefHeight="65.0" prefWidth="65.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <styleClass>
+                        <String fx:value="PolzSmall" />
+                        <String fx:value="buttomHover" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="PolzClose" layoutX="70.0" layoutY="1.0" maxHeight="17.0" maxWidth="16.0" minHeight="10.0" minWidth="7.0" mnemonicParsing="false" onAction="#PolzSmallClose" prefHeight="16.0" prefWidth="16.0" snapToPixel="false" styleClass="prosmotrClose" visible="false" />
+               </children>
+            </Pane>
+            <Pane fx:id="ProgSmallPane" layoutX="429.0" layoutY="345.0" maxHeight="75.0" maxWidth="90.0" minHeight="75.0" minWidth="90.0" onMouseEntered="#ProgCloseOn" onMouseExited="#ProgCloseOff" prefHeight="75.0" prefWidth="90.0">
+               <children>
+                  <Button fx:id="ProgBtnUp" layoutX="3.0" layoutY="4.0" mnemonicParsing="false" onAction="#prog" prefHeight="65.0" prefWidth="65.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <styleClass>
+                        <String fx:value="ProgSmall" />
+                        <String fx:value="buttomHover" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="ProgClose" layoutX="70.0" layoutY="1.0" maxHeight="17.0" maxWidth="16.0" minHeight="10.0" minWidth="7.0" mnemonicParsing="false" onAction="#ProgSmallClose" prefHeight="16.0" prefWidth="16.0" snapToPixel="false" styleClass="prosmotrClose" visible="false" />
+               </children>
+            </Pane>
+            <Pane fx:id="MapSmallPane" layoutX="23.0" layoutY="601.0" maxHeight="75.0" maxWidth="90.0" minHeight="75.0" minWidth="90.0" onMouseEntered="#MapCloseOn" onMouseExited="#MapCloseOff" prefHeight="75.0" prefWidth="90.0">
+               <children>
+                  <Button fx:id="MapBtnUp" layoutX="3.0" layoutY="4.0" mnemonicParsing="false" onAction="#map" prefHeight="65.0" prefWidth="65.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <styleClass>
+                        <String fx:value="MapSmall" />
+                        <String fx:value="buttomHover" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="MapClose" layoutX="70.0" layoutY="1.0" maxHeight="17.0" maxWidth="16.0" minHeight="10.0" minWidth="7.0" mnemonicParsing="false" onAction="#MapSmallClose" prefHeight="16.0" prefWidth="16.0" snapToPixel="false" styleClass="prosmotrClose" visible="false" />
+               </children>
+            </Pane>
+            <Pane fx:id="DecSmallPane" layoutX="124.0" layoutY="601.0" maxHeight="75.0" maxWidth="90.0" minHeight="75.0" minWidth="90.0" onMouseEntered="#DecCloseOn" onMouseExited="#DecCloseOff" prefHeight="75.0" prefWidth="90.0">
+               <children>
+                  <Button fx:id="DecBtnUp" layoutX="3.0" layoutY="4.0" mnemonicParsing="false" onAction="#dec" prefHeight="65.0" prefWidth="65.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <styleClass>
+                        <String fx:value="DecSmall" />
+                        <String fx:value="buttomHover" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="DecClose" layoutX="70.0" layoutY="1.0" maxHeight="17.0" maxWidth="16.0" minHeight="10.0" minWidth="7.0" mnemonicParsing="false" onAction="#DecSmallClose" prefHeight="16.0" prefWidth="16.0" snapToPixel="false" styleClass="prosmotrClose" visible="false" />
+               </children>
+            </Pane>
+            <Pane fx:id="BekSmallPane" layoutX="214.0" layoutY="601.0" maxHeight="75.0" maxWidth="90.0" minHeight="75.0" minWidth="90.0" onMouseEntered="#BekCloseOn" onMouseExited="#BekCloseOff" prefHeight="75.0" prefWidth="90.0">
+               <children>
+                  <Button fx:id="BekBtnUp" layoutX="3.0" layoutY="4.0" mnemonicParsing="false" onAction="#bek" prefHeight="65.0" prefWidth="65.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <styleClass>
+                        <String fx:value="BekSmall" />
+                        <String fx:value="buttomHover" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="BekClose" layoutX="70.0" layoutY="1.0" maxHeight="17.0" maxWidth="16.0" minHeight="10.0" minWidth="7.0" mnemonicParsing="false" onAction="#BekSmallClose" prefHeight="16.0" prefWidth="16.0" snapToPixel="false" styleClass="prosmotrClose" visible="false" />
+               </children>
+            </Pane>
+            <Pane fx:id="ProshSmallPane" layoutX="312.0" layoutY="602.0" maxHeight="75.0" maxWidth="90.0" minHeight="75.0" minWidth="90.0" onMouseEntered="#ProshCloseOn" onMouseExited="#ProshCloseOff" prefHeight="75.0" prefWidth="90.0">
+               <children>
+                  <Button fx:id="ProshBtnUp" layoutX="3.0" layoutY="4.0" mnemonicParsing="false" onAction="#prosh" prefHeight="65.0" prefWidth="65.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <styleClass>
+                        <String fx:value="ProshSmall" />
+                        <String fx:value="buttomHover" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="ProshClose" layoutX="70.0" layoutY="1.0" maxHeight="17.0" maxWidth="16.0" minHeight="10.0" minWidth="7.0" mnemonicParsing="false" onAction="#ProshSmallClose" prefHeight="16.0" prefWidth="16.0" snapToPixel="false" styleClass="prosmotrClose" visible="false" />
+               </children>
+            </Pane>
+            <Pane fx:id="FonZapSmallPane" layoutX="417.0" layoutY="600.0" maxHeight="75.0" maxWidth="90.0" minHeight="75.0" minWidth="90.0" onMouseEntered="#FonZapCloseOn" onMouseExited="#FonZapCloseOff" prefHeight="75.0" prefWidth="90.0">
+               <children>
+                  <Button fx:id="FonZapBtnUp" layoutX="3.0" layoutY="4.0" mnemonicParsing="false" onAction="#fonZap" prefHeight="65.0" prefWidth="65.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <styleClass>
+                        <String fx:value="FonZapSmall" />
+                        <String fx:value="buttomHover" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="FonZapClose" layoutX="70.0" layoutY="1.0" maxHeight="17.0" maxWidth="16.0" minHeight="10.0" minWidth="7.0" mnemonicParsing="false" onAction="#FonZapSmallClose" prefHeight="16.0" prefWidth="16.0" snapToPixel="false" styleClass="prosmotrClose" visible="false" />
+               </children>
+            </Pane>
          </children>
       </AnchorPane>
+      <AnchorPane fx:id="anchorPaneArh" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: black;" visible="false" />
    </children>
 </AnchorPane>
