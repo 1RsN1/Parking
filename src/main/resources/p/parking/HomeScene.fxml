@@ -48,7 +48,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <HBox fx:id="hBox" layoutX="210.0" prefHeight="75.0" prefWidth="1000.0" />
+            <HBox fx:id="hBox" layoutX="207.0" prefHeight="75.0" prefWidth="1080.0" />
          </children>
       </AnchorPane>
       <AnchorPane fx:id="baseAnchorPane" layoutX="20.0" layoutY="95.0" prefHeight="250.0" prefWidth="1400.0" styleClass="inputbox" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
@@ -64,7 +64,7 @@
             </AnchorPane>
             <Pane fx:id="basePane" prefHeight="200.0" prefWidth="1000.0">
                <children>
-                  <Button layoutX="750.0" layoutY="66.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
+                  <Button layoutX="750.0" layoutY="66.0" mnemonicParsing="false" onAction="#jurTrev" prefHeight="90.0" prefWidth="90.0">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -73,7 +73,7 @@
                         <String fx:value="buttomHover" />
                      </styleClass>
                   </Button>
-                  <Button layoutX="610.0" layoutY="66.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
+                  <Button layoutX="610.0" layoutY="66.0" mnemonicParsing="false" onAction="#jur" prefHeight="90.0" prefWidth="90.0">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -82,7 +82,7 @@
                         <String fx:value="buttomHover" />
                      </styleClass>
                   </Button>
-                  <Button layoutX="470.0" layoutY="66.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
+                  <Button layoutX="470.0" layoutY="66.0" mnemonicParsing="false" onAction="#zap" prefHeight="90.0" prefWidth="90.0">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -100,7 +100,7 @@
                         <String fx:value="buttomHover" />
                      </styleClass>
                   </Button>
-                  <Button layoutX="330.0" layoutY="66.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
+                  <Button layoutX="330.0" layoutY="66.0" mnemonicParsing="false" onAction="#arh" prefHeight="90.0" prefWidth="90.0">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -214,7 +214,7 @@
             </AnchorPane>
             <Pane fx:id="basePane1" prefHeight="200.0" prefWidth="1000.0">
                <children>
-                  <Button layoutX="330.0" layoutY="66.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
+                  <Button layoutX="330.0" layoutY="66.0" mnemonicParsing="false" onAction="#tur" prefHeight="90.0" prefWidth="90.0">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -223,7 +223,7 @@
                         <String fx:value="buttomHover" />
                      </styleClass>
                   </Button>
-                  <Button layoutX="50.0" layoutY="66.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
+                  <Button layoutX="50.0" layoutY="66.0" mnemonicParsing="false" onAction="#konf" prefHeight="90.0" prefWidth="90.0">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -232,7 +232,7 @@
                         <String fx:value="buttomHover" />
                      </styleClass>
                   </Button>
-                  <Button layoutX="190.0" layoutY="66.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
+                  <Button layoutX="190.0" layoutY="66.0" mnemonicParsing="false" onAction="#trev" prefHeight="90.0" prefWidth="90.0">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -241,7 +241,7 @@
                         <String fx:value="buttomHover" />
                      </styleClass>
                   </Button>
-                  <Button layoutX="610.0" layoutY="66.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
+                  <Button layoutX="610.0" layoutY="66.0" mnemonicParsing="false" onAction="#prog" prefHeight="90.0" prefWidth="90.0">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -250,7 +250,7 @@
                         <String fx:value="buttomHover" />
                      </styleClass>
                   </Button>
-                  <Button layoutX="470.0" layoutY="66.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
+                  <Button layoutX="470.0" layoutY="66.0" mnemonicParsing="false" onAction="#polz" prefHeight="90.0" prefWidth="90.0">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -343,7 +343,7 @@
             </AnchorPane>
             <Pane fx:id="basePane11" prefHeight="200.0" prefWidth="1000.0">
                <children>
-                  <Button layoutX="50.0" layoutY="66.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
+                  <Button layoutX="50.0" layoutY="66.0" mnemonicParsing="false" onAction="#map" prefHeight="90.0" prefWidth="90.0">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -352,7 +352,7 @@
                         <String fx:value="buttomHover" />
                      </styleClass>
                   </Button>
-                  <Button layoutX="330.0" layoutY="66.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
+                  <Button layoutX="330.0" layoutY="66.0" mnemonicParsing="false" onAction="#bek" prefHeight="90.0" prefWidth="90.0">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -361,7 +361,7 @@
                         <String fx:value="buttomHover" />
                      </styleClass>
                   </Button>
-                  <Button layoutX="470.0" layoutY="66.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
+                  <Button layoutX="470.0" layoutY="66.0" mnemonicParsing="false" onAction="#prosh" prefHeight="90.0" prefWidth="90.0">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -370,7 +370,7 @@
                         <String fx:value="buttomHover" />
                      </styleClass>
                   </Button>
-                  <Button layoutX="610.0" layoutY="66.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
+                  <Button layoutX="610.0" layoutY="66.0" mnemonicParsing="false" onAction="#fonZap" prefHeight="90.0" prefWidth="90.0">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -379,7 +379,7 @@
                         <String fx:value="buttomHover" />
                      </styleClass>
                   </Button>
-                  <Button layoutX="190.0" layoutY="66.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0">
+                  <Button layoutX="190.0" layoutY="66.0" mnemonicParsing="false" onAction="#dec" prefHeight="90.0" prefWidth="90.0">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -694,13 +694,13 @@
          <children>
             <Pane fx:id="prosmotrSmallPane" layoutX="7.0" layoutY="17.0" maxHeight="75.0" maxWidth="90.0" minHeight="75.0" minWidth="90.0" onMouseEntered="#prosmotrCloseOn" onMouseExited="#prosmotrCloseOff" prefHeight="75.0" prefWidth="90.0">
                <children>
-                  <Button fx:id="prosmotrBtnUp" layoutX="3.0" layoutY="4.0" mnemonicParsing="false" onAction="#prosmotr" prefHeight="65.0" prefWidth="65.0">
+                  <Button fx:id="prosmotrBtnUp" layoutX="3.0" layoutY="5.0" mnemonicParsing="false" onAction="#prosmotr" prefHeight="65.0" prefWidth="65.0">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
                      <styleClass>
                         <String fx:value="prosmotrSmall" />
-                        <String fx:value="buttomHover" />
+                        <String fx:value="buttonSmallHover" />
                      </styleClass>
                   </Button>
                   <Button fx:id="prosmotrClose" layoutX="70.0" layoutY="1.0" maxHeight="17.0" maxWidth="16.0" minHeight="10.0" minWidth="7.0" mnemonicParsing="false" onAction="#prosmotrSmallClose" prefHeight="16.0" prefWidth="16.0" snapToPixel="false" styleClass="prosmotrClose" visible="false" />
@@ -714,7 +714,7 @@
                      </cursor>
                      <styleClass>
                         <String fx:value="UstSmall" />
-                        <String fx:value="buttomHover" />
+                        <String fx:value="buttonSmallHover" />
                      </styleClass>
                   </Button>
                   <Button fx:id="UstClose" layoutX="70.0" layoutY="1.0" maxHeight="17.0" maxWidth="16.0" minHeight="10.0" minWidth="7.0" mnemonicParsing="false" onAction="#UstSmallClose" prefHeight="16.0" prefWidth="16.0" snapToPixel="false" styleClass="prosmotrClose" visible="false" />
@@ -728,7 +728,7 @@
                      </cursor>
                      <styleClass>
                         <String fx:value="ArhSmall" />
-                        <String fx:value="buttomHover" />
+                        <String fx:value="buttonSmallHover" />
                      </styleClass>
                   </Button>
                   <Button fx:id="ArhClose" layoutX="70.0" layoutY="1.0" maxHeight="17.0" maxWidth="16.0" minHeight="10.0" minWidth="7.0" mnemonicParsing="false" onAction="#ArhSmallClose" prefHeight="16.0" prefWidth="16.0" snapToPixel="false" styleClass="prosmotrClose" visible="false" />
@@ -742,7 +742,7 @@
                      </cursor>
                      <styleClass>
                         <String fx:value="ZapSmall" />
-                        <String fx:value="buttomHover" />
+                        <String fx:value="buttonSmallHover" />
                      </styleClass>
                   </Button>
                   <Button fx:id="ZapClose" layoutX="70.0" layoutY="1.0" maxHeight="17.0" maxWidth="16.0" minHeight="10.0" minWidth="7.0" mnemonicParsing="false" onAction="#ZapSmallClose" prefHeight="16.0" prefWidth="16.0" snapToPixel="false" styleClass="prosmotrClose" visible="false" />
@@ -756,7 +756,7 @@
                      </cursor>
                      <styleClass>
                         <String fx:value="JurSmall" />
-                        <String fx:value="buttomHover" />
+                        <String fx:value="buttonSmallHover" />
                      </styleClass>
                   </Button>
                   <Button fx:id="JurClose" layoutX="70.0" layoutY="1.0" maxHeight="17.0" maxWidth="16.0" minHeight="10.0" minWidth="7.0" mnemonicParsing="false" onAction="#JurSmallClose" prefHeight="16.0" prefWidth="16.0" snapToPixel="false" styleClass="prosmotrClose" visible="false" />
@@ -770,7 +770,7 @@
                      </cursor>
                      <styleClass>
                         <String fx:value="JurTrevSmall" />
-                        <String fx:value="buttomHover" />
+                        <String fx:value="buttonSmallHover" />
                      </styleClass>
                   </Button>
                   <Button fx:id="JurTrevClose" layoutX="70.0" layoutY="1.0" maxHeight="17.0" maxWidth="16.0" minHeight="10.0" minWidth="7.0" mnemonicParsing="false" onAction="#JurTrevSmallClose" prefHeight="16.0" prefWidth="16.0" snapToPixel="false" styleClass="prosmotrClose" visible="false" />
@@ -784,7 +784,7 @@
                      </cursor>
                      <styleClass>
                         <String fx:value="KonfSmall" />
-                        <String fx:value="buttomHover" />
+                        <String fx:value="buttonSmallHover" />
                      </styleClass>
                   </Button>
                   <Button fx:id="KonfClose" layoutX="70.0" layoutY="1.0" maxHeight="17.0" maxWidth="16.0" minHeight="10.0" minWidth="7.0" mnemonicParsing="false" onAction="#KonfSmallClose" prefHeight="16.0" prefWidth="16.0" snapToPixel="false" styleClass="prosmotrClose" visible="false" />
@@ -798,7 +798,7 @@
                      </cursor>
                      <styleClass>
                         <String fx:value="TrevSmall" />
-                        <String fx:value="buttomHover" />
+                        <String fx:value="buttonSmallHover" />
                      </styleClass>
                   </Button>
                   <Button fx:id="TrevClose" layoutX="70.0" layoutY="1.0" maxHeight="17.0" maxWidth="16.0" minHeight="10.0" minWidth="7.0" mnemonicParsing="false" onAction="#TrevSmallClose" prefHeight="16.0" prefWidth="16.0" snapToPixel="false" styleClass="prosmotrClose" visible="false" />
@@ -812,7 +812,7 @@
                      </cursor>
                      <styleClass>
                         <String fx:value="TurSmall" />
-                        <String fx:value="buttomHover" />
+                        <String fx:value="buttonSmallHover" />
                      </styleClass>
                   </Button>
                   <Button fx:id="TurClose" layoutX="70.0" layoutY="1.0" maxHeight="17.0" maxWidth="16.0" minHeight="10.0" minWidth="7.0" mnemonicParsing="false" onAction="#TurSmallClose" prefHeight="16.0" prefWidth="16.0" snapToPixel="false" styleClass="prosmotrClose" visible="false" />
@@ -826,7 +826,7 @@
                      </cursor>
                      <styleClass>
                         <String fx:value="PolzSmall" />
-                        <String fx:value="buttomHover" />
+                        <String fx:value="buttonSmallHover" />
                      </styleClass>
                   </Button>
                   <Button fx:id="PolzClose" layoutX="70.0" layoutY="1.0" maxHeight="17.0" maxWidth="16.0" minHeight="10.0" minWidth="7.0" mnemonicParsing="false" onAction="#PolzSmallClose" prefHeight="16.0" prefWidth="16.0" snapToPixel="false" styleClass="prosmotrClose" visible="false" />
@@ -840,7 +840,7 @@
                      </cursor>
                      <styleClass>
                         <String fx:value="ProgSmall" />
-                        <String fx:value="buttomHover" />
+                        <String fx:value="buttonSmallHover" />
                      </styleClass>
                   </Button>
                   <Button fx:id="ProgClose" layoutX="70.0" layoutY="1.0" maxHeight="17.0" maxWidth="16.0" minHeight="10.0" minWidth="7.0" mnemonicParsing="false" onAction="#ProgSmallClose" prefHeight="16.0" prefWidth="16.0" snapToPixel="false" styleClass="prosmotrClose" visible="false" />
@@ -854,7 +854,7 @@
                      </cursor>
                      <styleClass>
                         <String fx:value="MapSmall" />
-                        <String fx:value="buttomHover" />
+                        <String fx:value="buttonSmallHover" />
                      </styleClass>
                   </Button>
                   <Button fx:id="MapClose" layoutX="70.0" layoutY="1.0" maxHeight="17.0" maxWidth="16.0" minHeight="10.0" minWidth="7.0" mnemonicParsing="false" onAction="#MapSmallClose" prefHeight="16.0" prefWidth="16.0" snapToPixel="false" styleClass="prosmotrClose" visible="false" />
@@ -868,7 +868,7 @@
                      </cursor>
                      <styleClass>
                         <String fx:value="DecSmall" />
-                        <String fx:value="buttomHover" />
+                        <String fx:value="buttonSmallHover" />
                      </styleClass>
                   </Button>
                   <Button fx:id="DecClose" layoutX="70.0" layoutY="1.0" maxHeight="17.0" maxWidth="16.0" minHeight="10.0" minWidth="7.0" mnemonicParsing="false" onAction="#DecSmallClose" prefHeight="16.0" prefWidth="16.0" snapToPixel="false" styleClass="prosmotrClose" visible="false" />
@@ -882,7 +882,7 @@
                      </cursor>
                      <styleClass>
                         <String fx:value="BekSmall" />
-                        <String fx:value="buttomHover" />
+                        <String fx:value="buttonSmallHover" />
                      </styleClass>
                   </Button>
                   <Button fx:id="BekClose" layoutX="70.0" layoutY="1.0" maxHeight="17.0" maxWidth="16.0" minHeight="10.0" minWidth="7.0" mnemonicParsing="false" onAction="#BekSmallClose" prefHeight="16.0" prefWidth="16.0" snapToPixel="false" styleClass="prosmotrClose" visible="false" />
@@ -896,7 +896,7 @@
                      </cursor>
                      <styleClass>
                         <String fx:value="ProshSmall" />
-                        <String fx:value="buttomHover" />
+                        <String fx:value="buttonSmallHover" />
                      </styleClass>
                   </Button>
                   <Button fx:id="ProshClose" layoutX="70.0" layoutY="1.0" maxHeight="17.0" maxWidth="16.0" minHeight="10.0" minWidth="7.0" mnemonicParsing="false" onAction="#ProshSmallClose" prefHeight="16.0" prefWidth="16.0" snapToPixel="false" styleClass="prosmotrClose" visible="false" />
@@ -910,7 +910,7 @@
                      </cursor>
                      <styleClass>
                         <String fx:value="FonZapSmall" />
-                        <String fx:value="buttomHover" />
+                        <String fx:value="buttonSmallHover" />
                      </styleClass>
                   </Button>
                   <Button fx:id="FonZapClose" layoutX="70.0" layoutY="1.0" maxHeight="17.0" maxWidth="16.0" minHeight="10.0" minWidth="7.0" mnemonicParsing="false" onAction="#FonZapSmallClose" prefHeight="16.0" prefWidth="16.0" snapToPixel="false" styleClass="prosmotrClose" visible="false" />
@@ -918,6 +918,5 @@
             </Pane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="anchorPaneArh" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: black;" visible="false" />
    </children>
 </AnchorPane>

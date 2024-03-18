@@ -4,6 +4,7 @@ import java.net.URL;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -43,6 +44,11 @@ public class HomeSceneController {
     AnchorPane paneWithFourCam, paneWithOneCam, paneWithSevenCam, paneWithNineCam;
     ImageView mxbtnView = new ImageView(new Image(getClass().getResourceAsStream("icon/mxmz.png")));
 
+    public void hboxDeleteLast() {
+        if(hBox.getMaxWidth() > 1080) {
+            hBox.getChildren().removeLast();
+        }
+    }
 
     public void initialize() {
         //  ImageView mxbtnView = new ImageView(new Image(getClass().getResourceAsStream("icon/mxmz.png")));
@@ -91,6 +97,7 @@ public class HomeSceneController {
         else {
             hBox.getChildren().addFirst(prosmotrSmallPane);
             prosmotrBtnUp.setVisible(true);
+            hboxDeleteLast();
         }
     }
 
@@ -104,6 +111,7 @@ public class HomeSceneController {
         hBox.getChildren().remove(prosmotrSmallPane);
         anchorPaneProsmotr.setVisible(false);
         anchorPaneUst.setVisible(false);
+        anchorPaneArh.setVisible(false);
     }
 
     public void prosmotrCloseOn(MouseEvent event) {
@@ -126,6 +134,7 @@ public class HomeSceneController {
         hBox.getChildren().remove(UstSmallPane);
         anchorPaneProsmotr.setVisible(false);
         anchorPaneUst.setVisible(false);
+        anchorPaneArh.setVisible(false);
     }
 
     public void ust(ActionEvent event) {
@@ -152,12 +161,16 @@ public class HomeSceneController {
 
     public void ArhSmallClose(ActionEvent event) {
         hBox.getChildren().remove(ArhSmallPane);
+        anchorPaneProsmotr.setVisible(false);
+        anchorPaneUst.setVisible(false);
         anchorPaneArh.setVisible(false);
     }
 
     public void arh(ActionEvent event) {
         ArhBtnUpper();
         anchorPaneArh.setVisible(true);
+        anchorPaneProsmotr.setVisible(false);
+        anchorPaneUst.setVisible(false);
     }
 
     public void ArhCloseOn(MouseEvent event) {
