@@ -45,7 +45,15 @@ public class HomeSceneController {
     ImageView mxbtnView = new ImageView(new Image(getClass().getResourceAsStream("icon/mxmz.png")));
 
     public void hboxDeleteLast() {
-        if(hBox.getMaxWidth() > 1080) {
+        if (scenePanel.getWidth() < 1920 && hBox.getChildren().size() >12 ) {
+                while (hBox.getChildren().size() > 12) {
+                    hBox.getChildren().removeLast();
+                }
+        }
+    }
+
+    public void hboxDeleteWhenMinimize(){
+        while (hBox.getChildren().size() > 12) {
             hBox.getChildren().removeLast();
         }
     }
@@ -97,7 +105,7 @@ public class HomeSceneController {
         else {
             hBox.getChildren().addFirst(prosmotrSmallPane);
             prosmotrBtnUp.setVisible(true);
-            hboxDeleteLast();
+
         }
     }
 
@@ -105,6 +113,7 @@ public class HomeSceneController {
         prosmotrBtnUpper();
         anchorPaneProsmotr.setVisible(true);
         anchorPaneUst.setVisible(false);
+        hboxDeleteLast();
     }
 
     public void prosmotrSmallClose(ActionEvent event) {
@@ -573,15 +582,13 @@ public class HomeSceneController {
             anchorPaneProsmotr.setPrefHeight(1004);
             anchorPaneProsmotr.setPrefWidth(1920);
             anchorPaneUst.setPrefHeight(1004);
-            anchorPaneUst.setPrefWidth(1920);
-            camRightPane.setLayoutX(1730);
+            anchorPaneUst.setPrefWidth(1920);;
             camRightPane.setPrefHeight(950);
             camBtnPane.setPrefWidth(1920);
-            camBtnPane.setLayoutY(873);
-            // camsPane.setPrefHeight(890);
-            //camsPane.setPrefWidth(1700);
-            imgV1.setFitWidth(1700);
-            imgV1.setFitHeight(890);
+            camBtnPane.setLayoutY(930);
+           imgV1.setFitWidth(1700);
+            imgV1.setFitHeight(900);
+
             camsMaximize();
         } else {
             mxbtnView.setImage(new Image(getClass().getResourceAsStream("icon/mxmz.png")));
@@ -608,6 +615,7 @@ public class HomeSceneController {
             // camsPane.setPrefWidth(1241);
             imgV1.setFitWidth(1235);
             imgV1.setFitHeight(700);
+            hboxDeleteWhenMinimize();
         }
     }
 
