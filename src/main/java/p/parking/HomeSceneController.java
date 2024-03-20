@@ -42,20 +42,30 @@ public class HomeSceneController {
             DecBtnUp, BekBtnUp, ProshBtnUp, FonZapBtnUp;
     @FXML
     AnchorPane paneWithFourCam, paneWithOneCam, paneWithSevenCam, paneWithNineCam;
+    @FXML
+    Button btnSplitRightPane;
     ImageView mxbtnView = new ImageView(new Image(getClass().getResourceAsStream("icon/mxmz.png")));
 
     public void hboxDeleteLast() {
-        if (scenePanel.getWidth() < 1920 && hBox.getChildren().size() >12 ) {
-                while (hBox.getChildren().size() > 12) {
-                    hBox.getChildren().removeLast();
-                }
+        if (scenePanel.getWidth() < 1920 && hBox.getChildren().size() > 12) {
+            while (hBox.getChildren().size() > 12) {
+                hBox.getChildren().removeLast();
+            }
         }
     }
 
-    public void hboxDeleteWhenMinimize(){
+    public void hboxDeleteWhenMinimize() {
         while (hBox.getChildren().size() > 12) {
             hBox.getChildren().removeLast();
         }
+    }
+
+    public void splitCamRightPane(ActionEvent event) {
+     /*   if (camRightPane.isVisible()) {
+            camRightPane.setVisible(false);
+        } else {
+            camRightPane.setVisible(true);
+        }*/
     }
 
     public void initialize() {
@@ -101,8 +111,8 @@ public class HomeSceneController {
     }
 
     public void prosmotrBtnUpper() {
-        if (hBox.getChildren().contains(prosmotrSmallPane)) {}
-        else {
+        if (hBox.getChildren().contains(prosmotrSmallPane)) {
+        } else {
             hBox.getChildren().addFirst(prosmotrSmallPane);
             prosmotrBtnUp.setVisible(true);
 
@@ -132,8 +142,8 @@ public class HomeSceneController {
     }
 
     public void UstBtnUpper() {
-        if (hBox.getChildren().contains(UstSmallPane)) {}
-        else {
+        if (hBox.getChildren().contains(UstSmallPane)) {
+        } else {
             hBox.getChildren().addFirst(UstSmallPane);
             UstBtnUp.setVisible(true);
         }
@@ -161,8 +171,8 @@ public class HomeSceneController {
     }
 
     public void ArhBtnUpper() {
-        if (hBox.getChildren().contains(ArhSmallPane)) {}
-        else {
+        if (hBox.getChildren().contains(ArhSmallPane)) {
+        } else {
             hBox.getChildren().addFirst(ArhSmallPane);
             ArhBtnUp.setVisible(true);
         }
@@ -191,8 +201,8 @@ public class HomeSceneController {
     }
 
     public void ZapBtnUpper() {
-        if (hBox.getChildren().contains(ZapSmallPane)) {}
-        else {
+        if (hBox.getChildren().contains(ZapSmallPane)) {
+        } else {
             hBox.getChildren().addFirst(ZapSmallPane);
             ArhBtnUp.setVisible(true);
         }
@@ -217,8 +227,8 @@ public class HomeSceneController {
     }
 
     public void JurBtnUpper() {
-        if (hBox.getChildren().contains(JurSmallPane)) {}
-        else {
+        if (hBox.getChildren().contains(JurSmallPane)) {
+        } else {
             hBox.getChildren().addFirst(JurSmallPane);
             JurBtnUp.setVisible(true);
         }
@@ -243,8 +253,8 @@ public class HomeSceneController {
     }
 
     public void JurTrevBtnUpper() {
-        if (hBox.getChildren().contains(JurTrevSmallPane)) {}
-        else {
+        if (hBox.getChildren().contains(JurTrevSmallPane)) {
+        } else {
             hBox.getChildren().addFirst(JurTrevSmallPane);
             JurTrevBtnUp.setVisible(true);
         }
@@ -269,8 +279,8 @@ public class HomeSceneController {
     }
 
     public void KonfBtnUpper() {
-        if (hBox.getChildren().contains(KonfSmallPane)) {}
-        else {
+        if (hBox.getChildren().contains(KonfSmallPane)) {
+        } else {
             hBox.getChildren().addFirst(KonfSmallPane);
             KonfBtnUp.setVisible(true);
         }
@@ -295,8 +305,8 @@ public class HomeSceneController {
     }
 
     public void TrevBtnUpper() {
-        if (hBox.getChildren().contains(TrevSmallPane)) {}
-        else {
+        if (hBox.getChildren().contains(TrevSmallPane)) {
+        } else {
             hBox.getChildren().addFirst(TrevSmallPane);
             TrevBtnUp.setVisible(true);
         }
@@ -316,11 +326,13 @@ public class HomeSceneController {
         TrevClose.setVisible(true);
     }
 
-    public void TrevCloseOff(MouseEvent event) {TrevClose.setVisible(false); }
+    public void TrevCloseOff(MouseEvent event) {
+        TrevClose.setVisible(false);
+    }
 
     public void TurBtnUpper() {
-        if (hBox.getChildren().contains(TurSmallPane)) {}
-        else {
+        if (hBox.getChildren().contains(TurSmallPane)) {
+        } else {
             hBox.getChildren().addFirst(TurSmallPane);
             TurBtnUp.setVisible(true);
         }
@@ -345,8 +357,8 @@ public class HomeSceneController {
     }
 
     public void PolzBtnUpper() {
-        if (hBox.getChildren().contains(PolzSmallPane)) {}
-        else {
+        if (hBox.getChildren().contains(PolzSmallPane)) {
+        } else {
             hBox.getChildren().addFirst(PolzSmallPane);
             PolzBtnUp.setVisible(true);
         }
@@ -371,8 +383,8 @@ public class HomeSceneController {
     }
 
     public void ProgBtnUpper() {
-        if (hBox.getChildren().contains(ProgSmallPane)) {}
-        else {
+        if (hBox.getChildren().contains(ProgSmallPane)) {
+        } else {
             hBox.getChildren().addFirst(ProgSmallPane);
             ProgBtnUp.setVisible(true);
         }
@@ -397,8 +409,8 @@ public class HomeSceneController {
     }
 
     public void MapBtnUpper() {
-        if (hBox.getChildren().contains(MapSmallPane)) {}
-        else {
+        if (hBox.getChildren().contains(MapSmallPane)) {
+        } else {
             hBox.getChildren().addFirst(MapSmallPane);
             MapBtnUp.setVisible(true);
         }
@@ -423,8 +435,8 @@ public class HomeSceneController {
     }
 
     public void DecBtnUpper() {
-        if (hBox.getChildren().contains(DecSmallPane)) {}
-        else {
+        if (hBox.getChildren().contains(DecSmallPane)) {
+        } else {
             hBox.getChildren().addFirst(DecSmallPane);
             DecBtnUp.setVisible(true);
         }
@@ -449,8 +461,8 @@ public class HomeSceneController {
     }
 
     public void BekBtnUpper() {
-        if (hBox.getChildren().contains(BekSmallPane)) {}
-        else {
+        if (hBox.getChildren().contains(BekSmallPane)) {
+        } else {
             hBox.getChildren().addFirst(BekSmallPane);
             BekBtnUp.setVisible(true);
         }
@@ -475,8 +487,8 @@ public class HomeSceneController {
     }
 
     public void ProshBtnUpper() {
-        if (hBox.getChildren().contains(ProshSmallPane)) {}
-        else {
+        if (hBox.getChildren().contains(ProshSmallPane)) {
+        } else {
             hBox.getChildren().addFirst(ProshSmallPane);
             ProshBtnUp.setVisible(true);
         }
@@ -501,8 +513,8 @@ public class HomeSceneController {
     }
 
     public void FonZapBtnUpper() {
-        if (hBox.getChildren().contains(FonZapSmallPane)) {}
-        else {
+        if (hBox.getChildren().contains(FonZapSmallPane)) {
+        } else {
             hBox.getChildren().addFirst(FonZapSmallPane);
             FonZapBtnUp.setVisible(true);
         }
@@ -582,14 +594,21 @@ public class HomeSceneController {
             anchorPaneProsmotr.setPrefHeight(1004);
             anchorPaneProsmotr.setPrefWidth(1920);
             anchorPaneUst.setPrefHeight(1004);
-            anchorPaneUst.setPrefWidth(1920);;
-            camRightPane.setPrefHeight(950);
+            anchorPaneUst.setPrefWidth(1920);
+            camRightPane.setPrefHeight(850);
+            camRightPane.setLayoutX(1755);
             camBtnPane.setPrefWidth(1920);
-            camBtnPane.setLayoutY(930);
-           imgV1.setFitWidth(1700);
-            imgV1.setFitHeight(900);
+            camBtnPane.setLayoutY(900);
+            paneWithOneCam.setPrefWidth(1710);
+            paneWithOneCam.setPrefHeight(850);
+            imgV1.setFitWidth(1705);
+            imgV1.setFitHeight(850);
+            btnSplitRightPane.setLayoutX(1736);
+            btnSplitRightPane.setPrefHeight(857);
 
             camsMaximize();
+
+
         } else {
             mxbtnView.setImage(new Image(getClass().getResourceAsStream("icon/mxmz.png")));
             stage.setWidth(1440);
@@ -607,14 +626,18 @@ public class HomeSceneController {
             anchorPaneProsmotr.setPrefHeight(900);
             anchorPaneProsmotr.setPrefWidth(1440);
             camRightPane.setPrefHeight(700);
-            camRightPane.setLayoutY(13);
-            camRightPane.setLayoutX(1256);
-            camBtnPane.setPrefWidth(1440);
-            camBtnPane.setLayoutY(725);
+            camRightPane.setLayoutX(1278);
+            camBtnPane.setPrefWidth(730);
+            camBtnPane.setLayoutY(740);
+            camBtnPane.setLayoutX(313);
             // camsPane.setPrefHeight(700);
             // camsPane.setPrefWidth(1241);
+            paneWithOneCam.setPrefHeight(700);
+            paneWithOneCam.setPrefWidth(1235);
             imgV1.setFitWidth(1235);
             imgV1.setFitHeight(700);
+            btnSplitRightPane.setPrefHeight(707);
+            btnSplitRightPane.setLayoutX(1259);
             hboxDeleteWhenMinimize();
         }
     }
