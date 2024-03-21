@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="825.0" prefWidth="1440.0" styleClass="home" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="p.parking.HomeSceneController">
+   <children>
+      <Button layoutX="153.0" layoutY="40.0" mnemonicParsing="false" styleClass="btnUst" text="0/0" />
+      <Button layoutX="197.0" layoutY="40.0" mnemonicParsing="false" styleClass="btnUst" text="Очистить" />
+      <Label layoutX="22.0" layoutY="45.0" text="Не обработано/Все">
+         <font>
+            <Font name="Calibri" size="14.0" />
+         </font>
+      </Label>
+      <TableView layoutX="20.0" layoutY="70.0" prefHeight="735.0" prefWidth="1400.0" style="-fx-border-color: black;">
+        <columns>
+          <TableColumn maxWidth="100.0" minWidth="50.0" prefWidth="50.0" text="№" />
+          <TableColumn maxWidth="500.0" minWidth="250.0" prefWidth="400.0" text="Статус" />
+            <TableColumn maxWidth="300.0" minWidth="150.0" prefWidth="250.0" text="Тип тревоги" />
+            <TableColumn maxWidth="300.0" prefWidth="250.0" text="Время" />
+            <TableColumn maxWidth="400.0" minWidth="200.0" prefWidth="300.0" text="Устройство" />
+            <TableColumn maxWidth="1500.0" minWidth="100.0" prefWidth="150.0" text="Канал" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
