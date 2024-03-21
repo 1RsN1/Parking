@@ -44,6 +44,9 @@ public class HomeSceneController {
     AnchorPane paneWithFourCam, paneWithOneCam, paneWithSevenCam, paneWithNineCam;
     @FXML
     Button btnSplitRightPane;
+    @FXML
+    AnchorPane  prosmotrFX;
+
     ImageView mxbtnView = new ImageView(new Image(getClass().getResourceAsStream("icon/mxmz.png")));
 
     public void hboxDeleteLast() {
@@ -69,13 +72,11 @@ public class HomeSceneController {
     }
 
     public void initialize() {
-        //  ImageView mxbtnView = new ImageView(new Image(getClass().getResourceAsStream("icon/mxmz.png")));
         mxbtnView.setFitWidth(18);
         mxbtnView.setFitHeight(18);
         maxBtn.setGraphic(mxbtnView);
-        // ошибка если во время разворачивания / сворачивания окна в / из полноэкранного режима нажать на кнопку домой, пока окно не развернулось до конца
         ivProsmotr0.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("icon/VSTU-logo.png")));
-        imgV1.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/1.jpg")));
+        //imgV1.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/1.jpg")));
         /*imgV41.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/1.jpg")));
         imgV42.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/2.jpg")));
         imgV43.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/3.jpg")));
@@ -121,16 +122,19 @@ public class HomeSceneController {
 
     public void prosmotr(ActionEvent event) {
         prosmotrBtnUpper();
-        anchorPaneProsmotr.setVisible(true);
+        //anchorPaneProsmotr.setVisible(true);
+        System.out.println("init");
+        prosmotrFX .setVisible(true);
         anchorPaneUst.setVisible(false);
         hboxDeleteLast();
     }
 
     public void prosmotrSmallClose(ActionEvent event) {
         hBox.getChildren().remove(prosmotrSmallPane);
-        anchorPaneProsmotr.setVisible(false);
+       // anchorPaneProsmotr.setVisible(false);
+        prosmotrFX.setVisible(false);
         anchorPaneUst.setVisible(false);
-        anchorPaneArh.setVisible(false);
+        //anchorPaneArh.setVisible(false);
     }
 
     public void prosmotrCloseOn(MouseEvent event) {
@@ -539,7 +543,8 @@ public class HomeSceneController {
     }
 
     public void glavnaya(ActionEvent event) {
-        anchorPaneProsmotr.setVisible(false);
+        prosmotrFX.setVisible(false);
+       // anchorPaneProsmotr.setVisible(false);
         anchorPaneUst.setVisible(false);
     }
 
