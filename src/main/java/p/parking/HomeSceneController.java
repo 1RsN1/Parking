@@ -49,19 +49,7 @@ public class HomeSceneController {
 
     ImageView mxbtnView = new ImageView(new Image(getClass().getResourceAsStream("icon/mxmz.png")));
 
-    public void hboxDeleteLast() {
-        if (scenePanel.getWidth() < 1920 && hBox.getChildren().size() > 12) {
-            while (hBox.getChildren().size() > 12) {
-                hBox.getChildren().removeLast();
-            }
-        }
-    }
 
-    public void hboxDeleteWhenMinimize() {
-        while (hBox.getChildren().size() > 12) {
-            hBox.getChildren().removeLast();
-        }
-    }
 
     public void splitCamRightPane(ActionEvent event) {
      /*   if (camRightPane.isVisible()) {
@@ -111,12 +99,25 @@ public class HomeSceneController {
         }
     }
 
+    public void hboxDeleteLast() {
+        if (scenePanel.getWidth() < 1920 && hBox.getChildren().size() > 12) {
+            while (hBox.getChildren().size() > 12) {
+                hBox.getChildren().removeLast();
+            }
+        }
+    }
+
+    public void hboxDeleteWhenMinimize() {
+        while (hBox.getChildren().size() > 12) {
+            hBox.getChildren().removeLast();
+        }
+    }
+
     public void prosmotrBtnUpper() {
         if (hBox.getChildren().contains(prosmotrSmallPane)) {
         } else {
             hBox.getChildren().addFirst(prosmotrSmallPane);
             prosmotrBtnUp.setVisible(true);
-
         }
     }
 
@@ -126,6 +127,8 @@ public class HomeSceneController {
         System.out.println("init");
         //prosmotrFX .setVisible(true);
         anchorPaneUst.setVisible(false);
+        anchorPaneJurTrev.setVisible(false);
+        anchorPaneArh.setVisible(false);
         hboxDeleteLast();
     }
 
@@ -133,7 +136,6 @@ public class HomeSceneController {
         hBox.getChildren().remove(prosmotrSmallPane);
        anchorPaneProsmotr.setVisible(false);
        // prosmotrFX.setVisible(false);
-        anchorPaneUst.setVisible(false);
         //anchorPaneArh.setVisible(false);
     }
 
@@ -155,15 +157,15 @@ public class HomeSceneController {
 
     public void UstSmallClose(ActionEvent event) {
         hBox.getChildren().remove(UstSmallPane);
-        anchorPaneProsmotr.setVisible(false);
         anchorPaneUst.setVisible(false);
-        anchorPaneArh.setVisible(false);
     }
 
     public void ust(ActionEvent event) {
         UstBtnUpper();
         anchorPaneUst.setVisible(true);
         anchorPaneProsmotr.setVisible(false);
+        anchorPaneJurTrev.setVisible(false);
+        anchorPaneArh.setVisible(false);
     }
 
     public void UstCloseOn(MouseEvent event) {
@@ -184,8 +186,6 @@ public class HomeSceneController {
 
     public void ArhSmallClose(ActionEvent event) {
         hBox.getChildren().remove(ArhSmallPane);
-        anchorPaneProsmotr.setVisible(false);
-        anchorPaneUst.setVisible(false);
         anchorPaneArh.setVisible(false);
     }
 
@@ -194,6 +194,7 @@ public class HomeSceneController {
         anchorPaneArh.setVisible(true);
         anchorPaneProsmotr.setVisible(false);
         anchorPaneUst.setVisible(false);
+        anchorPaneJurTrev.setVisible(false);
     }
 
     public void ArhCloseOn(MouseEvent event) {
@@ -272,6 +273,8 @@ public class HomeSceneController {
     public void jurTrev(ActionEvent event) {
         JurTrevBtnUpper();
         anchorPaneJurTrev.setVisible(true);
+        anchorPaneProsmotr.setVisible(false);
+        anchorPaneUst.setVisible(false);
     }
 
     public void JurTrevCloseOn(MouseEvent event) {
@@ -546,6 +549,8 @@ public class HomeSceneController {
         //prosmotrFX.setVisible(false);
         anchorPaneProsmotr.setVisible(false);
         anchorPaneUst.setVisible(false);
+        anchorPaneJurTrev.setVisible(false);
+        anchorPaneArh.setVisible(false);
     }
 
     @FXML
@@ -610,10 +615,7 @@ public class HomeSceneController {
             imgV1.setFitHeight(850);
             btnSplitRightPane.setLayoutX(1736);
             btnSplitRightPane.setPrefHeight(857);
-
             camsMaximize();
-
-
         } else {
             mxbtnView.setImage(new Image(getClass().getResourceAsStream("icon/mxmz.png")));
             stage.setWidth(1440);

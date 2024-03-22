@@ -398,17 +398,24 @@
     -fx-background-color: rgba(199, 199, 199, 0.71);
 }
 
-/* ============ Кнопки в устройствах ========================================================================= */
+/* ============ Кнопки для всех вкладок ========================================================================= */
 
-.btnUst {
+.btnForAllPane {
     -fx-background-radius: 7;
 }
 
-.btnUst:hover {
+.btnForAllPane:hover {
     -fx-background-color: #53A2BE;
     -fx-background-radius: 7;
 }
 
-.checkBoxUst:hover {
+.checkBoxForAllPane:hover {
     -fx-text-fill: #127daa;
+}
+
+.btnForArhRight {
+    -fx-background-color: #c0bfbf;
+    -fx-background-radius: 7;
+    -fx-border-color: black;
+    -fx-border-radius: 7;
 }
