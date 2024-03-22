@@ -122,17 +122,17 @@ public class HomeSceneController {
 
     public void prosmotr(ActionEvent event) {
         prosmotrBtnUpper();
-        //anchorPaneProsmotr.setVisible(true);
+        anchorPaneProsmotr.setVisible(true);
         System.out.println("init");
-        prosmotrFX .setVisible(true);
+        //prosmotrFX .setVisible(true);
         anchorPaneUst.setVisible(false);
         hboxDeleteLast();
     }
 
     public void prosmotrSmallClose(ActionEvent event) {
         hBox.getChildren().remove(prosmotrSmallPane);
-       // anchorPaneProsmotr.setVisible(false);
-        prosmotrFX.setVisible(false);
+       anchorPaneProsmotr.setVisible(false);
+       // prosmotrFX.setVisible(false);
         anchorPaneUst.setVisible(false);
         //anchorPaneArh.setVisible(false);
     }
@@ -543,8 +543,8 @@ public class HomeSceneController {
     }
 
     public void glavnaya(ActionEvent event) {
-        prosmotrFX.setVisible(false);
-       // anchorPaneProsmotr.setVisible(false);
+        //prosmotrFX.setVisible(false);
+        anchorPaneProsmotr.setVisible(false);
         anchorPaneUst.setVisible(false);
     }
 
