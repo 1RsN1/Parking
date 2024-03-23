@@ -1,6 +1,8 @@
 package p.parking;
 
 import java.net.URL;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -11,6 +13,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
+
 
 public class HomeSceneController {
     @FXML
@@ -49,7 +52,37 @@ public class HomeSceneController {
 
     ImageView mxbtnView = new ImageView(new Image(getClass().getResourceAsStream("icon/mxmz.png")));
 
+    @FXML
+    DatePicker datePickerBeginning, datePickerEnd;
 
+    @FXML
+    ChoiceBox<String> choiceBoxForChooseFiles, choiceBoxForType;
+
+    @FXML
+    ToggleButton toggleForJurPC, toggleForJurUstr;
+    @FXML
+    ToggleGroup ToggleForJurPane;
+    @FXML
+    ChoiceBox<?> choiceBoxForJurEq;
+    @FXML
+    Label NameOfEquipment;
+    @FXML
+    TableView<?> tableViewForJurPC;
+    @FXML
+    TableView<?> tableViewForJurUstr;
+
+    @FXML
+    SpinnerValueFactory<LocalTime> svf = new SpinnerValueFactory<LocalTime>() {
+        @Override
+        public void decrement(int i) {
+
+        }
+
+        @Override
+        public void increment(int i) {
+
+        }
+    };
 
     public void splitCamRightPane(ActionEvent event) {
      /*   if (camRightPane.isVisible()) {
@@ -64,6 +97,8 @@ public class HomeSceneController {
         mxbtnView.setFitHeight(18);
         maxBtn.setGraphic(mxbtnView);
         ivProsmotr0.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("icon/VSTU-logo.png")));
+        choiceBoxForChooseFiles.getItems().addAll("Файл", "Время", "Лицо");
+        choiceBoxForType.getItems().addAll("Все", "Трев. вход", "Движение", "Постоянно", "Ручная", "I-кадр видео", "Видео анализ");
         //imgV1.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/1.jpg")));
         /*imgV41.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/1.jpg")));
         imgV42.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/2.jpg")));
@@ -99,6 +134,16 @@ public class HomeSceneController {
         }
     }
 
+    public void glavnaya(ActionEvent event) {
+        //prosmotrFX.setVisible(false);
+        anchorPaneProsmotr.setVisible(false);
+        anchorPaneUst.setVisible(false);
+        anchorPaneArh.setVisible(false);
+        anchorPaneZap.setVisible(false);
+        anchorPaneJur.setVisible(false);
+        anchorPaneJurTrev.setVisible(false);
+    }
+
     public void hboxDeleteLast() {
         if (scenePanel.getWidth() < 1920 && hBox.getChildren().size() > 12) {
             while (hBox.getChildren().size() > 12) {
@@ -124,11 +169,12 @@ public class HomeSceneController {
     public void prosmotr(ActionEvent event) {
         prosmotrBtnUpper();
         anchorPaneProsmotr.setVisible(true);
-        System.out.println("init");
         //prosmotrFX .setVisible(true);
         anchorPaneUst.setVisible(false);
-        anchorPaneJurTrev.setVisible(false);
         anchorPaneArh.setVisible(false);
+        anchorPaneZap.setVisible(false);
+        anchorPaneJur.setVisible(false);
+        anchorPaneJurTrev.setVisible(false);
         hboxDeleteLast();
     }
 
@@ -164,8 +210,10 @@ public class HomeSceneController {
         UstBtnUpper();
         anchorPaneUst.setVisible(true);
         anchorPaneProsmotr.setVisible(false);
-        anchorPaneJurTrev.setVisible(false);
         anchorPaneArh.setVisible(false);
+        anchorPaneZap.setVisible(false);
+        anchorPaneJur.setVisible(false);
+        anchorPaneJurTrev.setVisible(false);
     }
 
     public void UstCloseOn(MouseEvent event) {
@@ -194,6 +242,8 @@ public class HomeSceneController {
         anchorPaneArh.setVisible(true);
         anchorPaneProsmotr.setVisible(false);
         anchorPaneUst.setVisible(false);
+        anchorPaneZap.setVisible(false);
+        anchorPaneJur.setVisible(false);
         anchorPaneJurTrev.setVisible(false);
     }
 
@@ -221,6 +271,11 @@ public class HomeSceneController {
     public void zap(ActionEvent event) {
         ZapBtnUpper();
         anchorPaneZap.setVisible(true);
+        anchorPaneProsmotr.setVisible(false);
+        anchorPaneUst.setVisible(false);
+        anchorPaneArh.setVisible(false);
+        anchorPaneJur.setVisible(false);
+        anchorPaneJurTrev.setVisible(false);
     }
 
     public void ZapCloseOn(MouseEvent event) {
@@ -247,6 +302,10 @@ public class HomeSceneController {
     public void jur(ActionEvent event) {
         JurBtnUpper();
         anchorPaneJur.setVisible(true);
+        anchorPaneProsmotr.setVisible(false);
+        anchorPaneUst.setVisible(false);
+        anchorPaneArh.setVisible(false);
+        anchorPaneZap.setVisible(false);
     }
 
     public void JurCloseOn(MouseEvent event) {
@@ -275,6 +334,9 @@ public class HomeSceneController {
         anchorPaneJurTrev.setVisible(true);
         anchorPaneProsmotr.setVisible(false);
         anchorPaneUst.setVisible(false);
+        anchorPaneArh.setVisible(false);
+        anchorPaneZap.setVisible(false);
+        anchorPaneJur.setVisible(false);
     }
 
     public void JurTrevCloseOn(MouseEvent event) {
@@ -545,14 +607,6 @@ public class HomeSceneController {
         FonZapClose.setVisible(false);
     }
 
-    public void glavnaya(ActionEvent event) {
-        //prosmotrFX.setVisible(false);
-        anchorPaneProsmotr.setVisible(false);
-        anchorPaneUst.setVisible(false);
-        anchorPaneJurTrev.setVisible(false);
-        anchorPaneArh.setVisible(false);
-    }
-
     @FXML
     void clickedForFourCam(MouseEvent event) {
         paneWithFourCam.setVisible(true);
@@ -657,8 +711,45 @@ public class HomeSceneController {
         stage = (Stage) scenePanel.getScene().getWindow();
         stage.setIconified(true);
     }
-}
 
+    /*==================================== AnchorPane Arh ==========================================*/
+
+    @FXML
+    void getDateFromDatePicker(ActionEvent event) {
+        LocalDateTime time = datePickerBeginning.getValue().atTime(0, 0, 0);
+    }
+
+    @FXML
+    void getChoiceBoxForFiles(MouseEvent event) {
+
+    }
+    @FXML
+    void getChoiceBoxForType(MouseEvent event) {
+
+    }
+
+    /*==================================== AnchorPane Jur ==========================================*/
+
+    @FXML
+    void toggleForJurPCAction(ActionEvent event) {
+        if(event.getSource() == toggleForJurPC) {
+            NameOfEquipment.setVisible(false);
+            choiceBoxForJurEq.setVisible(false);
+            tableViewForJurPC.setVisible(true);
+            tableViewForJurUstr.setVisible(false);
+        }
+    }
+
+    @FXML
+    void toggleForJurUstrAction(ActionEvent event) {
+        if(event.getSource() == toggleForJurUstr) {
+            NameOfEquipment.setVisible(true);
+            choiceBoxForJurEq.setVisible(true);
+            tableViewForJurUstr.setVisible(true);
+            tableViewForJurPC.setVisible(false);
+        }
+    }
+}
 
 
 

@@ -5,11 +5,16 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Spinner?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.image.ImageView?>
@@ -748,113 +753,102 @@
             </Button>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="anchorPaneArh" layoutY="75.0" prefHeight="825.0" prefWidth="1440.0" styleClass="home">
+      <AnchorPane fx:id="anchorPaneArh" layoutY="75.0" prefHeight="825.0" prefWidth="1440.0" styleClass="home" visible="false">
          <children>
             <ImageView fitHeight="350.0" fitWidth="600.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fitHeight="350.0" fitWidth="600.0" layoutX="620.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fitHeight="350.0" fitWidth="600.0" layoutX="20.0" layoutY="360.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fitHeight="350.0" fitWidth="600.0" layoutX="620.0" layoutY="360.0" pickOnBounds="true" preserveRatio="true" />
-            <Slider layoutX="20.0" layoutY="715.0" prefWidth="1200.0" />
-            <ChoiceBox layoutX="320.0" layoutY="753.0" prefHeight="25.0" prefWidth="100.0" />
-            <CheckBox layoutX="120.0" layoutY="755.0" mnemonicParsing="false" styleClass="checkBoxForAllPane" text="Все">
+            <Slider layoutX="20.0" layoutY="715.0" prefWidth="1200.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Slider>
+            <ChoiceBox fx:id="choiceBoxForChooseFiles" layoutX="320.0" layoutY="765.0" onMouseClicked="#getChoiceBoxForFiles" prefHeight="25.0" prefWidth="100.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></ChoiceBox>
+            <CheckBox layoutX="120.0" layoutY="768.0" mnemonicParsing="false" styleClass="checkBoxForAllPane" text="Все">
                <font>
                   <Font name="Calibri" size="14.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </CheckBox>
-            <CheckBox layoutX="185.0" layoutY="755.0" mnemonicParsing="false" styleClass="checkBoxForAllPane" text="Объединить">
+            <CheckBox layoutX="185.0" layoutY="768.0" mnemonicParsing="false" styleClass="checkBoxForAllPane" text="Объединить">
                <font>
                   <Font size="14.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </CheckBox>
-            <Button layoutX="20.0" layoutY="750.0" mnemonicParsing="false" prefWidth="75.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Скачать">
+            <Button layoutX="20.0" layoutY="763.0" mnemonicParsing="false" prefWidth="75.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Скачать">
                <font>
                   <Font size="14.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
-            <AnchorPane layoutX="500.0" layoutY="755.0" prefHeight="50.0" prefWidth="516.0" style="-fx-background-color: #132E44; -fx-background-radius: 20;">
+            <AnchorPane layoutX="500.0" layoutY="752.5" prefHeight="50.0" prefWidth="516.0" style="-fx-background-color: #132E44; -fx-background-radius: 20;">
                <children>
-                  <Button fx:id="buttonForOneCam3" layoutX="30.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#clickedForOneCam" pickOnBounds="false" prefHeight="30.0" prefWidth="36.0" style="-fx-background-insets: 0;">
-                     <styleClass>
-                        <String fx:value="cam1Btn" />
-                        <String fx:value="camBtnHover" />
-                     </styleClass>
+                  <Button fx:id="buttonOpenFiles" layoutX="30.0" layoutY="10.0" mnemonicParsing="false" pickOnBounds="false" prefHeight="30.0" prefWidth="36.0" style="-fx-background-insets: 0;" styleClass="buttonOpenFiles">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button fx:id="buttonForFourCam1" layoutX="100.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#clickedForFourCam" prefHeight="30.0" prefWidth="36.0" style="-fx-background-insets: 0;">
-                     <styleClass>
-                        <String fx:value="cam4Btn" />
-                        <String fx:value="camBtnHover" />
-                     </styleClass>
+                  <Button fx:id="buttonSlow" layoutX="100.0" layoutY="10.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="36.0" style="-fx-background-insets: 0;" styleClass="buttonSlow">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button fx:id="buttonForSevenCam1" layoutX="170.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#clickedForSevenCam" prefHeight="30.0" prefWidth="36.0" style="-fx-background-insets: 0;">
-                     <styleClass>
-                        <String fx:value="cam1d6Btn" />
-                        <String fx:value="camBtnHover" />
-                     </styleClass>
+                  <Button fx:id="buttonPrev" layoutX="170.0" layoutY="10.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="36.0" style="-fx-background-insets: 0;" styleClass="buttonPrev">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button fx:id="buttonForNineCam1" layoutX="240.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#clickedForNineCam" prefHeight="30.0" prefWidth="36.0" style="-fx-background-insets: 0;">
-                     <styleClass>
-                        <String fx:value="cam1d9Btn" />
-                        <String fx:value="camBtnHover" />
-                     </styleClass>
+                  <Button fx:id="butonPlay" layoutX="245.0" layoutY="10.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="36.0" style="-fx-background-insets: 0;" styleClass="buttonPlay">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button fx:id="buttonForNineCam11" layoutX="310.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#clickedForNineCam" prefHeight="30.0" prefWidth="36.0" style="-fx-background-insets: 0;">
-                     <styleClass>
-                        <String fx:value="cam1d9Btn" />
-                        <String fx:value="camBtnHover" />
-                     </styleClass>
+                  <Button fx:id="buttonNext" layoutX="310.0" layoutY="10.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="36.0" style="-fx-background-insets: 0;" styleClass="buttonNext">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button fx:id="buttonForNineCam21" layoutX="380.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#clickedForNineCam" prefHeight="30.0" prefWidth="36.0" style="-fx-background-insets: 0;">
-                     <styleClass>
-                        <String fx:value="cam1d9Btn" />
-                        <String fx:value="camBtnHover" />
-                     </styleClass>
+                  <Button fx:id="buttonFast" layoutX="380.0" layoutY="10.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="36.0" style="-fx-background-insets: 0;" styleClass="buttonFast">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button fx:id="buttonForNineCam211" layoutX="450.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#clickedForNineCam" prefHeight="30.0" prefWidth="36.0" style="-fx-background-insets: 0;">
-                     <styleClass>
-                        <String fx:value="cam1d9Btn" />
-                        <String fx:value="camBtnHover" />
-                     </styleClass>
+                  <Button fx:id="buttonStop" layoutX="450.0" layoutY="10.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="36.0" style="-fx-background-insets: 0;" styleClass="buttonStop">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
                </children>
             </AnchorPane>
-            <ChoiceBox layoutX="1120.0" layoutY="756.0" prefHeight="25.0" prefWidth="100.0" />
-            <Button layoutX="1250.0" layoutY="24.0" mnemonicParsing="false" prefWidth="100.0" style="-fx-background-insets: 0;" styleClass="btnForArhRight" text="Устройство">
+            <ToggleButton layoutX="1250.0" layoutY="25.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="100.0" selected="true" style="-fx-background-insets: 0;" styleClass="btnForArhRight" text="Устройство">
+               <toggleGroup>
+                  <ToggleGroup fx:id="ToggleForArhPane" />
+               </toggleGroup>
                <font>
-                  <Font size="14.0" />
+                  <Font name="Calibri" size="14.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
-            </Button>
-            <Button layoutX="1351.0" layoutY="24.0" mnemonicParsing="false" prefWidth="50.0" style="-fx-background-insets: 0;" styleClass="btnForArhRight" text="ПК">
+            </ToggleButton>
+            <ToggleButton layoutX="1351.0" layoutY="25.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="80.0" style="-fx-background-insets: 0;" styleClass="btnForArhRight" text="ПК" toggleGroup="$ToggleForArhPane">
                <font>
-                  <Font size="14.0" />
+                  <Font name="Calibri" size="14.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
-            </Button>
+            </ToggleButton>
             <Button fx:id="btnSplitRightPane1" layoutX="1230.0" layoutY="25.0" mnemonicParsing="false" onAction="#splitCamRightPane" onMouseClicked="#clickedForOneCam" pickOnBounds="false" prefHeight="700.0" prefWidth="15.0" style="-fx-background-insets: 0;">
                <styleClass>
                   <String fx:value="cam1Btn" />
@@ -865,7 +859,7 @@
                </cursor>
             </Button>
             <AnchorPane fx:id="camRightPane1" layoutX="1250.0" layoutY="56.0" prefHeight="580.0" prefWidth="180.0" style="-fx-background-color: #A8A7A7; -fx-border-color: black; -fx-border-radius: 5; -fx-background-radius: 5;" />
-            <Button layoutX="1250.0" layoutY="790.0" mnemonicParsing="false" prefWidth="180.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Поиск">
+            <Button layoutX="1230.0" layoutY="792.0" mnemonicParsing="false" prefWidth="200.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Поиск">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -875,23 +869,309 @@
                   <Font name="Calibri" size="14.0" />
                </font>
             </Label>
-            <Label layoutX="1250.0" layoutY="735.0" text="Начало">
+            <Label layoutX="1230.0" layoutY="735.0" text="Начало">
                <font>
                   <Font name="Calibri" size="14.0" />
                </font>
             </Label>
-            <Label layoutX="1250.0" layoutY="765.0" text="Конец">
+            <Label layoutX="1230.0" layoutY="765.0" text="Конец">
                <font>
                   <Font name="Calibri" size="14.0" />
                </font>
             </Label>
-            <RadioButton layoutX="1290.0" layoutY="644.0" mnemonicParsing="false" styleClass="checkBoxForAllPane" text="Осн." />
-            <RadioButton layoutX="1360.0" layoutY="644.0" mnemonicParsing="false" styleClass="checkBoxForAllPane" text="Доп." />
-            <RadioButton layoutX="1290.0" layoutY="677.0" mnemonicParsing="false" styleClass="checkBoxForAllPane" text="Видео" />
-            <RadioButton layoutX="1360.0" layoutY="677.0" mnemonicParsing="false" styleClass="checkBoxForAllPane" text="Снимок" />
-            <ChoiceBox layoutX="1300.0" layoutY="700.0" prefHeight="25.0" prefWidth="130.0" />
-            <Label layoutX="1300.0" layoutY="730.0" prefHeight="25.0" text="2024-12-22 11:11:11" />
-            <Label layoutX="1300.0" layoutY="760.0" prefHeight="25.0" text="2024-12-22 11:11:11" />
+            <RadioButton layoutX="1290.0" layoutY="644.0" mnemonicParsing="false" selected="true" styleClass="checkBoxForAllPane" text="Осн.">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <toggleGroup>
+                  <ToggleGroup fx:id="RadioForArhFirst" />
+               </toggleGroup></RadioButton>
+            <RadioButton layoutX="1360.0" layoutY="644.0" mnemonicParsing="false" styleClass="checkBoxForAllPane" text="Доп." toggleGroup="$RadioForArhFirst">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></RadioButton>
+            <RadioButton layoutX="1290.0" layoutY="677.0" mnemonicParsing="false" selected="true" styleClass="checkBoxForAllPane" text="Видео">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <toggleGroup>
+                  <ToggleGroup fx:id="RadioForArhSecond" />
+               </toggleGroup></RadioButton>
+            <RadioButton layoutX="1360.0" layoutY="677.0" mnemonicParsing="false" styleClass="checkBoxForAllPane" text="Снимок" toggleGroup="$RadioForArhSecond">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></RadioButton>
+            <ChoiceBox fx:id="choiceBoxForType" layoutX="1280.0" layoutY="700.0" onMouseClicked="#getChoiceBoxForType" prefHeight="25.0" prefWidth="150.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></ChoiceBox>
+            <DatePicker fx:id="datePickerBeginning" layoutX="1280.0" layoutY="730.0" onAction="#getDateFromDatePicker" prefWidth="150.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </DatePicker>
+            <DatePicker fx:id="datePickerEnd" layoutX="1280.0" layoutY="760.0" prefWidth="150.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </DatePicker>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="anchorPaneZap" layoutY="75.0" prefHeight="825.0" prefWidth="1440.0" styleClass="home" visible="false">
+         <children>
+            <AnchorPane fx:id="baseAnchorPane1" layoutX="20.0" layoutY="20.0" prefHeight="250.0" prefWidth="1400.0" styleClass="inputbox" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+               <children>
+                  <AnchorPane prefHeight="25.0" prefWidth="75.0" styleClass="inputtext">
+                     <children>
+                        <Label layoutX="7.0" layoutY="4.0" prefWidth="120.0" styleClass="inputlabel" text="Параметры дисков" textAlignment="CENTER">
+                           <font>
+                              <Font name="Calibri" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <RadioButton layoutX="20.0" layoutY="40.0" mnemonicParsing="false" selected="true" styleClass="checkBoxForAllPane" text="C:/">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="RadioForZap1" />
+                     </toggleGroup>
+                     <font>
+                        <Font name="Calibri" size="20.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton layoutX="100.0" layoutY="40.0" mnemonicParsing="false" styleClass="checkBoxForAllPane" text="D:/" toggleGroup="$RadioForZap1">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="Calibri" size="20.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton layoutX="175.0" layoutY="198.0" mnemonicParsing="false" selected="true" styleClass="checkBoxForAllPane" text="Остановить запись">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="RadioForZap2" />
+                     </toggleGroup>
+                     <font>
+                        <Font name="Calibri" size="20.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton layoutX="400.0" layoutY="198.0" mnemonicParsing="false" styleClass="checkBoxForAllPane" text="Перезапись" toggleGroup="$RadioForZap2">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="Calibri" size="20.0" />
+                     </font>
+                  </RadioButton>
+                  <Label layoutX="20.0" layoutY="100.0" text="Резерв на диске:">
+                     <font>
+                        <Font name="Calibri" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="20.0" layoutY="150.0" text="Размер файла:">
+                     <font>
+                        <Font name="Calibri" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="20.0" layoutY="200.0" text="При заполнении:">
+                     <font>
+                        <Font name="Calibri" size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="170.0" layoutY="100.0" />
+                  <TextField layoutX="170.0" layoutY="150.0" />
+                  <Label layoutX="327.0" layoutY="100.0" text="5000-5000000(MB)">
+                     <font>
+                        <Font name="Calibri" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="327.0" layoutY="150.0" text="5-120(мин.)">
+                     <font>
+                        <Font name="Calibri" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+               <effect>
+                  <InnerShadow height="255.0" radius="127.0" width="255.0">
+                     <color>
+                        <Color red="0.7803921699523926" green="0.7803921699523926" blue="0.7803921699523926" />
+                     </color>
+                  </InnerShadow>
+               </effect>
+            </AnchorPane>
+            <AnchorPane fx:id="baseAnchorPane11" layoutX="20.0" layoutY="285.0" prefHeight="480.0" prefWidth="1400.0" styleClass="inputbox">
+               <children>
+                  <AnchorPane prefHeight="25.0" prefWidth="120.0" styleClass="inputtext">
+                     <children>
+                        <Label layoutX="7.0" layoutY="4.0" styleClass="inputlabel" text="Настройки записи" textAlignment="CENTER">
+                           <font>
+                              <Font name="Calibri" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <CheckBox layoutX="20.0" layoutY="50.0" mnemonicParsing="false" styleClass="checkBoxForAllPane" text="Вкл. запись">
+                     <font>
+                        <Font name="Calibri" size="20.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </CheckBox>
+                  <Label layoutX="20.0" layoutY="120.0" text="Время:">
+                     <font>
+                        <Font name="Calibri" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="250.0" layoutY="120.0" text="до">
+                     <font>
+                        <Font name="Calibri" size="20.0" />
+                     </font>
+                  </Label>
+                  <Spinner fx:id="spinnerBeginning" layoutX="90.0" layoutY="120.0" />
+                  <Spinner fx:id="spinnerEnd" layoutX="280.0" layoutY="120.0" />
+               </children>
+               <effect>
+                  <InnerShadow height="255.0" radius="127.0" width="255.0">
+                     <color>
+                        <Color red="0.7803921699523926" green="0.7803921699523926" blue="0.7803921699523926" />
+                     </color>
+                  </InnerShadow>
+               </effect>
+            </AnchorPane>
+            <Button layoutX="580.0" layoutY="775.0" mnemonicParsing="false" prefWidth="100.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Применить">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="700.0" layoutY="775.0" mnemonicParsing="false" prefWidth="120.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Сброс настроек">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="anchorPaneJur" layoutY="75.0" prefHeight="825.0" prefWidth="1440.0" styleClass="home" visible="false">
+         <children>
+            <ToggleButton fx:id="toggleForJurUstr" layoutX="100.0" layoutY="25.0" mnemonicParsing="false" onAction="#toggleForJurUstrAction" prefHeight="32.0" prefWidth="100.0" style="-fx-background-insets: 0;" styleClass="btnForArhRight" text="Устройство">
+               <font>
+                  <Font name="Calibri" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <toggleGroup>
+                  <ToggleGroup fx:id="ToggleForJurPane" />
+               </toggleGroup>
+            </ToggleButton>
+            <ToggleButton fx:id="toggleForJurPC" layoutX="20.0" layoutY="25.0" mnemonicParsing="false" onAction="#toggleForJurPCAction" prefHeight="32.0" prefWidth="80.0" selected="true" style="-fx-background-insets: 0;" styleClass="btnForArhRight" text="На ПК" toggleGroup="$ToggleForJurPane">
+               <font>
+                  <Font name="Calibri" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ToggleButton>
+            <AnchorPane layoutX="20.0" layoutY="57.0" prefHeight="740.0" prefWidth="1400.0" style="-fx-border-color: #c7c7c7;" styleClass="home">
+               <children>
+                  <Label layoutX="10.0" layoutY="20.0" text="Время начала:">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font>
+                  </Label>
+                  <DatePicker fx:id="datePickerBeginning1" layoutX="100.0" layoutY="16.0" onAction="#getDateFromDatePicker" prefWidth="150.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </DatePicker>
+                  <Label layoutX="265.0" layoutY="20.0" text="Окончание:">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font>
+                  </Label>
+                  <DatePicker fx:id="datePickerEnd1" layoutX="340.0" layoutY="16.0" prefWidth="150.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </DatePicker>
+                  <Label layoutX="37.0" layoutY="60.0" text="Тип:">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font>
+                  </Label>
+                  <ChoiceBox fx:id="choiceBoxForJur" layoutX="100.0" layoutY="55.0" onMouseClicked="#getChoiceBoxForType" prefHeight="25.0" prefWidth="150.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ChoiceBox>
+                  <Label fx:id="NameOfEquipment" layoutX="265.0" layoutY="60.0" text="Имя оборудования:" visible="false">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font>
+                  </Label>
+                  <ChoiceBox fx:id="choiceBoxForJurEq" layoutX="390.0" layoutY="55.0" onMouseClicked="#getChoiceBoxForType" prefHeight="25.0" prefWidth="150.0" visible="false">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ChoiceBox>
+                  <Button layoutX="740.0" layoutY="55.0" mnemonicParsing="false" prefWidth="70.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Очистить">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button layoutX="655.0" layoutY="55.0" mnemonicParsing="false" prefWidth="70.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Экспорт">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button layoutX="570.0" layoutY="55.0" mnemonicParsing="false" prefWidth="70.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text=" Поиск">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <TableView fx:id="tableViewForJurPC" layoutX="10.0" layoutY="90.0" prefHeight="600.0" prefWidth="1380.0">
+                    <columns>
+                      <TableColumn maxWidth="75.0" minWidth="50.0" prefWidth="50.0" text="№" />
+                      <TableColumn maxWidth="250.0" minWidth="150.0" prefWidth="230.0" text="Время" />
+                        <TableColumn maxWidth="250.0" minWidth="150.0" prefWidth="200.0" text="Пользователь" />
+                        <TableColumn maxWidth="250.0" minWidth="150.0" prefWidth="200.0" text="Тип" />
+                        <TableColumn maxWidth="250.0" minWidth="150.0" prefWidth="200.0" text="Устройство" />
+                        <TableColumn maxWidth="250.0" minWidth="150.0" prefWidth="200.0" text="Канал" />
+                        <TableColumn maxWidth="350.0" minWidth="200.0" prefWidth="300.0" text="Примечание" />
+                    </columns>
+                  </TableView>
+                  <Button layoutX="685.0" layoutY="700.0" mnemonicParsing="false" prefWidth="70.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="&gt;&gt;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button layoutX="600.0" layoutY="700.0" mnemonicParsing="false" prefWidth="70.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="&lt;&lt;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <TableView fx:id="tableViewForJurUstr" layoutX="10.0" layoutY="90.0" prefHeight="600.0" prefWidth="1380.0" visible="false">
+                     <columns>
+                        <TableColumn maxWidth="75.0" minWidth="50.0" prefWidth="50.0" text="№" />
+                        <TableColumn maxWidth="450.0" minWidth="150.0" prefWidth="430.0" text="Время" />
+                        <TableColumn maxWidth="250.0" minWidth="150.0" prefWidth="300.0" text="Пользователь" />
+                        <TableColumn maxWidth="250.0" minWidth="150.0" prefWidth="300.0" text="Тип" />
+                        <TableColumn maxWidth="450.0" minWidth="200.0" prefWidth="400.0" text="Примечание" />
+                     </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
          </children>
       </AnchorPane>
       <AnchorPane fx:id="anchorPaneJurTrev" layoutY="75.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="825.0" prefWidth="1440.0" styleClass="home" stylesheets="@Style.css" visible="false">

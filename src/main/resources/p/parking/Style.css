@@ -414,8 +414,58 @@
 }
 
 .btnForArhRight {
-    -fx-background-color: #c0bfbf;
+    -fx-background-color: #A8A7A7;
     -fx-background-radius: 7;
     -fx-border-color: black;
     -fx-border-radius: 7;
+}
+
+.btnForArhRight:selected {
+    -fx-background-color: #9fa3c0;
+    -fx-text-fill: #f2ebeb;
+}
+
+.buttonOpenFiles {
+    -fx-background-image: url("./icon/openFiles.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 100% 100%;
+    -fx-background-color: #132E44;
+}
+
+.buttonSlow {
+    -fx-background-image: url("./icon/slow.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 100% 100%;
+    -fx-background-color: #132E44;
+}
+
+.buttonPrev {
+    -fx-background-image: url("./icon/prev.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 100% 100%;
+    -fx-background-color: #132E44;
+}
+.buttonPlay {
+    -fx-background-image: url("./icon/play.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 100% 100%;
+    -fx-background-color: #132E44;
+}
+.buttonNext {
+    -fx-background-image: url("./icon/next.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 100% 100%;
+    -fx-background-color: #132E44;
+}
+.buttonFast {
+    -fx-background-image: url("./icon/fast.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 100% 100%;
+    -fx-background-color: #132E44;
+}
+.buttonStop {
+    -fx-background-image: url("./icon/square.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 100% 100%;
+    -fx-background-color: #132E44;
 }
