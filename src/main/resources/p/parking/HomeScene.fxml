@@ -753,7 +753,7 @@
             </Button>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="anchorPaneArh" layoutY="75.0" prefHeight="825.0" prefWidth="1440.0" styleClass="home" visible="false">
+      <AnchorPane fx:id="anchorPaneArh" layoutY="75.0" prefHeight="825.0" prefWidth="1440.0" styleClass="home">
          <children>
             <ImageView fitHeight="350.0" fitWidth="600.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fitHeight="350.0" fitWidth="600.0" layoutX="620.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
@@ -767,7 +767,7 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></ChoiceBox>
-            <CheckBox layoutX="120.0" layoutY="768.0" mnemonicParsing="false" styleClass="checkBoxForAllPane" text="Все">
+            <CheckBox fx:id="checkBoxForArhAll" layoutX="120.0" layoutY="768.0" mnemonicParsing="false" styleClass="checkBoxForAllPane" text="Все">
                <font>
                   <Font name="Calibri" size="14.0" />
                </font>
@@ -775,7 +775,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </CheckBox>
-            <CheckBox layoutX="185.0" layoutY="768.0" mnemonicParsing="false" styleClass="checkBoxForAllPane" text="Объединить">
+            <CheckBox fx:id="checkBoxForArhConnect" layoutX="185.0" layoutY="768.0" mnemonicParsing="false" styleClass="checkBoxForAllPane" text="Объединить">
                <font>
                   <Font size="14.0" />
                </font>
@@ -783,7 +783,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </CheckBox>
-            <Button layoutX="20.0" layoutY="763.0" mnemonicParsing="false" prefWidth="75.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Скачать">
+            <Button fx:id="buttonForArhDownload" layoutX="20.0" layoutY="763.0" mnemonicParsing="false" prefWidth="75.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Скачать">
                <font>
                   <Font size="14.0" />
                </font>
@@ -830,7 +830,7 @@
                   </Button>
                </children>
             </AnchorPane>
-            <ToggleButton layoutX="1250.0" layoutY="25.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="100.0" selected="true" style="-fx-background-insets: 0;" styleClass="btnForArhRight" text="Устройство">
+            <ToggleButton fx:id="toggleForArhUstr" layoutX="1250.0" layoutY="25.0" mnemonicParsing="false" onAction="#toggleForArhUstrAction" prefHeight="32.0" prefWidth="100.0" selected="true" style="-fx-background-insets: 0;" styleClass="btnForArhRight" text="Устройство">
                <toggleGroup>
                   <ToggleGroup fx:id="ToggleForArhPane" />
                </toggleGroup>
@@ -841,7 +841,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ToggleButton>
-            <ToggleButton layoutX="1351.0" layoutY="25.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="80.0" style="-fx-background-insets: 0;" styleClass="btnForArhRight" text="ПК" toggleGroup="$ToggleForArhPane">
+            <ToggleButton fx:id="toggleForArhPC" layoutX="1351.0" layoutY="25.0" mnemonicParsing="false" onAction="#toggleForArhPCAction" prefHeight="32.0" prefWidth="80.0" style="-fx-background-insets: 0;" styleClass="btnForArhRight" text="ПК" toggleGroup="$ToggleForArhPane">
                <font>
                   <Font name="Calibri" size="14.0" />
                </font>
@@ -858,7 +858,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <AnchorPane fx:id="camRightPane1" layoutX="1250.0" layoutY="56.0" prefHeight="580.0" prefWidth="180.0" style="-fx-background-color: #A8A7A7; -fx-border-color: black; -fx-border-radius: 5; -fx-background-radius: 5;" />
+            <AnchorPane fx:id="rightPaneForArh" layoutX="1250.0" layoutY="56.0" prefHeight="580.0" prefWidth="180.0" style="-fx-border-color: black; -fx-border-radius: 5; -fx-background-radius: 5;" styleClass="home" />
             <Button layoutX="1230.0" layoutY="792.0" mnemonicParsing="false" prefWidth="200.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Поиск">
                <cursor>
                   <Cursor fx:constant="HAND" />
@@ -879,25 +879,25 @@
                   <Font name="Calibri" size="14.0" />
                </font>
             </Label>
-            <RadioButton layoutX="1290.0" layoutY="644.0" mnemonicParsing="false" selected="true" styleClass="checkBoxForAllPane" text="Осн.">
+            <RadioButton fx:id="radioForArhMain" layoutX="1290.0" layoutY="644.0" mnemonicParsing="false" selected="true" styleClass="checkBoxForAllPane" text="Осн.">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
                <toggleGroup>
                   <ToggleGroup fx:id="RadioForArhFirst" />
                </toggleGroup></RadioButton>
-            <RadioButton layoutX="1360.0" layoutY="644.0" mnemonicParsing="false" styleClass="checkBoxForAllPane" text="Доп." toggleGroup="$RadioForArhFirst">
+            <RadioButton fx:id="radioForArhDop" layoutX="1360.0" layoutY="644.0" mnemonicParsing="false" styleClass="checkBoxForAllPane" text="Доп." toggleGroup="$RadioForArhFirst">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></RadioButton>
-            <RadioButton layoutX="1290.0" layoutY="677.0" mnemonicParsing="false" selected="true" styleClass="checkBoxForAllPane" text="Видео">
+            <RadioButton fx:id="radioForArhVideo" layoutX="1290.0" layoutY="677.0" mnemonicParsing="false" selected="true" styleClass="checkBoxForAllPane" text="Видео">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
                <toggleGroup>
                   <ToggleGroup fx:id="RadioForArhSecond" />
                </toggleGroup></RadioButton>
-            <RadioButton layoutX="1360.0" layoutY="677.0" mnemonicParsing="false" styleClass="checkBoxForAllPane" text="Снимок" toggleGroup="$RadioForArhSecond">
+            <RadioButton fx:id="radioForArhPhoto" layoutX="1360.0" layoutY="677.0" mnemonicParsing="false" styleClass="checkBoxForAllPane" text="Снимок" toggleGroup="$RadioForArhSecond">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></RadioButton>

@@ -25,7 +25,7 @@ public class HomeSceneController {
     AnchorPane anchorPaneProsmotr, anchorPaneUst, anchorPaneArh, anchorPaneZap, anchorPaneJur, anchorPaneJurTrev,
             anchorPaneKonf, anchorPaneTrev, anchorPaneTur, anchorPanePolz, anchorPaneProg, anchorPaneMap,
             anchorPaneDec, anchorPaneBek, anchorPaneProsh, anchorPaneFonZap, scenePanel, baseAnchorPane, othersAnchorPane,
-            settingAP, camBtnPane, camRightPane;
+            settingAP, camBtnPane, camRightPane, rightPaneForArh;
     @FXML
     Pane basePane, basePane1, basePane11;
     @FXML
@@ -34,7 +34,7 @@ public class HomeSceneController {
             ProshSmallPane, FonZapSmallPane;
     @FXML
     Button prosmotrClose, UstClose, ArhClose, ZapClose, JurClose, JurTrevClose, KonfClose, TrevClose, TurClose,
-            PolzClose, ProgClose, MapClose, DecClose, BekClose, ProshClose, FonZapClose;
+            PolzClose, ProgClose, MapClose, DecClose, BekClose, ProshClose, FonZapClose, buttonForArhDownload;
     @FXML
     HBox hBox;
     @FXML
@@ -57,13 +57,22 @@ public class HomeSceneController {
 
     @FXML
     ChoiceBox<String> choiceBoxForChooseFiles, choiceBoxForType;
-
     @FXML
-    ToggleButton toggleForJurPC, toggleForJurUstr;
-    @FXML
-    ToggleGroup ToggleForJurPane;
+    ChoiceBox<?> choiceBoxForJur;
     @FXML
     ChoiceBox<?> choiceBoxForJurEq;
+
+    @FXML
+    ToggleGroup RadioForArhFirst, RadioForArhSecond, RadioForZap1, RadioForZap2, ToggleForArhPane, ToggleForJurPane;
+    @FXML
+    ToggleButton toggleForArhPC, toggleForArhUstr, toggleForJurPC, toggleForJurUstr;
+
+    @FXML
+    CheckBox checkBoxForArhAll, checkBoxForArhConnect;
+
+    @FXML
+    RadioButton radioForArhDop, radioForArhMain, radioForArhPhoto, radioForArhVideo;
+
     @FXML
     Label NameOfEquipment;
     @FXML
@@ -726,6 +735,36 @@ public class HomeSceneController {
     @FXML
     void getChoiceBoxForType(MouseEvent event) {
 
+    }
+
+    @FXML
+    void toggleForArhPCAction(ActionEvent event) {
+        if(event.getSource() == toggleForArhPC) {
+            checkBoxForArhAll.setVisible(false);
+            checkBoxForArhConnect.setVisible(false);
+            choiceBoxForChooseFiles.setLayoutX(20);
+            radioForArhDop.setVisible(false);
+            radioForArhMain.setVisible(false);
+            radioForArhPhoto.setVisible(false);
+            radioForArhVideo.setVisible(false);
+            rightPaneForArh.setPrefHeight(640);
+            buttonForArhDownload.setVisible(false);
+        }
+    }
+
+    @FXML
+    void toggleForArhUstrAction(ActionEvent event) {
+        if(event.getSource() == toggleForArhUstr) {
+            checkBoxForArhAll.setVisible(true);
+            checkBoxForArhConnect.setVisible(true);
+            choiceBoxForChooseFiles.setLayoutX(320);
+            radioForArhDop.setVisible(true);
+            radioForArhMain.setVisible(true);
+            radioForArhPhoto.setVisible(true);
+            radioForArhVideo.setVisible(true);
+            rightPaneForArh.setPrefHeight(580);
+            buttonForArhDownload.setVisible(true);
+        }
     }
 
     /*==================================== AnchorPane Jur ==========================================*/
