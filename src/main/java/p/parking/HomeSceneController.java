@@ -135,7 +135,7 @@ public class HomeSceneController {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Logout");
         alert.setHeaderText("You are about to logout!");
-        alert.setContentText("Do you want to save before exiting?: ");
+        alert.setContentText("Do you want to save before exiting?");
         if (alert.showAndWait().get() == ButtonType.OK) {
             stage = (Stage) scenePanel.getScene().getWindow();
             System.out.println("Successfully logged out!");
@@ -153,10 +153,13 @@ public class HomeSceneController {
         anchorPaneJurTrev.setVisible(false);
     }
 
-    public void hboxDeleteLast() {
+    public void hboxDeleteLast(AnchorPane anchorPane) {
         if (scenePanel.getWidth() < 1920 && hBox.getChildren().size() > 12) {
             while (hBox.getChildren().size() > 12) {
-                hBox.getChildren().removeLast();
+                if(hBox.getChildren().getLast() == anchorPane) {
+                    hBox.getChildren().remove(11, hBox.getChildren().lastIndexOf(hBox));
+                } else
+                    hBox.getChildren().removeLast();
             }
         }
     }
@@ -184,7 +187,7 @@ public class HomeSceneController {
         anchorPaneZap.setVisible(false);
         anchorPaneJur.setVisible(false);
         anchorPaneJurTrev.setVisible(false);
-        hboxDeleteLast();
+        hboxDeleteLast(anchorPaneProsmotr);
     }
 
     public void prosmotrSmallClose(ActionEvent event) {
@@ -223,6 +226,7 @@ public class HomeSceneController {
         anchorPaneZap.setVisible(false);
         anchorPaneJur.setVisible(false);
         anchorPaneJurTrev.setVisible(false);
+        hboxDeleteLast(anchorPaneUst);
     }
 
     public void UstCloseOn(MouseEvent event) {
@@ -254,6 +258,7 @@ public class HomeSceneController {
         anchorPaneZap.setVisible(false);
         anchorPaneJur.setVisible(false);
         anchorPaneJurTrev.setVisible(false);
+        hboxDeleteLast(anchorPaneArh);
     }
 
     public void ArhCloseOn(MouseEvent event) {
@@ -285,6 +290,7 @@ public class HomeSceneController {
         anchorPaneArh.setVisible(false);
         anchorPaneJur.setVisible(false);
         anchorPaneJurTrev.setVisible(false);
+        hboxDeleteLast(anchorPaneZap);
     }
 
     public void ZapCloseOn(MouseEvent event) {
@@ -315,6 +321,8 @@ public class HomeSceneController {
         anchorPaneUst.setVisible(false);
         anchorPaneArh.setVisible(false);
         anchorPaneZap.setVisible(false);
+        anchorPaneJurTrev.setVisible(false);
+        hboxDeleteLast(anchorPaneJur);
     }
 
     public void JurCloseOn(MouseEvent event) {
@@ -346,6 +354,7 @@ public class HomeSceneController {
         anchorPaneArh.setVisible(false);
         anchorPaneZap.setVisible(false);
         anchorPaneJur.setVisible(false);
+        hboxDeleteLast(anchorPaneJurTrev);
     }
 
     public void JurTrevCloseOn(MouseEvent event) {
@@ -372,6 +381,7 @@ public class HomeSceneController {
     public void konf(ActionEvent event) {
         KonfBtnUpper();
         anchorPaneKonf.setVisible(true);
+        hboxDeleteLast(anchorPaneKonf);
     }
 
     public void KonfCloseOn(MouseEvent event) {
@@ -398,6 +408,7 @@ public class HomeSceneController {
     public void trev(ActionEvent event) {
         TrevBtnUpper();
         anchorPaneTrev.setVisible(true);
+        hboxDeleteLast(anchorPaneTrev);
     }
 
     public void TrevCloseOn(MouseEvent event) {
@@ -424,6 +435,7 @@ public class HomeSceneController {
     public void tur(ActionEvent event) {
         TurBtnUpper();
         anchorPaneTur.setVisible(true);
+        hboxDeleteLast(anchorPaneTur);
     }
 
     public void TurCloseOn(MouseEvent event) {
@@ -450,6 +462,7 @@ public class HomeSceneController {
     public void polz(ActionEvent event) {
         PolzBtnUpper();
         anchorPanePolz.setVisible(true);
+        hboxDeleteLast(anchorPanePolz);
     }
 
     public void PolzCloseOn(MouseEvent event) {
@@ -476,6 +489,7 @@ public class HomeSceneController {
     public void prog(ActionEvent event) {
         ProgBtnUpper();
         anchorPaneProg.setVisible(true);
+        hboxDeleteLast(anchorPaneProg);
     }
 
     public void ProgCloseOn(MouseEvent event) {
@@ -502,6 +516,7 @@ public class HomeSceneController {
     public void map(ActionEvent event) {
         MapBtnUpper();
         anchorPaneMap.setVisible(true);
+        hboxDeleteLast(anchorPaneMap);
     }
 
     public void MapCloseOn(MouseEvent event) {
@@ -528,6 +543,7 @@ public class HomeSceneController {
     public void dec(ActionEvent event) {
         DecBtnUpper();
         anchorPaneDec.setVisible(true);
+        hboxDeleteLast(anchorPaneDec);
     }
 
     public void DecCloseOn(MouseEvent event) {
@@ -554,6 +570,7 @@ public class HomeSceneController {
     public void bek(ActionEvent event) {
         BekBtnUpper();
         anchorPaneBek.setVisible(true);
+        hboxDeleteLast(anchorPaneBek);
     }
 
     public void BekCloseOn(MouseEvent event) {
@@ -580,6 +597,7 @@ public class HomeSceneController {
     public void prosh(ActionEvent event) {
         ProshBtnUpper();
         anchorPaneProsh.setVisible(true);
+        hboxDeleteLast(anchorPaneProsh);
     }
 
     public void ProshCloseOn(MouseEvent event) {
@@ -606,6 +624,7 @@ public class HomeSceneController {
     public void fonZap(ActionEvent event) {
         FonZapBtnUpper();
         anchorPaneFonZap.setVisible(true);
+        hboxDeleteLast(anchorPaneFonZap);
     }
 
     public void FonZapCloseOn(MouseEvent event) {

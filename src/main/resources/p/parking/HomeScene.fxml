@@ -753,7 +753,7 @@
             </Button>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="anchorPaneArh" layoutY="75.0" prefHeight="825.0" prefWidth="1440.0" styleClass="home">
+      <AnchorPane fx:id="anchorPaneArh" layoutY="75.0" prefHeight="825.0" prefWidth="1440.0" styleClass="home" visible="false">
          <children>
             <ImageView fitHeight="350.0" fitWidth="600.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fitHeight="350.0" fitWidth="600.0" layoutX="620.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
@@ -1174,24 +1174,30 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="anchorPaneJurTrev" layoutY="75.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="825.0" prefWidth="1440.0" styleClass="home" stylesheets="@Style.css" visible="false">
+      <AnchorPane fx:id="anchorPaneJurTrev" layoutY="75.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="825.0" prefWidth="1440.0" styleClass="home" stylesheets="@Style.css">
          <children>
-            <Button layoutX="150.0" layoutY="28.0" mnemonicParsing="false" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="0/0">
+            <Button layoutX="150.0" layoutY="28.0" mnemonicParsing="false" prefWidth="70.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="0/0">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
+               <font>
+                  <Font name="Calibri" size="14.0" />
+               </font>
             </Button>
-            <Button layoutX="200.0" layoutY="28.0" mnemonicParsing="false" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Очистить">
+            <Button layoutX="235.0" layoutY="28.0" mnemonicParsing="false" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Очистить">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
+               <font>
+                  <Font name="Calibri" size="14.0" />
+               </font>
             </Button>
             <Label layoutX="22.0" layoutY="32.0" text="Не обработано/Все">
                <font>
                   <Font name="Calibri" size="14.0" />
                </font>
             </Label>
-            <TableView layoutX="20.0" layoutY="60.0" prefHeight="750.0" prefWidth="1400.0" style="-fx-border-color: black;">
+            <TableView layoutX="20.0" layoutY="60.0" prefHeight="750.0" prefWidth="1400.0">
                <columns>
                   <TableColumn maxWidth="100.0" minWidth="50.0" prefWidth="50.0" text="№" />
                   <TableColumn maxWidth="500.0" minWidth="250.0" prefWidth="400.0" text="Статус" />
