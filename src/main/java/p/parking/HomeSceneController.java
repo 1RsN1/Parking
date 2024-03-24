@@ -231,9 +231,9 @@ public class HomeSceneController {
         choiceBoxForType.getItems().addAll("Все", "Трев. вход", "Движение", "Постоянно", "Ручная", "I-кадр видео", "Видео анализ");
         */
 
-        imgV1.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/1.jpg")));
-        imgV41.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/1.jpg")));
-        imgV42.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/2.jpg")));
+        imgV1.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/2.jpg")));
+        imgV41.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/2.jpg")));
+        imgV42.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/5.jpg")));
         imgV43.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/3.jpg")));
         imgV44.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/4.jpg")));
         /*
