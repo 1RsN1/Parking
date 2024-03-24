@@ -6,6 +6,7 @@ import java.time.LocalTime;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
@@ -16,8 +17,13 @@ import javafx.stage.Stage;
 
 
 public class HomeSceneController {
+    public ToggleGroup RadioForArhSecond1;
+    @FXML
+    AnchorPane ustAnch1, ustAnch2, arhCamPane, arhRightPane2,zapAnch1, jurAn1,jurAn11;
     @FXML
     Stage stage;
+    @FXML
+    TableView jurtrevTable;
     @FXML
     ImageView imgV1, imgV41, imgV42, imgV43, imgV44, imgV71, imgV72, imgV73, imgV74, imgV75, imgV76,
             imgV77, imgV91, imgV92, imgV93, imgV94, imgV95, imgV96, imgV97, imgV98, imgV99, ivProsmotr0;
@@ -27,7 +33,7 @@ public class HomeSceneController {
             anchorPaneDec, anchorPaneBek, anchorPaneProsh, anchorPaneFonZap, scenePanel, baseAnchorPane, othersAnchorPane,
             settingAP, camBtnPane, camRightPane, rightPaneForArh;
     @FXML
-    Pane basePane, basePane1, basePane11;
+    Pane basePane, basePane1, basePane11, zapBtnPane;
     @FXML
     Pane prosmotrSmallPane, UstSmallPane, ArhSmallPane, ZapSmallPane, JurSmallPane, JurTrevSmallPane, KonfSmallPane,
             TrevSmallPane, TurSmallPane, PolzSmallPane, ProgSmallPane, MapSmallPane, DecSmallPane, BekSmallPane,
@@ -42,7 +48,7 @@ public class HomeSceneController {
     @FXML
     Button buttonForSevenCam, buttonForFourCam, buttonForNineCam, buttonForOneCam, maxBtn, prosmotrBtnUp, UstBtnUp,
             ArhBtnUp, ZapBtnUp, JurBtnUp, JurTrevBtnUp, KonfBtnUp, TrevBtnUp, TurBtnUp, PolzBtnUp, ProgBtnUp, MapBtnUp,
-            DecBtnUp, BekBtnUp, ProshBtnUp, FonZapBtnUp;
+            DecBtnUp, BekBtnUp, ProshBtnUp, FonZapBtnUp, btnSplitArh;
     @FXML
     AnchorPane paneWithFourCam, paneWithOneCam, paneWithSevenCam, paneWithNineCam;
     @FXML
@@ -94,11 +100,100 @@ public class HomeSceneController {
     };
 
     public void splitCamRightPane(ActionEvent event) {
-     /*   if (camRightPane.isVisible()) {
-            camRightPane.setVisible(false);
-        } else {
-            camRightPane.setVisible(true);
-        }*/
+         // camRightPane.setVisible(!camRightPane.isVisible());
+        if(anchorPaneProsmotr.getWidth() == 1920){
+            if(camRightPane.isVisible()==true){
+                camRightPane.setVisible(false);
+                btnSplitRightPane.setLayoutX(1897.5);
+                imgV1.setFitWidth(1885);
+            }
+            else {
+                camRightPane.setVisible(true);
+                btnSplitRightPane.setLayoutX(1739);
+                imgV1.setFitWidth(1710);
+            }
+        }else {
+            if(camRightPane.isVisible()==true){
+                camRightPane.setVisible(false);
+                btnSplitRightPane.setLayoutX(1417.5);
+                imgV1.setFitWidth(1405);
+            }
+            else {
+                camRightPane.setVisible(true);
+                btnSplitRightPane.setLayoutX(1262);
+                imgV1.setFitWidth(1230);
+            }
+        }
+    }
+    public void splitCamBool(){
+        if(anchorPaneProsmotr.getWidth() < 1920){
+            if(camRightPane.isVisible()==false){
+                btnSplitRightPane.setLayoutX(1897.5);
+                imgV1.setFitWidth(1885);
+            }
+            else {
+                btnSplitRightPane.setLayoutX(1739);
+                imgV1.setFitWidth(1710);
+            }
+        }else {
+            if(camRightPane.isVisible()==false){
+                btnSplitRightPane.setLayoutX(1417.5);
+                imgV1.setFitWidth(1405);
+            }
+            else {
+                btnSplitRightPane.setLayoutX(1262);
+                imgV1.setFitWidth(1230);
+            }
+        }
+    }
+
+    public void splitArh(ActionEvent event) {
+        if(anchorPaneProsmotr.getWidth() == 1920){
+            if(arhRightPane2.isVisible()==true){
+                arhRightPane2.setVisible(false);
+                btnSplitArh.setLayoutX(1897.5);
+              //  imgV1.setFitWidth(1885);
+            }
+            else {
+               arhRightPane2.setVisible(true);
+                btnSplitArh.setLayoutX(1710);
+               // imgV1.setFitWidth(1710);
+            }
+        }else {
+            if(arhRightPane2.isVisible()==true){
+                arhRightPane2.setVisible(false);
+                btnSplitArh.setLayoutX(1417.5);
+               // imgV1.setFitWidth(1405);
+            }
+            else {
+                arhRightPane2  .setVisible(true);
+                btnSplitArh.setLayoutX(1230);
+
+               // imgV1.setFitWidth(1230);
+            }
+        }
+    }
+
+    public void splitArhBool(){
+        if(anchorPaneProsmotr.getWidth() < 1920){
+            if(arhRightPane2.isVisible()==false){
+                btnSplitArh.setLayoutX(1897.5);
+
+            }
+            else {
+                btnSplitArh.setLayoutX(1710);
+
+            }
+        }else {
+            if(arhRightPane2.isVisible()==false){
+                btnSplitArh.setLayoutX(1417.5);
+
+            }
+            else {
+                btnSplitArh.setLayoutX(1230);
+
+            }
+        }
     }
 
     public void initialize() {
@@ -106,13 +201,18 @@ public class HomeSceneController {
         mxbtnView.setFitHeight(18);
         maxBtn.setGraphic(mxbtnView);
         ivProsmotr0.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("icon/VSTU-logo.png")));
+
+        /* не работает
         choiceBoxForChooseFiles.getItems().addAll("Файл", "Время", "Лицо");
         choiceBoxForType.getItems().addAll("Все", "Трев. вход", "Движение", "Постоянно", "Ручная", "I-кадр видео", "Видео анализ");
-        //imgV1.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/1.jpg")));
-        /*imgV41.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/1.jpg")));
+        */
+
+        imgV1.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/1.jpg")));
+        imgV41.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/1.jpg")));
         imgV42.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/2.jpg")));
         imgV43.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/3.jpg")));
         imgV44.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/4.jpg")));
+        /*
         imgV71.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/1.jpg")));
         imgV72.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/2.jpg")));
         imgV73.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/3.jpg")));
@@ -675,6 +775,7 @@ public class HomeSceneController {
             stage.setHeight(1079);
             stage.setX(0);
             stage.setY(0);
+
             baseAnchorPane.setPrefHeight(300);
             basePane.setLayoutY(23);
             settingAP.setPrefHeight(300);
@@ -683,21 +784,50 @@ public class HomeSceneController {
             othersAnchorPane.setLayoutY(725);
             othersAnchorPane.setPrefHeight(300);
             basePane11.setLayoutY(23);
-            anchorPaneProsmotr.setPrefHeight(1004);
+            // prosmotr
+            anchorPaneProsmotr.setPrefHeight(1003);
             anchorPaneProsmotr.setPrefWidth(1920);
-            anchorPaneUst.setPrefHeight(1004);
-            anchorPaneUst.setPrefWidth(1920);
             camRightPane.setPrefHeight(850);
             camRightPane.setLayoutX(1755);
-            camBtnPane.setPrefWidth(1920);
-            camBtnPane.setLayoutY(900);
+            btnSplitRightPane.setLayoutX(1739);
+            btnSplitRightPane.setPrefHeight(850);
+            camBtnPane.setLayoutY(885);
+            camBtnPane.setLayoutX(585);
+
+            //1 cam
             paneWithOneCam.setPrefWidth(1710);
             paneWithOneCam.setPrefHeight(850);
-            imgV1.setFitWidth(1705);
+            imgV1.setFitWidth(1710);
             imgV1.setFitHeight(850);
-            btnSplitRightPane.setLayoutX(1736);
-            btnSplitRightPane.setPrefHeight(857);
-            camsMaximize();
+            // 4 cam
+            //1/5cam
+            //1/8cam
+            //1/8 cam 2
+            // 1 cam full
+            //
+            splitCamBool();
+            //ust
+            anchorPaneUst.setPadding(new Insets(0, 0, 30, 0));
+            ustAnch1.setPrefHeight(480);
+            ustAnch2.setLayoutY(502);
+            ustAnch2.setPrefHeight(502);
+            //arh
+            arhCamPane.setLayoutX(610);
+            anchorPaneArh.setPadding(new Insets(0, 0, 20, 0));
+            splitArhBool();
+            //jur
+            anchorPaneJur.setPadding(new Insets(0, 0, 30, 0));
+            jurAn1.setLayoutX(835);
+            jurAn11.setLayoutX(880);
+            //zap
+            anchorPaneZap.setPadding(new Insets(0, 0, 30, 0));
+            zapBtnPane.setLayoutX(840);
+            zapAnch1.setPrefHeight(400);
+            //jurtrev
+            anchorPaneJurTrev.setPadding(new Insets(0, 0, 30, 0));
+
+
+
         } else {
             mxbtnView.setImage(new Image(getClass().getResourceAsStream("icon/mxmz.png")));
             stage.setWidth(1440);
@@ -712,6 +842,7 @@ public class HomeSceneController {
             othersAnchorPane.setPrefHeight(250);
             othersAnchorPane.setLayoutY(625);
             basePane11.setLayoutY(-2);
+            //prosmotr
             anchorPaneProsmotr.setPrefHeight(900);
             anchorPaneProsmotr.setPrefWidth(1440);
             camRightPane.setPrefHeight(700);
@@ -719,14 +850,41 @@ public class HomeSceneController {
             camBtnPane.setPrefWidth(730);
             camBtnPane.setLayoutY(740);
             camBtnPane.setLayoutX(313);
-            // camsPane.setPrefHeight(700);
-            // camsPane.setPrefWidth(1241);
+            btnSplitRightPane.setPrefHeight(700);
+            btnSplitRightPane.setLayoutX(1262);
+
+            //1cam
             paneWithOneCam.setPrefHeight(700);
             paneWithOneCam.setPrefWidth(1235);
             imgV1.setFitWidth(1235);
             imgV1.setFitHeight(700);
-            btnSplitRightPane.setPrefHeight(707);
-            btnSplitRightPane.setLayoutX(1259);
+            // 4 cam
+            //1/5cam
+            //1/8cam
+            //1/8 cam 2
+            // 1 cam full
+            //
+            splitCamBool();
+            //ust
+            anchorPaneUst.setPadding(new Insets(0, 0, 0, 0));
+            ustAnch1.setPrefHeight(405);
+            ustAnch2.setLayoutY(405);
+            ustAnch2.setPrefHeight(405);
+            //arh
+            arhCamPane.setLayoutX(500);
+            anchorPaneArh.setPadding(new Insets(0, 0, 0, 0));
+            splitArhBool();
+            //jur
+            anchorPaneJur.setPadding(new Insets(0, 0, 0, 0));
+            jurAn1.setLayoutX(595);
+            jurAn11.setLayoutX(640);
+            //zap
+            zapBtnPane.setLayoutX(600);
+            anchorPaneZap.setPadding(new Insets(0, 0, 0, 0));
+            zapAnch1.setPrefHeight(250);
+            //jurtrev
+            anchorPaneJurTrev.setPadding(new Insets(0, 0, 0, 0));
+
             hboxDeleteWhenMinimize();
         }
     }

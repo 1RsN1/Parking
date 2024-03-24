@@ -19,13 +19,12 @@
 <?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="scenePanel" prefHeight="900.0" prefWidth="1440.0" styleClass="home" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="p.parking.HomeSceneController">
+<AnchorPane fx:id="scenePanel" maxWidth="1440.0" prefHeight="900.0" prefWidth="1440.0" styleClass="home" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="p.parking.HomeSceneController">
    <children>
       <AnchorPane prefHeight="75.0" prefWidth="1440.0" styleClass="header" stylesheets="@Style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <effect>
@@ -468,7 +467,7 @@
             </InnerShadow>
          </effect>
       </AnchorPane>
-      <AnchorPane fx:id="anchorPaneProsmotr" layoutY="76.0" prefHeight="825.0" prefWidth="1440.0" styleClass="home" visible="false">
+      <AnchorPane fx:id="anchorPaneProsmotr" layoutY="76.0" prefHeight="1003.0" prefWidth="1440.0" styleClass="home" visible="false">
          <children>
             <AnchorPane fx:id="paneWithNineCam" layoutX="12.5" layoutY="12.5" prefHeight="700.0" prefWidth="1235.0" style="-fx-background-color: grey;" visible="false">
                <children>
@@ -502,12 +501,12 @@
                   <ImageView fx:id="imgV44" fitHeight="350.0" fitWidth="617.5" layoutX="617.5" layoutY="350.0" pickOnBounds="true" preserveRatio="true" />
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="paneWithOneCam" layoutX="12.0" layoutY="12.0" prefHeight="700.0" prefWidth="1230.0" style="-fx-background-color: grey;">
+            <AnchorPane fx:id="paneWithOneCam" layoutX="12.0" layoutY="12.0" prefHeight="850.0" style="-fx-background-color: grey;">
                <children>
-                  <ImageView fx:id="imgV1" fitHeight="700.0" fitWidth="1230.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="imgV1" fitHeight="850.0" fitWidth="1710.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" />
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="camBtnPane" layoutX="313.0" layoutY="740.0" prefHeight="70.0" prefWidth="730.0" styleClass="home">
+            <AnchorPane fx:id="camBtnPane" layoutX="585.0" layoutY="885.0" prefHeight="70.0" prefWidth="730.0" styleClass="home">
                <children>
                   <AnchorPane layoutX="10.0" layoutY="15.0" prefHeight="40.0" prefWidth="470.0" style="-fx-background-color: #132E44; -fx-background-radius: 20;">
                      <children>
@@ -591,8 +590,8 @@
                   </AnchorPane>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="camRightPane" layoutX="1278.0" layoutY="15.5" prefHeight="700.0" prefWidth="150.0" style="-fx-background-color: #A8A7A7; -fx-border-color: black; -fx-border-radius: 5; -fx-background-radius: 5;" />
-            <Button fx:id="btnSplitRightPane" layoutX="1262.0" layoutY="15.5" mnemonicParsing="false" onAction="#splitCamRightPane" onMouseClicked="#clickedForOneCam" pickOnBounds="false" prefHeight="700.0" prefWidth="15.0" style="-fx-background-insets: 0;">
+            <AnchorPane fx:id="camRightPane" layoutX="1755.0" layoutY="15.5" prefHeight="850.0" prefWidth="150.0" style="-fx-background-color: #A8A7A7; -fx-border-color: black; -fx-border-radius: 5; -fx-background-radius: 5;" />
+            <Button fx:id="btnSplitRightPane" layoutX="1739.0" layoutY="15.5" mnemonicParsing="false" onAction="#splitCamRightPane" onMouseClicked="#clickedForOneCam" pickOnBounds="false" prefHeight="850.0" prefWidth="15.0" style="-fx-background-insets: 0;">
                <styleClass>
                   <String fx:value="cam1Btn" />
                   <String fx:value="camBtnHover" />
@@ -603,9 +602,9 @@
             </Button>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="anchorPaneUst" layoutY="75.0" prefHeight="825.0" prefWidth="1440.0" styleClass="home" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
+      <AnchorPane fx:id="anchorPaneUst" layoutY="75.0" prefHeight="1004.0" prefWidth="1440.0" styleClass="home" visible="false">
          <children>
-            <AnchorPane fx:id="ustAnch1" prefHeight="405.0" prefWidth="1920.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <AnchorPane fx:id="ustrAnch1" prefHeight="502.0" prefWidth="1920.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <children>
                   <Label layoutX="22.0" layoutY="23.0" text="Устройства онлайн:">
                      <font>
@@ -671,9 +670,9 @@
                   </Button>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="ustAnch2" layoutY="405.0" prefHeight="405.0" prefWidth="1880.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="0.0">
+            <AnchorPane fx:id="ustrAnch2" layoutY="502.0" prefHeight="502.0" prefWidth="1880.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
                <children>
-                  <TableView layoutY="30.0" prefHeight="290.0" prefWidth="1840.0" AnchorPane.bottomAnchor="85.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="30.0">
+                  <TableView layoutY="30.0" prefHeight="290.0" prefWidth="1840.0" AnchorPane.bottomAnchor="82.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="30.0">
                      <columns>
                         <TableColumn maxWidth="150.0" minWidth="50.0" prefWidth="100.0" text="Имя" />
                         <TableColumn maxWidth="300.0" minWidth="150.0" prefWidth="150.0" text="CloudID" />
@@ -710,7 +709,7 @@
                         <Font name="Calibri" size="14.0" />
                      </font>
                   </Label>
-                  <CheckBox layoutY="327.0" mnemonicParsing="false" style="-fx-background-insets: 0;" styleClass="checkBoxForAllPane" text="Сменить IP адрес автоматически" textAlignment="CENTER" AnchorPane.bottomAnchor="56.0">
+                  <CheckBox layoutY="327.0" mnemonicParsing="false" style="-fx-background-insets: 0;" styleClass="checkBoxForAllPane" text="Сменить IP адрес автоматически" textAlignment="CENTER" AnchorPane.bottomAnchor="53.0">
                      <font>
                         <Font name="Calibri" size="16.0" />
                      </font>
@@ -718,7 +717,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </CheckBox>
-                  <Button contentDisplay="CENTER" layoutY="355.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Доб.вручную" AnchorPane.bottomAnchor="20.0">
+                  <Button contentDisplay="CENTER" layoutY="355.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Доб.вручную" AnchorPane.bottomAnchor="17.0">
                      <font>
                         <Font name="Calibri" size="14.0" />
                      </font>
@@ -726,7 +725,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button contentDisplay="CENTER" layoutX="120.0" layoutY="355.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Доб. группу" AnchorPane.bottomAnchor="20.0">
+                  <Button contentDisplay="CENTER" layoutX="120.0" layoutY="355.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Доб. группу" AnchorPane.bottomAnchor="17.0">
                      <font>
                         <Font name="Calibri" size="14.0" />
                      </font>
@@ -734,7 +733,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button contentDisplay="CENTER" layoutX="240.0" layoutY="355.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Удалить" AnchorPane.bottomAnchor="20.0">
+                  <Button contentDisplay="CENTER" layoutX="240.0" layoutY="355.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Удалить" AnchorPane.bottomAnchor="17.0">
                      <font>
                         <Font name="Calibri" size="14.0" />
                      </font>
@@ -742,7 +741,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button contentDisplay="CENTER" layoutX="360.0" layoutY="355.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Бэкап" AnchorPane.bottomAnchor="20.0">
+                  <Button contentDisplay="CENTER" layoutX="360.0" layoutY="355.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Бэкап" AnchorPane.bottomAnchor="17.0">
                      <font>
                         <Font name="Calibri" size="14.0" />
                      </font>
@@ -750,7 +749,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button contentDisplay="CENTER" layoutX="480.0" layoutY="355.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Импорт" AnchorPane.bottomAnchor="20.0">
+                  <Button contentDisplay="CENTER" layoutX="480.0" layoutY="355.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Импорт" AnchorPane.bottomAnchor="17.0">
                      <font>
                         <Font name="Calibri" size="14.0" />
                      </font>
@@ -762,21 +761,17 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="anchorPaneArh" layoutY="75.0" prefHeight="810.0" prefWidth="1440.0" styleClass="home" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
+      <AnchorPane fx:id="anchorPaneArh" layoutY="75.0" prefHeight="1004.0" prefWidth="1440.0" styleClass="home" visible="false">
          <children>
-            <FlowPane alignment="CENTER" columnHalignment="CENTER" prefHeight="730.0" prefWidth="1200.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="220.0" AnchorPane.topAnchor="0.0">
-               <children>
-                  <ImageView fx:id="imgV44" fitHeight="350.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true" />
-                  <ImageView fx:id="imgV43" fitHeight="350.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true" />
-                  <ImageView fx:id="imgV41" fitHeight="350.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true" />
-                  <ImageView fx:id="imgV42" fitHeight="350.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true" />
-               </children>
-            </FlowPane>
-            <Slider layoutX="20.0" layoutY="715.0" prefWidth="1200.0" AnchorPane.bottomAnchor="72.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="220.0">
+            <ImageView fitHeight="350.0" fitWidth="600.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="350.0" fitWidth="600.0" layoutX="620.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="350.0" fitWidth="600.0" layoutX="20.0" layoutY="360.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="350.0" fitWidth="600.0" layoutX="620.0" layoutY="360.0" pickOnBounds="true" preserveRatio="true" />
+            <Slider layoutX="20.0" layoutY="715.0" prefWidth="1200.0" AnchorPane.bottomAnchor="97.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="220.0">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Slider>
-            <Pane layoutX="1.0" layoutY="738.0" prefHeight="63.0" prefWidth="444.0" AnchorPane.bottomAnchor="9.0">
+            <Pane layoutX="1.0" layoutY="738.0" prefHeight="84.0" prefWidth="444.0" AnchorPane.bottomAnchor="3.0">
                <children>
                   <ChoiceBox fx:id="choiceBoxForChooseFiles1" layoutX="319.0" layoutY="27.0" onMouseClicked="#getChoiceBoxForFiles" prefHeight="25.0" prefWidth="100.0">
                      <cursor>
@@ -809,7 +804,7 @@
                   </Button>
                </children>
             </Pane>
-            <AnchorPane fx:id="arhCamPane" layoutX="500.0" layoutY="752.5" prefHeight="50.0" prefWidth="516.0" style="-fx-background-color: #132E44; -fx-background-radius: 20;" AnchorPane.bottomAnchor="7.5">
+            <AnchorPane layoutX="618.0" layoutY="913.0" prefHeight="50.0" prefWidth="516.0" style="-fx-background-color: #132E44; -fx-background-radius: 20;" AnchorPane.bottomAnchor="41.0">
                <children>
                   <Button fx:id="buttonOpenFiles" layoutX="30.0" layoutY="10.0" mnemonicParsing="false" pickOnBounds="false" prefHeight="30.0" prefWidth="36.0" style="-fx-background-insets: 0;" styleClass="buttonOpenFiles">
                      <cursor>
@@ -848,102 +843,26 @@
                   </Button>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="arhRightPane2" layoutX="1240.0" prefHeight="810.0" prefWidth="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-               <children>
-                  <ToggleButton fx:id="toggleForArhUstr" mnemonicParsing="false" onAction="#toggleForArhUstrAction" prefHeight="32.0" prefWidth="100.0" selected="true" style="-fx-background-insets: 0;" styleClass="btnForArhRight" text="Устройство" AnchorPane.rightAnchor="90.0" AnchorPane.topAnchor="25.0">
-                     <toggleGroup>
-                        <ToggleGroup fx:id="ToggleForArhPane" />
-                     </toggleGroup>
-                     <font>
-                        <Font name="Calibri" size="14.0" />
-                     </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </ToggleButton>
-                  <ToggleButton fx:id="toggleForArhPC" mnemonicParsing="false" onAction="#toggleForArhPCAction" prefHeight="32.0" prefWidth="80.0" style="-fx-background-insets: 0;" styleClass="btnForArhRight" text="ПК" toggleGroup="$ToggleForArhPane" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="25.0">
-                     <font>
-                        <Font name="Calibri" size="14.0" />
-                     </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </ToggleButton>
-                  <AnchorPane fx:id="rightPaneForArh" prefHeight="580.0" prefWidth="183.0" style="-fx-border-color: black; -fx-border-radius: 5; -fx-background-radius: 5;" styleClass="home" AnchorPane.bottomAnchor="190.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="56.0" />
-                  <Pane prefHeight="183.0" prefWidth="216.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="1.0">
-                     <children>
-                        <Button layoutX="7.0" layoutY="155.0" mnemonicParsing="false" prefWidth="200.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Поиск">
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </Button>
-                        <Label layoutX="27.0" layoutY="67.0" text="Тип">
-                           <font>
-                              <Font name="Calibri" size="14.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="7.0" layoutY="98.0" text="Начало">
-                           <font>
-                              <Font name="Calibri" size="14.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="7.0" layoutY="128.0" text="Конец">
-                           <font>
-                              <Font name="Calibri" size="14.0" />
-                           </font>
-                        </Label>
-                        <RadioButton fx:id="radioForArhMain1" layoutX="67.0" layoutY="7.0" mnemonicParsing="false" selected="true" styleClass="checkBoxForAllPane" text="Осн.">
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                           <toggleGroup>
-                              <ToggleGroup />
-                           </toggleGroup>
-                        </RadioButton>
-                        <RadioButton fx:id="radioForArhDop1" layoutX="137.0" layoutY="7.0" mnemonicParsing="false" styleClass="checkBoxForAllPane" text="Доп.">
-                           <toggleGroup>
-                              <ToggleGroup />
-                           </toggleGroup>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </RadioButton>
-                        <RadioButton fx:id="radioForArhVideo1" layoutX="67.0" layoutY="40.0" mnemonicParsing="false" selected="true" styleClass="checkBoxForAllPane" text="Видео">
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                           <toggleGroup>
-                              <ToggleGroup />
-                           </toggleGroup>
-                        </RadioButton>
-                        <RadioButton fx:id="radioForArhPhoto1" layoutX="137.0" layoutY="40.0" mnemonicParsing="false" styleClass="checkBoxForAllPane" text="Снимок">
-                           <toggleGroup>
-                              <ToggleGroup />
-                           </toggleGroup>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </RadioButton>
-                        <ChoiceBox fx:id="choiceBoxForType1" layoutX="57.0" layoutY="62.0" onMouseClicked="#getChoiceBoxForType" prefHeight="25.0" prefWidth="150.0">
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </ChoiceBox>
-                        <DatePicker fx:id="datePickerBeginning2" layoutX="57.0" layoutY="92.0" onAction="#getDateFromDatePicker" prefWidth="150.0">
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </DatePicker>
-                        <DatePicker fx:id="datePickerEnd2" layoutX="57.0" layoutY="122.0" prefWidth="150.0">
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </DatePicker>
-                     </children>
-                  </Pane>
-               </children>
-            </AnchorPane>
-            <Button fx:id="btnSplitArh" layoutX="1230.0" layoutY="25.0" mnemonicParsing="false" onAction="#splitArh" onMouseClicked="#clickedForOneCam" pickOnBounds="false" prefHeight="700.0" prefWidth="15.0" style="-fx-background-insets: 0;" AnchorPane.bottomAnchor="85.0" AnchorPane.topAnchor="25.0">
+            <ToggleButton fx:id="toggleForArhUstr" layoutX="1250.0" layoutY="25.0" mnemonicParsing="false" onAction="#toggleForArhUstrAction" prefHeight="32.0" prefWidth="100.0" selected="true" style="-fx-background-insets: 0;" styleClass="btnForArhRight" text="Устройство" AnchorPane.rightAnchor="90.0" AnchorPane.topAnchor="25.0">
+               <toggleGroup>
+                  <ToggleGroup fx:id="ToggleForArhPane" />
+               </toggleGroup>
+               <font>
+                  <Font name="Calibri" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ToggleButton>
+            <ToggleButton fx:id="toggleForArhPC" layoutX="1351.0" layoutY="25.0" mnemonicParsing="false" onAction="#toggleForArhPCAction" prefHeight="32.0" prefWidth="80.0" style="-fx-background-insets: 0;" styleClass="btnForArhRight" text="ПК" toggleGroup="$ToggleForArhPane" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="25.0">
+               <font>
+                  <Font name="Calibri" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ToggleButton>
+            <Button fx:id="btnSplitRightPane1" layoutX="1230.0" layoutY="25.0" mnemonicParsing="false" onAction="#splitCamRightPane" onMouseClicked="#clickedForOneCam" pickOnBounds="false" prefHeight="700.0" prefWidth="15.0" style="-fx-background-insets: 0;" AnchorPane.bottomAnchor="101.0" AnchorPane.rightAnchor="194.0" AnchorPane.topAnchor="25.0">
                <styleClass>
                   <String fx:value="cam1Btn" />
                   <String fx:value="camBtnHover" />
@@ -952,11 +871,83 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
+            <AnchorPane fx:id="rightPaneForArh" layoutX="1247.0" layoutY="56.0" prefHeight="580.0" prefWidth="183.0" style="-fx-border-color: black; -fx-border-radius: 5; -fx-background-radius: 5;" styleClass="home" AnchorPane.bottomAnchor="190.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="56.0" />
+            <Pane layoutX="1223.0" layoutY="638.0" prefHeight="188.0" prefWidth="216.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="1.0">
+               <children>
+                  <Button layoutX="7.0" layoutY="155.0" mnemonicParsing="false" prefWidth="200.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Поиск">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Label layoutX="27.0" layoutY="67.0" text="Тип">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="7.0" layoutY="98.0" text="Начало">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="7.0" layoutY="128.0" text="Конец">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font>
+                  </Label>
+                  <RadioButton fx:id="radioForArhMain1" layoutX="67.0" layoutY="7.0" mnemonicParsing="false" selected="true" styleClass="checkBoxForAllPane" text="Осн.">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <toggleGroup>
+                        <ToggleGroup />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="radioForArhDop1" layoutX="137.0" layoutY="7.0" mnemonicParsing="false" styleClass="checkBoxForAllPane" text="Доп.">
+                     <toggleGroup>
+                        <ToggleGroup />
+                     </toggleGroup>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </RadioButton>
+                  <RadioButton fx:id="radioForArhVideo1" layoutX="67.0" layoutY="40.0" mnemonicParsing="false" selected="true" styleClass="checkBoxForAllPane" text="Видео">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <toggleGroup>
+                        <ToggleGroup />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="radioForArhPhoto1" layoutX="137.0" layoutY="40.0" mnemonicParsing="false" styleClass="checkBoxForAllPane" text="Снимок">
+                     <toggleGroup>
+                        <ToggleGroup />
+                     </toggleGroup>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </RadioButton>
+                  <ChoiceBox fx:id="choiceBoxForType1" layoutX="57.0" layoutY="62.0" onMouseClicked="#getChoiceBoxForType" prefHeight="25.0" prefWidth="150.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ChoiceBox>
+                  <DatePicker fx:id="datePickerBeginning2" layoutX="57.0" layoutY="92.0" onAction="#getDateFromDatePicker" prefWidth="150.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </DatePicker>
+                  <DatePicker fx:id="datePickerEnd2" layoutX="57.0" layoutY="122.0" prefWidth="150.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </DatePicker>
+               </children>
+            </Pane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="anchorPaneZap" layoutY="75.0" prefHeight="825.0" prefWidth="1440.0" styleClass="home" visible="false" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
+      <AnchorPane fx:id="anchorPaneZap" layoutY="75.0" prefHeight="825.0" prefWidth="1440.0" styleClass="home" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
          <children>
-            <AnchorPane fx:id="zapAnch1" layoutY="20.0" prefHeight="250.0" prefWidth="1400.0" styleClass="inputbox" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+            <AnchorPane fx:id="baseAnchorPane1" layoutY="20.0" prefHeight="425.0" prefWidth="1865.0" styleClass="inputbox" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
                <children>
                   <AnchorPane prefHeight="25.0" prefWidth="75.0" styleClass="inputtext">
                      <children>
@@ -1081,7 +1072,7 @@
                   </InnerShadow>
                </effect>
             </AnchorPane>
-            <Pane fx:id="zapBtnPane" layoutX="600.0" prefHeight="40.0" prefWidth="240.0" AnchorPane.bottomAnchor="15.0">
+            <Pane layoutX="830.0" layoutY="938.0" prefHeight="40.0" prefWidth="242.0" AnchorPane.bottomAnchor="15.0">
                <children>
                   <Button layoutY="7.0" mnemonicParsing="false" prefWidth="100.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Применить">
                      <font>
@@ -1103,7 +1094,7 @@
             </Pane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="anchorPaneJur" layoutY="75.0" prefHeight="825.0" prefWidth="1440.0" styleClass="home" visible="false" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
+      <AnchorPane fx:id="anchorPaneJur" layoutY="75.0" prefHeight="825.0" prefWidth="1440.0" styleClass="home" visible="false">
          <children>
             <ToggleButton fx:id="toggleForJurUstr" layoutX="100.0" layoutY="25.0" mnemonicParsing="false" onAction="#toggleForJurUstrAction" prefHeight="32.0" prefWidth="100.0" style="-fx-background-insets: 0;" styleClass="btnForArhRight" text="Устройство" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="25.0">
                <font>
@@ -1166,7 +1157,22 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </ChoiceBox>
-                  <TableView fx:id="tableViewForJurPC1" prefHeight="600.0" prefWidth="1380.0" AnchorPane.bottomAnchor="48.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="90.0">
+                  <Button layoutX="740.0" layoutY="55.0" mnemonicParsing="false" prefWidth="70.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Очистить">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button layoutX="655.0" layoutY="55.0" mnemonicParsing="false" prefWidth="70.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Экспорт">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button layoutX="570.0" layoutY="55.0" mnemonicParsing="false" prefWidth="70.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text=" Поиск">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <TableView fx:id="tableViewForJurPC" layoutX="10.0" layoutY="90.0" prefHeight="600.0" prefWidth="1380.0">
                      <columns>
                         <TableColumn maxWidth="75.0" minWidth="50.0" prefWidth="50.0" text="№" />
                         <TableColumn maxWidth="250.0" minWidth="150.0" prefWidth="230.0" text="Время" />
@@ -1177,6 +1183,16 @@
                         <TableColumn maxWidth="350.0" minWidth="200.0" prefWidth="300.0" text="Примечание" />
                      </columns>
                   </TableView>
+                  <Button layoutX="685.0" layoutY="700.0" mnemonicParsing="false" prefWidth="70.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="&gt;&gt;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button layoutX="600.0" layoutY="700.0" mnemonicParsing="false" prefWidth="70.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="&lt;&lt;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
                   <TableView fx:id="tableViewForJurUstr" layoutX="10.0" layoutY="90.0" prefHeight="600.0" prefWidth="1380.0" visible="false">
                      <columns>
                         <TableColumn maxWidth="75.0" minWidth="50.0" prefWidth="50.0" text="№" />
@@ -1188,44 +1204,11 @@
                   </TableView>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="jurAn1" layoutX="595.0" layoutY="110.0" prefHeight="31.0" prefWidth="251.0">
-               <children>
-                  <Button mnemonicParsing="false" prefWidth="70.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Очистить">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Button>
-                  <Button layoutX="90.0" mnemonicParsing="false" prefWidth="70.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Экспорт">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Button>
-                  <Button layoutX="180.0" mnemonicParsing="false" prefWidth="70.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text=" Поиск">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Button>
-               </children>
-            </AnchorPane>
-            <AnchorPane fx:id="jurAn11" layoutX="640.0" layoutY="751.0" prefHeight="38.0" prefWidth="161.0" AnchorPane.bottomAnchor="30.0">
-               <children>
-                  <Button layoutX="90.0" mnemonicParsing="false" prefWidth="70.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="&gt;&gt;">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Button>
-                  <Button mnemonicParsing="false" prefWidth="70.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="&lt;&lt;">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Button>
-               </children>
-            </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="anchorPaneJurTrev" layoutY="75.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="825.0" prefWidth="1440.0" styleClass="home" stylesheets="@Style.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
+      <AnchorPane fx:id="anchorPaneJurTrev" layoutY="75.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="825.0" prefWidth="1440.0" styleClass="home" stylesheets="@Style.css" visible="false">
          <children>
-            <Button layoutX="150.0" layoutY="28.0" mnemonicParsing="false" prefWidth="70.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="0/0" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="28.0">
+            <Button layoutX="150.0" layoutY="28.0" mnemonicParsing="false" prefWidth="70.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="0/0" AnchorPane.bottomAnchor="770.0" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="28.0">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -1233,7 +1216,7 @@
                   <Font name="Calibri" size="14.0" />
                </font>
             </Button>
-            <Button layoutX="235.0" layoutY="28.0" mnemonicParsing="false" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Очистить" AnchorPane.leftAnchor="235.0" AnchorPane.topAnchor="28.0">
+            <Button layoutX="235.0" layoutY="28.0" mnemonicParsing="false" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Очистить" AnchorPane.bottomAnchor="770.0" AnchorPane.leftAnchor="235.0" AnchorPane.topAnchor="28.0">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -1241,12 +1224,12 @@
                   <Font name="Calibri" size="14.0" />
                </font>
             </Button>
-            <Label layoutX="22.0" layoutY="32.0" text="Не обработано/Все" AnchorPane.leftAnchor="22.0" AnchorPane.topAnchor="32.0">
+            <Label layoutX="22.0" layoutY="32.0" text="Не обработано/Все" AnchorPane.bottomAnchor="776.0" AnchorPane.leftAnchor="22.0" AnchorPane.topAnchor="32.0">
                <font>
                   <Font name="Calibri" size="14.0" />
                </font>
             </Label>
-            <TableView fx:id="jurtrevTable" layoutX="20.0" layoutY="60.0" prefHeight="750.0" prefWidth="1400.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="60.0">
+            <TableView layoutX="20.0" layoutY="60.0" prefHeight="750.0" prefWidth="1400.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="60.0">
                <columns>
                   <TableColumn maxWidth="100.0" minWidth="50.0" prefWidth="50.0" text="№" />
                   <TableColumn maxWidth="500.0" minWidth="250.0" prefWidth="400.0" text="Статус" />
