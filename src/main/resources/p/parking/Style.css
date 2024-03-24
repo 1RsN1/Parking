@@ -398,6 +398,34 @@
     -fx-background-color: rgba(199, 199, 199, 0.71);
 }
 
+.cam9Btn {
+    -fx-background-image: url("./icon/cam9.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 100% 100%;
+    -fx-background-color: rgba(199, 199, 199, 0.71);
+}
+
+.cam1FullBtn {
+    -fx-background-image: url("./icon/cam1Full.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 100% 100%;
+    -fx-background-color: rgba(199, 199, 199, 0.71);
+}
+
+.camSohrBtn {
+    -fx-background-image: url("./icon/camSohr.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 100% 100%;
+    -fx-background-color: rgba(199, 199, 199, 0.71);
+}
+
+.camTurBtn {
+    -fx-background-image: url("./icon/camTur.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 100% 100%;
+    -fx-background-color: rgba(199, 199, 199, 0.71);
+}
+
 /* ============ Кнопки для всех вкладок ========================================================================= */
 
 .btnForAllPane {
