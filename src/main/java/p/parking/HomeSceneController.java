@@ -108,26 +108,26 @@ public class HomeSceneController {
             if(camRightPane.isVisible()==true){
                 camRightPane.setVisible(false);
                 btnSplitRightPane.setLayoutX(1897.5);
-                imgV1.setFitWidth(1885);
+               // imgV1.setFitWidth(1885);
                 prosmotrGP1.setPadding(new Insets(0,40,0,320));
             }
             else {
                 camRightPane.setVisible(true);
                 btnSplitRightPane.setLayoutX(1739);
-                imgV1.setFitWidth(1710);
+               // imgV1.setFitWidth(1710);
                 prosmotrGP1.setPadding(new Insets(0,200,0,0));
             }
         }else {
             if(camRightPane.isVisible()==true){
                 camRightPane.setVisible(false);
                 btnSplitRightPane.setLayoutX(1417.5);
-                imgV1.setFitWidth(1405);
-                prosmotrGP1.setPadding(new Insets(0,40,0,250));
+               // imgV1.setFitWidth(1405);
+                prosmotrGP1.setPadding(new Insets(0,90,0,90));
             }
             else {
                 camRightPane.setVisible(true);
                 btnSplitRightPane.setLayoutX(1262);
-                imgV1.setFitWidth(1230);
+               // imgV1.setFitWidth(1230);
                 prosmotrGP1.setPadding(new Insets(0,200,0,0));
             }
         }
@@ -176,8 +176,8 @@ public class HomeSceneController {
             if(arhRightPane2.isVisible()==true){
                 arhRightPane2.setVisible(false);
                 btnSplitArh.setLayoutX(1417.5);
-                arhGP.setPadding(new Insets(0,40,0,200));
-                arhSlider.setPadding(new Insets(0,40,0,200));
+                arhGP.setPadding(new Insets(0,90,0,90));
+                arhSlider.setPadding(new Insets(0,90,0,90));
             }
             else {
                 arhRightPane2  .setVisible(true);
@@ -230,11 +230,11 @@ public class HomeSceneController {
         choiceBoxForType.getItems().addAll("Все", "Трев. вход", "Движение", "Постоянно", "Ручная", "I-кадр видео", "Видео анализ");
         */
 
-        imgV1.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/2.jpg")));
-        imgV41.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/2.jpg")));
-        imgV42.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/5.jpg")));
-        imgV43.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/3.jpg")));
-        imgV44.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/4.jpg")));
+        imgV1.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
+        imgV41.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
+        imgV42.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
+        imgV43.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
+        imgV44.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
         /*
         imgV71.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/1.jpg")));
         imgV72.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/2.jpg")));

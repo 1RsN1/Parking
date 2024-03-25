@@ -19,6 +19,7 @@
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -30,7 +31,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="scenePanel" prefHeight="900.0" prefWidth="1440.0" styleClass="home" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="p.parking.HomeSceneController">
+<AnchorPane fx:id="scenePanel" prefHeight="900.0" prefWidth="1440.0" styleClass="home" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="p.parking.HomeSceneController">
    <children>
       <AnchorPane prefHeight="75.0" prefWidth="1440.0" styleClass="header" stylesheets="@Style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <effect>
@@ -381,7 +382,7 @@
                   <ImageView fx:id="imgV44" fitHeight="350.0" fitWidth="617.5" layoutX="617.5" layoutY="350.0" pickOnBounds="true" preserveRatio="true" />
                </children>
             </AnchorPane>
-            <GridPane fx:id="prosmotrGP1" prefHeight="707.0" prefWidth="1236.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0">
+            <GridPane fx:id="prosmotrGP1" prefHeight="707.0" prefWidth="1236.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>
@@ -389,13 +390,17 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <ImageView fx:id="imgV1" fitHeight="700.0" fitWidth="1232.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="imgV1" fitHeight="690.0" fitWidth="1290.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@photo/pop3.jpg" />
+                     </image>
+                  </ImageView>
                </children>
                <padding>
                   <Insets right="200.0" />
                </padding>
             </GridPane>
-            <AnchorPane fx:id="camBtnPane" layoutX="313.0" layoutY="740.0" prefHeight="70.0" prefWidth="730.0" styleClass="home">
+            <AnchorPane fx:id="camBtnPane" layoutX="313.0" layoutY="725.0" prefHeight="70.0" prefWidth="730.0" styleClass="home">
                <children>
                   <AnchorPane layoutX="10.0" layoutY="15.0" prefHeight="40.0" prefWidth="470.0" style="-fx-background-color: #132E44; -fx-background-radius: 20;">
                      <children>
@@ -479,8 +484,8 @@
                   </AnchorPane>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="camRightPane" layoutX="1278.0" layoutY="15.5" prefHeight="700.0" prefWidth="150.0" style="-fx-background-color: #A8A7A7; -fx-border-color: black; -fx-border-radius: 5; -fx-background-radius: 5;" />
-            <Button fx:id="btnSplitRightPane" layoutX="1262.0" layoutY="15.5" mnemonicParsing="false" onAction="#splitCamRightPane" onMouseClicked="#clickedForOneCam" pickOnBounds="false" prefHeight="700.0" prefWidth="15.0" style="-fx-background-insets: 0;">
+            <AnchorPane fx:id="camRightPane" layoutX="1278.0" layoutY="20.5" prefHeight="700.0" prefWidth="150.0" style="-fx-background-color: #A8A7A7; -fx-border-color: black; -fx-border-radius: 5; -fx-background-radius: 5;" />
+            <Button fx:id="btnSplitRightPane" layoutX="1262.0" layoutY="20.5" mnemonicParsing="false" onAction="#splitCamRightPane" onMouseClicked="#clickedForOneCam" pickOnBounds="false" prefHeight="700.0" prefWidth="15.0" style="-fx-background-insets: 0;">
                <styleClass>
                   <String fx:value="cam1Btn" />
                   <String fx:value="camBtnHover" />
@@ -650,9 +655,9 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="anchorPaneArh" layoutY="75.0" prefHeight="810.0" prefWidth="1440.0" styleClass="home" visible="false" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
+      <AnchorPane fx:id="anchorPaneArh" layoutY="75.0" prefHeight="810.0" prefWidth="1440.0" styleClass="home" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
          <children>
-            <GridPane fx:id="arhGP" layoutX="4.0" layoutY="2.0" prefHeight="721.0" prefWidth="1215.0" AnchorPane.bottomAnchor="93.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="2.0">
+            <GridPane fx:id="arhGP" layoutX="4.0" layoutY="2.0" prefHeight="674.0" prefWidth="1152.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="35.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -684,12 +689,12 @@
                </padding></Slider>
             <Pane layoutX="1.0" layoutY="738.0" prefHeight="63.0" prefWidth="444.0" AnchorPane.bottomAnchor="9.0">
                <children>
-                  <ChoiceBox fx:id="choiceBoxForChooseFiles1" layoutX="319.0" layoutY="27.0" onMouseClicked="#getChoiceBoxForFiles" prefHeight="25.0" prefWidth="100.0">
+                  <ChoiceBox fx:id="choiceBoxForChooseFiles" layoutX="319.0" layoutY="27.0" onMouseClicked="#getChoiceBoxForFiles" prefHeight="25.0" prefWidth="100.0">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </ChoiceBox>
-                  <CheckBox fx:id="checkBoxForArhAll1" layoutX="119.0" layoutY="30.0" mnemonicParsing="false" styleClass="checkBoxForAllPane" text="Все">
+                  <CheckBox fx:id="checkBoxForArhAll" layoutX="119.0" layoutY="30.0" mnemonicParsing="false" styleClass="checkBoxForAllPane" text="Все">
                      <font>
                         <Font name="Calibri" size="14.0" />
                      </font>
@@ -697,7 +702,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </CheckBox>
-                  <CheckBox fx:id="checkBoxForArhConnect1" layoutX="184.0" layoutY="30.0" mnemonicParsing="false" styleClass="checkBoxForAllPane" text="Объединить">
+                  <CheckBox fx:id="checkBoxForArhConnect" layoutX="184.0" layoutY="30.0" mnemonicParsing="false" styleClass="checkBoxForAllPane" text="Объединить">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -705,7 +710,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </CheckBox>
-                  <Button fx:id="buttonForArhDownload1" layoutX="19.0" layoutY="25.0" mnemonicParsing="false" prefWidth="75.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Скачать">
+                  <Button fx:id="buttonForArhDownload" layoutX="19.0" layoutY="25.0" mnemonicParsing="false" prefWidth="75.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Скачать">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -798,7 +803,7 @@
                               <Font name="Calibri" size="14.0" />
                            </font>
                         </Label>
-                        <RadioButton fx:id="radioForArhMain1" layoutX="67.0" layoutY="7.0" mnemonicParsing="false" selected="true" styleClass="checkBoxForAllPane" text="Осн.">
+                        <RadioButton fx:id="radioForArhMain" layoutX="67.0" layoutY="7.0" mnemonicParsing="false" selected="true" styleClass="checkBoxForAllPane" text="Осн.">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
@@ -806,7 +811,7 @@
                               <ToggleGroup />
                            </toggleGroup>
                         </RadioButton>
-                        <RadioButton fx:id="radioForArhDop1" layoutX="137.0" layoutY="7.0" mnemonicParsing="false" styleClass="checkBoxForAllPane" text="Доп.">
+                        <RadioButton fx:id="radioForArhDop" layoutX="137.0" layoutY="7.0" mnemonicParsing="false" styleClass="checkBoxForAllPane" text="Доп.">
                            <toggleGroup>
                               <ToggleGroup />
                            </toggleGroup>
@@ -814,7 +819,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </RadioButton>
-                        <RadioButton fx:id="radioForArhVideo1" layoutX="67.0" layoutY="40.0" mnemonicParsing="false" selected="true" styleClass="checkBoxForAllPane" text="Видео">
+                        <RadioButton fx:id="radioForArhVideo" layoutX="67.0" layoutY="40.0" mnemonicParsing="false" selected="true" styleClass="checkBoxForAllPane" text="Видео">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
@@ -822,7 +827,7 @@
                               <ToggleGroup />
                            </toggleGroup>
                         </RadioButton>
-                        <RadioButton fx:id="radioForArhPhoto1" layoutX="137.0" layoutY="40.0" mnemonicParsing="false" styleClass="checkBoxForAllPane" text="Снимок">
+                        <RadioButton fx:id="radioForArhPhoto" layoutX="137.0" layoutY="40.0" mnemonicParsing="false" styleClass="checkBoxForAllPane" text="Снимок">
                            <toggleGroup>
                               <ToggleGroup />
                            </toggleGroup>
@@ -830,7 +835,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </RadioButton>
-                        <ChoiceBox fx:id="choiceBoxForType1" layoutX="57.0" layoutY="62.0" onMouseClicked="#getChoiceBoxForType" prefHeight="25.0" prefWidth="150.0">
+                        <ChoiceBox fx:id="choiceBoxForType" layoutX="57.0" layoutY="62.0" onMouseClicked="#getChoiceBoxForType" prefHeight="25.0" prefWidth="150.0">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
