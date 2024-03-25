@@ -28,8 +28,9 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="scenePanel" prefHeight="900.0" prefWidth="1440.0" styleClass="home" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="p.parking.HomeSceneController">
+<AnchorPane fx:id="scenePanel" prefHeight="900.0" prefWidth="1440.0" styleClass="home" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="p.parking.HomeSceneController">
    <children>
       <AnchorPane prefHeight="75.0" prefWidth="1440.0" styleClass="header" stylesheets="@Style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <effect>
@@ -77,39 +78,12 @@
             </AnchorPane>
             <Pane fx:id="basePane" prefHeight="200.0" prefWidth="1000.0">
                <children>
-                  <Button layoutX="750.0" layoutY="66.0" mnemonicParsing="false" onAction="#jurTrev" prefHeight="90.0" prefWidth="90.0">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                     <styleClass>
-                        <String fx:value="buttonJurTrev" />
-                        <String fx:value="buttomHover" />
-                     </styleClass>
-                  </Button>
-                  <Button layoutX="610.0" layoutY="66.0" mnemonicParsing="false" onAction="#jur" prefHeight="90.0" prefWidth="90.0">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                     <styleClass>
-                        <String fx:value="buttonJur" />
-                        <String fx:value="buttomHover" />
-                     </styleClass>
-                  </Button>
                   <Button layoutX="470.0" layoutY="66.0" mnemonicParsing="false" onAction="#zap" prefHeight="90.0" prefWidth="90.0">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
                      <styleClass>
                         <String fx:value="buttonZap" />
-                        <String fx:value="buttomHover" />
-                     </styleClass>
-                  </Button>
-                  <Button layoutX="190.0" layoutY="66.0" mnemonicParsing="false" onAction="#ust" prefHeight="90.0" prefWidth="90.0">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                     <styleClass>
-                        <String fx:value="buttonUstr" />
                         <String fx:value="buttomHover" />
                      </styleClass>
                   </Button>
@@ -131,19 +105,7 @@
                         <String fx:value="buttomHover" />
                      </styleClass>
                   </Button>
-                  <Label alignment="TOP_CENTER" layoutX="52.0" layoutY="166.0" prefWidth="90.0" styleClass="inputsubtitle" text="Просмотр" textAlignment="CENTER">
-                     <font>
-                        <Font name="Calibri Bold" size="18.0" />
-                     </font>
-                     <effect>
-                        <DropShadow height="3.0" radius="1.0" width="3.0">
-                           <color>
-                              <Color red="0.3137255012989044" green="0.5215686559677124" blue="1.0" />
-                           </color>
-                        </DropShadow>
-                     </effect>
-                  </Label>
-                  <Label layoutX="194.0" layoutY="166.0" prefWidth="90.0" styleClass="inputsubtitle" text="Устройства">
+                  <Label alignment="TOP_CENTER" layoutX="50.0" layoutY="166.0" prefWidth="90.0" styleClass="inputsubtitle" text="Просмотр" textAlignment="CENTER">
                      <font>
                         <Font name="Calibri Bold" size="18.0" />
                      </font>
@@ -179,19 +141,16 @@
                         </DropShadow>
                      </effect>
                   </Label>
-                  <Label alignment="TOP_CENTER" layoutX="610.0" layoutY="166.0" prefWidth="90.0" styleClass="inputsubtitle" text="Журнал" textAlignment="CENTER">
-                     <font>
-                        <Font name="Calibri Bold" size="18.0" />
-                     </font>
-                     <effect>
-                        <DropShadow height="3.0" radius="1.0" width="3.0">
-                           <color>
-                              <Color red="0.3137255012989044" green="0.5215686559677124" blue="1.0" />
-                           </color>
-                        </DropShadow>
-                     </effect>
-                  </Label>
-                  <Label alignment="TOP_CENTER" layoutX="737.0" layoutY="166.0" styleClass="inputsubtitle" text="Журнал тревог" textAlignment="CENTER">
+                  <Button layoutX="190.0" layoutY="66.0" mnemonicParsing="false" onAction="#tur" prefHeight="90.0" prefWidth="90.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <styleClass>
+                        <String fx:value="buttonTur" />
+                        <String fx:value="buttomHover" />
+                     </styleClass>
+                  </Button>
+                  <Label alignment="TOP_CENTER" layoutX="190.0" layoutY="166.0" prefWidth="90.0" styleClass="inputsubtitle" text="Тур" textAlignment="CENTER">
                      <font>
                         <Font name="Calibri Bold" size="18.0" />
                      </font>
@@ -227,25 +186,7 @@
             </AnchorPane>
             <Pane fx:id="basePane1" prefHeight="200.0" prefWidth="1000.0">
                <children>
-                  <Button layoutX="330.0" layoutY="66.0" mnemonicParsing="false" onAction="#tur" prefHeight="90.0" prefWidth="90.0">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                     <styleClass>
-                        <String fx:value="buttonTur" />
-                        <String fx:value="buttomHover" />
-                     </styleClass>
-                  </Button>
-                  <Button layoutX="50.0" layoutY="66.0" mnemonicParsing="false" onAction="#konf" prefHeight="90.0" prefWidth="90.0">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                     <styleClass>
-                        <String fx:value="buttonKonf" />
-                        <String fx:value="buttomHover" />
-                     </styleClass>
-                  </Button>
-                  <Button layoutX="190.0" layoutY="66.0" mnemonicParsing="false" onAction="#trev" prefHeight="90.0" prefWidth="90.0">
+                  <Button layoutX="50.0" layoutY="66.0" mnemonicParsing="false" onAction="#trev" prefHeight="90.0" prefWidth="90.0">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -254,25 +195,37 @@
                         <String fx:value="buttomHover" />
                      </styleClass>
                   </Button>
-                  <Button layoutX="610.0" layoutY="66.0" mnemonicParsing="false" onAction="#prog" prefHeight="90.0" prefWidth="90.0">
+                  <Label alignment="TOP_CENTER" layoutX="26.0" layoutY="166.0" prefWidth="138.0" styleClass="inputsubtitle" text="Настройка тревог" textAlignment="CENTER">
+                     <font>
+                        <Font name="Calibri Bold" size="18.0" />
+                     </font>
+                     <effect>
+                        <DropShadow height="3.0" radius="1.0" width="3.0">
+                           <color>
+                              <Color red="0.3137255012989044" green="0.5215686559677124" blue="1.0" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Label>
+                  <Button layoutX="330.0" layoutY="66.0" mnemonicParsing="false" onAction="#jurTrev" prefHeight="90.0" prefWidth="90.0">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
                      <styleClass>
-                        <String fx:value="buttonProg" />
+                        <String fx:value="buttonJurTrev" />
                         <String fx:value="buttomHover" />
                      </styleClass>
                   </Button>
-                  <Button layoutX="470.0" layoutY="66.0" mnemonicParsing="false" onAction="#polz" prefHeight="90.0" prefWidth="90.0">
+                  <Button layoutX="190.0" layoutY="66.0" mnemonicParsing="false" onAction="#jur" prefHeight="90.0" prefWidth="90.0">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
                      <styleClass>
-                        <String fx:value="buttonPolz" />
+                        <String fx:value="buttonJur" />
                         <String fx:value="buttomHover" />
                      </styleClass>
                   </Button>
-                  <Label alignment="TOP_CENTER" layoutX="39.0" layoutY="166.0" styleClass="inputsubtitle" text="Конфигуратор" textAlignment="CENTER">
+                  <Label alignment="TOP_CENTER" layoutX="190.0" layoutY="166.0" prefWidth="90.0" styleClass="inputsubtitle" text="Журнал" textAlignment="CENTER">
                      <font>
                         <Font name="Calibri Bold" size="18.0" />
                      </font>
@@ -284,43 +237,7 @@
                         </DropShadow>
                      </effect>
                   </Label>
-                  <Label alignment="TOP_CENTER" layoutX="190.0" layoutY="166.0" prefWidth="90.0" styleClass="inputsubtitle" text="Тревога" textAlignment="CENTER">
-                     <font>
-                        <Font name="Calibri Bold" size="18.0" />
-                     </font>
-                     <effect>
-                        <DropShadow height="3.0" radius="1.0" width="3.0">
-                           <color>
-                              <Color red="0.3137255012989044" green="0.5215686559677124" blue="1.0" />
-                           </color>
-                        </DropShadow>
-                     </effect>
-                  </Label>
-                  <Label alignment="TOP_CENTER" layoutX="330.0" layoutY="166.0" prefWidth="90.0" styleClass="inputsubtitle" text="Тур" textAlignment="CENTER">
-                     <font>
-                        <Font name="Calibri Bold" size="18.0" />
-                     </font>
-                     <effect>
-                        <DropShadow height="3.0" radius="1.0" width="3.0">
-                           <color>
-                              <Color red="0.3137255012989044" green="0.5215686559677124" blue="1.0" />
-                           </color>
-                        </DropShadow>
-                     </effect>
-                  </Label>
-                  <Label alignment="TOP_CENTER" layoutX="460.0" layoutY="166.0" styleClass="inputsubtitle" text="Пользователи" textAlignment="CENTER">
-                     <font>
-                        <Font name="Calibri Bold" size="18.0" />
-                     </font>
-                     <effect>
-                        <DropShadow height="3.0" radius="1.0" width="3.0">
-                           <color>
-                              <Color red="0.3137255012989044" green="0.5215686559677124" blue="1.0" />
-                           </color>
-                        </DropShadow>
-                     </effect>
-                  </Label>
-                  <Label alignment="TOP_CENTER" layoutX="610.0" layoutY="166.0" styleClass="inputsubtitle" text="Программа" textAlignment="CENTER">
+                  <Label alignment="TOP_CENTER" layoutX="318.0" layoutY="166.0" styleClass="inputsubtitle" text="Журнал тревог" textAlignment="CENTER">
                      <font>
                         <Font name="Calibri Bold" size="18.0" />
                      </font>
@@ -356,52 +273,16 @@
             </AnchorPane>
             <Pane fx:id="basePane11" prefHeight="200.0" prefWidth="1000.0">
                <children>
-                  <Button layoutX="50.0" layoutY="66.0" mnemonicParsing="false" onAction="#map" prefHeight="90.0" prefWidth="90.0">
+                  <Button layoutX="190.0" layoutY="66.0" mnemonicParsing="false" onAction="#prog" prefHeight="90.0" prefWidth="90.0">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
                      <styleClass>
-                        <String fx:value="buttonMap" />
+                        <String fx:value="buttonProg" />
                         <String fx:value="buttomHover" />
                      </styleClass>
                   </Button>
-                  <Button layoutX="330.0" layoutY="66.0" mnemonicParsing="false" onAction="#bek" prefHeight="90.0" prefWidth="90.0">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                     <styleClass>
-                        <String fx:value="buttonBek" />
-                        <String fx:value="buttomHover" />
-                     </styleClass>
-                  </Button>
-                  <Button layoutX="470.0" layoutY="66.0" mnemonicParsing="false" onAction="#prosh" prefHeight="90.0" prefWidth="90.0">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                     <styleClass>
-                        <String fx:value="buttonProsh" />
-                        <String fx:value="buttomHover" />
-                     </styleClass>
-                  </Button>
-                  <Button layoutX="610.0" layoutY="66.0" mnemonicParsing="false" onAction="#fonZap" prefHeight="90.0" prefWidth="90.0">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                     <styleClass>
-                        <String fx:value="buttonFonZap" />
-                        <String fx:value="buttomHover" />
-                     </styleClass>
-                  </Button>
-                  <Button layoutX="190.0" layoutY="66.0" mnemonicParsing="false" onAction="#dec" prefHeight="90.0" prefWidth="90.0">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                     <styleClass>
-                        <String fx:value="buttonDec" />
-                        <String fx:value="buttomHover" />
-                     </styleClass>
-                  </Button>
-                  <Label alignment="TOP_CENTER" layoutX="50.0" layoutY="166.0" prefWidth="90.0" styleClass="inputsubtitle" text="Карта" textAlignment="CENTER">
+                  <Label alignment="TOP_CENTER" layoutX="190.0" layoutY="166.0" styleClass="inputsubtitle" text="Программа" textAlignment="CENTER">
                      <font>
                         <Font name="Calibri Bold" size="18.0" />
                      </font>
@@ -413,7 +294,16 @@
                         </DropShadow>
                      </effect>
                   </Label>
-                  <Label alignment="TOP_CENTER" layoutX="190.0" layoutY="166.0" prefWidth="90.0" styleClass="inputsubtitle" text="Декодер" textAlignment="CENTER">
+                  <Button layoutX="50.0" layoutY="66.0" mnemonicParsing="false" onAction="#ust" prefHeight="90.0" prefWidth="90.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <styleClass>
+                        <String fx:value="buttonUstr" />
+                        <String fx:value="buttomHover" />
+                     </styleClass>
+                  </Button>
+                  <Label layoutX="50.0" layoutY="166.0" prefWidth="90.0" styleClass="inputsubtitle" text="Устройства">
                      <font>
                         <Font name="Calibri Bold" size="18.0" />
                      </font>
@@ -425,31 +315,16 @@
                         </DropShadow>
                      </effect>
                   </Label>
-                  <Label alignment="TOP_CENTER" layoutX="330.0" layoutY="166.0" prefWidth="90.0" styleClass="inputsubtitle" text="Бэкап" textAlignment="CENTER">
-                     <font>
-                        <Font name="Calibri Bold" size="18.0" />
-                     </font>
-                     <effect>
-                        <DropShadow height="3.0" radius="1.0" width="3.0">
-                           <color>
-                              <Color red="0.3137255012989044" green="0.5215686559677124" blue="1.0" />
-                           </color>
-                        </DropShadow>
-                     </effect>
-                  </Label>
-                  <Label alignment="TOP_CENTER" layoutX="470.0" layoutY="166.0" prefWidth="90.0" styleClass="inputsubtitle" text="Прошивка" textAlignment="CENTER">
-                     <font>
-                        <Font name="Calibri Bold" size="18.0" />
-                     </font>
-                     <effect>
-                        <DropShadow height="3.0" radius="1.0" width="3.0">
-                           <color>
-                              <Color red="0.3137255012989044" green="0.5215686559677124" blue="1.0" />
-                           </color>
-                        </DropShadow>
-                     </effect>
-                  </Label>
-                  <Label alignment="TOP_CENTER" layoutX="592.0" layoutY="166.0" styleClass="inputsubtitle" text="Фоновая запись" textAlignment="CENTER">
+                  <Button layoutX="330.0" layoutY="66.0" mnemonicParsing="false" onAction="#polz" prefHeight="90.0" prefWidth="90.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <styleClass>
+                        <String fx:value="buttonPolz" />
+                        <String fx:value="buttomHover" />
+                     </styleClass>
+                  </Button>
+                  <Label alignment="TOP_CENTER" layoutX="320.0" layoutY="166.0" styleClass="inputsubtitle" text="Пользователи" textAlignment="CENTER">
                      <font>
                         <Font name="Calibri Bold" size="18.0" />
                      </font>
@@ -1277,16 +1152,63 @@
                   <Font name="Calibri" size="14.0" />
                </font>
             </Label>
-            <TableView fx:id="jurtrevTable" layoutX="20.0" layoutY="60.0" prefHeight="750.0" prefWidth="1400.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="60.0">
+            <TableView fx:id="jurtrevTable" layoutX="20.0" layoutY="60.0" prefHeight="740.0" prefWidth="810.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="610.0" AnchorPane.topAnchor="60.0">
                <columns>
                   <TableColumn maxWidth="100.0" minWidth="50.0" prefWidth="50.0" text="№" />
-                  <TableColumn maxWidth="500.0" minWidth="250.0" prefWidth="400.0" text="Статус" />
-                  <TableColumn maxWidth="300.0" minWidth="150.0" prefWidth="250.0" text="Тип тревоги" />
-                  <TableColumn maxWidth="300.0" prefWidth="250.0" text="Время" />
-                  <TableColumn maxWidth="400.0" minWidth="200.0" prefWidth="300.0" text="Устройство" />
-                  <TableColumn maxWidth="1500.0" minWidth="100.0" prefWidth="150.0" text="Канал" />
+                  <TableColumn maxWidth="500.0" minWidth="150.0" prefWidth="200.0" text="Статус" />
+                  <TableColumn maxWidth="300.0" minWidth="100.0" prefWidth="150.0" text="Тип тревоги" />
+                  <TableColumn maxWidth="300.0" prefWidth="150.0" text="Время" />
+                  <TableColumn maxWidth="400.0" minWidth="150.0" prefWidth="150.0" text="Устройство" />
+                  <TableColumn maxWidth="1500.0" minWidth="100.0" prefWidth="110.0" text="Результат" />
                </columns>
             </TableView>
+            <Button layoutX="1082.0" layoutY="390.0" mnemonicParsing="false" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Активно">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="Calibri" size="24.0" />
+               </font>
+            </Button>
+            <Button layoutX="980.0" layoutY="729.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="200.0" styleClass="btnForJurTrevLock" text="Блокировать">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="Calibri" size="24.0" />
+               </font>
+            </Button>
+            <Label layoutX="845.0" layoutY="752.0" prefHeight="32.0" text="Шлагбаум:">
+               <font>
+                  <Font name="Calibri" size="26.0" />
+               </font>
+            </Label>
+            <Button layoutX="1210.0" layoutY="729.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="200.0" styleClass="btnForJurTrevUnlock" text="Разблокировать">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="Calibri" size="24.0" />
+               </font>
+            </Button>
+            <Label layoutX="883.0" layoutY="397.0" text="Поменять статус:">
+               <font>
+                  <Font name="Calibri" size="24.0" />
+               </font>
+            </Label>
+            <Text layoutX="903.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Тут я хочу чтобы чел тыкал в таблице на любую тревогу, она выводилась вместо этого текста и он что-то делал дальше. Возможно поменять статус, надо придумать еще" wrappingWidth="492.80340576171875">
+               <font>
+                  <Font size="32.0" />
+               </font>
+            </Text>
+            <Button layoutX="1240.0" layoutY="390.0" mnemonicParsing="false" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Не активно">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="Calibri" size="24.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
       <AnchorPane fx:id="invisiblePane" layoutX="882.0" layoutY="104.0" prefHeight="759.0" prefWidth="520.0" visible="false">
@@ -1305,7 +1227,7 @@
                   <Button fx:id="prosmotrClose" layoutX="70.0" layoutY="1.0" maxHeight="17.0" maxWidth="16.0" minHeight="10.0" minWidth="7.0" mnemonicParsing="false" onAction="#prosmotrSmallClose" prefHeight="16.0" prefWidth="16.0" snapToPixel="false" styleClass="prosmotrClose" visible="false" />
                </children>
             </Pane>
-            <Pane fx:id="UstSmallPane" layoutX="97.0" layoutY="17.0" maxHeight="75.0" maxWidth="90.0" minHeight="75.0" minWidth="90.0" onMouseEntered="#UstCloseOn" onMouseExited="#UstCloseOff" prefHeight="75.0" prefWidth="90.0">
+            <Pane fx:id="UstSmallPane" layoutX="41.0" layoutY="600.0" maxHeight="75.0" maxWidth="90.0" minHeight="75.0" minWidth="90.0" onMouseEntered="#UstCloseOn" onMouseExited="#UstCloseOff" prefHeight="75.0" prefWidth="90.0">
                <children>
                   <Button fx:id="UstBtnUp" layoutX="3.0" layoutY="4.0" mnemonicParsing="false" onAction="#ust" prefHeight="65.0" prefWidth="65.0">
                      <cursor>
@@ -1347,7 +1269,7 @@
                   <Button fx:id="ZapClose" layoutX="70.0" layoutY="1.0" maxHeight="17.0" maxWidth="16.0" minHeight="10.0" minWidth="7.0" mnemonicParsing="false" onAction="#ZapSmallClose" prefHeight="16.0" prefWidth="16.0" snapToPixel="false" styleClass="prosmotrClose" visible="false" />
                </children>
             </Pane>
-            <Pane fx:id="JurSmallPane" layoutX="57.0" layoutY="105.0" maxHeight="75.0" maxWidth="90.0" minHeight="75.0" minWidth="90.0" onMouseEntered="#JurCloseOn" onMouseExited="#JurCloseOff" prefHeight="75.0" prefWidth="90.0">
+            <Pane fx:id="JurSmallPane" layoutX="178.0" layoutY="350.0" maxHeight="75.0" maxWidth="90.0" minHeight="75.0" minWidth="90.0" onMouseEntered="#JurCloseOn" onMouseExited="#JurCloseOff" prefHeight="75.0" prefWidth="90.0">
                <children>
                   <Button fx:id="JurBtnUp" layoutX="3.0" layoutY="4.0" mnemonicParsing="false" onAction="#jur" prefHeight="65.0" prefWidth="65.0">
                      <cursor>
@@ -1361,7 +1283,7 @@
                   <Button fx:id="JurClose" layoutX="70.0" layoutY="1.0" maxHeight="17.0" maxWidth="16.0" minHeight="10.0" minWidth="7.0" mnemonicParsing="false" onAction="#JurSmallClose" prefHeight="16.0" prefWidth="16.0" snapToPixel="false" styleClass="prosmotrClose" visible="false" />
                </children>
             </Pane>
-            <Pane fx:id="JurTrevSmallPane" layoutX="246.0" layoutY="105.0" maxHeight="75.0" maxWidth="90.0" minHeight="75.0" minWidth="90.0" onMouseEntered="#JurTrevCloseOn" onMouseExited="#JurTrevCloseOff" prefHeight="75.0" prefWidth="90.0">
+            <Pane fx:id="JurTrevSmallPane" layoutX="299.0" layoutY="350.0" maxHeight="75.0" maxWidth="90.0" minHeight="75.0" minWidth="90.0" onMouseEntered="#JurTrevCloseOn" onMouseExited="#JurTrevCloseOff" prefHeight="75.0" prefWidth="90.0">
                <children>
                   <Button fx:id="JurTrevBtnUp" layoutX="3.0" layoutY="4.0" mnemonicParsing="false" onAction="#jurTrev" prefHeight="65.0" prefWidth="65.0">
                      <cursor>
@@ -1375,21 +1297,7 @@
                   <Button fx:id="JurTrevClose" layoutX="70.0" layoutY="1.0" maxHeight="17.0" maxWidth="16.0" minHeight="10.0" minWidth="7.0" mnemonicParsing="false" onAction="#JurTrevSmallClose" prefHeight="16.0" prefWidth="16.0" snapToPixel="false" styleClass="prosmotrClose" visible="false" />
                </children>
             </Pane>
-            <Pane fx:id="KonfSmallPane" layoutX="21.0" layoutY="347.0" maxHeight="75.0" maxWidth="90.0" minHeight="75.0" minWidth="90.0" onMouseEntered="#KonfCloseOn" onMouseExited="#KonfCloseOff" prefHeight="75.0" prefWidth="90.0">
-               <children>
-                  <Button fx:id="KonfBtnUp" layoutX="3.0" layoutY="4.0" mnemonicParsing="false" onAction="#konf" prefHeight="65.0" prefWidth="65.0">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                     <styleClass>
-                        <String fx:value="KonfSmall" />
-                        <String fx:value="buttonSmallHover" />
-                     </styleClass>
-                  </Button>
-                  <Button fx:id="KonfClose" layoutX="70.0" layoutY="1.0" maxHeight="17.0" maxWidth="16.0" minHeight="10.0" minWidth="7.0" mnemonicParsing="false" onAction="#KonfSmallClose" prefHeight="16.0" prefWidth="16.0" snapToPixel="false" styleClass="prosmotrClose" visible="false" />
-               </children>
-            </Pane>
-            <Pane fx:id="TrevSmallPane" layoutX="126.0" layoutY="345.0" maxHeight="75.0" maxWidth="90.0" minHeight="75.0" minWidth="90.0" onMouseEntered="#TrevCloseOn" onMouseExited="#TrevCloseOff" prefHeight="75.0" prefWidth="90.0">
+            <Pane fx:id="TrevSmallPane" layoutX="53.0" layoutY="350.0" maxHeight="75.0" maxWidth="90.0" minHeight="75.0" minWidth="90.0" onMouseEntered="#TrevCloseOn" onMouseExited="#TrevCloseOff" prefHeight="75.0" prefWidth="90.0">
                <children>
                   <Button fx:id="TrevBtnUp" layoutX="3.0" layoutY="4.0" mnemonicParsing="false" onAction="#trev" prefHeight="65.0" prefWidth="65.0">
                      <cursor>
@@ -1403,7 +1311,7 @@
                   <Button fx:id="TrevClose" layoutX="70.0" layoutY="1.0" maxHeight="17.0" maxWidth="16.0" minHeight="10.0" minWidth="7.0" mnemonicParsing="false" onAction="#TrevSmallClose" prefHeight="16.0" prefWidth="16.0" snapToPixel="false" styleClass="prosmotrClose" visible="false" />
                </children>
             </Pane>
-            <Pane fx:id="TurSmallPane" layoutX="241.0" layoutY="344.0" maxHeight="75.0" maxWidth="90.0" minHeight="75.0" minWidth="90.0" onMouseEntered="#TurCloseOn" onMouseExited="#TurCloseOff" prefHeight="75.0" prefWidth="90.0">
+            <Pane fx:id="TurSmallPane" layoutX="95.0" layoutY="18.0" maxHeight="75.0" maxWidth="90.0" minHeight="75.0" minWidth="90.0" onMouseEntered="#TurCloseOn" onMouseExited="#TurCloseOff" prefHeight="75.0" prefWidth="90.0">
                <children>
                   <Button fx:id="TurBtnUp" layoutX="3.0" layoutY="4.0" mnemonicParsing="false" onAction="#tur" prefHeight="65.0" prefWidth="65.0">
                      <cursor>
@@ -1417,21 +1325,7 @@
                   <Button fx:id="TurClose" layoutX="70.0" layoutY="1.0" maxHeight="17.0" maxWidth="16.0" minHeight="10.0" minWidth="7.0" mnemonicParsing="false" onAction="#TurSmallClose" prefHeight="16.0" prefWidth="16.0" snapToPixel="false" styleClass="prosmotrClose" visible="false" />
                </children>
             </Pane>
-            <Pane fx:id="PolzSmallPane" layoutX="331.0" layoutY="344.0" maxHeight="75.0" maxWidth="90.0" minHeight="75.0" minWidth="90.0" onMouseEntered="#PolzCloseOn" onMouseExited="#PolzCloseOff" prefHeight="75.0" prefWidth="90.0">
-               <children>
-                  <Button fx:id="PolzBtnUp" layoutX="3.0" layoutY="4.0" mnemonicParsing="false" onAction="#polz" prefHeight="65.0" prefWidth="65.0">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                     <styleClass>
-                        <String fx:value="PolzSmall" />
-                        <String fx:value="buttonSmallHover" />
-                     </styleClass>
-                  </Button>
-                  <Button fx:id="PolzClose" layoutX="70.0" layoutY="1.0" maxHeight="17.0" maxWidth="16.0" minHeight="10.0" minWidth="7.0" mnemonicParsing="false" onAction="#PolzSmallClose" prefHeight="16.0" prefWidth="16.0" snapToPixel="false" styleClass="prosmotrClose" visible="false" />
-               </children>
-            </Pane>
-            <Pane fx:id="ProgSmallPane" layoutX="429.0" layoutY="345.0" maxHeight="75.0" maxWidth="90.0" minHeight="75.0" minWidth="90.0" onMouseEntered="#ProgCloseOn" onMouseExited="#ProgCloseOff" prefHeight="75.0" prefWidth="90.0">
+            <Pane fx:id="ProgSmallPane" layoutX="162.0" layoutY="600.0" maxHeight="75.0" maxWidth="90.0" minHeight="75.0" minWidth="90.0" onMouseEntered="#ProgCloseOn" onMouseExited="#ProgCloseOff" prefHeight="75.0" prefWidth="90.0">
                <children>
                   <Button fx:id="ProgBtnUp" layoutX="3.0" layoutY="4.0" mnemonicParsing="false" onAction="#prog" prefHeight="65.0" prefWidth="65.0">
                      <cursor>
@@ -1445,74 +1339,18 @@
                   <Button fx:id="ProgClose" layoutX="70.0" layoutY="1.0" maxHeight="17.0" maxWidth="16.0" minHeight="10.0" minWidth="7.0" mnemonicParsing="false" onAction="#ProgSmallClose" prefHeight="16.0" prefWidth="16.0" snapToPixel="false" styleClass="prosmotrClose" visible="false" />
                </children>
             </Pane>
-            <Pane fx:id="MapSmallPane" layoutX="23.0" layoutY="601.0" maxHeight="75.0" maxWidth="90.0" minHeight="75.0" minWidth="90.0" onMouseEntered="#MapCloseOn" onMouseExited="#MapCloseOff" prefHeight="75.0" prefWidth="90.0">
+            <Pane fx:id="PolzSmallPane" layoutX="270.0" layoutY="600.0" maxHeight="75.0" maxWidth="90.0" minHeight="75.0" minWidth="90.0" onMouseEntered="#PolzCloseOn" onMouseExited="#PolzCloseOff" prefHeight="75.0" prefWidth="90.0">
                <children>
-                  <Button fx:id="MapBtnUp" layoutX="3.0" layoutY="4.0" mnemonicParsing="false" onAction="#map" prefHeight="65.0" prefWidth="65.0">
+                  <Button fx:id="PolzBtnUp" layoutX="3.0" layoutY="4.0" mnemonicParsing="false" onAction="#polz" prefHeight="65.0" prefWidth="65.0">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
                      <styleClass>
-                        <String fx:value="MapSmall" />
+                        <String fx:value="PolzSmall" />
                         <String fx:value="buttonSmallHover" />
                      </styleClass>
                   </Button>
-                  <Button fx:id="MapClose" layoutX="70.0" layoutY="1.0" maxHeight="17.0" maxWidth="16.0" minHeight="10.0" minWidth="7.0" mnemonicParsing="false" onAction="#MapSmallClose" prefHeight="16.0" prefWidth="16.0" snapToPixel="false" styleClass="prosmotrClose" visible="false" />
-               </children>
-            </Pane>
-            <Pane fx:id="DecSmallPane" layoutX="124.0" layoutY="601.0" maxHeight="75.0" maxWidth="90.0" minHeight="75.0" minWidth="90.0" onMouseEntered="#DecCloseOn" onMouseExited="#DecCloseOff" prefHeight="75.0" prefWidth="90.0">
-               <children>
-                  <Button fx:id="DecBtnUp" layoutX="3.0" layoutY="4.0" mnemonicParsing="false" onAction="#dec" prefHeight="65.0" prefWidth="65.0">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                     <styleClass>
-                        <String fx:value="DecSmall" />
-                        <String fx:value="buttonSmallHover" />
-                     </styleClass>
-                  </Button>
-                  <Button fx:id="DecClose" layoutX="70.0" layoutY="1.0" maxHeight="17.0" maxWidth="16.0" minHeight="10.0" minWidth="7.0" mnemonicParsing="false" onAction="#DecSmallClose" prefHeight="16.0" prefWidth="16.0" snapToPixel="false" styleClass="prosmotrClose" visible="false" />
-               </children>
-            </Pane>
-            <Pane fx:id="BekSmallPane" layoutX="214.0" layoutY="601.0" maxHeight="75.0" maxWidth="90.0" minHeight="75.0" minWidth="90.0" onMouseEntered="#BekCloseOn" onMouseExited="#BekCloseOff" prefHeight="75.0" prefWidth="90.0">
-               <children>
-                  <Button fx:id="BekBtnUp" layoutX="3.0" layoutY="4.0" mnemonicParsing="false" onAction="#bek" prefHeight="65.0" prefWidth="65.0">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                     <styleClass>
-                        <String fx:value="BekSmall" />
-                        <String fx:value="buttonSmallHover" />
-                     </styleClass>
-                  </Button>
-                  <Button fx:id="BekClose" layoutX="70.0" layoutY="1.0" maxHeight="17.0" maxWidth="16.0" minHeight="10.0" minWidth="7.0" mnemonicParsing="false" onAction="#BekSmallClose" prefHeight="16.0" prefWidth="16.0" snapToPixel="false" styleClass="prosmotrClose" visible="false" />
-               </children>
-            </Pane>
-            <Pane fx:id="ProshSmallPane" layoutX="312.0" layoutY="602.0" maxHeight="75.0" maxWidth="90.0" minHeight="75.0" minWidth="90.0" onMouseEntered="#ProshCloseOn" onMouseExited="#ProshCloseOff" prefHeight="75.0" prefWidth="90.0">
-               <children>
-                  <Button fx:id="ProshBtnUp" layoutX="3.0" layoutY="4.0" mnemonicParsing="false" onAction="#prosh" prefHeight="65.0" prefWidth="65.0">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                     <styleClass>
-                        <String fx:value="ProshSmall" />
-                        <String fx:value="buttonSmallHover" />
-                     </styleClass>
-                  </Button>
-                  <Button fx:id="ProshClose" layoutX="70.0" layoutY="1.0" maxHeight="17.0" maxWidth="16.0" minHeight="10.0" minWidth="7.0" mnemonicParsing="false" onAction="#ProshSmallClose" prefHeight="16.0" prefWidth="16.0" snapToPixel="false" styleClass="prosmotrClose" visible="false" />
-               </children>
-            </Pane>
-            <Pane fx:id="FonZapSmallPane" layoutX="417.0" layoutY="600.0" maxHeight="75.0" maxWidth="90.0" minHeight="75.0" minWidth="90.0" onMouseEntered="#FonZapCloseOn" onMouseExited="#FonZapCloseOff" prefHeight="75.0" prefWidth="90.0">
-               <children>
-                  <Button fx:id="FonZapBtnUp" layoutX="3.0" layoutY="4.0" mnemonicParsing="false" onAction="#fonZap" prefHeight="65.0" prefWidth="65.0">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                     <styleClass>
-                        <String fx:value="FonZapSmall" />
-                        <String fx:value="buttonSmallHover" />
-                     </styleClass>
-                  </Button>
-                  <Button fx:id="FonZapClose" layoutX="70.0" layoutY="1.0" maxHeight="17.0" maxWidth="16.0" minHeight="10.0" minWidth="7.0" mnemonicParsing="false" onAction="#FonZapSmallClose" prefHeight="16.0" prefWidth="16.0" snapToPixel="false" styleClass="prosmotrClose" visible="false" />
+                  <Button fx:id="PolzClose" layoutX="70.0" layoutY="1.0" maxHeight="17.0" maxWidth="16.0" minHeight="10.0" minWidth="7.0" mnemonicParsing="false" onAction="#PolzSmallClose" prefHeight="16.0" prefWidth="16.0" snapToPixel="false" styleClass="prosmotrClose" visible="false" />
                </children>
             </Pane>
          </children>

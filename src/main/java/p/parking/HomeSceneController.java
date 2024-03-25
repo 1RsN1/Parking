@@ -32,10 +32,9 @@ public class HomeSceneController {
     ImageView imgV1, imgV41, imgV42, imgV43, imgV44, imgV71, imgV72, imgV73, imgV74, imgV75, imgV76,
             imgV77, imgV91, imgV92, imgV93, imgV94, imgV95, imgV96, imgV97, imgV98, imgV99, ivProsmotr0;
     @FXML
-    AnchorPane anchorPaneProsmotr, anchorPaneUst, anchorPaneArh, anchorPaneZap, anchorPaneJur, anchorPaneJurTrev,
-            anchorPaneKonf, anchorPaneTrev, anchorPaneTur, anchorPanePolz, anchorPaneProg, anchorPaneMap,
-            anchorPaneDec, anchorPaneBek, anchorPaneProsh, anchorPaneFonZap, scenePanel, baseAnchorPane, othersAnchorPane,
-            settingAP, camBtnPane, camRightPane, rightPaneForArh;
+    AnchorPane anchorPaneProsmotr, anchorPaneUst, anchorPaneArh, anchorPaneZap, anchorPaneJur, anchorPaneJurTrev, anchorPaneTrev,
+            anchorPaneTur, anchorPaneProg, anchorPanePolz, scenePanel, baseAnchorPane, othersAnchorPane, settingAP, camBtnPane, camRightPane,
+            rightPaneForArh;
     @FXML
     Pane basePane, basePane1, basePane11, zapBtnPane;
     @FXML
@@ -489,33 +488,6 @@ public class HomeSceneController {
         JurTrevClose.setVisible(false);
     }
 
-    public void KonfBtnUpper() {
-        if (hBox.getChildren().contains(KonfSmallPane)) {
-        } else {
-            hBox.getChildren().addFirst(KonfSmallPane);
-            KonfBtnUp.setVisible(true);
-        }
-    }
-
-    public void KonfSmallClose(ActionEvent event) {
-        hBox.getChildren().remove(KonfSmallPane);
-        anchorPaneKonf.setVisible(false);
-    }
-
-    public void konf(ActionEvent event) {
-        KonfBtnUpper();
-        anchorPaneKonf.setVisible(true);
-        hboxDeleteLast(anchorPaneKonf);
-    }
-
-    public void KonfCloseOn(MouseEvent event) {
-        KonfClose.setVisible(true);
-    }
-
-    public void KonfCloseOff(MouseEvent event) {
-        KonfClose.setVisible(false);
-    }
-
     public void TrevBtnUpper() {
         if (hBox.getChildren().contains(TrevSmallPane)) {
         } else {
@@ -570,6 +542,29 @@ public class HomeSceneController {
         TurClose.setVisible(false);
     }
 
+    public void ProgBtnUpper() {
+        if (hBox.getChildren().contains(ProgSmallPane)) {
+        } else {
+            hBox.getChildren().addFirst(ProgSmallPane);
+            ProgBtnUp.setVisible(true);
+        }
+    }
+
+    public void ProgSmallClose(ActionEvent event) {
+        hBox.getChildren().remove(ProgSmallPane);
+        anchorPaneProg.setVisible(false);
+    }
+
+    public void prog(ActionEvent event) {
+        ProgBtnUpper();
+        anchorPaneProg.setVisible(true);
+        hboxDeleteLast(anchorPaneProg);
+    }
+
+    public void ProgCloseOn(MouseEvent event) {
+        ProgClose.setVisible(true);
+    }
+
     public void PolzBtnUpper() {
         if (hBox.getChildren().contains(PolzSmallPane)) {
         } else {
@@ -597,166 +592,8 @@ public class HomeSceneController {
         PolzClose.setVisible(false);
     }
 
-    public void ProgBtnUpper() {
-        if (hBox.getChildren().contains(ProgSmallPane)) {
-        } else {
-            hBox.getChildren().addFirst(ProgSmallPane);
-            ProgBtnUp.setVisible(true);
-        }
-    }
-
-    public void ProgSmallClose(ActionEvent event) {
-        hBox.getChildren().remove(ProgSmallPane);
-        anchorPaneProg.setVisible(false);
-    }
-
-    public void prog(ActionEvent event) {
-        ProgBtnUpper();
-        anchorPaneProg.setVisible(true);
-        hboxDeleteLast(anchorPaneProg);
-    }
-
-    public void ProgCloseOn(MouseEvent event) {
-        ProgClose.setVisible(true);
-    }
-
     public void ProgCloseOff(MouseEvent event) {
         ProgClose.setVisible(false);
-    }
-
-    public void MapBtnUpper() {
-        if (hBox.getChildren().contains(MapSmallPane)) {
-        } else {
-            hBox.getChildren().addFirst(MapSmallPane);
-            MapBtnUp.setVisible(true);
-        }
-    }
-
-    public void MapSmallClose(ActionEvent event) {
-        hBox.getChildren().remove(MapSmallPane);
-        anchorPaneMap.setVisible(false);
-    }
-
-    public void map(ActionEvent event) {
-        MapBtnUpper();
-        anchorPaneMap.setVisible(true);
-        hboxDeleteLast(anchorPaneMap);
-    }
-
-    public void MapCloseOn(MouseEvent event) {
-        MapClose.setVisible(true);
-    }
-
-    public void MapCloseOff(MouseEvent event) {
-        MapClose.setVisible(false);
-    }
-
-    public void DecBtnUpper() {
-        if (hBox.getChildren().contains(DecSmallPane)) {
-        } else {
-            hBox.getChildren().addFirst(DecSmallPane);
-            DecBtnUp.setVisible(true);
-        }
-    }
-
-    public void DecSmallClose(ActionEvent event) {
-        hBox.getChildren().remove(DecSmallPane);
-        anchorPaneDec.setVisible(false);
-    }
-
-    public void dec(ActionEvent event) {
-        DecBtnUpper();
-        anchorPaneDec.setVisible(true);
-        hboxDeleteLast(anchorPaneDec);
-    }
-
-    public void DecCloseOn(MouseEvent event) {
-        DecClose.setVisible(true);
-    }
-
-    public void DecCloseOff(MouseEvent event) {
-        DecClose.setVisible(false);
-    }
-
-    public void BekBtnUpper() {
-        if (hBox.getChildren().contains(BekSmallPane)) {
-        } else {
-            hBox.getChildren().addFirst(BekSmallPane);
-            BekBtnUp.setVisible(true);
-        }
-    }
-
-    public void BekSmallClose(ActionEvent event) {
-        hBox.getChildren().remove(BekSmallPane);
-        anchorPaneBek.setVisible(false);
-    }
-
-    public void bek(ActionEvent event) {
-        BekBtnUpper();
-        anchorPaneBek.setVisible(true);
-        hboxDeleteLast(anchorPaneBek);
-    }
-
-    public void BekCloseOn(MouseEvent event) {
-        BekClose.setVisible(true);
-    }
-
-    public void BekCloseOff(MouseEvent event) {
-        BekClose.setVisible(false);
-    }
-
-    public void ProshBtnUpper() {
-        if (hBox.getChildren().contains(ProshSmallPane)) {
-        } else {
-            hBox.getChildren().addFirst(ProshSmallPane);
-            ProshBtnUp.setVisible(true);
-        }
-    }
-
-    public void ProshSmallClose(ActionEvent event) {
-        hBox.getChildren().remove(ProshSmallPane);
-        anchorPaneProsh.setVisible(false);
-    }
-
-    public void prosh(ActionEvent event) {
-        ProshBtnUpper();
-        anchorPaneProsh.setVisible(true);
-        hboxDeleteLast(anchorPaneProsh);
-    }
-
-    public void ProshCloseOn(MouseEvent event) {
-        ProshClose.setVisible(true);
-    }
-
-    public void ProshCloseOff(MouseEvent event) {
-        ProshClose.setVisible(false);
-    }
-
-    public void FonZapBtnUpper() {
-        if (hBox.getChildren().contains(FonZapSmallPane)) {
-        } else {
-            hBox.getChildren().addFirst(FonZapSmallPane);
-            FonZapBtnUp.setVisible(true);
-        }
-    }
-
-    public void FonZapSmallClose(ActionEvent event) {
-        hBox.getChildren().remove(FonZapSmallPane);
-        anchorPaneFonZap.setVisible(false);
-    }
-
-    public void fonZap(ActionEvent event) {
-        FonZapBtnUpper();
-        anchorPaneFonZap.setVisible(true);
-        hboxDeleteLast(anchorPaneFonZap);
-    }
-
-    public void FonZapCloseOn(MouseEvent event) {
-        FonZapClose.setVisible(true);
-    }
-
-    public void FonZapCloseOff(MouseEvent event) {
-        FonZapClose.setVisible(false);
     }
 
     @FXML
