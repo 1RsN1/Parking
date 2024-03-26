@@ -29,7 +29,7 @@ public class HomeSceneController {
     TableView jurtrevTable;
     @FXML
     ImageView imgV1, imgV41, imgV42, imgV43, imgV44, imgV71, imgV72, imgV73, imgV74, imgV75, imgV76,
-            imgV77, imgV91, imgV92, imgV93, imgV94, imgV95, imgV96, imgV97, imgV98, imgV99, ivProsmotr0;
+            imgV77, imgV91, imgV92, imgV93, imgV94, imgV95, imgV96, imgV97, imgV98, imgV99, ivProsmotr0, imArh1, imArh2, imArh3, imArh4;
     @FXML
     AnchorPane anchorPaneProsmotr, anchorPaneUst, anchorPaneArh, anchorPaneZap, anchorPaneJur, anchorPaneJurTrev, anchorPaneTrev,
             anchorPaneTur, anchorPaneProg, anchorPanePolz, homePanel, baseAnchorPane, othersAnchorPane, settingAP, camBtnPane, camRightPane,
@@ -231,10 +231,11 @@ public class HomeSceneController {
         */
 
         imgV1.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
-        imgV41.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
-        imgV42.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
-        imgV43.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
-        imgV44.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
+        imArh1.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
+        imArh2.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
+        imArh3.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
+        imArh4.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
+
         /*
         imgV71.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/1.jpg")));
         imgV72.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/2.jpg")));
@@ -674,12 +675,19 @@ public class HomeSceneController {
             //arh
             arhCamPane.setLayoutX(610);
             anchorPaneArh.setPadding(new Insets(0, 0, 20, 0));
+
+            arhGP.setPadding(new Insets(0, 0, 0, 0));
             splitArhBool();
 
-            imgV41.setFitHeight(440);
-            imgV42.setFitHeight(440);
-            imgV43.setFitHeight(440);
-            imgV44.setFitHeight(440);
+           imArh1.setFitHeight(418);
+           imArh1.setFitWidth(1500);
+            imArh2.setFitHeight(418);
+            imArh2.setFitWidth(1000);
+            imArh3.setFitHeight(418);
+            imArh3.setFitWidth(1000);
+            imArh4.setFitHeight(418);
+            imArh4.setFitWidth(1000);
+
 
             //jur
             anchorPaneJur.setPadding(new Insets(0, 0, 30, 0));
@@ -741,10 +749,14 @@ public class HomeSceneController {
             arhCamPane.setLayoutX(500);
             anchorPaneArh.setPadding(new Insets(0, 0, 0, 0));
             splitArhBool();
-            imgV41.setFitHeight(350);
-            imgV42.setFitHeight(350);
-            imgV43.setFitHeight(350);
-            imgV44.setFitHeight(350);
+            imArh1.setFitHeight(350);
+            imArh1.setFitWidth(600);
+            imArh2.setFitHeight(600);
+            imArh2.setFitWidth(600);
+            imArh3.setFitHeight(350);
+            imArh3.setFitWidth(600);
+            imArh4.setFitHeight(350);
+            imArh4.setFitWidth(600);
 
             //jur
             anchorPaneJur.setPadding(new Insets(0, 0, 0, 0));

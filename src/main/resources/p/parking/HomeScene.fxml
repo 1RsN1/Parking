@@ -723,7 +723,7 @@
       </AnchorPane>
       <AnchorPane fx:id="anchorPaneArh" layoutY="75.0" prefHeight="810.0" prefWidth="1440.0" styleClass="home" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
          <children>
-            <GridPane fx:id="arhGP" layoutX="4.0" layoutY="2.0" prefHeight="674.0" prefWidth="1152.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="35.0">
+            <GridPane fx:id="arhGP" gridLinesVisible="true" layoutX="4.0" layoutY="2.0" prefHeight="674.0" prefWidth="1152.0" AnchorPane.bottomAnchor="106.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="35.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -733,14 +733,14 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <ImageView fx:id="imgV44" fitHeight="350.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+                  <ImageView fx:id="imArh2" fitHeight="350.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
                      <viewport>
                         <Rectangle2D />
                      </viewport>
                   </ImageView>
-                  <ImageView fx:id="imgV43" fitHeight="350.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1" />
-                  <ImageView fx:id="imgV42" fitHeight="350.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true" />
-                  <ImageView fx:id="imgV41" fitHeight="350.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <ImageView fx:id="imArh4" fitHeight="350.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1" />
+                  <ImageView fx:id="imArh3" fitHeight="350.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="imArh1" fitHeight="350.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                </children>
                <padding>
                   <Insets right="220.0" />
