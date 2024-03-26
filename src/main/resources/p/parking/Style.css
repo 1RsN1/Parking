@@ -329,6 +329,15 @@
     -fx-background-size: 100% 100%;
     -fx-background-color: rgba(199, 199, 199, 0.71);
 }
+.splitBtn{
+    -fx-background-image: url("./icon/21.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 100% 100%;
+    -fx-background-color: rgba(199, 199, 199, 0.71);
+}
+.splitBtn:hover{
+    -fx-background-color: #53A2BE;
+}
 
 /* ============ Кнопки для всех вкладок ========================================================================= */
 

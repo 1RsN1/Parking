@@ -31,7 +31,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="homePanel" prefHeight="900.0" prefWidth="1440.0" styleClass="home" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="p.parking.HomeSceneController">
+<AnchorPane fx:id="homePanel" prefHeight="900.0" prefWidth="1440.0" styleClass="home" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="p.parking.HomeSceneController">
    <children>
       <AnchorPane prefHeight="75.0" prefWidth="1440.0" styleClass="header" stylesheets="@Style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <effect>
@@ -348,7 +348,7 @@
             </InnerShadow>
          </effect>
       </AnchorPane>
-      <AnchorPane fx:id="anchorPaneProsmotr" layoutY="76.0" prefHeight="825.0" prefWidth="1440.0" styleClass="home" visible="false" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
+      <AnchorPane fx:id="anchorPaneProsmotr" layoutY="76.0" prefHeight="825.0" prefWidth="1440.0" styleClass="home" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
          <children>
             <AnchorPane fx:id="paneWithNineCam" layoutX="12.5" layoutY="12.5" prefHeight="700.0" prefWidth="1235.0" style="-fx-background-color: grey;" visible="false">
                <children>
@@ -485,11 +485,7 @@
                </children>
             </AnchorPane>
             <AnchorPane fx:id="camRightPane" layoutX="1278.0" layoutY="20.5" prefHeight="700.0" prefWidth="150.0" style="-fx-background-color: #A8A7A7; -fx-border-color: black; -fx-border-radius: 5; -fx-background-radius: 5;" />
-            <Button fx:id="btnSplitRightPane" layoutX="1262.0" layoutY="20.5" mnemonicParsing="false" onAction="#splitCamRightPane" onMouseClicked="#clickedForOneCam" pickOnBounds="false" prefHeight="700.0" prefWidth="15.0" style="-fx-background-insets: 0;">
-               <styleClass>
-                  <String fx:value="cam1Btn" />
-                  <String fx:value="camBtnHover" />
-               </styleClass>
+            <Button fx:id="btnSplitRightPane" layoutX="1262.0" layoutY="20.5" mnemonicParsing="false" onAction="#splitCamRightPane" pickOnBounds="false" prefHeight="700.0" prefWidth="15.0" style="-fx-background-insets: 0;" styleClass="splitBtn">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -725,7 +721,7 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="anchorPaneArh" layoutY="75.0" prefHeight="810.0" prefWidth="1440.0" styleClass="home" visible="false" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
+      <AnchorPane fx:id="anchorPaneArh" layoutY="75.0" prefHeight="810.0" prefWidth="1440.0" styleClass="home" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
          <children>
             <GridPane fx:id="arhGP" layoutX="4.0" layoutY="2.0" prefHeight="674.0" prefWidth="1152.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="35.0">
               <columnConstraints>
@@ -857,7 +853,10 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </ToggleButton>
-                  <AnchorPane fx:id="rightPaneForArh" prefHeight="580.0" prefWidth="183.0" style="-fx-border-color: black; -fx-border-radius: 5; -fx-background-radius: 5;" styleClass="home" AnchorPane.bottomAnchor="190.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="56.0" />
+                  <AnchorPane fx:id="rightPaneForArh" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="580.0" prefWidth="183.0" style="-fx-border-color: black; -fx-border-radius: 5; -fx-background-radius: 5;" styleClass="home" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="56.0">
+                     <padding>
+                        <Insets top="9.0" />
+                     </padding></AnchorPane>
                   <Pane prefHeight="183.0" prefWidth="216.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="1.0">
                      <children>
                         <Button layoutX="7.0" layoutY="155.0" mnemonicParsing="false" prefWidth="200.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Поиск">
@@ -938,11 +937,7 @@
                   </Pane>
                </children>
             </AnchorPane>
-            <Button fx:id="btnSplitArh" layoutX="1230.0" layoutY="25.0" mnemonicParsing="false" onAction="#splitArh" onMouseClicked="#clickedForOneCam" pickOnBounds="false" prefHeight="700.0" prefWidth="15.0" style="-fx-background-insets: 0;" AnchorPane.bottomAnchor="85.0" AnchorPane.topAnchor="25.0">
-               <styleClass>
-                  <String fx:value="cam1Btn" />
-                  <String fx:value="camBtnHover" />
-               </styleClass>
+            <Button fx:id="btnSplitArh" layoutX="1230.0" layoutY="25.0" mnemonicParsing="false" onAction="#splitArh" pickOnBounds="false" prefHeight="700.0" prefWidth="15.0" style="-fx-background-insets: 0;" styleClass="splitBtn" AnchorPane.bottomAnchor="85.0" AnchorPane.topAnchor="25.0">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -1175,7 +1170,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </ChoiceBox>
-                  <TableView fx:id="tableViewForJurPC1" prefHeight="600.0" prefWidth="1380.0" AnchorPane.bottomAnchor="48.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="90.0">
+                  <TableView fx:id="tableViewForJurPC" fixedCellSize="7.0" prefHeight="600.0" prefWidth="1380.0" AnchorPane.bottomAnchor="48.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="90.0">
                      <columns>
                         <TableColumn maxWidth="75.0" minWidth="50.0" prefWidth="50.0" text="№" />
                         <TableColumn maxWidth="250.0" minWidth="150.0" prefWidth="230.0" text="Время" />
@@ -1183,16 +1178,16 @@
                         <TableColumn maxWidth="250.0" minWidth="150.0" prefWidth="200.0" text="Тип" />
                         <TableColumn maxWidth="250.0" minWidth="150.0" prefWidth="200.0" text="Устройство" />
                         <TableColumn maxWidth="250.0" minWidth="150.0" prefWidth="200.0" text="Канал" />
-                        <TableColumn maxWidth="350.0" minWidth="200.0" prefWidth="300.0" text="Примечание" />
+                        <TableColumn fx:id="jurPCPrim" minWidth="200.0" prefWidth="300.0" text="Примечание" />
                      </columns>
                   </TableView>
-                  <TableView fx:id="tableViewForJurUstr" layoutX="10.0" layoutY="90.0" prefHeight="600.0" prefWidth="1380.0" visible="false">
+                  <TableView fx:id="tableViewForJurUstr" fixedCellSize="5.0" layoutX="10.0" layoutY="90.0" prefHeight="600.0" prefWidth="1380.0" visible="false" AnchorPane.bottomAnchor="48.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="90.0">
                      <columns>
                         <TableColumn maxWidth="75.0" minWidth="50.0" prefWidth="50.0" text="№" />
                         <TableColumn maxWidth="450.0" minWidth="150.0" prefWidth="430.0" text="Время" />
                         <TableColumn maxWidth="250.0" minWidth="150.0" prefWidth="300.0" text="Пользователь" />
                         <TableColumn maxWidth="250.0" minWidth="150.0" prefWidth="300.0" text="Тип" />
-                        <TableColumn maxWidth="450.0" minWidth="200.0" prefWidth="400.0" text="Примечание" />
+                        <TableColumn fx:id="jurUPrim" minWidth="200.0" prefWidth="400.0" text="Примечание" />
                      </columns>
                   </TableView>
                </children>
