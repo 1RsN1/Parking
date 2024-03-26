@@ -334,6 +334,16 @@
 
 .btnForAllPane {
     -fx-background-radius: 7;
+    -fx-border-color: grey;
+    -fx-border-radius: 7;
+}
+.btnForAllPane:hover {
+    -fx-background-color: #53A2BE;
+    -fx-background-radius: 7;
+}
+
+.checkBoxForAllPane:hover {
+    -fx-text-fill: #127daa;
 }
 
 .btnForJurTrevLock {
@@ -351,15 +361,6 @@
 .btnForJurTrevUnlock:hover {
     -fx-background-color: #00b222;
     -fx-text-fill: white;
-}
-
-.btnForAllPane:hover {
-    -fx-background-color: #53A2BE;
-    -fx-background-radius: 7;
-}
-
-.checkBoxForAllPane:hover {
-    -fx-text-fill: #127daa;
 }
 
 .btnForArhRight {

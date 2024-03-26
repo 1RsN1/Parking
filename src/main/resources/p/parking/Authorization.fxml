@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane fx:id="scenePanel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="600.0" style="-fx-background-radius: 15;" styleClass="home" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="p.parking.AuthorizationController">
+   <children>
+      <AnchorPane prefHeight="65.0" prefWidth="600.0" style="-fx-background-radius: 15 15 0 0;" styleClass="header" stylesheets="@Style.css">
+         <effect>
+            <InnerShadow height="120.0" radius="59.5" width="120.0">
+               <color>
+                  <Color red="0.43529412150382996" green="0.5098039507865906" blue="0.6196078658103943" />
+               </color>
+            </InnerShadow>
+         </effect>
+         <children>
+            <Label alignment="TOP_CENTER" layoutX="175.0" layoutY="5.0" prefHeight="55.0" prefWidth="260.0" stylesheets="@Style.css" text="Авторизация" textFill="#d9e3ff">
+               <font>
+                  <Font name="Calibri" size="46.0" />
+               </font>
+               <effect>
+                  <DropShadow height="15.0" radius="7.0" width="15.0">
+                     <color>
+                        <Color red="0.8470588326454163" green="0.06666667014360428" blue="0.3490196168422699" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Label>
+            <Button layoutX="550.0" layoutY="12.5" mnemonicParsing="false" onAction="#logout" prefHeight="40.0" prefWidth="40.0" styleClass="closeButton">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </AnchorPane>
+      <ImageView fx:id="ivProsmotr0" fitHeight="65.0" fitWidth="80.0" layoutX="10.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="buttonLogIn" layoutX="240.0" layoutY="290.0" mnemonicParsing="false" onAction="#userLogIn" prefWidth="120.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" stylesheets="@Style.css" text="Вход">
+         <font>
+            <Font name="Calibri" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <InnerShadow choke="0.2" height="25.0" radius="12.0" width="25.0">
+               <color>
+                  <Color red="0.6549019813537598" green="0.6549019813537598" blue="0.658823549747467" />
+               </color>
+            </InnerShadow>
+         </effect>
+      </Button>
+      <TextField fx:id="userName" layoutX="260.0" layoutY="134.0" prefHeight="30.0" prefWidth="200.0" promptText="Логин">
+         <font>
+            <Font name="Calibri" size="14.0" />
+         </font>
+      </TextField>
+      <PasswordField fx:id="password" layoutX="260.0" layoutY="186.0" prefHeight="30.0" prefWidth="200.0" promptText="Пароль">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </PasswordField>
+      <Label layoutX="100.0" layoutY="134.0" stylesheets="@Style.css" text="Пользователь:" textFill="#d4defc">
+         <font>
+            <Font name="Calibri" size="24.0" />
+         </font>
+         <effect>
+            <DropShadow height="15.0" radius="7.0" width="15.0" />
+         </effect>
+      </Label>
+      <Label layoutX="167.0" layoutY="187.0" stylesheets="@Style.css" text="Пароль:" textFill="#d4defc">
+         <font>
+            <Font name="Calibri" size="24.0" />
+         </font>
+         <effect>
+            <DropShadow height="15.0" radius="7.0" width="15.0" />
+         </effect>
+      </Label>
+      <Label fx:id="wrongLogIn" layoutX="200.0" layoutY="85.0" textFill="RED">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

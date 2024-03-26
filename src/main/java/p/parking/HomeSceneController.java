@@ -3,11 +3,9 @@ package p.parking;
 import java.net.URL;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
-import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -33,7 +31,7 @@ public class HomeSceneController {
             imgV77, imgV91, imgV92, imgV93, imgV94, imgV95, imgV96, imgV97, imgV98, imgV99, ivProsmotr0;
     @FXML
     AnchorPane anchorPaneProsmotr, anchorPaneUst, anchorPaneArh, anchorPaneZap, anchorPaneJur, anchorPaneJurTrev, anchorPaneTrev,
-            anchorPaneTur, anchorPaneProg, anchorPanePolz, scenePanel, baseAnchorPane, othersAnchorPane, settingAP, camBtnPane, camRightPane,
+            anchorPaneTur, anchorPaneProg, anchorPanePolz, homePanel, baseAnchorPane, othersAnchorPane, settingAP, camBtnPane, camRightPane,
             rightPaneForArh;
     @FXML
     Pane basePane, basePane1, basePane11, zapBtnPane;
@@ -260,7 +258,7 @@ public class HomeSceneController {
         alert.setHeaderText("You are about to logout!");
         alert.setContentText("Do you want to save before exiting?");
         if (alert.showAndWait().get() == ButtonType.OK) {
-            stage = (Stage) scenePanel.getScene().getWindow();
+            stage = (Stage) homePanel.getScene().getWindow();
             System.out.println("Successfully logged out!");
             stage.close();
         }
@@ -277,7 +275,7 @@ public class HomeSceneController {
     }
 
     public void hboxDeleteLast(AnchorPane anchorPane) {
-        if (scenePanel.getWidth() < 1920 && hBox.getChildren().size() > 12) {
+        if (homePanel.getWidth() < 1920 && hBox.getChildren().size() > 12) {
             while (hBox.getChildren().size() > 12) {
                 if(hBox.getChildren().getLast() == anchorPane) {
                     hBox.getChildren().remove(11, hBox.getChildren().lastIndexOf(hBox));
@@ -565,6 +563,10 @@ public class HomeSceneController {
         ProgClose.setVisible(true);
     }
 
+    public void ProgCloseOff(MouseEvent event) {
+        ProgClose.setVisible(false);
+    }
+
     public void PolzBtnUpper() {
         if (hBox.getChildren().contains(PolzSmallPane)) {
         } else {
@@ -590,10 +592,6 @@ public class HomeSceneController {
 
     public void PolzCloseOff(MouseEvent event) {
         PolzClose.setVisible(false);
-    }
-
-    public void ProgCloseOff(MouseEvent event) {
-        ProgClose.setVisible(false);
     }
 
     @FXML
@@ -629,7 +627,7 @@ public class HomeSceneController {
     }
 
     public void maximizeWindow(ActionEvent event) {
-        stage = (Stage) scenePanel.getScene().getWindow();
+        stage = (Stage) homePanel.getScene().getWindow();
         if (stage.getWidth() < 1920) {
             mxbtnView.setImage(new Image(getClass().getResourceAsStream("icon/rstr.png")));
             stage.setWidth(1920);
@@ -764,7 +762,7 @@ public class HomeSceneController {
     }
 
     public void minimizeWindow(ActionEvent event) {
-        stage = (Stage) scenePanel.getScene().getWindow();
+        stage = (Stage) homePanel.getScene().getWindow();
         stage.setIconified(true);
     }
 

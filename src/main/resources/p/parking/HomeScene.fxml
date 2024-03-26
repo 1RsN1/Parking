@@ -31,7 +31,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="scenePanel" prefHeight="900.0" prefWidth="1440.0" styleClass="home" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="p.parking.HomeSceneController">
+<AnchorPane fx:id="homePanel" prefHeight="900.0" prefWidth="1440.0" styleClass="home" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="p.parking.HomeSceneController">
    <children>
       <AnchorPane prefHeight="75.0" prefWidth="1440.0" styleClass="header" stylesheets="@Style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <effect>
@@ -529,6 +529,13 @@
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
+                     <effect>
+                        <InnerShadow choke="0.2" height="25.0" radius="12.0" width="25.0">
+                           <color>
+                              <Color red="0.6549019813537598" green="0.6549019813537598" blue="0.658823549747467" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
                   </Button>
                   <Button contentDisplay="CENTER" layoutX="140.0" layoutY="350.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Поиск Onvif" AnchorPane.bottomAnchor="25.0">
                      <font>
@@ -537,6 +544,13 @@
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
+                     <effect>
+                        <InnerShadow choke="0.2" height="25.0" radius="12.0" width="25.0">
+                           <color>
+                              <Color red="0.6549019813537598" green="0.6549019813537598" blue="0.658823549747467" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
                   </Button>
                   <Button contentDisplay="CENTER" layoutX="260.0" layoutY="350.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Поиск IPv6" AnchorPane.bottomAnchor="25.0">
                      <font>
@@ -545,6 +559,13 @@
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
+                     <effect>
+                        <InnerShadow choke="0.2" height="25.0" radius="12.0" width="25.0">
+                           <color>
+                              <Color red="0.6549019813537598" green="0.6549019813537598" blue="0.658823549747467" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
                   </Button>
                   <Button contentDisplay="CENTER" layoutX="380.0" layoutY="350.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Добавить" AnchorPane.bottomAnchor="25.0">
                      <font>
@@ -553,6 +574,13 @@
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
+                     <effect>
+                        <InnerShadow choke="0.2" height="25.0" radius="12.0" width="25.0">
+                           <color>
+                              <Color red="0.6549019813537598" green="0.6549019813537598" blue="0.658823549747467" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
                   </Button>
                   <Button contentDisplay="CENTER" layoutX="500.0" layoutY="350.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Cloud ID" AnchorPane.bottomAnchor="25.0">
                      <font>
@@ -561,6 +589,13 @@
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
+                     <effect>
+                        <InnerShadow choke="0.2" height="25.0" radius="12.0" width="25.0">
+                           <color>
+                              <Color red="0.6549019813537598" green="0.6549019813537598" blue="0.658823549747467" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
                   </Button>
                </children>
             </AnchorPane>
@@ -618,6 +653,13 @@
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
+                     <effect>
+                        <InnerShadow choke="0.2" height="25.0" radius="12.0" width="25.0">
+                           <color>
+                              <Color red="0.6549019813537598" green="0.6549019813537598" blue="0.658823549747467" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
                   </Button>
                   <Button contentDisplay="CENTER" layoutX="120.0" layoutY="355.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Доб. группу" AnchorPane.bottomAnchor="20.0">
                      <font>
@@ -626,6 +668,13 @@
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
+                     <effect>
+                        <InnerShadow choke="0.2" height="25.0" radius="12.0" width="25.0">
+                           <color>
+                              <Color red="0.6549019813537598" green="0.6549019813537598" blue="0.658823549747467" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
                   </Button>
                   <Button contentDisplay="CENTER" layoutX="240.0" layoutY="355.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Удалить" AnchorPane.bottomAnchor="20.0">
                      <font>
@@ -634,6 +683,13 @@
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
+                     <effect>
+                        <InnerShadow choke="0.2" height="25.0" radius="12.0" width="25.0">
+                           <color>
+                              <Color red="0.6549019813537598" green="0.6549019813537598" blue="0.658823549747467" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
                   </Button>
                   <Button contentDisplay="CENTER" layoutX="360.0" layoutY="355.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Бэкап" AnchorPane.bottomAnchor="20.0">
                      <font>
@@ -642,6 +698,13 @@
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
+                     <effect>
+                        <InnerShadow choke="0.2" height="25.0" radius="12.0" width="25.0">
+                           <color>
+                              <Color red="0.6549019813537598" green="0.6549019813537598" blue="0.658823549747467" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
                   </Button>
                   <Button contentDisplay="CENTER" layoutX="480.0" layoutY="355.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Импорт" AnchorPane.bottomAnchor="20.0">
                      <font>
@@ -650,12 +713,19 @@
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
+                     <effect>
+                        <InnerShadow choke="0.2" height="25.0" radius="12.0" width="25.0">
+                           <color>
+                              <Color red="0.6549019813537598" green="0.6549019813537598" blue="0.658823549747467" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
                   </Button>
                </children>
             </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="anchorPaneArh" layoutY="75.0" prefHeight="810.0" prefWidth="1440.0" styleClass="home" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
+      <AnchorPane fx:id="anchorPaneArh" layoutY="75.0" prefHeight="810.0" prefWidth="1440.0" styleClass="home" visible="false" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
          <children>
             <GridPane fx:id="arhGP" layoutX="4.0" layoutY="2.0" prefHeight="674.0" prefWidth="1152.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="35.0">
               <columnConstraints>
@@ -717,6 +787,13 @@
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
+                     <effect>
+                        <InnerShadow choke="0.2" height="25.0" radius="12.0" width="25.0">
+                           <color>
+                              <Color red="0.6549019813537598" green="0.6549019813537598" blue="0.658823549747467" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
                   </Button>
                </children>
             </Pane>
@@ -787,6 +864,13 @@
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
+                           <effect>
+                              <InnerShadow choke="0.2" height="25.0" radius="12.0" width="25.0">
+                                 <color>
+                                    <Color red="0.6549019813537598" green="0.6549019813537598" blue="0.658823549747467" />
+                                 </color>
+                              </InnerShadow>
+                           </effect>
                         </Button>
                         <Label layoutX="27.0" layoutY="67.0" text="Тип">
                            <font>
@@ -1001,6 +1085,13 @@
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
+                     <effect>
+                        <InnerShadow choke="0.2" height="25.0" radius="12.0" width="25.0">
+                           <color>
+                              <Color red="0.6549019813537598" green="0.6549019813537598" blue="0.658823549747467" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
                   </Button>
                   <Button layoutX="120.0" layoutY="7.0" mnemonicParsing="false" prefWidth="120.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Сброс настроек">
                      <font>
@@ -1009,6 +1100,13 @@
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
+                     <effect>
+                        <InnerShadow choke="0.2" height="25.0" radius="12.0" width="25.0">
+                           <color>
+                              <Color red="0.6549019813537598" green="0.6549019813537598" blue="0.658823549747467" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
                   </Button>
                </children>
             </Pane>
@@ -1105,16 +1203,37 @@
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
+                     <effect>
+                        <InnerShadow choke="0.2" height="25.0" radius="12.0" width="25.0">
+                           <color>
+                              <Color red="0.6549019813537598" green="0.6549019813537598" blue="0.658823549747467" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
                   </Button>
                   <Button layoutX="90.0" mnemonicParsing="false" prefWidth="70.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Экспорт">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
+                     <effect>
+                        <InnerShadow choke="0.2" height="25.0" radius="12.0" width="25.0">
+                           <color>
+                              <Color red="0.6549019813537598" green="0.6549019813537598" blue="0.658823549747467" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
                   </Button>
                   <Button layoutX="180.0" mnemonicParsing="false" prefWidth="70.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text=" Поиск">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
+                     <effect>
+                        <InnerShadow choke="0.2" height="25.0" radius="12.0" width="25.0">
+                           <color>
+                              <Color red="0.6549019813537598" green="0.6549019813537598" blue="0.658823549747467" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
                   </Button>
                </children>
             </AnchorPane>
@@ -1124,11 +1243,25 @@
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
+                     <effect>
+                        <InnerShadow choke="0.2" height="25.0" radius="12.0" width="25.0">
+                           <color>
+                              <Color red="0.6549019813537598" green="0.6549019813537598" blue="0.658823549747467" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
                   </Button>
                   <Button mnemonicParsing="false" prefWidth="70.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="&lt;&lt;">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
+                     <effect>
+                        <InnerShadow choke="0.2" height="25.0" radius="12.0" width="25.0">
+                           <color>
+                              <Color red="0.6549019813537598" green="0.6549019813537598" blue="0.658823549747467" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
                   </Button>
                </children>
             </AnchorPane>
@@ -1143,6 +1276,13 @@
                <font>
                   <Font name="Calibri" size="14.0" />
                </font>
+               <effect>
+                  <InnerShadow choke="0.2" height="25.0" radius="12.0" width="25.0">
+                     <color>
+                        <Color red="0.6549019813537598" green="0.6549019813537598" blue="0.658823549747467" />
+                     </color>
+                  </InnerShadow>
+               </effect>
             </Button>
             <Button layoutX="235.0" layoutY="28.0" mnemonicParsing="false" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Очистить" AnchorPane.leftAnchor="235.0" AnchorPane.topAnchor="28.0">
                <cursor>
@@ -1151,6 +1291,13 @@
                <font>
                   <Font name="Calibri" size="14.0" />
                </font>
+               <effect>
+                  <InnerShadow choke="0.2" height="25.0" radius="12.0" width="25.0">
+                     <color>
+                        <Color red="0.6549019813537598" green="0.6549019813537598" blue="0.658823549747467" />
+                     </color>
+                  </InnerShadow>
+               </effect>
             </Button>
             <Label layoutX="22.0" layoutY="32.0" text="Не обработано/Все" AnchorPane.leftAnchor="22.0" AnchorPane.topAnchor="32.0">
                <font>
@@ -1174,6 +1321,13 @@
                <font>
                   <Font name="Calibri" size="24.0" />
                </font>
+               <effect>
+                  <InnerShadow choke="0.2" height="25.0" radius="12.0" width="25.0">
+                     <color>
+                        <Color red="0.6549019813537598" green="0.6549019813537598" blue="0.658823549747467" />
+                     </color>
+                  </InnerShadow>
+               </effect>
             </Button>
             <Button layoutX="980.0" layoutY="729.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="200.0" styleClass="btnForJurTrevLock" text="Блокировать">
                <cursor>
@@ -1213,6 +1367,13 @@
                <font>
                   <Font name="Calibri" size="24.0" />
                </font>
+               <effect>
+                  <InnerShadow choke="0.2" height="25.0" radius="12.0" width="25.0">
+                     <color>
+                        <Color red="0.6549019813537598" green="0.6549019813537598" blue="0.658823549747467" />
+                     </color>
+                  </InnerShadow>
+               </effect>
             </Button>
          </children>
       </AnchorPane>

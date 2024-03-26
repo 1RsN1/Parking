@@ -16,7 +16,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="scenePanel" prefHeight="900.0" prefWidth="1440.0" styleClass="home" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="p.parking.HomeSceneController">
+<AnchorPane fx:id="homePanel" prefHeight="900.0" prefWidth="1440.0" styleClass="home" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="p.parking.HomeSceneController">
    <children>
       <AnchorPane prefHeight="75.0" prefWidth="1440.0" styleClass="header" stylesheets="@Style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <effect>
