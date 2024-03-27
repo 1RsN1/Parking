@@ -138,22 +138,22 @@ public class HomeSceneController {
             if (camRightPane.isVisible() == false) {
                 btnSplitRightPane.setLayoutX(1897.5);
                 imgV1.setFitWidth(1885);
-                System.out.println("if 1920");
+              //  System.out.println("if 1920");
                 prosmotrGP1.setPadding(new Insets(-20, 140, 0, 220));
             } else {
                 btnSplitRightPane.setLayoutX(1739);
                 imgV1.setFitWidth(1710);
-                System.out.println("else 1920");
+               // System.out.println("else 1920");
                 prosmotrGP1.setPadding(new Insets(-20, 200, 0, 0));
             }
         } else {
             if (camRightPane.isVisible() == false) {
                 btnSplitRightPane.setLayoutX(1417.5);
                 imgV1.setFitWidth(1405);
-                System.out.println("if");
+               // System.out.println("if");
                 prosmotrGP1.setPadding(new Insets(0, 90, 0, 90));
             } else {
-                System.out.println("Ekse");
+               // System.out.println("Ekse");
                 btnSplitRightPane.setLayoutX(1262);
                 imgV1.setFitWidth(1230);
                 prosmotrGP1.setPadding(new Insets(0, 200, 0, 0));
@@ -691,9 +691,6 @@ public class HomeSceneController {
             imArh4.setFitHeight(418);
             imArh4.setFitWidth(1000);
 
-
-
-
             //jur
             anchorPaneJur.setPadding(new Insets(0, 0, 30, 0));
             jurAn1.setLayoutX(835);
@@ -708,8 +705,9 @@ public class HomeSceneController {
             anchorPaneJurTrev.setPadding(new Insets(0, 0, 30, 0));
 
 
-
+            ArhToggle();
         } else {
+
             mxbtnView.setImage(new Image(getClass().getResourceAsStream("icon/mxmz.png")));
             stage.setWidth(1440);
             stage.setHeight(900);
@@ -766,6 +764,7 @@ public class HomeSceneController {
             imArh4.setFitHeight(350);
             imArh4.setFitWidth(600);
 
+
             //jur
             anchorPaneJur.setPadding(new Insets(0, 0, 0, 0));
             jurAn1.setLayoutX(595);
@@ -779,6 +778,7 @@ public class HomeSceneController {
             //jurtrev
             anchorPaneJurTrev.setPadding(new Insets(0, 0, 0, 0));
             hboxDeleteWhenMinimize();
+            ArhToggle();
         }
     }
 
@@ -812,26 +812,51 @@ public class HomeSceneController {
         System.out.println(rightPaneForArh.getPrefHeight());
         if (anchorPaneArh.getWidth() == 1920) {
             if (rightPaneForArh.getPrefHeight() == 580) {
-                rightPaneForArh.setPrefHeight(740);
+                rightPaneForArh.setPrefHeight(730);
                 arhCamPane.setLayoutX(750);
             } else {
-                rightPaneForArh.setPrefHeight(790);
+                rightPaneForArh.setPrefHeight(770);
                 arhCamPane.setLayoutX(600);
             }
         } else {
             System.out.println("init");
-            if (rightPaneForArh.getPrefHeight() == 580) {
-                rightPaneForArh.setPrefHeight(580);
+            if (rightPaneForArh.getPrefHeight() == 570) {
+                rightPaneForArh.setPrefHeight(570);
                 arhCamPane.setLayoutX(500);
             } else {
-                rightPaneForArh.setPrefHeight(630);
+                rightPaneForArh.setPrefHeight(620);
                 arhCamPane.setLayoutX(360);
             }
         }
     }
-    public void ArhCamPaneSetHeight() {
+public void ArhToggle(){
+     //PC ACTION
+    if(checkBoxForArhAll.isVisible() == false){
+        if (arhGP.getPrefWidth() == 1200) {
+            rightPaneForArh.setPrefHeight(620);
+            arhCamPane.setLayoutX(360);
+            System.out.println("check off, 1200");
+        }
+        if(arhGP.getPrefWidth()==1705){
+            rightPaneForArh.setPrefHeight(770);
+            arhCamPane.setLayoutX(600);
 
+            System.out.println("check off, 1700");
+        }
+    } // ust ACTION
+    if (checkBoxForArhAll.isVisible() == true) {
+        if (arhGP.getPrefWidth() == 1200) {
+            rightPaneForArh.setPrefHeight(570);
+            arhCamPane.setLayoutX(500);
+            System.out.println("check on, 1200");
+        }
+        if(arhGP.getPrefWidth()==1705){
+            System.out.println("check on, 1700");
+            rightPaneForArh.setPrefHeight(730);
+            arhCamPane.setLayoutX(750);
+        }
     }
+}
 
     @FXML
     void toggleForArhPCAction(ActionEvent event) {
@@ -843,9 +868,9 @@ public class HomeSceneController {
             radioForArhMain.setVisible(false);
             radioForArhPhoto.setVisible(false);
             radioForArhVideo.setVisible(false);
-            rightPaneForArh.setPrefHeight(640);
             buttonForArhDownload.setVisible(false);
-            ArhRightPaneSetHeight();
+            ArhToggle();
+
 
         }
     }
@@ -860,9 +885,9 @@ public class HomeSceneController {
             radioForArhMain.setVisible(true);
             radioForArhPhoto.setVisible(true);
             radioForArhVideo.setVisible(true);
-            rightPaneForArh.setPrefHeight(580);
             buttonForArhDownload.setVisible(true);
-            ArhRightPaneSetHeight();
+            ArhToggle();
+
         }
     }
 

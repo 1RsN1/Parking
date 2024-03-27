@@ -721,7 +721,7 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="anchorPaneArh" layoutY="75.0" prefHeight="810.0" prefWidth="1440.0" styleClass="home" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
+      <AnchorPane fx:id="anchorPaneArh" layoutY="75.0" prefHeight="810.0" prefWidth="1440.0" styleClass="home" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
          <children>
             <GridPane fx:id="arhGP" layoutX="20.0" layoutY="30.0" prefHeight="674.0" prefWidth="1200.0">
                <columnConstraints>
@@ -850,7 +850,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </ToggleButton>
-                  <AnchorPane fx:id="rightPaneForArh" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="580.0" prefWidth="183.0" style="-fx-border-color: black; -fx-border-radius: 5; -fx-background-radius: 5;" styleClass="home" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="56.0">
+                  <AnchorPane fx:id="rightPaneForArh" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="570.0" prefWidth="183.0" style="-fx-border-color: black; -fx-border-radius: 5; -fx-background-radius: 5;" styleClass="home" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="56.0">
                      <padding>
                         <Insets top="9.0" />
                      </padding></AnchorPane>
