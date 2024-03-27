@@ -167,24 +167,24 @@ public class HomeSceneController {
             if (arhRightPane2.isVisible() == true) {
                 arhRightPane2.setVisible(false);
                 btnSplitArh.setLayoutX(1897.5);
-                arhGP.setPadding(new Insets(0, 40, 0, 200));
-                arhSlider.setPadding(new Insets(0, 40, 0, 200));
+                arhGP.setLayoutX(220);
+                arhSlider.setPadding(new Insets(0, 100, 0, 200));
             } else {
                 arhRightPane2.setVisible(true);
                 btnSplitArh.setLayoutX(1710);
-                arhGP.setPadding(new Insets(0, 220, 0, 0));
-                arhSlider.setPadding(new Insets(0, 220, 0, 0));
+                arhGP.setLayoutX(20);
+                arhSlider.setPadding(new Insets(0, 300, 0, 0));
             }
         } else {
             if (arhRightPane2.isVisible() == true) {
                 arhRightPane2.setVisible(false);
                 btnSplitArh.setLayoutX(1417.5);
-                arhGP.setPadding(new Insets(0, 90, 0, 90));
-                arhSlider.setPadding(new Insets(0, 90, 0, 90));
+                arhGP.setLayoutX(90);
+                arhSlider.setPadding(new Insets(0, 150, 0, 65));
             } else {
                 arhRightPane2.setVisible(true);
                 btnSplitArh.setLayoutX(1230);
-                arhGP.setPadding(new Insets(0, 220, 0, 0));
+                arhGP.setLayoutX(20);
                 arhSlider.setPadding(new Insets(0, 220, 0, 0));
             }
         }
@@ -194,25 +194,25 @@ public class HomeSceneController {
         if (anchorPaneProsmotr.getWidth() < 1920) {
             if (arhRightPane2.isVisible() == false) {
                 btnSplitArh.setLayoutX(1897.5);
-                arhGP.setPadding(new Insets(0, 40, 0, 200));
-                arhSlider.setPadding(new Insets(0, 40, 0, 200));
+                arhGP.setLayoutX(220);
+                arhSlider.setPadding(new Insets(0, 100, 0, 200));
 
             } else {
                 btnSplitArh.setLayoutX(1710);
-                arhGP.setPadding(new Insets(0, 220, 0, 0));
-                arhSlider.setPadding(new Insets(0, 220, 0, 0));
+                arhGP.setLayoutX(20);
+                arhSlider.setPadding(new Insets(0, 300, 0, 0));
 
 
             }
         } else {
             if (arhRightPane2.isVisible() == false) {
                 btnSplitArh.setLayoutX(1417.5);
-                arhGP.setPadding(new Insets(0, 40, 0, 200));
-                arhSlider.setPadding(new Insets(0, 40, 0, 200));
+                arhGP.setLayoutX(90);
+                arhSlider.setPadding(new Insets(0, 150, 0, 65));
 
             } else {
                 btnSplitArh.setLayoutX(1230);
-                arhGP.setPadding(new Insets(0, 220, 0, 0));
+                arhGP.setLayoutX(20);
                 arhSlider.setPadding(new Insets(0, 220, 0, 0));
 
             }
@@ -679,14 +679,19 @@ public class HomeSceneController {
             arhGP.setPadding(new Insets(0, 0, 0, 0));
             splitArhBool();
 
+        arhGP.setPrefWidth(1705);
+        arhGP.setPrefHeight(836);
+            arhSlider.setPadding(new Insets(0, 300, 0, 0));
            imArh1.setFitHeight(418);
-           imArh1.setFitWidth(1500);
+           imArh1.setFitWidth(1000);
             imArh2.setFitHeight(418);
             imArh2.setFitWidth(1000);
             imArh3.setFitHeight(418);
             imArh3.setFitWidth(1000);
             imArh4.setFitHeight(418);
             imArh4.setFitWidth(1000);
+
+
 
 
             //jur
@@ -749,6 +754,9 @@ public class HomeSceneController {
             arhCamPane.setLayoutX(500);
             anchorPaneArh.setPadding(new Insets(0, 0, 0, 0));
             splitArhBool();
+            arhGP.setPrefWidth(1200);
+            arhGP.setPrefHeight(674);
+            arhSlider.setPadding(new Insets(0, 220, 0, 0));
             imArh1.setFitHeight(350);
             imArh1.setFitWidth(600);
             imArh2.setFitHeight(600);
