@@ -348,7 +348,7 @@
             </InnerShadow>
          </effect>
       </AnchorPane>
-      <AnchorPane fx:id="anchorPaneProsmotr" layoutY="76.0" prefHeight="825.0" prefWidth="1440.0" styleClass="home" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
+      <AnchorPane fx:id="anchorPaneProsmotr" layoutY="76.0" prefHeight="825.0" prefWidth="1440.0" styleClass="home" visible="false" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
          <children>
             <AnchorPane fx:id="paneWithNineCam" layoutX="12.5" layoutY="12.5" prefHeight="700.0" prefWidth="1235.0" style="-fx-background-color: grey;" visible="false">
                <children>
@@ -721,7 +721,7 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="anchorPaneArh" layoutY="75.0" prefHeight="810.0" prefWidth="1440.0" styleClass="home" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
+      <AnchorPane fx:id="anchorPaneArh" layoutY="75.0" prefHeight="810.0" prefWidth="1440.0" styleClass="home" visible="false" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
          <children>
             <GridPane fx:id="arhGP" layoutX="20.0" layoutY="30.0" prefHeight="674.0" prefWidth="1200.0">
                <columnConstraints>
