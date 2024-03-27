@@ -808,27 +808,7 @@ public class HomeSceneController {
 
     }
 
-    public void ArhRightPaneSetHeight() {
-        System.out.println(rightPaneForArh.getPrefHeight());
-        if (anchorPaneArh.getWidth() == 1920) {
-            if (rightPaneForArh.getPrefHeight() == 580) {
-                rightPaneForArh.setPrefHeight(730);
-                arhCamPane.setLayoutX(750);
-            } else {
-                rightPaneForArh.setPrefHeight(770);
-                arhCamPane.setLayoutX(600);
-            }
-        } else {
-            System.out.println("init");
-            if (rightPaneForArh.getPrefHeight() == 570) {
-                rightPaneForArh.setPrefHeight(570);
-                arhCamPane.setLayoutX(500);
-            } else {
-                rightPaneForArh.setPrefHeight(620);
-                arhCamPane.setLayoutX(360);
-            }
-        }
-    }
+
 public void ArhToggle(){
      //PC ACTION
     if(checkBoxForArhAll.isVisible() == false){
