@@ -43,7 +43,7 @@
          </children>
       </AnchorPane>
       <ImageView fx:id="ivProsmotr0" fitHeight="65.0" fitWidth="80.0" layoutX="10.0" pickOnBounds="true" preserveRatio="true" />
-      <Button fx:id="buttonLogIn" contentDisplay="TOP" graphicTextGap="0.0" layoutX="240.0" layoutY="239.0" mnemonicParsing="false" onAction="#userLogIn" prefWidth="120.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" stylesheets="@Style.css" text="Вход" textAlignment="CENTER" textFill="#263145">
+      <Button fx:id="buttonLogIn" contentDisplay="TOP" graphicTextGap="0.0" layoutX="240.0" layoutY="239.0" mnemonicParsing="false" onAction="#userLogIn" prefWidth="120.0" style="-fx-background-insets: 0; -fx-border-radius: 15; -fx-background-radius: 15;" styleClass="btnForAllPane" stylesheets="@Style.css" text="Вход" textAlignment="CENTER" textFill="#263145">
          <font>
             <Font name="Calibri" size="20.0" />
          </font>

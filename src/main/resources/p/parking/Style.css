@@ -30,6 +30,11 @@
     -fx-text-fill: #2f324f;
 }
 
+.notificationPane {
+    -fx-background-color: #ff0000;
+    -fx-background-radius: 25;
+}
+
 /* ============ Кнопки на главной ========================================================================= */
 
 .buttomHover:hover {
@@ -343,7 +348,7 @@
 
 .btnForAllPane {
     -fx-background-radius: 7;
-    -fx-border-color: grey;
+    -fx-border-color: #959090;
     -fx-border-radius: 7;
 }
 .btnForAllPane:hover {
