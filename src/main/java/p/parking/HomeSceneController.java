@@ -10,6 +10,8 @@ import javafx.geometry.Insets;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
@@ -33,7 +35,7 @@ public class HomeSceneController {
     @FXML
     AnchorPane anchorPaneProsmotr, anchorPaneUst, anchorPaneArh, anchorPaneZap, anchorPaneJur, anchorPaneJurTrev, anchorPaneTrev,
             anchorPaneTur, anchorPaneProg, anchorPanePolz, homePanel, baseAnchorPane, othersAnchorPane, settingAP, camBtnPane, camRightPane,
-            rightPaneForArh;
+            rightPaneForArh, trevogaPane;
     @FXML
     Pane basePane, basePane1, basePane11, zapBtnPane;
     @FXML
@@ -288,6 +290,19 @@ public class HomeSceneController {
             hBox.getChildren().removeLast();
         }
     }
+
+    public void prosmotrIfTrev() {
+        trevogaPane.setVisible(false);
+        prosmotrBtnUpper();
+        anchorPaneProsmotr.setVisible(true);
+        anchorPaneUst.setVisible(false);
+        anchorPaneArh.setVisible(false);
+        anchorPaneZap.setVisible(false);
+        anchorPaneJur.setVisible(false);
+        anchorPaneJurTrev.setVisible(false);
+        hboxDeleteLast(anchorPaneProsmotr);
+    }
+
 
     public void prosmotrBtnUpper() {
         if (hBox.getChildren().contains(prosmotrSmallPane)) {
