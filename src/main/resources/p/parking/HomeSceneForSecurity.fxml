@@ -42,7 +42,7 @@
             </InnerShadow>
          </effect>
          <children>
-            <Button layoutX="100.0" layoutY="3.0" mnemonicParsing="false" onAction="#glavnaya" prefHeight="70.0" prefWidth="90.0" styleClass="buttonGlav">
+            <Button layoutX="100.0" layoutY="3.0" mnemonicParsing="false" onAction="#glavnaya" onKeyPressed="#trevogaSetVisible" prefHeight="70.0" prefWidth="90.0" styleClass="buttonGlav">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -1485,6 +1485,56 @@
                </children>
             </Pane>
          </children>
+      </AnchorPane>
+      <AnchorPane fx:id="trevogaPane" layoutX="519.0" layoutY="350.0" prefHeight="180.0" prefWidth="400.0" styleClass="notificationPane" visible="false">
+         <children>
+            <Button layoutX="131.0" layoutY="115.0" mnemonicParsing="false" onAction="#prosmotrIfTrev" style="-fx-background-insets: 0; -fx-background-radius: 15; -fx-border-radius: 15;" styleClass="btnForAllPane" text="К камере">
+               <font>
+                  <Font name="Calibri" size="26.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <InnerShadow choke="0.2" height="25.0" radius="12.0" width="25.0">
+                     <color>
+                        <Color red="0.6549019813537598" green="0.6549019813537598" blue="0.658823549747467" />
+                     </color>
+                  </InnerShadow>
+               </effect>
+            </Button>
+            <Label alignment="TOP_CENTER" layoutX="90.5" layoutY="25.0" text="Сработала тревога!" textAlignment="CENTER" textFill="#210f04">
+               <font>
+                  <Font name="Calibri Bold" size="26.0" />
+               </font>
+               <effect>
+                  <DropShadow height="20.0" radius="9.5" spread="0.2" width="20.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Label>
+            <Label alignment="TOP_CENTER" layoutX="11.0" layoutY="65.0" text="На камере №* зафиксировано нарушение!" textAlignment="CENTER" textFill="#210f04">
+               <font>
+                  <Font name="Calibri Bold Italic" size="20.0" />
+               </font>
+               <effect>
+                  <DropShadow height="20.0" radius="9.5" spread="0.2" width="20.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Label>
+         </children>
+         <effect>
+            <InnerShadow choke="0.2" height="25.0" radius="12.0" width="25.0">
+               <color>
+                  <Color red="0.1184210553765297" green="0.1184210553765297" blue="0.1184210553765297" />
+               </color>
+            </InnerShadow>
+         </effect>
       </AnchorPane>
    </children>
 </AnchorPane>
