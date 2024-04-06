@@ -35,7 +35,7 @@ public class HomeSceneController {
     @FXML
     AnchorPane anchorPaneProsmotr, anchorPaneUst, anchorPaneArh, anchorPaneZap, anchorPaneJur, anchorPaneJurTrev, anchorPaneTrev,
             anchorPaneTur, anchorPaneProg, anchorPanePolz, homePanel, baseAnchorPane, othersAnchorPane, settingAP, camBtnPane, camRightPane,
-            rightPaneForArh, trevogaPane;
+            rightPaneForArh, trevogaPane, jurTrevBtnSchalgPane;
     @FXML
     Pane basePane, basePane1, basePane11, zapBtnPane;
     @FXML
@@ -91,6 +91,8 @@ public class HomeSceneController {
     TableView<?> tableViewForJurUstr;
     @FXML
     TableColumn jurUPrim, jurPCPrim;
+    @FXML // Колонки таблицы журнала тревог
+    TableColumn jurTrevStat,jurTrevType,jurTrevTime ,jurTrevUst,jurTrevRes;
 
     @FXML
     SpinnerValueFactory<LocalTime> svf = new SpinnerValueFactory<LocalTime>() {
@@ -107,29 +109,29 @@ public class HomeSceneController {
 
     public void splitCamRightPane(ActionEvent event) {
         btnSplitArh.setRotate(btnSplitArh.getRotate() + 180);
-        // camRightPane.setVisible(!camRightPane.isVisible());
+
         if (anchorPaneProsmotr.getWidth() == 1920) {
             if (camRightPane.isVisible() == true) {
                 camRightPane.setVisible(false);
                 btnSplitRightPane.setLayoutX(1897.5);
-                // imgV1.setFitWidth(1885);
+
                 prosmotrGP1.setPadding(new Insets(-20, 140, 0, 220));
             } else {
                 camRightPane.setVisible(true);
                 btnSplitRightPane.setLayoutX(1739);
-                // imgV1.setFitWidth(1710);
+
                 prosmotrGP1.setPadding(new Insets(-20, 200, 0, 0));
             }
         } else {
             if (camRightPane.isVisible() == true) {
                 camRightPane.setVisible(false);
                 btnSplitRightPane.setLayoutX(1417.5);
-                // imgV1.setFitWidth(1405);
+
                 prosmotrGP1.setPadding(new Insets(0, 90, 0, 90));
             } else {
                 camRightPane.setVisible(true);
                 btnSplitRightPane.setLayoutX(1262);
-                // imgV1.setFitWidth(1230);
+
                 prosmotrGP1.setPadding(new Insets(0, 200, 0, 0));
             }
         }
@@ -140,22 +142,22 @@ public class HomeSceneController {
             if (camRightPane.isVisible() == false) {
                 btnSplitRightPane.setLayoutX(1897.5);
                 imgV1.setFitWidth(1885);
-              //  System.out.println("if 1920");
+
                 prosmotrGP1.setPadding(new Insets(-20, 140, 0, 220));
             } else {
                 btnSplitRightPane.setLayoutX(1739);
                 imgV1.setFitWidth(1710);
-               // System.out.println("else 1920");
+
                 prosmotrGP1.setPadding(new Insets(-20, 200, 0, 0));
             }
         } else {
             if (camRightPane.isVisible() == false) {
                 btnSplitRightPane.setLayoutX(1417.5);
                 imgV1.setFitWidth(1405);
-               // System.out.println("if");
+
                 prosmotrGP1.setPadding(new Insets(0, 90, 0, 90));
             } else {
-               // System.out.println("Ekse");
+
                 btnSplitRightPane.setLayoutX(1262);
                 imgV1.setFitWidth(1230);
                 prosmotrGP1.setPadding(new Insets(0, 200, 0, 0));
@@ -227,7 +229,7 @@ public class HomeSceneController {
         choiceBoxForType.getItems().addAll("Все", "Трев. вход", "Движение", "Постоянно", "Ручная", "I-кадр видео", "Видео анализ");
         */
 
-//        imgV1.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
+     imgV1.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
 //        imArh1.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
 //        imArh2.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
 //        imArh3.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
@@ -473,37 +475,7 @@ public class HomeSceneController {
         JurClose.setVisible(false);
     }
 
-    public void JurTrevBtnUpper() {
-        if (hBox.getChildren().contains(JurTrevSmallPane)) {
-        } else {
-            hBox.getChildren().addFirst(JurTrevSmallPane);
-            JurTrevBtnUp.setVisible(true);
-        }
-    }
 
-    public void JurTrevSmallClose(ActionEvent event) {
-        hBox.getChildren().remove(JurTrevSmallPane);
-        anchorPaneJurTrev.setVisible(false);
-    }
-
-    public void jurTrev(ActionEvent event) {
-        JurTrevBtnUpper();
-        anchorPaneJurTrev.setVisible(true);
-        anchorPaneProsmotr.setVisible(false);
-        anchorPaneUst.setVisible(false);
-        anchorPaneArh.setVisible(false);
-        anchorPaneZap.setVisible(false);
-        anchorPaneJur.setVisible(false);
-        hboxDeleteLast(anchorPaneJurTrev);
-    }
-
-    public void JurTrevCloseOn(MouseEvent event) {
-        JurTrevClose.setVisible(true);
-    }
-
-    public void JurTrevCloseOff(MouseEvent event) {
-        JurTrevClose.setVisible(false);
-    }
 
     public void TrevBtnUpper() {
         if (hBox.getChildren().contains(TrevSmallPane)) {
@@ -520,7 +492,9 @@ public class HomeSceneController {
 
     public void trev(ActionEvent event) {
         TrevBtnUpper();
-        anchorPaneTrev.setVisible(true);
+        //anchorPaneTrev.setVisible(true);
+        System.out.println("anchorPaneTrev ne rab)");
+
         hboxDeleteLast(anchorPaneTrev);
     }
 
@@ -547,7 +521,8 @@ public class HomeSceneController {
 
     public void tur(ActionEvent event) {
         TurBtnUpper();
-        anchorPaneTur.setVisible(true);
+        //anchorPaneTur.setVisible(true);
+        System.out.println("tur ne rabotaet");
         hboxDeleteLast(anchorPaneTur);
     }
 
@@ -574,7 +549,8 @@ public class HomeSceneController {
 
     public void prog(ActionEvent event) {
         ProgBtnUpper();
-        anchorPaneProg.setVisible(true);
+     //   anchorPaneProg.setVisible(true);
+        System.out.println("prog ne rabotaet");
         hboxDeleteLast(anchorPaneProg);
     }
 
@@ -601,7 +577,8 @@ public class HomeSceneController {
 
     public void polz(ActionEvent event) {
         PolzBtnUpper();
-        anchorPanePolz.setVisible(true);
+       // anchorPanePolz.setVisible(true);
+        System.out.println("pols ne rab");
         hboxDeleteLast(anchorPanePolz);
     }
 
@@ -653,7 +630,6 @@ public class HomeSceneController {
             stage.setHeight(1079);
             stage.setX(0);
             stage.setY(0);
-
             baseAnchorPane.setPrefHeight(300);
             basePane.setLayoutY(23);
             settingAP.setPrefHeight(300);
@@ -671,7 +647,6 @@ public class HomeSceneController {
             btnSplitRightPane.setPrefHeight(870);
             camBtnPane.setLayoutY(885);
             camBtnPane.setLayoutX(585);
-
             //1 cam
             //paneWithOneCam.setPrefWidth(1710);
             //paneWithOneCam.setPrefHeight(850);
@@ -691,7 +666,6 @@ public class HomeSceneController {
             //arh
             arhCamPane.setLayoutX(610);
             anchorPaneArh.setPadding(new Insets(0, 0, 20, 0));
-
         arhGP.setPrefWidth(1486);
         arhGP.setPrefHeight(836);
             arhSlider.setPadding(new Insets(0, 300, 0, 0));
@@ -704,7 +678,6 @@ public class HomeSceneController {
             imArh3.setFitWidth(1000);
             imArh4.setFitHeight(418);
             imArh4.setFitWidth(1000);
-
             //jur
             anchorPaneJur.setPadding(new Insets(0, 0, 30, 0));
             jurAn1.setLayoutX(835);
@@ -716,12 +689,9 @@ public class HomeSceneController {
             zapBtnPane.setLayoutX(840);
             zapAnch1.setPrefHeight(400);
             //jurtrev
-            anchorPaneJurTrev.setPadding(new Insets(0, 0, 30, 0));
-
-
+            JurTrevMaximize();
             ArhToggle();
         } else {
-
             mxbtnView.setImage(new Image(getClass().getResourceAsStream("icon/mxmz.png")));
             stage.setWidth(1440);
             stage.setHeight(900);
@@ -745,7 +715,6 @@ public class HomeSceneController {
             camBtnPane.setLayoutX(313);
             btnSplitRightPane.setPrefHeight(700);
             btnSplitRightPane.setLayoutX(1262);
-
             //1cam
             //paneWithOneCam.setPrefHeight(700);
             //paneWithOneCam.setPrefWidth(1235);
@@ -765,7 +734,6 @@ public class HomeSceneController {
             //arh
             arhCamPane.setLayoutX(500);
             anchorPaneArh.setPadding(new Insets(0, 0, 0, 0));
-
             arhGP.setPrefWidth(1200);
             arhGP.setPrefHeight(674);
             arhSlider.setPadding(new Insets(0, 220, 0, 0));
@@ -778,8 +746,6 @@ public class HomeSceneController {
             imArh3.setFitWidth(600);
             imArh4.setFitHeight(350);
             imArh4.setFitWidth(600);
-
-
             //jur
             anchorPaneJur.setPadding(new Insets(0, 0, 0, 0));
             jurAn1.setLayoutX(595);
@@ -791,7 +757,7 @@ public class HomeSceneController {
             anchorPaneZap.setPadding(new Insets(0, 0, 0, 0));
             zapAnch1.setPrefHeight(250);
             //jurtrev
-            anchorPaneJurTrev.setPadding(new Insets(0, 0, 0, 0));
+           JurTrevMinimize();
             hboxDeleteWhenMinimize();
             ArhToggle();
         }
@@ -830,23 +796,23 @@ public void ArhToggle(){
         if (arhGP.getPrefWidth() == 1200) {
             rightPaneForArh.setPrefHeight(620);
             arhCamPane.setLayoutX(360);
-            System.out.println("check off, 1200");
+
         }
         if(arhGP.getPrefWidth()==1486){
             rightPaneForArh.setPrefHeight(770);
             arhCamPane.setLayoutX(600);
 
-            System.out.println("check off, 1700");
         }
     } // ust ACTION
     if (checkBoxForArhAll.isVisible() == true) {
         if (arhGP.getPrefWidth() == 1200) {
             rightPaneForArh.setPrefHeight(570);
             arhCamPane.setLayoutX(500);
-            System.out.println("check on, 1200");
+
         }
         if(arhGP.getPrefWidth()==1486){
-            System.out.println("check on, 1700");
+
+
             rightPaneForArh.setPrefHeight(730);
             arhCamPane.setLayoutX(750);
         }
@@ -906,6 +872,64 @@ public void ArhToggle(){
             tableViewForJurUstr.setVisible(true);
             tableViewForJurPC.setVisible(false);
         }
+    }
+    /*==================================== JurPane trev ==========================================*/
+    public void JurTrevBtnUpper() {
+        if (hBox.getChildren().contains(JurTrevSmallPane)) {
+        } else {
+            hBox.getChildren().addFirst(JurTrevSmallPane);
+            JurTrevBtnUp.setVisible(true);
+        }
+    }
+    //jurTrevStat,jurTrevType,jurTrevTime ,jurTrevUst,jurTrevRes
+    public void JurTrevMinimize() {
+        anchorPaneJurTrev.setPadding(new Insets(0, 0, 0, 0));
+        jurTrevStat.setPrefWidth(260);
+        jurTrevType.setPrefWidth(260);
+        jurTrevTime.setPrefWidth(260);
+        jurTrevUst.setPrefWidth(260);
+        jurTrevRes.setPrefWidth(260);
+        //sum = 1300?
+    }
+    public void JurTrevMaximize() {
+        anchorPaneJurTrev.setPadding(new Insets(0, 0, 30, 0));
+        jurTrevStat.setPrefWidth(380);
+        jurTrevType.setPrefWidth(380);
+        jurTrevTime.setPrefWidth(380);
+        jurTrevUst.setPrefWidth(380);
+        jurTrevRes.setPrefWidth(420);
+        //sum = 1940?
+    }
+
+    public void JurTrevSmallClose(ActionEvent event) {
+        hBox.getChildren().remove(JurTrevSmallPane);
+        anchorPaneJurTrev.setVisible(false);
+    }
+
+    public void jurTrev(ActionEvent event) {
+        JurTrevBtnUpper();
+        anchorPaneJurTrev.setVisible(true);
+        anchorPaneProsmotr.setVisible(false);
+        anchorPaneUst.setVisible(false);
+        anchorPaneArh.setVisible(false);
+        anchorPaneZap.setVisible(false);
+        anchorPaneJur.setVisible(false);
+        hboxDeleteLast(anchorPaneJurTrev);
+    }
+
+    public void JurTrevCloseOn(MouseEvent event) {
+        JurTrevClose.setVisible(true);
+    }
+
+    public void JurTrevCloseOff(MouseEvent event) {
+        JurTrevClose.setVisible(false);
+    }
+
+    public void schlagOff(ActionEvent event) {
+        imgV1.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/schlagOff.jpg")));
+    }
+    public void schlagOn(ActionEvent event) {
+        imgV1.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/schlagOn.jpg")));
     }
 }
 

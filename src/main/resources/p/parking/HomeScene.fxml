@@ -19,7 +19,6 @@
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.effect.InnerShadow?>
-<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -29,9 +28,8 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="homePanel" prefHeight="900.0" prefWidth="1440.0" styleClass="home" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="p.parking.HomeSceneController">
+<AnchorPane fx:id="homePanel" prefHeight="900.0" prefWidth="1440.0" styleClass="home" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="p.parking.HomeSceneController">
    <children>
       <AnchorPane prefHeight="75.0" prefWidth="1440.0" styleClass="header" stylesheets="@Style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <effect>
@@ -390,11 +388,7 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <ImageView fx:id="imgV1" fitHeight="690.0" fitWidth="1290.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@photo/pop3.jpg" />
-                     </image>
-                  </ImageView>
+                  <ImageView fx:id="imgV1" fitHeight="690.0" fitWidth="1290.0" pickOnBounds="true" preserveRatio="true" />
                </children>
                <padding>
                   <Insets right="200.0" />
@@ -1104,7 +1098,7 @@
             </Pane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="anchorPaneJur" layoutY="75.0" prefHeight="825.0" prefWidth="1440.0" styleClass="home" visible="false" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
+      <AnchorPane fx:id="anchorPaneJur" layoutY="75.0" prefHeight="825.0" prefWidth="1440.0" styleClass="home" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
          <children>
             <ToggleButton fx:id="toggleForJurUstr" layoutX="100.0" layoutY="25.0" mnemonicParsing="false" onAction="#toggleForJurUstrAction" prefHeight="32.0" prefWidth="100.0" style="-fx-background-insets: 0;" styleClass="btnForArhRight" text="Устройство" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="25.0">
                <font>
@@ -1259,9 +1253,9 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="anchorPaneJurTrev" layoutY="75.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="825.0" prefWidth="1440.0" styleClass="home" stylesheets="@Style.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
+      <AnchorPane fx:id="anchorPaneJurTrev" layoutY="75.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="825.0" prefWidth="1440.0" styleClass="home" stylesheets="@Style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
          <children>
-            <Button layoutX="150.0" layoutY="28.0" mnemonicParsing="false" prefWidth="70.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="0/0" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="28.0">
+            <Button layoutX="150.0" layoutY="18.0" mnemonicParsing="false" prefWidth="70.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="0/0" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="18.0">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -1276,7 +1270,7 @@
                   </InnerShadow>
                </effect>
             </Button>
-            <Button layoutX="235.0" layoutY="28.0" mnemonicParsing="false" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Очистить" AnchorPane.leftAnchor="235.0" AnchorPane.topAnchor="28.0">
+            <Button layoutX="235.0" layoutY="18.0" mnemonicParsing="false" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Очистить" AnchorPane.leftAnchor="235.0" AnchorPane.topAnchor="18.0">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -1291,82 +1285,46 @@
                   </InnerShadow>
                </effect>
             </Button>
-            <Label layoutX="22.0" layoutY="32.0" text="Не обработано/Все" AnchorPane.leftAnchor="22.0" AnchorPane.topAnchor="32.0">
+            <Label layoutX="22.0" layoutY="22.0" text="Не обработано/Все" AnchorPane.leftAnchor="22.0" AnchorPane.topAnchor="22.0">
                <font>
                   <Font name="Calibri" size="14.0" />
                </font>
             </Label>
-            <TableView fx:id="jurtrevTable" layoutX="20.0" layoutY="60.0" prefHeight="740.0" prefWidth="810.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="610.0" AnchorPane.topAnchor="60.0">
+            <TableView fx:id="jurtrevTable" layoutX="20.0" layoutY="60.0" prefHeight="740.0" prefWidth="1400.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="60.0">
                <columns>
-                  <TableColumn maxWidth="100.0" minWidth="50.0" prefWidth="50.0" text="№" />
-                  <TableColumn maxWidth="500.0" minWidth="150.0" prefWidth="200.0" text="Статус" />
-                  <TableColumn maxWidth="300.0" minWidth="100.0" prefWidth="150.0" text="Тип тревоги" />
-                  <TableColumn maxWidth="300.0" prefWidth="150.0" text="Время" />
-                  <TableColumn maxWidth="400.0" minWidth="150.0" prefWidth="150.0" text="Устройство" />
-                  <TableColumn maxWidth="1500.0" minWidth="100.0" prefWidth="110.0" text="Результат" />
+                  <TableColumn maxWidth="100.0" minWidth="100.0" prefWidth="100.0" text="№" />
+                  <TableColumn fx:id="jurTrevStat" maxWidth="500.0" minWidth="150.0" prefWidth="200.0" text="Статус" />
+                  <TableColumn fx:id="jurTrevType" maxWidth="300.0" minWidth="100.0" prefWidth="150.0" text="Тип тревоги" />
+                  <TableColumn fx:id="jurTrevTime" maxWidth="300.0" prefWidth="150.0" text="Время" />
+                  <TableColumn fx:id="jurTrevUst" maxWidth="400.0" minWidth="150.0" prefWidth="150.0" text="Устройство" />
+                  <TableColumn fx:id="jurTrevRes" maxWidth="1500.0" minWidth="100.0" prefWidth="110.0" text="Результат" />
                </columns>
             </TableView>
-            <Button layoutX="1082.0" layoutY="390.0" mnemonicParsing="false" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Активно">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <font>
-                  <Font name="Calibri" size="24.0" />
-               </font>
-               <effect>
-                  <InnerShadow choke="0.2" height="25.0" radius="12.0" width="25.0">
-                     <color>
-                        <Color red="0.6549019813537598" green="0.6549019813537598" blue="0.658823549747467" />
-                     </color>
-                  </InnerShadow>
-               </effect>
-            </Button>
-            <Button layoutX="980.0" layoutY="729.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="200.0" styleClass="btnForJurTrevLock" text="Блокировать">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <font>
-                  <Font name="Calibri" size="24.0" />
-               </font>
-            </Button>
-            <Label layoutX="845.0" layoutY="752.0" prefHeight="32.0" text="Шлагбаум:">
-               <font>
-                  <Font name="Calibri" size="26.0" />
-               </font>
-            </Label>
-            <Button layoutX="1210.0" layoutY="729.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="200.0" styleClass="btnForJurTrevUnlock" text="Разблокировать">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <font>
-                  <Font name="Calibri" size="24.0" />
-               </font>
-            </Button>
-            <Label layoutX="883.0" layoutY="397.0" text="Поменять статус:">
-               <font>
-                  <Font name="Calibri" size="24.0" />
-               </font>
-            </Label>
-            <Text layoutX="903.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Тут я хочу чтобы чел тыкал в таблице на любую тревогу, она выводилась вместо этого текста и он что-то делал дальше. Возможно поменять статус, надо придумать еще" wrappingWidth="492.80340576171875">
-               <font>
-                  <Font size="32.0" />
-               </font>
-            </Text>
-            <Button layoutX="1240.0" layoutY="390.0" mnemonicParsing="false" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Не активно">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <font>
-                  <Font name="Calibri" size="24.0" />
-               </font>
-               <effect>
-                  <InnerShadow choke="0.2" height="25.0" radius="12.0" width="25.0">
-                     <color>
-                        <Color red="0.6549019813537598" green="0.6549019813537598" blue="0.658823549747467" />
-                     </color>
-                  </InnerShadow>
-               </effect>
-            </Button>
+            <AnchorPane fx:id="jurTrevBtnSchalgPane" layoutX="350.0" layoutY="10.0" prefHeight="40.0" prefWidth="595.0">
+               <children>
+                  <Label layoutY="6.0" prefHeight="32.0" text="Шлагбаум:">
+                     <font>
+                        <Font name="Calibri" size="26.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="135.0" mnemonicParsing="false" onAction="#schlagOff" prefHeight="30.0" prefWidth="180.0" styleClass="btnForJurTrevLock" text="Блокировать">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="Calibri" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="347.0" mnemonicParsing="false" onAction="#schlagOn" prefHeight="40.0" prefWidth="200.0" styleClass="btnForJurTrevUnlock" text="Разблокировать">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="Calibri" size="20.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
          </children>
       </AnchorPane>
       <AnchorPane fx:id="invisiblePane" layoutX="882.0" layoutY="104.0" prefHeight="759.0" prefWidth="520.0" visible="false">
