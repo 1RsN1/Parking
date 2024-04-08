@@ -1098,7 +1098,7 @@
             </Pane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="anchorPaneJur" layoutY="75.0" prefHeight="825.0" prefWidth="1440.0" styleClass="home" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
+      <AnchorPane fx:id="anchorPaneJur" layoutY="75.0" prefHeight="825.0" prefWidth="1440.0" styleClass="home" visible="false" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
          <children>
             <ToggleButton fx:id="toggleForJurUstr" layoutX="100.0" layoutY="25.0" mnemonicParsing="false" onAction="#toggleForJurUstrAction" prefHeight="32.0" prefWidth="100.0" style="-fx-background-insets: 0;" styleClass="btnForArhRight" text="Устройство" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="25.0">
                <font>
@@ -1253,7 +1253,7 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="anchorPaneJurTrev" layoutY="75.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="825.0" prefWidth="1440.0" styleClass="home" stylesheets="@Style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
+      <AnchorPane fx:id="anchorPaneJurTrev" layoutY="75.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="825.0" prefWidth="1440.0" styleClass="home" stylesheets="@Style.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
          <children>
             <Button layoutX="150.0" layoutY="18.0" mnemonicParsing="false" prefWidth="70.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="0/0" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="18.0">
                <cursor>
