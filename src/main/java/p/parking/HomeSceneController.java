@@ -1,5 +1,6 @@
 package p.parking;
 
+import java.io.File;
 import java.net.URL;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -14,6 +15,9 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 
@@ -45,6 +49,8 @@ public class HomeSceneController {
     @FXML
     Button prosmotrClose, UstClose, ArhClose, ZapClose, JurClose, JurTrevClose, KonfClose, TrevClose, TurClose,
             PolzClose, ProgClose, MapClose, DecClose, BekClose, ProshClose, FonZapClose, buttonForArhDownload;
+    @FXML
+    TextField chooseMusicTrev;
     @FXML
     HBox hBox;
     @FXML
@@ -323,6 +329,7 @@ public class HomeSceneController {
     public void prosmotr(ActionEvent event) {
         prosmotrBtnUpper();
         anchorPaneProsmotr.setVisible(true);
+
         //prosmotrFX .setVisible(true);
         anchorPaneUst.setVisible(false);
         anchorPaneArh.setVisible(false);
@@ -930,6 +937,25 @@ public void ArhToggle(){
     }
     public void schlagOn(ActionEvent event) {
         imgV1.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/schlagOn.jpg")));
+    }
+
+//==================== TrevPane ================================================
+    private MediaPlayer mediaPlayer;
+
+    @FXML
+    void chooseMusic(MouseEvent event) {
+        FileChooser chooser = new FileChooser();
+        File file = chooser.showOpenDialog(null);
+        if(file != null) {
+            String selectedFile = file.toURI().toString();
+            Media media = new Media(selectedFile);
+            mediaPlayer = new MediaPlayer(media);
+            mediaPlayer.setOnReady(() -> chooseMusicTrev.setText(file.getAbsolutePath()));
+        }
+    }
+    @FXML
+    void playSoundTrev(MouseEvent event) {
+        mediaPlayer.play();
     }
 }
 

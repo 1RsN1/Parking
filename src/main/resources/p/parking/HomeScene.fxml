@@ -29,7 +29,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="homePanel" prefHeight="900.0" prefWidth="1440.0" styleClass="home" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="p.parking.HomeSceneController">
+<AnchorPane fx:id="homePanel" prefHeight="900.0" prefWidth="1440.0" styleClass="home" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="p.parking.HomeSceneController">
    <children>
       <AnchorPane prefHeight="75.0" prefWidth="1440.0" styleClass="header" stylesheets="@Style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <effect>
@@ -1098,7 +1098,7 @@
             </Pane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="anchorPaneJur" layoutY="75.0" prefHeight="825.0" prefWidth="1440.0" styleClass="home" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
+      <AnchorPane fx:id="anchorPaneJur" layoutY="75.0" prefHeight="825.0" prefWidth="1440.0" styleClass="home" visible="false" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
          <children>
             <ToggleButton fx:id="toggleForJurUstr" layoutX="100.0" layoutY="25.0" mnemonicParsing="false" onAction="#toggleForJurUstrAction" prefHeight="32.0" prefWidth="100.0" style="-fx-background-insets: 0;" styleClass="btnForArhRight" text="Устройство" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="25.0">
                <font>
@@ -1253,7 +1253,7 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="anchorPaneJurTrev" layoutY="75.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="825.0" prefWidth="1440.0" styleClass="home" stylesheets="@Style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
+      <AnchorPane fx:id="anchorPaneJurTrev" layoutY="75.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="825.0" prefWidth="1440.0" styleClass="home" stylesheets="@Style.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
          <children>
             <Button layoutX="150.0" layoutY="18.0" mnemonicParsing="false" prefWidth="70.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="0/0" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="18.0">
                <cursor>
@@ -1324,6 +1324,155 @@
                      </font>
                   </Button>
                </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="anchorPaneTrev" layoutY="75.0" prefHeight="825.0" prefWidth="1440.0" styleClass="home">
+         <children>
+            <AnchorPane fx:id="baseAnchorPane111" layoutX="20.0" layoutY="20.0" prefHeight="785.0" prefWidth="1400.0" styleClass="inputbox">
+               <children>
+                  <AnchorPane prefHeight="25.0" prefWidth="120.0" styleClass="inputtext">
+                     <children>
+                        <Label layoutX="5.0" layoutY="4.0" styleClass="inputlabel" text="Основные настройки" textAlignment="CENTER">
+                           <font>
+                              <Font name="Calibri" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <Button layoutX="625.0" layoutY="714.0" mnemonicParsing="false" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Применить">
+                     <font>
+                        <Font name="Calibri" size="24.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <effect>
+                        <InnerShadow choke="0.2" height="25.0" radius="12.0" width="25.0">
+                           <color>
+                              <Color red="0.6549019813537598" green="0.6549019813537598" blue="0.658823549747467" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
+                  </Button>
+                  <Label layoutX="10.0" layoutY="50.0" text="Детектор движения">
+                     <font>
+                        <Font name="Calibri" size="30.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="110.0" text="Саботаж">
+                     <font>
+                        <Font name="Calibri" size="30.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="230.0" text="Потеря сигнала">
+                     <font>
+                        <Font name="Calibri" size="30.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="170.0" text="Тревожный вход">
+                     <font>
+                        <Font name="Calibri" size="30.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="290.0" text="Видео анализ">
+                     <font>
+                        <Font name="Calibri" size="30.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="350.0" text="Детектор людей">
+                     <font>
+                        <Font name="Calibri" size="30.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="410.0" text="Детекция лиц">
+                     <font>
+                        <Font name="Calibri" size="30.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="470.0" text="Диск заполнен">
+                     <font>
+                        <Font name="Calibri" size="30.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="530.0" text="Ошибка диска">
+                     <font>
+                        <Font name="Calibri" size="30.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="590.0" text="Детектор авто">
+                     <font>
+                        <Font name="Calibri" size="30.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="775.0" layoutY="74.0" mnemonicParsing="false" onMouseClicked="#playSoundTrev" text="Воспроизвести">
+                     <font>
+                        <Font name="Calibri" size="22.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="782.0" layoutY="138.0" mnemonicParsing="false" onMouseClicked="#playSoundTrev" text="Воспроизвести">
+                     <font>
+                        <Font name="Calibri" size="22.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="743.0" layoutY="201.0" mnemonicParsing="false" onMouseClicked="#playSoundTrev" text="Воспроизвести">
+                     <font>
+                        <Font name="Calibri" size="22.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="754.0" layoutY="273.0" mnemonicParsing="false" onMouseClicked="#playSoundTrev" text="Воспроизвести">
+                     <font>
+                        <Font name="Calibri" size="22.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="759.0" layoutY="316.0" mnemonicParsing="false" onMouseClicked="#playSoundTrev" text="Воспроизвести">
+                     <font>
+                        <Font name="Calibri" size="22.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="765.0" layoutY="377.0" mnemonicParsing="false" onMouseClicked="#playSoundTrev" text="Воспроизвести">
+                     <font>
+                        <Font name="Calibri" size="22.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="782.0" layoutY="453.0" mnemonicParsing="false" onMouseClicked="#playSoundTrev" text="Воспроизвести">
+                     <font>
+                        <Font name="Calibri" size="22.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="769.0" layoutY="525.0" mnemonicParsing="false" onMouseClicked="#playSoundTrev" text="Воспроизвести">
+                     <font>
+                        <Font name="Calibri" size="22.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="744.0" layoutY="589.0" mnemonicParsing="false" onMouseClicked="#playSoundTrev" text="Воспроизвести">
+                     <font>
+                        <Font name="Calibri" size="22.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="731.0" layoutY="661.0" mnemonicParsing="false" onMouseClicked="#playSoundTrev" text="Воспроизвести">
+                     <font>
+                        <Font name="Calibri" size="22.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="chooseMusicTrev" layoutX="320.0" layoutY="55.0" onMouseClicked="#chooseMusic" prefHeight="35.0" prefWidth="300.0" />
+                  <TextField fx:id="chooseMusicTrev1" layoutX="331.0" layoutY="97.0" prefHeight="35.0" prefWidth="300.0" />
+                  <TextField fx:id="chooseMusicTrev2" layoutX="338.0" layoutY="144.0" prefHeight="35.0" prefWidth="300.0" />
+                  <TextField fx:id="chooseMusicTrev11" layoutX="349.0" layoutY="186.0" prefHeight="35.0" prefWidth="300.0" />
+                  <TextField fx:id="chooseMusicTrev3" layoutX="241.0" layoutY="313.0" prefHeight="35.0" prefWidth="300.0" />
+                  <TextField fx:id="chooseMusicTrev12" layoutX="252.0" layoutY="355.0" prefHeight="35.0" prefWidth="300.0" />
+                  <TextField fx:id="chooseMusicTrev21" layoutX="259.0" layoutY="402.0" prefHeight="35.0" prefWidth="300.0" />
+                  <TextField fx:id="chooseMusicTrev111" layoutX="270.0" layoutY="444.0" prefHeight="35.0" prefWidth="300.0" />
+                  <TextField fx:id="chooseMusicTrev211" layoutX="272.0" layoutY="545.0" prefHeight="35.0" prefWidth="300.0" />
+                  <TextField fx:id="chooseMusicTrev1111" layoutX="283.0" layoutY="587.0" prefHeight="35.0" prefWidth="300.0" />
+               </children>
+               <effect>
+                  <InnerShadow height="255.0" radius="127.0" width="255.0">
+                     <color>
+                        <Color red="0.7803921699523926" green="0.7803921699523926" blue="0.7803921699523926" />
+                     </color>
+                  </InnerShadow>
+               </effect>
             </AnchorPane>
          </children>
       </AnchorPane>
