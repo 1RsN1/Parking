@@ -1327,7 +1327,7 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="anchorPaneTrev" layoutY="75.0" prefHeight="825.0" prefWidth="1440.0" styleClass="home">
+      <AnchorPane fx:id="anchorPaneTrev" layoutY="75.0" prefHeight="825.0" prefWidth="1440.0" styleClass="home" visible="false">
          <children>
             <AnchorPane fx:id="baseAnchorPane111" layoutX="20.0" layoutY="20.0" prefHeight="785.0" prefWidth="1400.0" styleClass="inputbox">
                <children>
