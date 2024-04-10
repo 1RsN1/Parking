@@ -17,7 +17,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 
@@ -50,7 +49,7 @@ public class HomeSceneController {
     Button prosmotrClose, UstClose, ArhClose, ZapClose, JurClose, JurTrevClose, KonfClose, TrevClose, TurClose,
             PolzClose, ProgClose, MapClose, DecClose, BekClose, ProshClose, FonZapClose, buttonForArhDownload;
     @FXML
-    TextField chooseMusicTrev;
+    TextField chooseMusicTrev1, chooseMusicTrev2, chooseMusicTrev3, chooseMusicTrev4, chooseMusicTrev5, chooseMusicTrev6, chooseMusicTrev7, chooseMusicTrev8, chooseMusicTrev9, chooseMusicTrev10;
     @FXML
     HBox hBox;
     @FXML
@@ -65,6 +64,9 @@ public class HomeSceneController {
     Button btnSplitRightPane;
     @FXML
     AnchorPane prosmotrFX;
+
+    @FXML
+    MouseEvent mouseEvent;
 
     ImageView mxbtnView = new ImageView(new Image(getClass().getResourceAsStream("icon/mxmz.png")));
 
@@ -258,6 +260,17 @@ public class HomeSceneController {
         imgV97.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/7.jpg")));
         imgV98.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/8.jpg")));
         imgV99.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/9.jpg")));*/
+
+        chooseMusicTrev1.setText("D:\\VMS\\sound\\Russian\\motion.wav");
+        chooseMusicTrev2.setText("D:\\VMS\\sound\\Russian\\cover.wav");
+        chooseMusicTrev3.setText("D:\\VMS\\sound\\Russian\\outAlarm.wav");
+        chooseMusicTrev4.setText("D:\\VMS\\sound\\Russian\\lost.wav");
+        chooseMusicTrev5.setText("D:\\VMS\\sound\\Russian\\analyze.wav");
+        chooseMusicTrev6.setText("D:\\VMS\\sound\\Russian\\humanDetect.wav");
+        chooseMusicTrev7.setText("D:\\VMS\\sound\\Russian\\facedetect.wav");
+        chooseMusicTrev8.setText("D:\\VMS\\sound\\Russian\\diskfull.wav");
+        chooseMusicTrev9.setText("D:\\VMS\\sound\\Russian\\diskerror.wav");
+        chooseMusicTrev10.setText("D:\\VMS\\sound\\Russian\\carshapedetect.wav");
     }
 
     public void logout(ActionEvent event) {
@@ -280,6 +293,7 @@ public class HomeSceneController {
         anchorPaneZap.setVisible(false);
         anchorPaneJur.setVisible(false);
         anchorPaneJurTrev.setVisible(false);
+        anchorPaneTrev.setVisible(false);
     }
 
     public void hboxDeleteLast(AnchorPane anchorPane) {
@@ -301,6 +315,11 @@ public class HomeSceneController {
     @FXML
     void trevogaSetVisible(KeyEvent event) { // Чтобы это работало необходимо сначала нажать на значок "на гланвую" и потом англ P
         if(event.getCode() == KeyCode.P) {
+            File file = new File(".\\src\\main\\resources\\p\\parking\\sound\\outAlarm.wav");
+            String selectedFile = file.toURI().toString();
+            Media media = new Media(selectedFile);
+            MediaPlayer mediaPlayerTrev = new MediaPlayer(media);
+            mediaPlayerTrev.play();
             trevogaPane.setVisible(true);
         }
     }
@@ -314,6 +333,7 @@ public class HomeSceneController {
         anchorPaneZap.setVisible(false);
         anchorPaneJur.setVisible(false);
         anchorPaneJurTrev.setVisible(false);
+        anchorPaneTrev.setVisible(false);
         hboxDeleteLast(anchorPaneProsmotr);
     }
 
@@ -336,6 +356,7 @@ public class HomeSceneController {
         anchorPaneZap.setVisible(false);
         anchorPaneJur.setVisible(false);
         anchorPaneJurTrev.setVisible(false);
+        anchorPaneTrev.setVisible(false);
         hboxDeleteLast(anchorPaneProsmotr);
     }
 
@@ -375,6 +396,7 @@ public class HomeSceneController {
         anchorPaneZap.setVisible(false);
         anchorPaneJur.setVisible(false);
         anchorPaneJurTrev.setVisible(false);
+        anchorPaneTrev.setVisible(false);
         hboxDeleteLast(anchorPaneUst);
     }
 
@@ -407,6 +429,7 @@ public class HomeSceneController {
         anchorPaneZap.setVisible(false);
         anchorPaneJur.setVisible(false);
         anchorPaneJurTrev.setVisible(false);
+        anchorPaneTrev.setVisible(false);
         hboxDeleteLast(anchorPaneArh);
     }
 
@@ -439,6 +462,7 @@ public class HomeSceneController {
         anchorPaneArh.setVisible(false);
         anchorPaneJur.setVisible(false);
         anchorPaneJurTrev.setVisible(false);
+        anchorPaneTrev.setVisible(false);
         hboxDeleteLast(anchorPaneZap);
     }
 
@@ -471,6 +495,7 @@ public class HomeSceneController {
         anchorPaneArh.setVisible(false);
         anchorPaneZap.setVisible(false);
         anchorPaneJurTrev.setVisible(false);
+        anchorPaneTrev.setVisible(false);
         hboxDeleteLast(anchorPaneJur);
     }
 
@@ -481,8 +506,6 @@ public class HomeSceneController {
     public void JurCloseOff(MouseEvent event) {
         JurClose.setVisible(false);
     }
-
-
 
     public void TrevBtnUpper() {
         if (hBox.getChildren().contains(TrevSmallPane)) {
@@ -499,9 +522,13 @@ public class HomeSceneController {
 
     public void trev(ActionEvent event) {
         TrevBtnUpper();
-        //anchorPaneTrev.setVisible(true);
-        System.out.println("anchorPaneTrev ne rab)");
-
+        anchorPaneTrev.setVisible(true);
+        anchorPaneJur.setVisible(false);
+        anchorPaneProsmotr.setVisible(false);
+        anchorPaneUst.setVisible(false);
+        anchorPaneArh.setVisible(false);
+        anchorPaneZap.setVisible(false);
+        anchorPaneJurTrev.setVisible(false);
         hboxDeleteLast(anchorPaneTrev);
     }
 
@@ -943,18 +970,113 @@ public void ArhToggle(){
     private MediaPlayer mediaPlayer;
 
     @FXML
-    void chooseMusic(MouseEvent event) {
-        FileChooser chooser = new FileChooser();
-        File file = chooser.showOpenDialog(null);
-        if(file != null) {
-            String selectedFile = file.toURI().toString();
-            Media media = new Media(selectedFile);
-            mediaPlayer = new MediaPlayer(media);
-            mediaPlayer.setOnReady(() -> chooseMusicTrev.setText(file.getAbsolutePath()));
-        }
+    void chooseMusic1(MouseEvent event) {
+        File file = new File(".\\src\\main\\resources\\p\\parking\\sound\\motion.wav");
+        String selectedFile = file.toURI().toString();
+        Media media = new Media(selectedFile);
+        mediaPlayer = new MediaPlayer(media);
     }
     @FXML
-    void playSoundTrev(MouseEvent event) {
+    void playSoundTrev1(MouseEvent event) {
+        mediaPlayer.play();
+    }
+    @FXML
+    void chooseMusic2(MouseEvent event) {
+        File file = new File(".\\src\\main\\resources\\p\\parking\\sound\\cover.wav");
+        String selectedFile = file.toURI().toString();
+        Media media = new Media(selectedFile);
+        mediaPlayer = new MediaPlayer(media);
+    }
+    @FXML
+    void playSoundTrev2(MouseEvent event) {
+        mediaPlayer.play();
+    }
+    @FXML
+    void chooseMusic3(MouseEvent event) {
+        File file = new File(".\\src\\main\\resources\\p\\parking\\sound\\outAlarm.wav");
+        String selectedFile = file.toURI().toString();
+        Media media = new Media(selectedFile);
+        mediaPlayer = new MediaPlayer(media);
+    }
+    @FXML
+    void playSoundTrev3(MouseEvent event) {
+        mediaPlayer.play();
+    }
+    @FXML
+    void chooseMusic4(MouseEvent event) {
+        File file = new File(".\\src\\main\\resources\\p\\parking\\sound\\lost.wav");
+        String selectedFile = file.toURI().toString();
+        Media media = new Media(selectedFile);
+        mediaPlayer = new MediaPlayer(media);
+    }
+    @FXML
+    void playSoundTrev4(MouseEvent event) {
+        mediaPlayer.play();
+    }
+    @FXML
+    void chooseMusic5(MouseEvent event) {
+        File file = new File(".\\src\\main\\resources\\p\\parking\\sound\\analyze.wav");
+        String selectedFile = file.toURI().toString();
+        Media media = new Media(selectedFile);
+        mediaPlayer = new MediaPlayer(media);
+    }
+    @FXML
+    void playSoundTrev5(MouseEvent event) {
+        mediaPlayer.play();
+    }
+    @FXML
+    void chooseMusic6(MouseEvent event) {
+        File file = new File(".\\src\\main\\resources\\p\\parking\\sound\\humanDetect.wav");
+        String selectedFile = file.toURI().toString();
+        Media media = new Media(selectedFile);
+        mediaPlayer = new MediaPlayer(media);
+    }
+    @FXML
+    void playSoundTrev6(MouseEvent event) {
+        mediaPlayer.play();
+    }
+    @FXML
+    void chooseMusic7(MouseEvent event) {
+        File file = new File(".\\src\\main\\resources\\p\\parking\\sound\\facedetect.wav");
+        String selectedFile = file.toURI().toString();
+        Media media = new Media(selectedFile);
+        mediaPlayer = new MediaPlayer(media);
+    }
+    @FXML
+    void playSoundTrev7(MouseEvent event) {
+        mediaPlayer.play();
+    }
+    @FXML
+    void chooseMusic8(MouseEvent event) {
+        File file = new File(".\\src\\main\\resources\\p\\parking\\sound\\diskfull.wav");
+        String selectedFile = file.toURI().toString();
+        Media media = new Media(selectedFile);
+        mediaPlayer = new MediaPlayer(media);
+    }
+    @FXML
+    void playSoundTrev8(MouseEvent event) {
+        mediaPlayer.play();
+    }
+    @FXML
+    void chooseMusic9(MouseEvent event) {
+        File file = new File(".\\src\\main\\resources\\p\\parking\\sound\\diskerror.wav");
+        String selectedFile = file.toURI().toString();
+        Media media = new Media(selectedFile);
+        mediaPlayer = new MediaPlayer(media);
+    }
+    @FXML
+    void playSoundTrev9(MouseEvent event) {
+        mediaPlayer.play();
+    }
+    @FXML
+    void chooseMusic10(MouseEvent event) {
+        File file = new File(".\\src\\main\\resources\\p\\parking\\sound\\carshapedetect.wav");
+        String selectedFile = file.toURI().toString();
+        Media media = new Media(selectedFile);
+        mediaPlayer = new MediaPlayer(media);
+    }
+    @FXML
+    void playSoundTrev10(MouseEvent event) {
         mediaPlayer.play();
     }
 }
