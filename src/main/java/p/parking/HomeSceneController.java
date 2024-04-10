@@ -57,7 +57,7 @@ public class HomeSceneController {
     @FXML
     Button buttonForSevenCam, buttonForFourCam, buttonForNineCam, buttonForOneCam, maxBtn, prosmotrBtnUp, UstBtnUp,
             ArhBtnUp, ZapBtnUp, JurBtnUp, JurTrevBtnUp, KonfBtnUp, TrevBtnUp, TurBtnUp, PolzBtnUp, ProgBtnUp, MapBtnUp,
-            DecBtnUp, BekBtnUp, ProshBtnUp, FonZapBtnUp, btnSplitArh;
+            DecBtnUp, BekBtnUp, ProshBtnUp, FonZapBtnUp, btnSplitArh, trevPrimBtn;
     @FXML
     AnchorPane paneWithFourCam, paneWithOneCam, paneWithSevenCam, paneWithNineCam;
     @FXML
@@ -923,7 +923,8 @@ public void ArhToggle(){
         jurTrevTime.setPrefWidth(260);
         jurTrevUst.setPrefWidth(260);
         jurTrevRes.setPrefWidth(260);
-        //sum = 1300?
+        trevPrimBtn.setLayoutX(625);
+        trevogaPane.setLayoutX(519);//sum = 1300?
     }
     public void JurTrevMaximize() {
         anchorPaneJurTrev.setPadding(new Insets(0, 0, 30, 0));
@@ -932,6 +933,8 @@ public void ArhToggle(){
         jurTrevTime.setPrefWidth(380);
         jurTrevUst.setPrefWidth(380);
         jurTrevRes.setPrefWidth(420);
+        trevPrimBtn.setLayoutX(885);
+        trevogaPane.setLayoutX(760);
         //sum = 1940?
     }
 

@@ -29,7 +29,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="homePanel" prefHeight="900.0" prefWidth="1440.0" styleClass="home" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="p.parking.HomeSceneController">
+<AnchorPane fx:id="homePanel" prefHeight="900.0" prefWidth="1440.0" styleClass="home" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="p.parking.HomeSceneController">
    <children>
       <AnchorPane prefHeight="75.0" prefWidth="1440.0" styleClass="header" stylesheets="@Style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <effect>
@@ -1327,9 +1327,9 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="anchorPaneTrev" layoutY="75.0" prefHeight="825.0" prefWidth="1440.0" styleClass="home" visible="false">
+      <AnchorPane fx:id="anchorPaneTrev" layoutY="75.0" prefHeight="825.0" prefWidth="1440.0" styleClass="home" visible="false" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
          <children>
-            <AnchorPane fx:id="baseAnchorPane111" layoutX="20.0" layoutY="20.0" prefHeight="785.0" prefWidth="1400.0" styleClass="inputbox">
+            <AnchorPane fx:id="baseAnchorPane111" layoutX="20.0" layoutY="20.0" prefHeight="785.0" prefWidth="1400.0" styleClass="inputbox" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
                <children>
                   <AnchorPane prefHeight="25.0" prefWidth="120.0" styleClass="inputtext">
                      <children>
@@ -1340,7 +1340,7 @@
                         </Label>
                      </children>
                   </AnchorPane>
-                  <Button layoutX="625.0" layoutY="714.0" mnemonicParsing="false" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Применить">
+                  <Button fx:id="trevPrimBtn" layoutX="625.0" layoutY="714.0" mnemonicParsing="false" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Применить" AnchorPane.bottomAnchor="10.0">
                      <font>
                         <Font name="Calibri" size="24.0" />
                      </font>
