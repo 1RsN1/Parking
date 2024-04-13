@@ -9,6 +9,7 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.Spinner?>
@@ -19,6 +20,7 @@
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -29,7 +31,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="homePanel" prefHeight="900.0" prefWidth="1440.0" styleClass="home" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="p.parking.HomeSceneController">
+<AnchorPane fx:id="homePanel" prefHeight="900.0" prefWidth="1440.0" styleClass="home" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="p.parking.HomeSceneController">
    <children>
       <AnchorPane prefHeight="75.0" prefWidth="1440.0" styleClass="header" stylesheets="@Style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <effect>
@@ -1634,6 +1636,304 @@
                   </InnerShadow>
                </effect>
             </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="anchorPanePolz" layoutY="75.0" prefHeight="825.0" prefWidth="1440.0" styleClass="home">
+         <children>
+            <AnchorPane layoutX="60.0" layoutY="218.0" prefHeight="350.0" prefWidth="300.0" styleClass="boxPolz">
+               <children>
+                  <Label layoutX="40.0" layoutY="180.0" prefHeight="25.0" text="Логин:">
+                     <font>
+                        <Font name="Calibri" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="40.0" layoutY="215.0" prefHeight="25.0" text="Пароль:">
+                     <font>
+                        <Font name="Calibri" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="40.0" layoutY="250.0" prefHeight="25.0" text="Подтв:">
+                     <font>
+                        <Font name="Calibri" size="20.0" />
+                     </font>
+                  </Label>
+                  <PasswordField layoutX="110.0" layoutY="215.0" text="admin">
+                     <font>
+                        <Font name="Calibri" size="13.0" />
+                     </font>
+                  </PasswordField>
+                  <PasswordField layoutX="110.0" layoutY="250.0">
+                     <font>
+                        <Font name="Calibri" size="13.0" />
+                     </font>
+                  </PasswordField>
+                  <TextField editable="false" layoutX="110.0" layoutY="180.0" text="admin">
+                     <font>
+                        <Font name="Calibri" size="13.0" />
+                     </font>
+                  </TextField>
+                  <Button layoutX="50.0" layoutY="300.0" mnemonicParsing="false" prefWidth="85.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Готово">
+                     <font>
+                        <Font name="Calibri" size="18.0" />
+                     </font>
+                     <effect>
+                        <InnerShadow choke="0.2" height="25.0" radius="12.0" width="25.0">
+                           <color>
+                              <Color red="0.6549019813537598" green="0.6549019813537598" blue="0.6549019813537598" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button layoutX="165.0" layoutY="300.0" mnemonicParsing="false" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Отмена">
+                     <font>
+                        <Font name="Calibri" size="18.0" />
+                     </font>
+                     <effect>
+                        <InnerShadow choke="0.2" height="25.0" radius="12.0" width="25.0">
+                           <color>
+                              <Color red="0.6549019813537598" green="0.6549019813537598" blue="0.6549019813537598" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <ImageView fx:id="imgAdminPolz1" fitHeight="150.0" fitWidth="160.0" layoutX="80.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icon/security.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="400.0" layoutY="218.0" prefHeight="350.0" prefWidth="300.0" styleClass="boxPolz">
+               <children>
+                  <Label layoutX="40.0" layoutY="180.0" prefHeight="25.0" text="Логин:">
+                     <font>
+                        <Font name="Calibri" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="40.0" layoutY="215.0" prefHeight="25.0" text="Пароль:">
+                     <font>
+                        <Font name="Calibri" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="40.0" layoutY="250.0" prefHeight="25.0" text="Подтв:">
+                     <font>
+                        <Font name="Calibri" size="20.0" />
+                     </font>
+                  </Label>
+                  <PasswordField layoutX="110.0" layoutY="215.0" text="security">
+                     <font>
+                        <Font name="Calibri" size="13.0" />
+                     </font>
+                  </PasswordField>
+                  <PasswordField layoutX="110.0" layoutY="250.0">
+                     <font>
+                        <Font name="Calibri" size="13.0" />
+                     </font>
+                  </PasswordField>
+                  <TextField editable="false" layoutX="110.0" layoutY="180.0" text="security">
+                     <font>
+                        <Font name="Calibri" size="13.0" />
+                     </font>
+                  </TextField>
+                  <Button layoutX="50.0" layoutY="300.0" mnemonicParsing="false" prefWidth="85.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Готово">
+                     <font>
+                        <Font name="Calibri" size="18.0" />
+                     </font>
+                     <effect>
+                        <InnerShadow choke="0.2" height="25.0" radius="12.0" width="25.0">
+                           <color>
+                              <Color red="0.6549019813537598" green="0.6549019813537598" blue="0.6549019813537598" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button layoutX="165.0" layoutY="300.0" mnemonicParsing="false" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Отмена">
+                     <font>
+                        <Font name="Calibri" size="18.0" />
+                     </font>
+                     <effect>
+                        <InnerShadow choke="0.2" height="25.0" radius="12.0" width="25.0">
+                           <color>
+                              <Color red="0.6549019813537598" green="0.6549019813537598" blue="0.6549019813537598" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <ImageView fx:id="imgAdminPolz" fitHeight="166.0" fitWidth="160.0" layoutX="73.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icon/admin.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="newPolz1" layoutX="740.0" layoutY="218.0" prefHeight="350.0" prefWidth="300.0" styleClass="boxPolz" visible="false">
+               <children>
+                  <ImageView fx:id="imgAdminPolz11" fitHeight="150.0" fitWidth="160.0" layoutX="77.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icon/security.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="40.0" layoutY="180.0" prefHeight="25.0" text="Логин:">
+                     <font>
+                        <Font name="Calibri" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="40.0" layoutY="215.0" prefHeight="25.0" text="Пароль:">
+                     <font>
+                        <Font name="Calibri" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="40.0" layoutY="250.0" prefHeight="25.0" text="Подтв:">
+                     <font>
+                        <Font name="Calibri" size="20.0" />
+                     </font>
+                  </Label>
+                  <PasswordField layoutX="110.0" layoutY="215.0">
+                     <font>
+                        <Font name="Calibri" size="13.0" />
+                     </font>
+                  </PasswordField>
+                  <PasswordField layoutX="110.0" layoutY="250.0">
+                     <font>
+                        <Font name="Calibri" size="13.0" />
+                     </font>
+                  </PasswordField>
+                  <TextField layoutX="110.0" layoutY="180.0">
+                     <font>
+                        <Font name="Calibri" size="13.0" />
+                     </font>
+                  </TextField>
+                  <Button layoutX="50.0" layoutY="300.0" mnemonicParsing="false" prefWidth="85.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Готово">
+                     <font>
+                        <Font name="Calibri" size="18.0" />
+                     </font>
+                     <effect>
+                        <InnerShadow choke="0.2" height="25.0" radius="12.0" width="25.0">
+                           <color>
+                              <Color red="0.6549019813537598" green="0.6549019813537598" blue="0.6549019813537598" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button layoutX="165.0" layoutY="300.0" mnemonicParsing="false" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Отмена">
+                     <font>
+                        <Font name="Calibri" size="18.0" />
+                     </font>
+                     <effect>
+                        <InnerShadow choke="0.2" height="25.0" radius="12.0" width="25.0">
+                           <color>
+                              <Color red="0.6549019813537598" green="0.6549019813537598" blue="0.6549019813537598" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button layoutX="255.0" layoutY="3.0" mnemonicParsing="false" onMouseClicked="#closeNewPolz1" prefHeight="40.0" prefWidth="40.0" styleClass="btnClosePolz">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="newPolz2" layoutX="1080.0" layoutY="218.0" prefHeight="350.0" prefWidth="300.0" styleClass="boxPolz" visible="false">
+               <children>
+                  <ImageView fx:id="imgAdminPolz12" fitHeight="150.0" fitWidth="160.0" layoutX="77.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icon/security.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="40.0" layoutY="180.0" prefHeight="25.0" text="Логин:">
+                     <font>
+                        <Font name="Calibri" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="40.0" layoutY="215.0" prefHeight="25.0" text="Пароль:">
+                     <font>
+                        <Font name="Calibri" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="40.0" layoutY="250.0" prefHeight="25.0" text="Подтв:">
+                     <font>
+                        <Font name="Calibri" size="20.0" />
+                     </font>
+                  </Label>
+                  <PasswordField layoutX="110.0" layoutY="215.0">
+                     <font>
+                        <Font name="Calibri" size="13.0" />
+                     </font>
+                  </PasswordField>
+                  <PasswordField layoutX="110.0" layoutY="250.0">
+                     <font>
+                        <Font name="Calibri" size="13.0" />
+                     </font>
+                  </PasswordField>
+                  <TextField layoutX="110.0" layoutY="180.0">
+                     <font>
+                        <Font name="Calibri" size="13.0" />
+                     </font>
+                  </TextField>
+                  <Button layoutX="50.0" layoutY="300.0" mnemonicParsing="false" prefWidth="85.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Готово">
+                     <font>
+                        <Font name="Calibri" size="18.0" />
+                     </font>
+                     <effect>
+                        <InnerShadow choke="0.2" height="25.0" radius="12.0" width="25.0">
+                           <color>
+                              <Color red="0.6549019813537598" green="0.6549019813537598" blue="0.6549019813537598" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button layoutX="165.0" layoutY="300.0" mnemonicParsing="false" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Отмена">
+                     <font>
+                        <Font name="Calibri" size="18.0" />
+                     </font>
+                     <effect>
+                        <InnerShadow choke="0.2" height="25.0" radius="12.0" width="25.0">
+                           <color>
+                              <Color red="0.6549019813537598" green="0.6549019813537598" blue="0.6549019813537598" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button layoutX="255.0" layoutY="3.0" mnemonicParsing="false" onMouseClicked="#closeNewPolz2" prefHeight="40.0" prefWidth="40.0" styleClass="btnClosePolz">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <Button fx:id="btnNewPolz" layoutX="720.0" layoutY="330.0" mnemonicParsing="false" onMouseClicked="#addNewPolz" prefHeight="128.0" prefWidth="128.0" styleClass="btnPlusPolz" text="." textAlignment="CENTER">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font size="1.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
       <AnchorPane fx:id="invisiblePane" layoutX="882.0" layoutY="104.0" prefHeight="759.0" prefWidth="520.0" visible="false">

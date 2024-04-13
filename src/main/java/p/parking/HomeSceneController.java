@@ -38,7 +38,7 @@ public class HomeSceneController {
     @FXML
     AnchorPane anchorPaneProsmotr, anchorPaneUst, anchorPaneArh, anchorPaneZap, anchorPaneJur, anchorPaneJurTrev, anchorPaneTrev,
             anchorPaneTur, anchorPaneProg, anchorPanePolz, homePanel, baseAnchorPane, othersAnchorPane, settingAP, camBtnPane, camRightPane,
-            rightPaneForArh, trevogaPane, jurTrevBtnSchalgPane;
+            rightPaneForArh, trevogaPane, jurTrevBtnSchalgPane, newPolz1, newPolz2;
     @FXML
     Pane basePane, basePane1, basePane11, zapBtnPane;
     @FXML
@@ -57,7 +57,7 @@ public class HomeSceneController {
     @FXML
     Button buttonForSevenCam, buttonForFourCam, buttonForNineCam, buttonForOneCam, maxBtn, prosmotrBtnUp, UstBtnUp,
             ArhBtnUp, ZapBtnUp, JurBtnUp, JurTrevBtnUp, KonfBtnUp, TrevBtnUp, TurBtnUp, PolzBtnUp, ProgBtnUp, MapBtnUp,
-            DecBtnUp, BekBtnUp, ProshBtnUp, FonZapBtnUp, btnSplitArh, trevPrimBtn;
+            DecBtnUp, BekBtnUp, ProshBtnUp, FonZapBtnUp, btnSplitArh, trevPrimBtn, btnNewPolz;
     @FXML
     AnchorPane paneWithFourCam, paneWithOneCam, paneWithSevenCam, paneWithNineCam;
     @FXML
@@ -294,6 +294,7 @@ public class HomeSceneController {
         anchorPaneJur.setVisible(false);
         anchorPaneJurTrev.setVisible(false);
         anchorPaneTrev.setVisible(false);
+        anchorPanePolz.setVisible(false);
     }
 
     public void hboxDeleteLast(AnchorPane anchorPane) {
@@ -334,6 +335,7 @@ public class HomeSceneController {
         anchorPaneJur.setVisible(false);
         anchorPaneJurTrev.setVisible(false);
         anchorPaneTrev.setVisible(false);
+        anchorPanePolz.setVisible(false);
         hboxDeleteLast(anchorPaneProsmotr);
     }
 
@@ -357,6 +359,7 @@ public class HomeSceneController {
         anchorPaneJur.setVisible(false);
         anchorPaneJurTrev.setVisible(false);
         anchorPaneTrev.setVisible(false);
+        anchorPanePolz.setVisible(false);
         hboxDeleteLast(anchorPaneProsmotr);
     }
 
@@ -397,6 +400,7 @@ public class HomeSceneController {
         anchorPaneJur.setVisible(false);
         anchorPaneJurTrev.setVisible(false);
         anchorPaneTrev.setVisible(false);
+        anchorPanePolz.setVisible(false);
         hboxDeleteLast(anchorPaneUst);
     }
 
@@ -430,6 +434,7 @@ public class HomeSceneController {
         anchorPaneJur.setVisible(false);
         anchorPaneJurTrev.setVisible(false);
         anchorPaneTrev.setVisible(false);
+        anchorPanePolz.setVisible(false);
         hboxDeleteLast(anchorPaneArh);
     }
 
@@ -463,6 +468,7 @@ public class HomeSceneController {
         anchorPaneJur.setVisible(false);
         anchorPaneJurTrev.setVisible(false);
         anchorPaneTrev.setVisible(false);
+        anchorPanePolz.setVisible(false);
         hboxDeleteLast(anchorPaneZap);
     }
 
@@ -496,6 +502,7 @@ public class HomeSceneController {
         anchorPaneZap.setVisible(false);
         anchorPaneJurTrev.setVisible(false);
         anchorPaneTrev.setVisible(false);
+        anchorPanePolz.setVisible(false);
         hboxDeleteLast(anchorPaneJur);
     }
 
@@ -529,6 +536,7 @@ public class HomeSceneController {
         anchorPaneArh.setVisible(false);
         anchorPaneZap.setVisible(false);
         anchorPaneJurTrev.setVisible(false);
+        anchorPanePolz.setVisible(false);
         hboxDeleteLast(anchorPaneTrev);
     }
 
@@ -611,8 +619,14 @@ public class HomeSceneController {
 
     public void polz(ActionEvent event) {
         PolzBtnUpper();
-       // anchorPanePolz.setVisible(true);
-        System.out.println("pols ne rab");
+        anchorPanePolz.setVisible(true);
+        anchorPaneJur.setVisible(false);
+        anchorPaneProsmotr.setVisible(false);
+        anchorPaneUst.setVisible(false);
+        anchorPaneArh.setVisible(false);
+        anchorPaneZap.setVisible(false);
+        anchorPaneJurTrev.setVisible(false);
+        anchorPaneTrev.setVisible(false);
         hboxDeleteLast(anchorPanePolz);
     }
 
@@ -971,7 +985,6 @@ public void ArhToggle(){
 
 //==================== TrevPane ================================================
     private MediaPlayer mediaPlayer;
-
     @FXML
     void chooseMusic1(MouseEvent event) {
         File file = new File(".\\src\\main\\resources\\p\\parking\\sound\\motion.wav");
@@ -1081,6 +1094,45 @@ public void ArhToggle(){
     @FXML
     void playSoundTrev10(MouseEvent event) {
         mediaPlayer.play();
+    }
+//==================== PolzPane ================================================
+    @FXML
+    void addNewPolz(MouseEvent event) {
+        if(!newPolz1.isVisible()) {
+            newPolz1.setVisible(true);
+            btnNewPolz.setLayoutX(1060);
+        } else if(newPolz2.isVisible() && !newPolz1.isVisible()) {
+            newPolz1.setVisible(true);
+            newPolz2.setLayoutX(1080);
+            btnNewPolz.setVisible(false);
+        }else {
+            newPolz2.setVisible(true);
+            btnNewPolz.setVisible(false);
+        }
+    }
+    @FXML
+    void closeNewPolz1(MouseEvent event) {
+        if(newPolz1.isVisible() && !newPolz2.isVisible()) {
+            newPolz1.setVisible(false);
+            btnNewPolz.setLayoutX(720);
+        } else if(newPolz1.isVisible() && newPolz2.isVisible()) {
+            newPolz1.setVisible(false);
+            newPolz2.setLayoutX(740);
+            btnNewPolz.setVisible(true);
+            btnNewPolz.setLayoutX(1060);
+        }
+    }
+    @FXML
+    void closeNewPolz2(MouseEvent event) {
+        if(newPolz1.isVisible() && newPolz2.isVisible()) {
+            newPolz2.setVisible(false);
+            btnNewPolz.setVisible(true);
+            btnNewPolz.setLayoutX(1060);
+        } else if(!newPolz1.isVisible() && newPolz2.isVisible()) {
+            newPolz2.setVisible(false);
+            btnNewPolz.setVisible(true);
+            btnNewPolz.setLayoutX(720);
+        }
     }
 }
 
