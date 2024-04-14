@@ -2,13 +2,18 @@ package p.parking;
 
 import java.io.File;
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.Calendar;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
@@ -30,8 +35,7 @@ public class HomeSceneController {
     Slider arhSlider;
     @FXML
     Stage stage;
-    @FXML
-    TableView jurtrevTable;
+
     @FXML
     ImageView imgV1, imgV41, imgV42, imgV43, imgV44, imgV71, imgV72, imgV73, imgV74, imgV75, imgV76,
             imgV77, imgV91, imgV92, imgV93, imgV94, imgV95, imgV96, imgV97, imgV98, imgV99, ivProsmotr0, imArh1, imArh2, imArh3, imArh4;
@@ -99,8 +103,27 @@ public class HomeSceneController {
     TableView<?> tableViewForJurUstr;
     @FXML
     TableColumn jurUPrim, jurPCPrim;
-    @FXML // Колонки таблицы журнала тревог
-    TableColumn jurTrevStat,jurTrevType,jurTrevTime ,jurTrevUst,jurTrevRes;
+    /*==================================== Колонки таблицы журнала тревог ==========================================*/
+    private ObservableList<Accident> accidentsData = FXCollections.observableArrayList();
+    @FXML
+    private TableView<Accident> jurtrevTable;
+    @FXML
+    private TableColumn<Accident, Integer> jurTrevNum;
+    @FXML
+    private TableColumn<Accident, String> jurTrevStat;
+    @FXML
+    private TableColumn<Accident, String> jurTrevType;
+    @FXML
+    private TableColumn<Accident, String> jurTrevTime;
+    @FXML
+    private TableColumn<Accident, String> jurTrevUst;
+    @FXML
+    private TableColumn<Accident, String> jurTrevRes;
+
+
+    /*=============================================================================================================*/
+   // @FXML // Колонки таблицы журнала тревог
+  //  TableColumn jurTrevStat,jurTrevType,jurTrevTime ,jurTrevUst,jurTrevRes, jurTrevNum;
 
     @FXML
     SpinnerValueFactory<LocalTime> svf = new SpinnerValueFactory<LocalTime>() {
@@ -227,6 +250,16 @@ public class HomeSceneController {
     }
 
     public void initialize() {
+        initAccidents();
+        jurTrevNum.setCellValueFactory(new PropertyValueFactory<Accident, Integer>("num"));
+        jurTrevStat.setCellValueFactory(new PropertyValueFactory<Accident, String>("status"));
+        jurTrevType.setCellValueFactory(new PropertyValueFactory<Accident, String>("type"));
+        jurTrevTime.setCellValueFactory(new PropertyValueFactory<Accident, String>("date"));
+        jurTrevUst.setCellValueFactory(new PropertyValueFactory<Accident, String>("ustr"));
+        jurTrevRes.setCellValueFactory(new PropertyValueFactory<Accident, String>("result"));
+        jurtrevTable.setItems(accidentsData);
+
+
         mxbtnView.setFitWidth(18);
         mxbtnView.setFitHeight(18);
         maxBtn.setGraphic(mxbtnView);
@@ -921,6 +954,19 @@ public void ArhToggle(){
             tableViewForJurPC.setVisible(false);
         }
     }
+    /*==================================== Accidents  ==========================================*/
+
+    private void initAccidents() {
+        accidentsData.add(new Accident(getNum(), "Состояние", "Тип", getTime(), "Устранение", "Результат"));
+        accidentsData.add(new Accident(getNum(), "Состояние", "Тип", getTime(), "Устранение", "Результат"));
+    }
+    private String getTime() {
+        return new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(Calendar.getInstance().getTime());
+    }
+    private int getNum() {
+        return accidentsData.size() + 1;
+    }
+
     /*==================================== JurPane trev ==========================================*/
     public void JurTrevBtnUpper() {
         if (hBox.getChildren().contains(JurTrevSmallPane)) {
@@ -977,6 +1023,8 @@ public void ArhToggle(){
     }
 
     public void schlagOff(ActionEvent event) {
+      //  jurTrevNum.setText(jurTrevNum.getText() + "1");
+
         imgV1.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/schlagOff.jpg")));
     }
     public void schlagOn(ActionEvent event) {

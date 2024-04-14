@@ -31,7 +31,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="homePanel" prefHeight="900.0" prefWidth="1440.0" styleClass="home" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="p.parking.HomeSceneController">
+<AnchorPane fx:id="homePanel" prefHeight="900.0" prefWidth="1440.0" styleClass="home" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="p.parking.HomeSceneController">
    <children>
       <AnchorPane prefHeight="75.0" prefWidth="1440.0" styleClass="header" stylesheets="@Style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <effect>
@@ -1255,7 +1255,7 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="anchorPaneJurTrev" layoutY="75.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="825.0" prefWidth="1440.0" styleClass="home" stylesheets="@Style.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
+      <AnchorPane fx:id="anchorPaneJurTrev" layoutY="75.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="825.0" prefWidth="1440.0" styleClass="home" stylesheets="@Style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
          <children>
             <Button layoutX="150.0" layoutY="18.0" mnemonicParsing="false" prefWidth="70.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="0/0" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="18.0">
                <cursor>
@@ -1294,12 +1294,12 @@
             </Label>
             <TableView fx:id="jurtrevTable" layoutX="20.0" layoutY="60.0" prefHeight="740.0" prefWidth="1400.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="60.0">
                <columns>
-                  <TableColumn maxWidth="100.0" minWidth="100.0" prefWidth="100.0" text="№" />
-                  <TableColumn fx:id="jurTrevStat" maxWidth="500.0" minWidth="150.0" prefWidth="200.0" text="Статус" />
-                  <TableColumn fx:id="jurTrevType" maxWidth="300.0" minWidth="100.0" prefWidth="150.0" text="Тип тревоги" />
-                  <TableColumn fx:id="jurTrevTime" maxWidth="300.0" prefWidth="150.0" text="Время" />
-                  <TableColumn fx:id="jurTrevUst" maxWidth="400.0" minWidth="150.0" prefWidth="150.0" text="Устройство" />
-                  <TableColumn fx:id="jurTrevRes" maxWidth="1500.0" minWidth="100.0" prefWidth="110.0" text="Результат" />
+                  <TableColumn fx:id="jurTrevNum" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" text="№" />
+                  <TableColumn fx:id="jurTrevStat" maxWidth="380.0" minWidth="150.0" prefWidth="260.0" text="Статус" />
+                  <TableColumn fx:id="jurTrevType" maxWidth="380.0" minWidth="100.0" prefWidth="260.0" text="Тип тревоги" />
+                  <TableColumn fx:id="jurTrevTime" maxWidth="380.0" prefWidth="260.0" text="Время" />
+                  <TableColumn fx:id="jurTrevUst" maxWidth="380.0" minWidth="150.0" prefWidth="260.0" text="Устройство" />
+                  <TableColumn fx:id="jurTrevRes" maxWidth="420.0" minWidth="100.0" prefWidth="260.0" text="Результат" />
                </columns>
             </TableView>
             <AnchorPane fx:id="jurTrevBtnSchalgPane" layoutX="350.0" layoutY="10.0" prefHeight="40.0" prefWidth="595.0">
@@ -1638,7 +1638,7 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="anchorPanePolz" layoutY="75.0" prefHeight="825.0" prefWidth="1440.0" styleClass="home">
+      <AnchorPane fx:id="anchorPanePolz" layoutY="75.0" prefHeight="825.0" prefWidth="1440.0" styleClass="home" visible="false">
          <children>
             <AnchorPane layoutX="60.0" layoutY="218.0" prefHeight="350.0" prefWidth="300.0" styleClass="boxPolz">
                <children>
