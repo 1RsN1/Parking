@@ -5,7 +5,10 @@ import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
+import java.util.Random;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -53,7 +56,10 @@ public class HomeSceneController {
     Button prosmotrClose, UstClose, ArhClose, ZapClose, JurClose, JurTrevClose, KonfClose, TrevClose, TurClose,
             PolzClose, ProgClose, MapClose, DecClose, BekClose, ProshClose, FonZapClose, buttonForArhDownload;
     @FXML
-    TextField chooseMusicTrev1, chooseMusicTrev2, chooseMusicTrev3, chooseMusicTrev4, chooseMusicTrev5, chooseMusicTrev6, chooseMusicTrev7, chooseMusicTrev8, chooseMusicTrev9, chooseMusicTrev10;
+    TextField chooseMusicTrev1, chooseMusicTrev2, chooseMusicTrev3, chooseMusicTrev4, chooseMusicTrev5, chooseMusicTrev6,
+            chooseMusicTrev7, chooseMusicTrev8, chooseMusicTrev9, chooseMusicTrev10, adminPodtvField, secLogField,
+            secPassField, secPodtvField, adminLogField, adminPassField;
+
     @FXML
     HBox hBox;
     @FXML
@@ -96,7 +102,7 @@ public class HomeSceneController {
     RadioButton radioForArhDop, radioForArhMain, radioForArhPhoto, radioForArhVideo;
 
     @FXML
-    Label NameOfEquipment;
+    Label NameOfEquipment, textIfWrongPolz;
     @FXML
     TableView<?> tableViewForJurPC;
     @FXML
@@ -304,6 +310,9 @@ public class HomeSceneController {
         chooseMusicTrev8.setText("D:\\VMS\\sound\\Russian\\diskfull.wav");
         chooseMusicTrev9.setText("D:\\VMS\\sound\\Russian\\diskerror.wav");
         chooseMusicTrev10.setText("D:\\VMS\\sound\\Russian\\carshapedetect.wav");
+
+        adminLogField.setText("admin");
+        adminPassField.setText("admin");
     }
 
     public void logout(ActionEvent event) {
@@ -956,8 +965,11 @@ public void ArhToggle(){
     }
     /*==================================== Accidents  ==========================================*/
 
+    List<String> list = List.of("АОЛД", "lsdjf", "Sasga");
+    Random random = new Random();
     private void initAccidents() {
-        accidentsData.add(new Accident(getNum(), "Состояние", "Тип", getTime(), "Устранение", "Результат"));
+        String temp = list.get(random.nextInt(3));
+        accidentsData.add(new Accident(getNum(), "Состояние", "Тип", getTime(), "Устранение", temp));
         accidentsData.add(new Accident(getNum(), "Состояние", "Тип", getTime(), "Устранение", "Результат"));
     }
     private String getTime() {
@@ -1143,6 +1155,7 @@ public void ArhToggle(){
     void playSoundTrev10(MouseEvent event) {
         mediaPlayer.play();
     }
+
 //==================== PolzPane ================================================
     @FXML
     void addNewPolz(MouseEvent event) {
@@ -1151,9 +1164,9 @@ public void ArhToggle(){
             btnNewPolz.setLayoutX(1060);
         } else if(newPolz2.isVisible() && !newPolz1.isVisible()) {
             newPolz1.setVisible(true);
-            newPolz2.setLayoutX(1080);
+            newPolz1.setLayoutX(1080);
             btnNewPolz.setVisible(false);
-        }else {
+          } else {
             newPolz2.setVisible(true);
             btnNewPolz.setVisible(false);
         }
@@ -1182,6 +1195,31 @@ public void ArhToggle(){
             btnNewPolz.setLayoutX(720);
         }
     }
+    @FXML
+    void adminClearField() {
+        adminPodtvField.clear();
+        adminLogField.clear();
+        adminPassField.clear();
+    }
+    @FXML
+    void secClearField() {
+        secPodtvField.clear();
+        secLogField.clear();
+        secPassField.clear();
+    }
+    @FXML
+    void new1ClearField() {
+        adminPodtvField.clear();
+        adminLogField.clear();
+        adminPassField.clear();
+    }
+    @FXML
+    void new2ClearField() {
+        adminPodtvField.clear();
+        adminLogField.clear();
+        adminPassField.clear();
+    }
+
 }
 
 

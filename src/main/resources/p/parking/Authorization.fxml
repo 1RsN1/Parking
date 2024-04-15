@@ -70,7 +70,7 @@
             </InnerShadow>
          </effect>
       </TextField>
-      <PasswordField fx:id="password" layoutX="259.0" layoutY="175.0" prefHeight="30.0" prefWidth="200.0" promptText="Пароль">
+      <PasswordField fx:id="passwordField" layoutX="259.0" layoutY="175.0" onKeyReleased="#EnterLogIn" prefHeight="30.0" prefWidth="200.0" promptText="Пароль">
          <font>
             <Font size="14.0" />
          </font>
