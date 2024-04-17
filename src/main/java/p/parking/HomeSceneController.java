@@ -126,23 +126,210 @@ public class HomeSceneController {
     @FXML
     private TableColumn<Accident, String> jurTrevRes;
 
-
     /*=============================================================================================================*/
-   // @FXML // Колонки таблицы журнала тревог
-  //  TableColumn jurTrevStat,jurTrevType,jurTrevTime ,jurTrevUst,jurTrevRes, jurTrevNum;
-
     @FXML
     SpinnerValueFactory<LocalTime> svf = new SpinnerValueFactory<LocalTime>() {
         @Override
         public void decrement(int i) {
-
         }
 
         @Override
         public void increment(int i) {
-
         }
     };
+
+// TODO *баг на архиве после максимизирования и обратного минимизирования невозможно заново максимизировать - не работает
+//  из-за изменения размера окон просмотра изображений в архиве - требуется дороботка баг*
+
+    //TODO увеличить размер шрифта в таблицах  - jurTrevType.setStyle("-fx-font-size: 22px;"); / сделать их непередвигаемыми
+    //TODO сделать таблицы для устройств devices / журнала log / журнала тревогог accidents
+    //TODO максимизировать окна
+
+    public void initialize() {
+        initAccidents();
+        jurTrevNum.setCellValueFactory(new PropertyValueFactory<Accident, Integer>("num"));
+        jurTrevStat.setCellValueFactory(new PropertyValueFactory<Accident, String>("status"));
+        jurTrevType.setCellValueFactory(new PropertyValueFactory<Accident, String>("type"));
+        jurTrevTime.setCellValueFactory(new PropertyValueFactory<Accident, String>("date"));
+        jurTrevUst.setCellValueFactory(new PropertyValueFactory<Accident, String>("ustr"));
+        jurTrevRes.setCellValueFactory(new PropertyValueFactory<Accident, String>("result"));
+        jurtrevTable.setItems(accidentsData);
+
+
+
+        mxbtnView.setFitWidth(18);
+        mxbtnView.setFitHeight(18);
+        maxBtn.setGraphic(mxbtnView);
+        ivProsmotr0.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("icon/VSTU-logo.png")));
+
+        /* не работает
+        choiceBoxForChooseFiles.getItems().addAll("Файл", "Время", "Лицо");
+        choiceBoxForType.getItems().addAll("Все", "Трев. вход", "Движение", "Постоянно", "Ручная", "I-кадр видео", "Видео анализ");*/
+
+
+        imgV1.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
+//        imArh1.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
+//        imArh2.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
+//        imArh3.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
+//        imArh4.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
+
+        /*
+        imgV71.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/1.jpg")));
+        imgV72.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/2.jpg")));
+        imgV73.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/3.jpg")));
+        imgV74.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/4.jpg")));
+        imgV75.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/5.jpg")));
+        imgV76.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/6.jpg")));
+        imgV77.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/7.jpg")));
+        imgV91.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/1.jpg")));
+        imgV92.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/2.jpg")));
+        imgV93.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/3.jpg")));
+        imgV94.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/4.jpg")));
+        imgV95.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/5.jpg")));
+        imgV96.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/6.jpg")));
+        imgV97.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/7.jpg")));
+        imgV98.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/8.jpg")));
+        imgV99.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/9.jpg")));*/
+
+        chooseMusicTrev1.setText("D:\\VMS\\sound\\Russian\\motion.wav");
+        chooseMusicTrev2.setText("D:\\VMS\\sound\\Russian\\cover.wav");
+        chooseMusicTrev3.setText("D:\\VMS\\sound\\Russian\\outAlarm.wav");
+        chooseMusicTrev4.setText("D:\\VMS\\sound\\Russian\\lost.wav");
+        chooseMusicTrev5.setText("D:\\VMS\\sound\\Russian\\analyze.wav");
+        chooseMusicTrev6.setText("D:\\VMS\\sound\\Russian\\humanDetect.wav");
+        chooseMusicTrev7.setText("D:\\VMS\\sound\\Russian\\facedetect.wav");
+        chooseMusicTrev8.setText("D:\\VMS\\sound\\Russian\\diskfull.wav");
+        chooseMusicTrev9.setText("D:\\VMS\\sound\\Russian\\diskerror.wav");
+        chooseMusicTrev10.setText("D:\\VMS\\sound\\Russian\\carshapedetect.wav");
+
+        adminLogField.setText("admin");
+        adminPassField.setText("admin");
+    }
+
+
+    public void maximizeWindow(ActionEvent event) {
+        stage = (Stage) homePanel.getScene().getWindow();
+        if (stage.getWidth() < 1920) {
+            glavnayaMaximize();
+            prosmotrMaximize();
+            arhMaximize();
+            zapMaximize();
+            jurMaximize();
+            JurTrevMaximize();
+            ustMaximize();
+        } else {
+            glavnayaMinimize();
+            prosmotrMinimize();
+            arhMinimize();
+            zapMinimize();
+            jurMinimize();
+            JurTrevMinimize();
+            ustMinimize();
+            hboxDeleteWhenMinimize();
+        }
+    }
+    public void minimizeWindow(ActionEvent event) {
+        stage = (Stage) homePanel.getScene().getWindow();
+        stage.setIconified(true);
+    }
+
+    /*==================================== Glavnaya ==========================================*/
+    public void logout(ActionEvent event) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Logout");
+        alert.setHeaderText("You are about to logout!");
+        alert.setContentText("Do you want to save before exiting?");
+        if (alert.showAndWait().get() == ButtonType.OK) {
+            stage = (Stage) homePanel.getScene().getWindow();
+            System.out.println("Successfully logged out!");
+            stage.close();
+        }
+    }
+
+    public void glavnaya(ActionEvent event) {
+        anchorPaneProsmotr.setVisible(false);
+        anchorPaneUst.setVisible(false);
+        anchorPaneArh.setVisible(false);
+        anchorPaneZap.setVisible(false);
+        anchorPaneJur.setVisible(false);
+        anchorPaneJurTrev.setVisible(false);
+        anchorPaneTrev.setVisible(false);
+        anchorPanePolz.setVisible(false);
+    }
+
+    public void hboxDeleteLast(AnchorPane anchorPane) {
+        if (homePanel.getWidth() < 1920 && hBox.getChildren().size() > 12) {
+            while (hBox.getChildren().size() > 12) {
+                if (hBox.getChildren().getLast() == anchorPane) {
+                    hBox.getChildren().remove(11, hBox.getChildren().lastIndexOf(hBox));
+                } else
+                    hBox.getChildren().removeLast();
+            }
+        }
+    }
+
+    public void hboxDeleteWhenMinimize() {
+        while (hBox.getChildren().size() > 12) {
+            hBox.getChildren().removeLast();
+        }
+    }
+
+    public void glavnayaMinimize() {
+        mxbtnView.setImage(new Image(getClass().getResourceAsStream("icon/mxmz.png")));
+        stage.setWidth(1440);
+        stage.setHeight(900);
+        stage.setX(240);
+        stage.setY(50);
+        baseAnchorPane.setPrefHeight(250);
+        basePane.setLayoutY(-2);
+        settingAP.setLayoutY(360);
+        settingAP.setPrefHeight(250);
+        basePane1.setLayoutY(-2);
+        othersAnchorPane.setPrefHeight(250);
+        othersAnchorPane.setLayoutY(625);
+    }
+
+    public void glavnayaMaximize() {
+        mxbtnView.setImage(new Image(getClass().getResourceAsStream("icon/rstr.png")));
+        stage.setWidth(1920);
+        stage.setHeight(1079);
+        stage.setX(0);
+        stage.setY(0);
+        baseAnchorPane.setPrefHeight(300);
+        basePane.setLayoutY(23);
+        settingAP.setPrefHeight(300);
+        settingAP.setLayoutY(410);
+        basePane1.setLayoutY(23);
+        othersAnchorPane.setLayoutY(725);
+        othersAnchorPane.setPrefHeight(300);
+    }
+
+    /************************************** Основное ******************************************************************
+     /*==================================== Просмотр ==========================================*/
+    public void prosmotrMinimize() {
+        basePane11.setLayoutY(-2);
+        camRightPane.setPrefHeight(700);
+        camRightPane.setLayoutX(1278);
+        camBtnPane.setPrefWidth(730);
+        camBtnPane.setLayoutY(740);
+        camBtnPane.setLayoutX(313);
+        btnSplitRightPane.setPrefHeight(700);
+        btnSplitRightPane.setLayoutX(1262);
+        imgV1.setFitHeight(690);
+        splitCamBool();
+    }
+
+    public void prosmotrMaximize() {
+        basePane11.setLayoutY(23);
+        camRightPane.setPrefHeight(870);
+        camRightPane.setLayoutX(1755);
+        btnSplitRightPane.setLayoutX(1739);
+        btnSplitRightPane.setPrefHeight(870);
+        camBtnPane.setLayoutY(885);
+        camBtnPane.setLayoutX(585);
+        imgV1.setFitHeight(850);
+        splitCamBool();
+    }
 
     public void splitCamRightPane(ActionEvent event) {
         btnSplitArh.setRotate(btnSplitArh.getRotate() + 180);
@@ -202,6 +389,260 @@ public class HomeSceneController {
         }
     }
 
+    public void prosmotrBtnUpper() {
+        if (hBox.getChildren().contains(prosmotrSmallPane)) {
+        } else {
+            hBox.getChildren().addFirst(prosmotrSmallPane);
+            prosmotrBtnUp.setVisible(true);
+        }
+    }
+
+    public void prosmotr(ActionEvent event) {
+        prosmotrBtnUpper();
+        anchorPaneProsmotr.setVisible(true);
+
+        //prosmotrFX .setVisible(true);
+        anchorPaneUst.setVisible(false);
+        anchorPaneArh.setVisible(false);
+        anchorPaneZap.setVisible(false);
+        anchorPaneJur.setVisible(false);
+        anchorPaneJurTrev.setVisible(false);
+        anchorPaneTrev.setVisible(false);
+        anchorPanePolz.setVisible(false);
+        hboxDeleteLast(anchorPaneProsmotr);
+    }
+
+    public void prosmotrSmallClose(ActionEvent event) {
+        hBox.getChildren().remove(prosmotrSmallPane);
+        anchorPaneProsmotr.setVisible(false);
+        // prosmotrFX.setVisible(false);
+        //anchorPaneArh.setVisible(false);
+    }
+
+    public void prosmotrCloseOn(MouseEvent event) {
+        prosmotrClose.setVisible(true);
+    }
+
+    public void prosmotrCloseOff(MouseEvent event) {
+        prosmotrClose.setVisible(false);
+    }
+
+    @FXML
+    void clickedForFourCam(MouseEvent event) {
+        paneWithFourCam.setVisible(true);
+        paneWithOneCam.setVisible(false);
+        paneWithSevenCam.setVisible(false);
+        paneWithNineCam.setVisible(false);
+    }
+
+    @FXML
+    void clickedForOneCam(MouseEvent event) {
+        paneWithOneCam.setVisible(true);
+        paneWithFourCam.setVisible(false);
+        paneWithSevenCam.setVisible(false);
+        paneWithNineCam.setVisible(false);
+    }
+
+    @FXML
+    void clickedForSevenCam(MouseEvent event) {
+        paneWithSevenCam.setVisible(true);
+        paneWithOneCam.setVisible(false);
+        paneWithFourCam.setVisible(false);
+        paneWithNineCam.setVisible(false);
+    }
+
+    @FXML
+    void clickedForNineCam(MouseEvent event) {
+        paneWithNineCam.setVisible(true);
+        paneWithOneCam.setVisible(false);
+        paneWithFourCam.setVisible(false);
+        paneWithSevenCam.setVisible(false);
+    }
+
+    /*==================================== Тур ==========================================*/
+    /*public void prosmotrMinimize(){
+
+    }
+    public void prosmotrMaximize(){
+
+    }*/
+    public void TurBtnUpper() {
+        if (hBox.getChildren().contains(TurSmallPane)) {
+        } else {
+            hBox.getChildren().addFirst(TurSmallPane);
+            TurBtnUp.setVisible(true);
+        }
+    }
+
+    public void TurSmallClose(ActionEvent event) {
+        hBox.getChildren().remove(TurSmallPane);
+        anchorPaneTur.setVisible(false);
+    }
+
+    public void tur(ActionEvent event) {
+        TurBtnUpper();
+        //anchorPaneTur.setVisible(true);
+        System.out.println("tur ne rabotaet");
+        hboxDeleteLast(anchorPaneTur);
+    }
+
+    public void TurCloseOn(MouseEvent event) {
+        TurClose.setVisible(true);
+    }
+
+    public void TurCloseOff(MouseEvent event) {
+        TurClose.setVisible(false);
+    }
+
+    /*==================================== Архив ==========================================*/
+    public void arhMinimize() {
+        arhCamPane.setLayoutX(500);
+        anchorPaneArh.setPadding(new Insets(0, 0, 0, 0));
+        arhGP.setPrefWidth(1200);
+        arhGP.setPrefHeight(674);
+        arhSlider.setPadding(new Insets(0, 220, 0, 0));
+        splitArhBool();
+            /*imArh1.setFitHeight(350);
+            imArh1.setFitWidth(600);
+            imArh2.setFitHeight(600);
+            imArh2.setFitWidth(600);
+            imArh3.setFitHeight(350);
+            imArh3.setFitWidth(600);
+            imArh4.setFitHeight(350);
+            imArh4.setFitWidth(600);*/
+        arhToggle();
+    }
+
+    public void arhMaximize() {
+        arhCamPane.setLayoutX(610);
+        anchorPaneArh.setPadding(new Insets(0, 0, 20, 0));
+        arhGP.setPrefWidth(1486);
+        arhGP.setPrefHeight(836);
+        arhSlider.setPadding(new Insets(0, 300, 0, 0));
+        splitArhBool();
+           /* imArh1.setFitHeight(418);
+            imArh1.setFitWidth(1000);
+            imArh2.setFitHeight(418);
+            imArh2.setFitWidth(1000);
+            imArh3.setFitHeight(418);
+            imArh3.setFitWidth(1000);
+            imArh4.setFitHeight(418);
+            imArh4.setFitWidth(1000);*/
+        arhToggle();
+    }
+
+    @FXML
+    void getDateFromDatePicker(ActionEvent event) {
+        LocalDateTime time = datePickerBeginning.getValue().atTime(0, 0, 0);
+    }
+
+    @FXML
+    void getChoiceBoxForFiles(MouseEvent event) {
+
+    }
+
+    @FXML
+    void getChoiceBoxForType(MouseEvent event) {
+
+    }
+
+    public void ArhBtnUpper() {
+        if (hBox.getChildren().contains(ArhSmallPane)) {
+        } else {
+            hBox.getChildren().addFirst(ArhSmallPane);
+            ArhBtnUp.setVisible(true);
+        }
+    }
+
+    public void ArhSmallClose(ActionEvent event) {
+        hBox.getChildren().remove(ArhSmallPane);
+        anchorPaneArh.setVisible(false);
+    }
+
+    public void arh(ActionEvent event) {
+        ArhBtnUpper();
+        anchorPaneArh.setVisible(true);
+        anchorPaneProsmotr.setVisible(false);
+        anchorPaneUst.setVisible(false);
+        anchorPaneZap.setVisible(false);
+        anchorPaneJur.setVisible(false);
+        anchorPaneJurTrev.setVisible(false);
+        anchorPaneTrev.setVisible(false);
+        anchorPanePolz.setVisible(false);
+        hboxDeleteLast(anchorPaneArh);
+    }
+
+    public void ArhCloseOn(MouseEvent event) {
+        ArhClose.setVisible(true);
+    }
+
+    public void ArhCloseOff(MouseEvent event) {
+        ArhClose.setVisible(false);
+    }
+
+
+    public void arhToggle() {
+        //PC ACTION
+        if (checkBoxForArhAll.isVisible() == false) {
+            if (arhGP.getPrefWidth() == 1200) {
+                rightPaneForArh.setPrefHeight(620);
+                arhCamPane.setLayoutX(360);
+
+            }
+            if (arhGP.getPrefWidth() == 1486) {
+                rightPaneForArh.setPrefHeight(770);
+                arhCamPane.setLayoutX(600);
+
+            }
+        } // ust ACTION
+        if (checkBoxForArhAll.isVisible() == true) {
+            if (arhGP.getPrefWidth() == 1200) {
+                rightPaneForArh.setPrefHeight(570);
+                arhCamPane.setLayoutX(500);
+
+            }
+            if (arhGP.getPrefWidth() == 1486) {
+
+
+                rightPaneForArh.setPrefHeight(730);
+                arhCamPane.setLayoutX(750);
+            }
+        }
+    }
+
+    @FXML
+    void toggleForArhPCAction(ActionEvent event) {
+        if (event.getSource() == toggleForArhPC) {
+            checkBoxForArhAll.setVisible(false);
+            checkBoxForArhConnect.setVisible(false);
+            choiceBoxForChooseFiles.setLayoutX(20);
+            radioForArhDop.setVisible(false);
+            radioForArhMain.setVisible(false);
+            radioForArhPhoto.setVisible(false);
+            radioForArhVideo.setVisible(false);
+            buttonForArhDownload.setVisible(false);
+            // ArhToggle();
+
+
+        }
+    }
+
+    @FXML
+    void toggleForArhUstrAction(ActionEvent event) {
+        if (event.getSource() == toggleForArhUstr) {
+            checkBoxForArhAll.setVisible(true);
+            checkBoxForArhConnect.setVisible(true);
+            choiceBoxForChooseFiles.setLayoutX(320);
+            radioForArhDop.setVisible(true);
+            radioForArhMain.setVisible(true);
+            radioForArhPhoto.setVisible(true);
+            radioForArhVideo.setVisible(true);
+            buttonForArhDownload.setVisible(true);
+            //ArhToggle();
+
+        }
+    }
+
     public void splitArh(ActionEvent event) {
         btnSplitArh.setRotate(btnSplitArh.getRotate() + 180);
         if (anchorPaneProsmotr.getWidth() == 1920) {
@@ -255,237 +696,17 @@ public class HomeSceneController {
         }
     }
 
-    public void initialize() {
-        initAccidents();
-        jurTrevNum.setCellValueFactory(new PropertyValueFactory<Accident, Integer>("num"));
-        jurTrevStat.setCellValueFactory(new PropertyValueFactory<Accident, String>("status"));
-        jurTrevType.setCellValueFactory(new PropertyValueFactory<Accident, String>("type"));
-        jurTrevTime.setCellValueFactory(new PropertyValueFactory<Accident, String>("date"));
-        jurTrevUst.setCellValueFactory(new PropertyValueFactory<Accident, String>("ustr"));
-        jurTrevRes.setCellValueFactory(new PropertyValueFactory<Accident, String>("result"));
-        jurtrevTable.setItems(accidentsData);
-
-
-        mxbtnView.setFitWidth(18);
-        mxbtnView.setFitHeight(18);
-        maxBtn.setGraphic(mxbtnView);
-        ivProsmotr0.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("icon/VSTU-logo.png")));
-
-        /* не работает
-        choiceBoxForChooseFiles.getItems().addAll("Файл", "Время", "Лицо");
-        choiceBoxForType.getItems().addAll("Все", "Трев. вход", "Движение", "Постоянно", "Ручная", "I-кадр видео", "Видео анализ");
-        */
-
-     imgV1.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
-//        imArh1.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
-//        imArh2.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
-//        imArh3.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
-//        imArh4.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
-
-        /*
-        imgV71.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/1.jpg")));
-        imgV72.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/2.jpg")));
-        imgV73.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/3.jpg")));
-        imgV74.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/4.jpg")));
-        imgV75.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/5.jpg")));
-        imgV76.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/6.jpg")));
-        imgV77.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/7.jpg")));
-        imgV91.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/1.jpg")));
-        imgV92.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/2.jpg")));
-        imgV93.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/3.jpg")));
-        imgV94.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/4.jpg")));
-        imgV95.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/5.jpg")));
-        imgV96.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/6.jpg")));
-        imgV97.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/7.jpg")));
-        imgV98.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/8.jpg")));
-        imgV99.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/9.jpg")));*/
-
-        chooseMusicTrev1.setText("D:\\VMS\\sound\\Russian\\motion.wav");
-        chooseMusicTrev2.setText("D:\\VMS\\sound\\Russian\\cover.wav");
-        chooseMusicTrev3.setText("D:\\VMS\\sound\\Russian\\outAlarm.wav");
-        chooseMusicTrev4.setText("D:\\VMS\\sound\\Russian\\lost.wav");
-        chooseMusicTrev5.setText("D:\\VMS\\sound\\Russian\\analyze.wav");
-        chooseMusicTrev6.setText("D:\\VMS\\sound\\Russian\\humanDetect.wav");
-        chooseMusicTrev7.setText("D:\\VMS\\sound\\Russian\\facedetect.wav");
-        chooseMusicTrev8.setText("D:\\VMS\\sound\\Russian\\diskfull.wav");
-        chooseMusicTrev9.setText("D:\\VMS\\sound\\Russian\\diskerror.wav");
-        chooseMusicTrev10.setText("D:\\VMS\\sound\\Russian\\carshapedetect.wav");
-
-        adminLogField.setText("admin");
-        adminPassField.setText("admin");
+    /*====================================  Онлайн запись ==========================================*/
+    public void zapMinimize() {
+        zapBtnPane.setLayoutX(600);
+        anchorPaneZap.setPadding(new Insets(0, 0, 0, 0));
+        zapAnch1.setPrefHeight(250);
     }
 
-    public void logout(ActionEvent event) {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Logout");
-        alert.setHeaderText("You are about to logout!");
-        alert.setContentText("Do you want to save before exiting?");
-        if (alert.showAndWait().get() == ButtonType.OK) {
-            stage = (Stage) homePanel.getScene().getWindow();
-            System.out.println("Successfully logged out!");
-            stage.close();
-        }
-    }
-
-    public void glavnaya(ActionEvent event) {
-        //prosmotrFX.setVisible(false);
-        anchorPaneProsmotr.setVisible(false);
-        anchorPaneUst.setVisible(false);
-        anchorPaneArh.setVisible(false);
-        anchorPaneZap.setVisible(false);
-        anchorPaneJur.setVisible(false);
-        anchorPaneJurTrev.setVisible(false);
-        anchorPaneTrev.setVisible(false);
-        anchorPanePolz.setVisible(false);
-    }
-
-    public void hboxDeleteLast(AnchorPane anchorPane) {
-        if (homePanel.getWidth() < 1920 && hBox.getChildren().size() > 12) {
-            while (hBox.getChildren().size() > 12) {
-                if (hBox.getChildren().getLast() == anchorPane) {
-                    hBox.getChildren().remove(11, hBox.getChildren().lastIndexOf(hBox));
-                } else
-                    hBox.getChildren().removeLast();
-            }
-        }
-    }
-
-    public void hboxDeleteWhenMinimize() {
-        while (hBox.getChildren().size() > 12) {
-            hBox.getChildren().removeLast();
-        }
-    }
-    @FXML
-    void trevogaSetVisible(KeyEvent event) { // Чтобы это работало необходимо сначала нажать на значок "на гланвую" и потом англ P
-        if(event.getCode() == KeyCode.P) {
-            File file = new File(".\\src\\main\\resources\\p\\parking\\sound\\outAlarm.wav");
-            String selectedFile = file.toURI().toString();
-            Media media = new Media(selectedFile);
-            MediaPlayer mediaPlayerTrev = new MediaPlayer(media);
-            mediaPlayerTrev.play();
-            trevogaPane.setVisible(true);
-        }
-    }
-
-    public void prosmotrIfTrev() {
-        trevogaPane.setVisible(false);
-        prosmotrBtnUpper();
-        anchorPaneProsmotr.setVisible(true);
-        anchorPaneUst.setVisible(false);
-        anchorPaneArh.setVisible(false);
-        anchorPaneZap.setVisible(false);
-        anchorPaneJur.setVisible(false);
-        anchorPaneJurTrev.setVisible(false);
-        anchorPaneTrev.setVisible(false);
-        anchorPanePolz.setVisible(false);
-        hboxDeleteLast(anchorPaneProsmotr);
-    }
-
-
-    public void prosmotrBtnUpper() {
-        if (hBox.getChildren().contains(prosmotrSmallPane)) {
-        } else {
-            hBox.getChildren().addFirst(prosmotrSmallPane);
-            prosmotrBtnUp.setVisible(true);
-        }
-    }
-
-    public void prosmotr(ActionEvent event) {
-        prosmotrBtnUpper();
-        anchorPaneProsmotr.setVisible(true);
-
-        //prosmotrFX .setVisible(true);
-        anchorPaneUst.setVisible(false);
-        anchorPaneArh.setVisible(false);
-        anchorPaneZap.setVisible(false);
-        anchorPaneJur.setVisible(false);
-        anchorPaneJurTrev.setVisible(false);
-        anchorPaneTrev.setVisible(false);
-        anchorPanePolz.setVisible(false);
-        hboxDeleteLast(anchorPaneProsmotr);
-    }
-
-    public void prosmotrSmallClose(ActionEvent event) {
-        hBox.getChildren().remove(prosmotrSmallPane);
-        anchorPaneProsmotr.setVisible(false);
-        // prosmotrFX.setVisible(false);
-        //anchorPaneArh.setVisible(false);
-    }
-
-    public void prosmotrCloseOn(MouseEvent event) {
-        prosmotrClose.setVisible(true);
-    }
-
-    public void prosmotrCloseOff(MouseEvent event) {
-        prosmotrClose.setVisible(false);
-    }
-
-    public void UstBtnUpper() {
-        if (hBox.getChildren().contains(UstSmallPane)) {
-        } else {
-            hBox.getChildren().addFirst(UstSmallPane);
-            UstBtnUp.setVisible(true);
-        }
-    }
-
-    public void UstSmallClose(ActionEvent event) {
-        hBox.getChildren().remove(UstSmallPane);
-        anchorPaneUst.setVisible(false);
-    }
-
-    public void ust(ActionEvent event) {
-        UstBtnUpper();
-        anchorPaneUst.setVisible(true);
-        anchorPaneProsmotr.setVisible(false);
-        anchorPaneArh.setVisible(false);
-        anchorPaneZap.setVisible(false);
-        anchorPaneJur.setVisible(false);
-        anchorPaneJurTrev.setVisible(false);
-        anchorPaneTrev.setVisible(false);
-        anchorPanePolz.setVisible(false);
-        hboxDeleteLast(anchorPaneUst);
-    }
-
-    public void UstCloseOn(MouseEvent event) {
-        UstClose.setVisible(true);
-    }
-
-    public void UstCloseOff(MouseEvent event) {
-        UstClose.setVisible(false);
-    }
-
-    public void ArhBtnUpper() {
-        if (hBox.getChildren().contains(ArhSmallPane)) {
-        } else {
-            hBox.getChildren().addFirst(ArhSmallPane);
-            ArhBtnUp.setVisible(true);
-        }
-    }
-
-    public void ArhSmallClose(ActionEvent event) {
-        hBox.getChildren().remove(ArhSmallPane);
-        anchorPaneArh.setVisible(false);
-    }
-
-    public void arh(ActionEvent event) {
-        ArhBtnUpper();
-        anchorPaneArh.setVisible(true);
-        anchorPaneProsmotr.setVisible(false);
-        anchorPaneUst.setVisible(false);
-        anchorPaneZap.setVisible(false);
-        anchorPaneJur.setVisible(false);
-        anchorPaneJurTrev.setVisible(false);
-        anchorPaneTrev.setVisible(false);
-        anchorPanePolz.setVisible(false);
-        hboxDeleteLast(anchorPaneArh);
-    }
-
-    public void ArhCloseOn(MouseEvent event) {
-        ArhClose.setVisible(true);
-    }
-
-    public void ArhCloseOff(MouseEvent event) {
-        ArhClose.setVisible(false);
+    public void zapMaximize() {
+        anchorPaneZap.setPadding(new Insets(0, 0, 30, 0));
+        zapBtnPane.setLayoutX(840);
+        zapAnch1.setPrefHeight(400);
     }
 
     public void ZapBtnUpper() {
@@ -522,40 +743,42 @@ public class HomeSceneController {
         ZapClose.setVisible(false);
     }
 
-    public void JurBtnUpper() {
-        if (hBox.getChildren().contains(JurSmallPane)) {
-        } else {
-            hBox.getChildren().addFirst(JurSmallPane);
-            JurBtnUp.setVisible(true);
+    /************************************** Настройки ******************************************************************
+     /*==================================== Настройка тревог ==========================================*///TODO
+    /*====================================  trevoga event ==========================================*/
+    @FXML
+    void trevogaSetVisible(KeyEvent event) { // Чтобы это работало необходимо сначала нажать на значок "на гланвую" и потом англ P
+        if (event.getCode() == KeyCode.P) {
+            File file = new File(".\\src\\main\\resources\\p\\parking\\sound\\outAlarm.wav");
+            String selectedFile = file.toURI().toString();
+            Media media = new Media(selectedFile);
+            MediaPlayer mediaPlayerTrev = new MediaPlayer(media);
+            mediaPlayerTrev.play();
+            trevogaPane.setVisible(true);
         }
     }
 
-    public void JurSmallClose(ActionEvent event) {
-        hBox.getChildren().remove(JurSmallPane);
-        anchorPaneJur.setVisible(false);
-    }
-
-    public void jur(ActionEvent event) {
-        JurBtnUpper();
-        anchorPaneJur.setVisible(true);
-        anchorPaneProsmotr.setVisible(false);
+    public void prosmotrIfTrev() {
+        trevogaPane.setVisible(false);
+        prosmotrBtnUpper();
+        anchorPaneProsmotr.setVisible(true);
         anchorPaneUst.setVisible(false);
         anchorPaneArh.setVisible(false);
         anchorPaneZap.setVisible(false);
+        anchorPaneJur.setVisible(false);
         anchorPaneJurTrev.setVisible(false);
         anchorPaneTrev.setVisible(false);
         anchorPanePolz.setVisible(false);
-        hboxDeleteLast(anchorPaneJur);
+        hboxDeleteLast(anchorPaneProsmotr);
     }
 
-    public void JurCloseOn(MouseEvent event) {
-        JurClose.setVisible(true);
-    }
+    //==================== ================================================
+     /*public void prosmotrMinimize(){
 
-    public void JurCloseOff(MouseEvent event) {
-        JurClose.setVisible(false);
     }
+    public void prosmotrMaximize(){
 
+    }*/
     public void TrevBtnUpper() {
         if (hBox.getChildren().contains(TrevSmallPane)) {
         } else {
@@ -590,359 +813,188 @@ public class HomeSceneController {
         TrevClose.setVisible(false);
     }
 
-    public void TurBtnUpper() {
-        if (hBox.getChildren().contains(TurSmallPane)) {
+    private MediaPlayer mediaPlayer;
+
+    @FXML
+    void chooseMusic1(MouseEvent event) {
+        File file = new File(".\\src\\main\\resources\\p\\parking\\sound\\motion.wav");
+        String selectedFile = file.toURI().toString();
+        Media media = new Media(selectedFile);
+        mediaPlayer = new MediaPlayer(media);
+    }
+
+    @FXML
+    void playSoundTrev1(MouseEvent event) {
+        mediaPlayer.play();
+    }
+
+    @FXML
+    void chooseMusic2(MouseEvent event) {
+        File file = new File(".\\src\\main\\resources\\p\\parking\\sound\\cover.wav");
+        String selectedFile = file.toURI().toString();
+        Media media = new Media(selectedFile);
+        mediaPlayer = new MediaPlayer(media);
+    }
+
+    @FXML
+    void playSoundTrev2(MouseEvent event) {
+        mediaPlayer.play();
+    }
+
+    @FXML
+    void chooseMusic3(MouseEvent event) {
+        File file = new File(".\\src\\main\\resources\\p\\parking\\sound\\outAlarm.wav");
+        String selectedFile = file.toURI().toString();
+        Media media = new Media(selectedFile);
+        mediaPlayer = new MediaPlayer(media);
+    }
+
+    @FXML
+    void playSoundTrev3(MouseEvent event) {
+        mediaPlayer.play();
+    }
+
+    @FXML
+    void chooseMusic4(MouseEvent event) {
+        File file = new File(".\\src\\main\\resources\\p\\parking\\sound\\lost.wav");
+        String selectedFile = file.toURI().toString();
+        Media media = new Media(selectedFile);
+        mediaPlayer = new MediaPlayer(media);
+    }
+
+    @FXML
+    void playSoundTrev4(MouseEvent event) {
+        mediaPlayer.play();
+    }
+
+    @FXML
+    void chooseMusic5(MouseEvent event) {
+        File file = new File(".\\src\\main\\resources\\p\\parking\\sound\\analyze.wav");
+        String selectedFile = file.toURI().toString();
+        Media media = new Media(selectedFile);
+        mediaPlayer = new MediaPlayer(media);
+    }
+
+    @FXML
+    void playSoundTrev5(MouseEvent event) {
+        mediaPlayer.play();
+    }
+
+    @FXML
+    void chooseMusic6(MouseEvent event) {
+        File file = new File(".\\src\\main\\resources\\p\\parking\\sound\\humanDetect.wav");
+        String selectedFile = file.toURI().toString();
+        Media media = new Media(selectedFile);
+        mediaPlayer = new MediaPlayer(media);
+    }
+
+    @FXML
+    void playSoundTrev6(MouseEvent event) {
+        mediaPlayer.play();
+    }
+
+    @FXML
+    void chooseMusic7(MouseEvent event) {
+        File file = new File(".\\src\\main\\resources\\p\\parking\\sound\\facedetect.wav");
+        String selectedFile = file.toURI().toString();
+        Media media = new Media(selectedFile);
+        mediaPlayer = new MediaPlayer(media);
+    }
+
+    @FXML
+    void playSoundTrev7(MouseEvent event) {
+        mediaPlayer.play();
+    }
+
+    @FXML
+    void chooseMusic8(MouseEvent event) {
+        File file = new File(".\\src\\main\\resources\\p\\parking\\sound\\diskfull.wav");
+        String selectedFile = file.toURI().toString();
+        Media media = new Media(selectedFile);
+        mediaPlayer = new MediaPlayer(media);
+    }
+
+    @FXML
+    void playSoundTrev8(MouseEvent event) {
+        mediaPlayer.play();
+    }
+
+    @FXML
+    void chooseMusic9(MouseEvent event) {
+        File file = new File(".\\src\\main\\resources\\p\\parking\\sound\\diskerror.wav");
+        String selectedFile = file.toURI().toString();
+        Media media = new Media(selectedFile);
+        mediaPlayer = new MediaPlayer(media);
+    }
+
+    @FXML
+    void playSoundTrev9(MouseEvent event) {
+        mediaPlayer.play();
+    }
+
+    @FXML
+    void chooseMusic10(MouseEvent event) {
+        File file = new File(".\\src\\main\\resources\\p\\parking\\sound\\carshapedetect.wav");
+        String selectedFile = file.toURI().toString();
+        Media media = new Media(selectedFile);
+        mediaPlayer = new MediaPlayer(media);
+    }
+
+    @FXML
+    void playSoundTrev10(MouseEvent event) {
+        mediaPlayer.play();
+    }
+
+    /*==================================== Журнал ==========================================*///TODO
+    public void jurMinimize() {
+        anchorPaneJur.setPadding(new Insets(0, 0, 0, 0));
+        jurAn1.setLayoutX(595);
+        jurAn11.setLayoutX(640);
+        jurPCPrim.setPrefWidth(300);
+        jurUPrim.setPrefWidth(300);
+    }
+
+    public void jurMaximize() {
+        anchorPaneJur.setPadding(new Insets(0, 0, 30, 0));
+        jurAn1.setLayoutX(835);
+        jurAn11.setLayoutX(880);
+        jurPCPrim.setPrefWidth(900);
+        jurUPrim.setPrefWidth(900);
+    }
+
+    public void JurBtnUpper() {
+        if (hBox.getChildren().contains(JurSmallPane)) {
         } else {
-            hBox.getChildren().addFirst(TurSmallPane);
-            TurBtnUp.setVisible(true);
+            hBox.getChildren().addFirst(JurSmallPane);
+            JurBtnUp.setVisible(true);
         }
     }
 
-    public void TurSmallClose(ActionEvent event) {
-        hBox.getChildren().remove(TurSmallPane);
-        anchorPaneTur.setVisible(false);
-    }
-
-    public void tur(ActionEvent event) {
-        TurBtnUpper();
-        //anchorPaneTur.setVisible(true);
-        System.out.println("tur ne rabotaet");
-        hboxDeleteLast(anchorPaneTur);
-    }
-
-    public void TurCloseOn(MouseEvent event) {
-        TurClose.setVisible(true);
-    }
-
-    public void TurCloseOff(MouseEvent event) {
-        TurClose.setVisible(false);
-    }
-
-    public void ProgBtnUpper() {
-        if (hBox.getChildren().contains(ProgSmallPane)) {
-        } else {
-            hBox.getChildren().addFirst(ProgSmallPane);
-            ProgBtnUp.setVisible(true);
-        }
-    }
-
-    public void ProgSmallClose(ActionEvent event) {
-        hBox.getChildren().remove(ProgSmallPane);
-        anchorPaneProg.setVisible(false);
-    }
-
-    public void prog(ActionEvent event) {
-        ProgBtnUpper();
-     //   anchorPaneProg.setVisible(true);
-        System.out.println("prog ne rabotaet");
-        hboxDeleteLast(anchorPaneProg);
-    }
-
-    public void ProgCloseOn(MouseEvent event) {
-        ProgClose.setVisible(true);
-    }
-
-    public void ProgCloseOff(MouseEvent event) {
-        ProgClose.setVisible(false);
-    }
-
-    public void PolzBtnUpper() {
-        if (hBox.getChildren().contains(PolzSmallPane)) {
-        } else {
-            hBox.getChildren().addFirst(PolzSmallPane);
-            PolzBtnUp.setVisible(true);
-        }
-    }
-
-    public void PolzSmallClose(ActionEvent event) {
-        hBox.getChildren().remove(PolzSmallPane);
-        anchorPanePolz.setVisible(false);
-    }
-
-    public void polz(ActionEvent event) {
-        PolzBtnUpper();
-        anchorPanePolz.setVisible(true);
+    public void JurSmallClose(ActionEvent event) {
+        hBox.getChildren().remove(JurSmallPane);
         anchorPaneJur.setVisible(false);
+    }
+
+    public void jur(ActionEvent event) {
+        JurBtnUpper();
+        anchorPaneJur.setVisible(true);
         anchorPaneProsmotr.setVisible(false);
         anchorPaneUst.setVisible(false);
         anchorPaneArh.setVisible(false);
         anchorPaneZap.setVisible(false);
         anchorPaneJurTrev.setVisible(false);
         anchorPaneTrev.setVisible(false);
-        hboxDeleteLast(anchorPanePolz);
+        anchorPanePolz.setVisible(false);
+        hboxDeleteLast(anchorPaneJur);
     }
 
-    public void PolzCloseOn(MouseEvent event) {
-        PolzClose.setVisible(true);
+    public void JurCloseOn(MouseEvent event) {
+        JurClose.setVisible(true);
     }
 
-    public void PolzCloseOff(MouseEvent event) {
-        PolzClose.setVisible(false);
+    public void JurCloseOff(MouseEvent event) {
+        JurClose.setVisible(false);
     }
-
-    @FXML
-    void clickedForFourCam(MouseEvent event) {
-        paneWithFourCam.setVisible(true);
-        paneWithOneCam.setVisible(false);
-        paneWithSevenCam.setVisible(false);
-        paneWithNineCam.setVisible(false);
-    }
-
-    @FXML
-    void clickedForOneCam(MouseEvent event) {
-        paneWithOneCam.setVisible(true);
-        paneWithFourCam.setVisible(false);
-        paneWithSevenCam.setVisible(false);
-        paneWithNineCam.setVisible(false);
-    }
-
-    @FXML
-    void clickedForSevenCam(MouseEvent event) {
-        paneWithSevenCam.setVisible(true);
-        paneWithOneCam.setVisible(false);
-        paneWithFourCam.setVisible(false);
-        paneWithNineCam.setVisible(false);
-    }
-
-    @FXML
-    void clickedForNineCam(MouseEvent event) {
-        paneWithNineCam.setVisible(true);
-        paneWithOneCam.setVisible(false);
-        paneWithFourCam.setVisible(false);
-        paneWithSevenCam.setVisible(false);
-    }
-
-    public void maximizeWindow(ActionEvent event) {
-        stage = (Stage) homePanel.getScene().getWindow();
-        if (stage.getWidth() < 1920) {
-            mxbtnView.setImage(new Image(getClass().getResourceAsStream("icon/rstr.png")));
-            stage.setWidth(1920);
-            stage.setHeight(1079);
-            stage.setX(0);
-            stage.setY(0);
-            baseAnchorPane.setPrefHeight(300);
-            basePane.setLayoutY(23);
-            settingAP.setPrefHeight(300);
-            settingAP.setLayoutY(410);
-            basePane1.setLayoutY(23);
-            othersAnchorPane.setLayoutY(725);
-            othersAnchorPane.setPrefHeight(300);
-            basePane11.setLayoutY(23);
-            // prosmotr
-            //anchorPaneProsmotr.setPrefHeight(1003);
-            // anchorPaneProsmotr.setPrefWidth(1920);
-            camRightPane.setPrefHeight(870);
-            camRightPane.setLayoutX(1755);
-            btnSplitRightPane.setLayoutX(1739);
-            btnSplitRightPane.setPrefHeight(870);
-            camBtnPane.setLayoutY(885);
-            camBtnPane.setLayoutX(585);
-            //1 cam
-            //paneWithOneCam.setPrefWidth(1710);
-            //paneWithOneCam.setPrefHeight(850);
-            imgV1.setFitHeight(850);
-            // 4 cam
-            //1/5cam
-            //1/8cam
-            //1/8 cam 2
-            // 1 cam full
-            //
-            splitCamBool();
-            //ust
-            anchorPaneUst.setPadding(new Insets(0, 0, 30, 0));
-            ustAnch1.setPrefHeight(480);
-            ustAnch2.setLayoutY(502);
-            ustAnch2.setPrefHeight(502);
-            //arh
-            arhCamPane.setLayoutX(610);
-            anchorPaneArh.setPadding(new Insets(0, 0, 20, 0));
-        arhGP.setPrefWidth(1486);
-        arhGP.setPrefHeight(836);
-            arhSlider.setPadding(new Insets(0, 300, 0, 0));
-            splitArhBool();
-           imArh1.setFitHeight(418);
-           imArh1.setFitWidth(1000);
-            imArh2.setFitHeight(418);
-            imArh2.setFitWidth(1000);
-            imArh3.setFitHeight(418);
-            imArh3.setFitWidth(1000);
-            imArh4.setFitHeight(418);
-            imArh4.setFitWidth(1000);
-            //jur
-            anchorPaneJur.setPadding(new Insets(0, 0, 30, 0));
-            jurAn1.setLayoutX(835);
-            jurAn11.setLayoutX(880);
-            jurPCPrim.setPrefWidth(900);
-            jurUPrim.setPrefWidth(900);
-            //zap
-            anchorPaneZap.setPadding(new Insets(0, 0, 30, 0));
-            zapBtnPane.setLayoutX(840);
-            zapAnch1.setPrefHeight(400);
-            //jurtrev
-            JurTrevMaximize();
-            ArhToggle();
-        } else {
-            mxbtnView.setImage(new Image(getClass().getResourceAsStream("icon/mxmz.png")));
-            stage.setWidth(1440);
-            stage.setHeight(900);
-            stage.setX(240);
-            stage.setY(50);
-            baseAnchorPane.setPrefHeight(250);
-            basePane.setLayoutY(-2);
-            settingAP.setLayoutY(360);
-            settingAP.setPrefHeight(250);
-            basePane1.setLayoutY(-2);
-            othersAnchorPane.setPrefHeight(250);
-            othersAnchorPane.setLayoutY(625);
-            basePane11.setLayoutY(-2);
-            //prosmotr
-            // anchorPaneProsmotr.setPrefHeight(900);
-            // anchorPaneProsmotr.setPrefWidth(1440);
-            camRightPane.setPrefHeight(700);
-            camRightPane.setLayoutX(1278);
-            camBtnPane.setPrefWidth(730);
-            camBtnPane.setLayoutY(740);
-            camBtnPane.setLayoutX(313);
-            btnSplitRightPane.setPrefHeight(700);
-            btnSplitRightPane.setLayoutX(1262);
-            //1cam
-            //paneWithOneCam.setPrefHeight(700);
-            //paneWithOneCam.setPrefWidth(1235);
-            imgV1.setFitHeight(690);
-            // 4 cam
-            //1/5cam
-            //1/8cam
-            //1/8 cam 2
-            // 1 cam full
-            //
-            splitCamBool();
-            //ust
-            anchorPaneUst.setPadding(new Insets(0, 0, 0, 0));
-            ustAnch1.setPrefHeight(405);
-            ustAnch2.setLayoutY(405);
-            ustAnch2.setPrefHeight(405);
-            //arh
-            arhCamPane.setLayoutX(500);
-            anchorPaneArh.setPadding(new Insets(0, 0, 0, 0));
-            arhGP.setPrefWidth(1200);
-            arhGP.setPrefHeight(674);
-            arhSlider.setPadding(new Insets(0, 220, 0, 0));
-            splitArhBool();
-            imArh1.setFitHeight(350);
-            imArh1.setFitWidth(600);
-            imArh2.setFitHeight(600);
-            imArh2.setFitWidth(600);
-            imArh3.setFitHeight(350);
-            imArh3.setFitWidth(600);
-            imArh4.setFitHeight(350);
-            imArh4.setFitWidth(600);
-            //jur
-            anchorPaneJur.setPadding(new Insets(0, 0, 0, 0));
-            jurAn1.setLayoutX(595);
-            jurAn11.setLayoutX(640);
-            jurPCPrim.setPrefWidth(300);
-            jurUPrim.setPrefWidth(300);
-            //zap
-            zapBtnPane.setLayoutX(600);
-            anchorPaneZap.setPadding(new Insets(0, 0, 0, 0));
-            zapAnch1.setPrefHeight(250);
-            //jurtrev
-           JurTrevMinimize();
-            hboxDeleteWhenMinimize();
-            ArhToggle();
-        }
-    }
-
-    public void camsMaximize() {
-
-    }
-
-    public void minimizeWindow(ActionEvent event) {
-        stage = (Stage) homePanel.getScene().getWindow();
-        stage.setIconified(true);
-    }
-
-    /*==================================== AnchorPane Arh ==========================================*/
-
-    @FXML
-    void getDateFromDatePicker(ActionEvent event) {
-        LocalDateTime time = datePickerBeginning.getValue().atTime(0, 0, 0);
-    }
-
-    @FXML
-    void getChoiceBoxForFiles(MouseEvent event) {
-
-    }
-
-    @FXML
-    void getChoiceBoxForType(MouseEvent event) {
-
-    }
-
-
-public void ArhToggle(){
-     //PC ACTION
-    if(checkBoxForArhAll.isVisible() == false){
-        if (arhGP.getPrefWidth() == 1200) {
-            rightPaneForArh.setPrefHeight(620);
-            arhCamPane.setLayoutX(360);
-
-        }
-        if(arhGP.getPrefWidth()==1486){
-            rightPaneForArh.setPrefHeight(770);
-            arhCamPane.setLayoutX(600);
-
-        }
-    } // ust ACTION
-    if (checkBoxForArhAll.isVisible() == true) {
-        if (arhGP.getPrefWidth() == 1200) {
-            rightPaneForArh.setPrefHeight(570);
-            arhCamPane.setLayoutX(500);
-
-        }
-        if(arhGP.getPrefWidth()==1486){
-
-
-            rightPaneForArh.setPrefHeight(730);
-            arhCamPane.setLayoutX(750);
-        }
-    }
-}
-
-    @FXML
-    void toggleForArhPCAction(ActionEvent event) {
-        if (event.getSource() == toggleForArhPC) {
-            checkBoxForArhAll.setVisible(false);
-            checkBoxForArhConnect.setVisible(false);
-            choiceBoxForChooseFiles.setLayoutX(20);
-            radioForArhDop.setVisible(false);
-            radioForArhMain.setVisible(false);
-            radioForArhPhoto.setVisible(false);
-            radioForArhVideo.setVisible(false);
-            buttonForArhDownload.setVisible(false);
-            ArhToggle();
-
-
-        }
-    }
-
-    @FXML
-    void toggleForArhUstrAction(ActionEvent event) {
-        if (event.getSource() == toggleForArhUstr) {
-            checkBoxForArhAll.setVisible(true);
-            checkBoxForArhConnect.setVisible(true);
-            choiceBoxForChooseFiles.setLayoutX(320);
-            radioForArhDop.setVisible(true);
-            radioForArhMain.setVisible(true);
-            radioForArhPhoto.setVisible(true);
-            radioForArhVideo.setVisible(true);
-            buttonForArhDownload.setVisible(true);
-            ArhToggle();
-
-        }
-    }
-
-    /*==================================== AnchorPane Jur ==========================================*/
 
     @FXML
     void toggleForJurPCAction(ActionEvent event) {
@@ -963,23 +1015,30 @@ public void ArhToggle(){
             tableViewForJurPC.setVisible(false);
         }
     }
-    /*==================================== Accidents  ==========================================*/
 
+
+    /*==================================== Журнал тревог ==========================================*/
+    /*==================================== Accidents  ==========================================*///TODO
     List<String> list = List.of("АОЛД", "lsdjf", "Sasga");
     Random random = new Random();
+
     private void initAccidents() {
         String temp = list.get(random.nextInt(3));
         accidentsData.add(new Accident(getNum(), "Состояние", "Тип", getTime(), "Устранение", temp));
         accidentsData.add(new Accident(getNum(), "Состояние", "Тип", getTime(), "Устранение", "Результат"));
     }
+
     private String getTime() {
         return new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(Calendar.getInstance().getTime());
     }
+
     private int getNum() {
         return accidentsData.size() + 1;
     }
 
-    /*==================================== JurPane trev ==========================================*/
+    /************************************************************************/
+
+
     public void JurTrevBtnUpper() {
         if (hBox.getChildren().contains(JurTrevSmallPane)) {
         } else {
@@ -987,7 +1046,7 @@ public void ArhToggle(){
             JurTrevBtnUp.setVisible(true);
         }
     }
-    //jurTrevStat,jurTrevType,jurTrevTime ,jurTrevUst,jurTrevRes
+
     public void JurTrevMinimize() {
         anchorPaneJurTrev.setPadding(new Insets(0, 0, 0, 0));
         jurTrevStat.setPrefWidth(260);
@@ -998,6 +1057,7 @@ public void ArhToggle(){
         trevPrimBtn.setLayoutX(625);
         trevogaPane.setLayoutX(519);//sum = 1300?
     }
+
     public void JurTrevMaximize() {
         anchorPaneJurTrev.setPadding(new Insets(0, 0, 30, 0));
         jurTrevStat.setPrefWidth(380);
@@ -1035,189 +1095,206 @@ public void ArhToggle(){
     }
 
     public void schlagOff(ActionEvent event) {
-      //  jurTrevNum.setText(jurTrevNum.getText() + "1");
-
         imgV1.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/schlagOff.jpg")));
     }
+
     public void schlagOn(ActionEvent event) {
         imgV1.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/schlagOn.jpg")));
     }
 
-//==================== TrevPane ================================================
-    private MediaPlayer mediaPlayer;
-    @FXML
-    void chooseMusic1(MouseEvent event) {
-        File file = new File(".\\src\\main\\resources\\p\\parking\\sound\\motion.wav");
-        String selectedFile = file.toURI().toString();
-        Media media = new Media(selectedFile);
-        mediaPlayer = new MediaPlayer(media);
-    }
-    @FXML
-    void playSoundTrev1(MouseEvent event) {
-        mediaPlayer.play();
-    }
-    @FXML
-    void chooseMusic2(MouseEvent event) {
-        File file = new File(".\\src\\main\\resources\\p\\parking\\sound\\cover.wav");
-        String selectedFile = file.toURI().toString();
-        Media media = new Media(selectedFile);
-        mediaPlayer = new MediaPlayer(media);
-    }
-    @FXML
-    void playSoundTrev2(MouseEvent event) {
-        mediaPlayer.play();
-    }
-    @FXML
-    void chooseMusic3(MouseEvent event) {
-        File file = new File(".\\src\\main\\resources\\p\\parking\\sound\\outAlarm.wav");
-        String selectedFile = file.toURI().toString();
-        Media media = new Media(selectedFile);
-        mediaPlayer = new MediaPlayer(media);
-    }
-    @FXML
-    void playSoundTrev3(MouseEvent event) {
-        mediaPlayer.play();
-    }
-    @FXML
-    void chooseMusic4(MouseEvent event) {
-        File file = new File(".\\src\\main\\resources\\p\\parking\\sound\\lost.wav");
-        String selectedFile = file.toURI().toString();
-        Media media = new Media(selectedFile);
-        mediaPlayer = new MediaPlayer(media);
-    }
-    @FXML
-    void playSoundTrev4(MouseEvent event) {
-        mediaPlayer.play();
-    }
-    @FXML
-    void chooseMusic5(MouseEvent event) {
-        File file = new File(".\\src\\main\\resources\\p\\parking\\sound\\analyze.wav");
-        String selectedFile = file.toURI().toString();
-        Media media = new Media(selectedFile);
-        mediaPlayer = new MediaPlayer(media);
-    }
-    @FXML
-    void playSoundTrev5(MouseEvent event) {
-        mediaPlayer.play();
-    }
-    @FXML
-    void chooseMusic6(MouseEvent event) {
-        File file = new File(".\\src\\main\\resources\\p\\parking\\sound\\humanDetect.wav");
-        String selectedFile = file.toURI().toString();
-        Media media = new Media(selectedFile);
-        mediaPlayer = new MediaPlayer(media);
-    }
-    @FXML
-    void playSoundTrev6(MouseEvent event) {
-        mediaPlayer.play();
-    }
-    @FXML
-    void chooseMusic7(MouseEvent event) {
-        File file = new File(".\\src\\main\\resources\\p\\parking\\sound\\facedetect.wav");
-        String selectedFile = file.toURI().toString();
-        Media media = new Media(selectedFile);
-        mediaPlayer = new MediaPlayer(media);
-    }
-    @FXML
-    void playSoundTrev7(MouseEvent event) {
-        mediaPlayer.play();
-    }
-    @FXML
-    void chooseMusic8(MouseEvent event) {
-        File file = new File(".\\src\\main\\resources\\p\\parking\\sound\\diskfull.wav");
-        String selectedFile = file.toURI().toString();
-        Media media = new Media(selectedFile);
-        mediaPlayer = new MediaPlayer(media);
-    }
-    @FXML
-    void playSoundTrev8(MouseEvent event) {
-        mediaPlayer.play();
-    }
-    @FXML
-    void chooseMusic9(MouseEvent event) {
-        File file = new File(".\\src\\main\\resources\\p\\parking\\sound\\diskerror.wav");
-        String selectedFile = file.toURI().toString();
-        Media media = new Media(selectedFile);
-        mediaPlayer = new MediaPlayer(media);
-    }
-    @FXML
-    void playSoundTrev9(MouseEvent event) {
-        mediaPlayer.play();
-    }
-    @FXML
-    void chooseMusic10(MouseEvent event) {
-        File file = new File(".\\src\\main\\resources\\p\\parking\\sound\\carshapedetect.wav");
-        String selectedFile = file.toURI().toString();
-        Media media = new Media(selectedFile);
-        mediaPlayer = new MediaPlayer(media);
-    }
-    @FXML
-    void playSoundTrev10(MouseEvent event) {
-        mediaPlayer.play();
+    /************************************** Остальное ******************************************************************/
+    //==================== Устройства================================================ TODO
+    public void ustMinimize() {
+        anchorPaneUst.setPadding(new Insets(0, 0, 0, 0));
+        ustAnch1.setPrefHeight(405);
+        ustAnch2.setLayoutY(405);
+        ustAnch2.setPrefHeight(405);
     }
 
-//==================== PolzPane ================================================
+    public void ustMaximize() {
+        anchorPaneUst.setPadding(new Insets(0, 0, 30, 0));
+        ustAnch1.setPrefHeight(480);
+        ustAnch2.setLayoutY(502);
+        ustAnch2.setPrefHeight(502);
+    }
+
+    public void UstBtnUpper() {
+        if (hBox.getChildren().contains(UstSmallPane)) {
+        } else {
+            hBox.getChildren().addFirst(UstSmallPane);
+            UstBtnUp.setVisible(true);
+        }
+    }
+
+    public void UstSmallClose(ActionEvent event) {
+        hBox.getChildren().remove(UstSmallPane);
+        anchorPaneUst.setVisible(false);
+    }
+
+    public void ust(ActionEvent event) {
+        UstBtnUpper();
+        anchorPaneUst.setVisible(true);
+        anchorPaneProsmotr.setVisible(false);
+        anchorPaneArh.setVisible(false);
+        anchorPaneZap.setVisible(false);
+        anchorPaneJur.setVisible(false);
+        anchorPaneJurTrev.setVisible(false);
+        anchorPaneTrev.setVisible(false);
+        anchorPanePolz.setVisible(false);
+        hboxDeleteLast(anchorPaneUst);
+    }
+
+    public void UstCloseOn(MouseEvent event) {
+        UstClose.setVisible(true);
+    }
+
+    public void UstCloseOff(MouseEvent event) {
+        UstClose.setVisible(false);
+    }
+
+    //==================== Программа ================================================
+     /*public void prosmotrMinimize(){
+
+    }
+    public void prosmotrMaximize(){
+
+    }*/
+    public void ProgBtnUpper() {
+        if (hBox.getChildren().contains(ProgSmallPane)) {
+        } else {
+            hBox.getChildren().addFirst(ProgSmallPane);
+            ProgBtnUp.setVisible(true);
+        }
+    }
+
+    public void ProgSmallClose(ActionEvent event) {
+        hBox.getChildren().remove(ProgSmallPane);
+        anchorPaneProg.setVisible(false);
+    }
+
+    public void prog(ActionEvent event) {
+        ProgBtnUpper();
+        //   anchorPaneProg.setVisible(true);
+        System.out.println("prog ne rabotaet");
+        hboxDeleteLast(anchorPaneProg);
+    }
+
+    public void ProgCloseOn(MouseEvent event) {
+        ProgClose.setVisible(true);
+    }
+
+    public void ProgCloseOff(MouseEvent event) {
+        ProgClose.setVisible(false);
+    }
+
+    //==================== Пользователи ================================================
+     /*public void prosmotrMinimize(){
+
+    }
+    public void prosmotrMaximize(){
+
+    }*/
     @FXML
     void addNewPolz(MouseEvent event) {
-        if(!newPolz1.isVisible()) {
+        if (!newPolz1.isVisible()) {
             newPolz1.setVisible(true);
             btnNewPolz.setLayoutX(1060);
-        } else if(newPolz2.isVisible() && !newPolz1.isVisible()) {
+        } else if (newPolz2.isVisible() && !newPolz1.isVisible()) {
             newPolz1.setVisible(true);
             newPolz1.setLayoutX(1080);
             btnNewPolz.setVisible(false);
-          } else {
+        } else {
             newPolz2.setVisible(true);
             btnNewPolz.setVisible(false);
         }
     }
+
     @FXML
     void closeNewPolz1(MouseEvent event) {
-        if(newPolz1.isVisible() && !newPolz2.isVisible()) {
+        if (newPolz1.isVisible() && !newPolz2.isVisible()) {
             newPolz1.setVisible(false);
             btnNewPolz.setLayoutX(720);
-        } else if(newPolz1.isVisible() && newPolz2.isVisible()) {
+        } else if (newPolz1.isVisible() && newPolz2.isVisible()) {
             newPolz1.setVisible(false);
             newPolz2.setLayoutX(740);
             btnNewPolz.setVisible(true);
             btnNewPolz.setLayoutX(1060);
         }
     }
+
     @FXML
     void closeNewPolz2(MouseEvent event) {
-        if(newPolz1.isVisible() && newPolz2.isVisible()) {
+        if (newPolz1.isVisible() && newPolz2.isVisible()) {
             newPolz2.setVisible(false);
             btnNewPolz.setVisible(true);
             btnNewPolz.setLayoutX(1060);
-        } else if(!newPolz1.isVisible() && newPolz2.isVisible()) {
+        } else if (!newPolz1.isVisible() && newPolz2.isVisible()) {
             newPolz2.setVisible(false);
             btnNewPolz.setVisible(true);
             btnNewPolz.setLayoutX(720);
         }
     }
+
     @FXML
     void adminClearField() {
         adminPodtvField.clear();
         adminLogField.clear();
         adminPassField.clear();
     }
+
     @FXML
     void secClearField() {
         secPodtvField.clear();
         secLogField.clear();
         secPassField.clear();
     }
+
     @FXML
     void new1ClearField() {
         adminPodtvField.clear();
         adminLogField.clear();
         adminPassField.clear();
     }
+
     @FXML
     void new2ClearField() {
         adminPodtvField.clear();
         adminLogField.clear();
         adminPassField.clear();
+    }
+
+    public void PolzBtnUpper() {
+        if (hBox.getChildren().contains(PolzSmallPane)) {
+        } else {
+            hBox.getChildren().addFirst(PolzSmallPane);
+            PolzBtnUp.setVisible(true);
+        }
+    }
+
+    public void PolzSmallClose(ActionEvent event) {
+        hBox.getChildren().remove(PolzSmallPane);
+        anchorPanePolz.setVisible(false);
+    }
+
+    public void polz(ActionEvent event) {
+        PolzBtnUpper();
+        anchorPanePolz.setVisible(true);
+        anchorPaneJur.setVisible(false);
+        anchorPaneProsmotr.setVisible(false);
+        anchorPaneUst.setVisible(false);
+        anchorPaneArh.setVisible(false);
+        anchorPaneZap.setVisible(false);
+        anchorPaneJurTrev.setVisible(false);
+        anchorPaneTrev.setVisible(false);
+        hboxDeleteLast(anchorPanePolz);
+    }
+
+    public void PolzCloseOn(MouseEvent event) {
+        PolzClose.setVisible(true);
+    }
+
+    public void PolzCloseOff(MouseEvent event) {
+        PolzClose.setVisible(false);
     }
 
 }
