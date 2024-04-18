@@ -104,4 +104,11 @@
          </font>
       </Label>
    </children>
+   <effect>
+      <InnerShadow choke="0.2" height="50.0" radius="24.5" width="50.0">
+         <color>
+            <Color red="0.14901961386203766" green="0.1921568661928177" blue="0.2705882489681244" />
+         </color>
+      </InnerShadow>
+   </effect>
 </AnchorPane>

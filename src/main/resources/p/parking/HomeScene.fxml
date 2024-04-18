@@ -1941,6 +1941,285 @@
             </Button>
          </children>
       </AnchorPane>
+      <AnchorPane fx:id="anchorPaneProg" layoutY="75.0" prefHeight="825.0" prefWidth="1440.0" styleClass="home" visible="false">
+         <children>
+            <AnchorPane fx:id="baseAnchorPane112" layoutX="20.0" layoutY="12.5" prefHeight="800.0" prefWidth="1400.0" styleClass="inputbox">
+               <children>
+                  <AnchorPane prefHeight="25.0" prefWidth="78.0" styleClass="inputtext">
+                     <children>
+                        <Label layoutX="7.0" layoutY="4.0" styleClass="inputlabel" text="Программа" textAlignment="CENTER">
+                           <font>
+                              <Font name="Calibri" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <Label layoutX="30.0" layoutY="50.0" text="Время зранения журнала">
+                     <font>
+                        <Font name="Calibri" size="28.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="30.0" layoutY="100.0" text="Количество событий">
+                     <font>
+                        <Font name="Calibri" size="28.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="30.0" layoutY="150.0" text="Декодирование">
+                     <font>
+                        <Font name="Calibri" size="28.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="30.0" layoutY="200.0" text="Формат записи">
+                     <font>
+                        <Font name="Calibri" size="28.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="30.0" layoutY="250.0" text="Формат файла для выгрузки">
+                     <font>
+                        <Font name="Calibri" size="28.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="30.0" layoutY="300.0" text="Фомрат снимка">
+                     <font>
+                        <Font name="Calibri" size="28.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="30.0" layoutY="350.0" text="Видеорендер">
+                     <font>
+                        <Font name="Calibri" size="28.0" />
+                     </font>
+                  </Label>
+                  <ChoiceBox fx:id="choiceBoxForProg1" layoutX="390.0" layoutY="50.0" onMouseClicked="#getChoiceBoxForType" prefHeight="32.0" prefWidth="200.0" styleClass="choiceBox">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ChoiceBox>
+                  <ChoiceBox fx:id="choiceBoxForProg2" layoutX="390.0" layoutY="100.0" onMouseClicked="#getChoiceBoxForType" prefHeight="32.0" prefWidth="200.0" styleClass="choiceBox">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ChoiceBox>
+                  <ChoiceBox fx:id="choiceBoxForProg3" layoutX="390.0" layoutY="150.0" onMouseClicked="#getChoiceBoxForType" prefHeight="32.0" prefWidth="200.0" styleClass="choiceBox">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ChoiceBox>
+                  <ChoiceBox fx:id="choiceBoxForProg4" layoutX="390.0" layoutY="200.0" onMouseClicked="#getChoiceBoxForType" prefHeight="32.0" prefWidth="200.0" styleClass="choiceBox">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ChoiceBox>
+                  <ChoiceBox fx:id="choiceBoxForProg5" layoutX="390.0" layoutY="250.0" onMouseClicked="#getChoiceBoxForType" prefHeight="32.0" prefWidth="200.0" styleClass="choiceBox">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ChoiceBox>
+                  <ChoiceBox fx:id="choiceBoxForProg6" layoutX="390.0" layoutY="300.0" onMouseClicked="#getChoiceBoxForType" prefHeight="32.0" prefWidth="200.0" styleClass="choiceBox">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ChoiceBox>
+                  <ChoiceBox fx:id="choiceBoxForProg7" layoutX="390.0" layoutY="350.0" onMouseClicked="#getChoiceBoxForType" prefHeight="32.0" prefWidth="200.0" styleClass="choiceBox">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ChoiceBox>
+                  <CheckBox fx:id="checkBoxForProg1" layoutX="650.0" layoutY="50.0" mnemonicParsing="false" text="Отображать битрейт">
+                     <font>
+                        <Font name="Calibri" size="26.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </CheckBox>
+                  <CheckBox fx:id="checkBoxForProg2" layoutX="650.0" layoutY="100.0" mnemonicParsing="false" text="Автоподключение устройств">
+                     <font>
+                        <Font name="Calibri" size="26.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </CheckBox>
+                  <CheckBox fx:id="checkBoxForProg3" layoutX="650.0" layoutY="150.0" mnemonicParsing="false" text="Синхронизация времени">
+                     <font>
+                        <Font name="Calibri" size="26.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </CheckBox>
+                  <CheckBox fx:id="checkBoxForProg4" layoutX="650.0" layoutY="200.0" mnemonicParsing="false" text="Возобновлять сеанс (полный экран)">
+                     <font>
+                        <Font name="Calibri" size="26.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </CheckBox>
+                  <CheckBox fx:id="checkBoxForProg5" layoutX="650.0" layoutY="250.0" mnemonicParsing="false" text="Автозапуск приложения">
+                     <font>
+                        <Font name="Calibri" size="26.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </CheckBox>
+                  <CheckBox fx:id="checkBoxForProg6" layoutX="650.0" layoutY="300.0" mnemonicParsing="false" text="Автопереключение между потоками">
+                     <font>
+                        <Font name="Calibri" size="26.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </CheckBox>
+                  <CheckBox fx:id="checkBoxForProg7" layoutX="650.0" layoutY="350.0" mnemonicParsing="false" text="Мастер первой настройки">
+                     <font>
+                        <Font name="Calibri" size="26.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </CheckBox>
+                  <CheckBox fx:id="checkBoxForProg8" layoutX="1100.0" layoutY="50.0" mnemonicParsing="false" text="Автовход">
+                     <font>
+                        <Font name="Calibri" size="26.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </CheckBox>
+                  <CheckBox fx:id="checkBoxForProg9" layoutX="1100.0" layoutY="100.0" mnemonicParsing="false" text="Запомнить пароль">
+                     <font>
+                        <Font name="Calibri" size="26.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </CheckBox>
+                  <CheckBox fx:id="checkBoxForProg10" layoutX="1100.0" layoutY="150.0" mnemonicParsing="false" text="Отображать тревоги">
+                     <font>
+                        <Font name="Calibri" size="26.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </CheckBox>
+                  <Button fx:id="btnResetProg" alignment="TOP_CENTER" layoutX="720.0" layoutY="725.0" mnemonicParsing="false" onMouseClicked="#resetAll" prefWidth="150.0" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Сброс" textAlignment="CENTER">
+                     <font>
+                        <Font name="Calibri" size="24.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <effect>
+                        <InnerShadow choke="0.2" height="25.0" radius="12.0" width="25.0">
+                           <color>
+                              <Color red="0.6549019813537598" green="0.6549019813537598" blue="0.658823549747467" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
+                  </Button>
+                  <Label layoutX="300.0" layoutY="450.0" text="Папка изображений">
+                     <font>
+                        <Font name="Calibri" size="28.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="300.0" layoutY="500.0" text="Путь для выгрузки">
+                     <font>
+                        <Font name="Calibri" size="28.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="300.0" layoutY="550.0" text="Путь экспорта логов">
+                     <font>
+                        <Font name="Calibri" size="28.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="textFieldForProg1" editable="false" layoutX="570.0" layoutY="450.0" prefHeight="32.0" prefWidth="350.0">
+                     <font>
+                        <Font name="Calibri" size="16.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="textFieldForProg2" editable="false" layoutX="570.0" layoutY="500.0" prefHeight="32.0" prefWidth="350.0">
+                     <font>
+                        <Font name="Calibri" size="16.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="textFieldForProg3" editable="false" layoutX="570.0" layoutY="550.0" prefHeight="32.0" prefWidth="350.0">
+                     <font>
+                        <Font name="Calibri" size="16.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="lookBtnForProg1" layoutX="940.0" layoutY="448.0" mnemonicParsing="false" onMouseClicked="#lookForProg" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Обзор">
+                     <font>
+                        <Font name="Calibri" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <effect>
+                        <InnerShadow choke="0.2" height="25.0" radius="12.0" width="25.0">
+                           <color>
+                              <Color red="0.6549019813537598" green="0.6549019813537598" blue="0.658823549747467" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
+                  </Button>
+                  <Button fx:id="lookBtnForProg2" layoutX="940.0" layoutY="498.0" mnemonicParsing="false" onMouseClicked="#lookForProg" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Обзор">
+                     <font>
+                        <Font name="Calibri" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <effect>
+                        <InnerShadow choke="0.2" height="25.0" radius="12.0" width="25.0">
+                           <color>
+                              <Color red="0.6549019813537598" green="0.6549019813537598" blue="0.658823549747467" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
+                  </Button>
+                  <Button fx:id="lookBtnForProg3" layoutX="940.0" layoutY="548.0" mnemonicParsing="false" onMouseClicked="#lookForProg" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Обзор">
+                     <font>
+                        <Font name="Calibri" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <effect>
+                        <InnerShadow choke="0.2" height="25.0" radius="12.0" width="25.0">
+                           <color>
+                              <Color red="0.6549019813537598" green="0.6549019813537598" blue="0.658823549747467" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
+                  </Button>
+                  <Button fx:id="trevPrimBtn1" alignment="TOP_CENTER" layoutX="530.0" layoutY="725.0" mnemonicParsing="false" style="-fx-background-insets: 0;" styleClass="btnForAllPane" text="Применить" textAlignment="CENTER">
+                     <font>
+                        <Font name="Calibri" size="24.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <effect>
+                        <InnerShadow choke="0.2" height="25.0" radius="12.0" width="25.0">
+                           <color>
+                              <Color red="0.6549019813537598" green="0.6549019813537598" blue="0.658823549747467" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
+                  </Button>
+               </children>
+               <effect>
+                  <InnerShadow height="255.0" radius="127.0" width="255.0">
+                     <color>
+                        <Color red="0.7803921699523926" green="0.7803921699523926" blue="0.7803921699523926" />
+                     </color>
+                  </InnerShadow>
+               </effect>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
       <AnchorPane fx:id="invisiblePane" layoutX="882.0" layoutY="104.0" prefHeight="759.0" prefWidth="520.0" visible="false">
          <children>
             <Pane fx:id="prosmotrSmallPane" layoutX="7.0" layoutY="17.0" maxHeight="75.0" maxWidth="90.0" minHeight="75.0" minWidth="90.0" onMouseEntered="#prosmotrCloseOn" onMouseExited="#prosmotrCloseOff" prefHeight="75.0" prefWidth="90.0">

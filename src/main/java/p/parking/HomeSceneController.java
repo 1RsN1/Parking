@@ -25,6 +25,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 
@@ -53,21 +54,19 @@ public class HomeSceneController {
             TrevSmallPane, TurSmallPane, PolzSmallPane, ProgSmallPane, MapSmallPane, DecSmallPane, BekSmallPane,
             ProshSmallPane, FonZapSmallPane;
     @FXML
-    Button prosmotrClose, UstClose, ArhClose, ZapClose, JurClose, JurTrevClose, KonfClose, TrevClose, TurClose,
-            PolzClose, ProgClose, MapClose, DecClose, BekClose, ProshClose, FonZapClose, buttonForArhDownload;
+    Button prosmotrClose, UstClose, ArhClose, ZapClose, JurClose, JurTrevClose, TrevClose, TurClose,
+            PolzClose, ProgClose, buttonForArhDownload, buttonForSevenCam, buttonForFourCam, buttonForNineCam, buttonForOneCam, maxBtn,
+            prosmotrBtnUp, UstBtnUp, ArhBtnUp, ZapBtnUp, JurBtnUp, JurTrevBtnUp,TrevBtnUp, TurBtnUp, PolzBtnUp, ProgBtnUp, btnSplitArh,
+            trevPrimBtn, btnNewPolz, lookBtnForProg1, lookBtnForProg2, lookBtnForProg3;
     @FXML
     TextField chooseMusicTrev1, chooseMusicTrev2, chooseMusicTrev3, chooseMusicTrev4, chooseMusicTrev5, chooseMusicTrev6,
             chooseMusicTrev7, chooseMusicTrev8, chooseMusicTrev9, chooseMusicTrev10, adminPodtvField, secLogField,
-            secPassField, secPodtvField, adminLogField, adminPassField;
+            secPassField, secPodtvField, adminLogField, adminPassField, textFieldForProg1, textFieldForProg2, textFieldForProg3;
 
     @FXML
     HBox hBox;
     @FXML
     URL location;
-    @FXML
-    Button buttonForSevenCam, buttonForFourCam, buttonForNineCam, buttonForOneCam, maxBtn, prosmotrBtnUp, UstBtnUp,
-            ArhBtnUp, ZapBtnUp, JurBtnUp, JurTrevBtnUp, KonfBtnUp, TrevBtnUp, TurBtnUp, PolzBtnUp, ProgBtnUp, MapBtnUp,
-            DecBtnUp, BekBtnUp, ProshBtnUp, FonZapBtnUp, btnSplitArh, trevPrimBtn, btnNewPolz;
     @FXML
     AnchorPane paneWithFourCam, paneWithOneCam, paneWithSevenCam, paneWithNineCam;
     @FXML
@@ -84,7 +83,8 @@ public class HomeSceneController {
     DatePicker datePickerBeginning, datePickerEnd;
 
     @FXML
-    ChoiceBox<String> choiceBoxForChooseFiles, choiceBoxForType;
+    ChoiceBox<String> choiceBoxForChooseFiles, choiceBoxForType, choiceBoxForProg1, choiceBoxForProg2, choiceBoxForProg3,
+            choiceBoxForProg4, choiceBoxForProg5, choiceBoxForProg6, choiceBoxForProg7;
     @FXML
     ChoiceBox<?> choiceBoxForJur;
     @FXML
@@ -96,7 +96,8 @@ public class HomeSceneController {
     ToggleButton toggleForArhPC, toggleForArhUstr, toggleForJurPC, toggleForJurUstr;
 
     @FXML
-    CheckBox checkBoxForArhAll, checkBoxForArhConnect;
+    CheckBox checkBoxForArhAll, checkBoxForArhConnect, checkBoxForProg1, checkBoxForProg2, checkBoxForProg3, checkBoxForProg4,
+            checkBoxForProg5, checkBoxForProg6, checkBoxForProg7, checkBoxForProg8, checkBoxForProg9, checkBoxForProg10;
 
     @FXML
     RadioButton radioForArhDop, radioForArhMain, radioForArhPhoto, radioForArhVideo;
@@ -127,16 +128,6 @@ public class HomeSceneController {
     private TableColumn<Accident, String> jurTrevRes;
 
     /*=============================================================================================================*/
-    @FXML
-    SpinnerValueFactory<LocalTime> svf = new SpinnerValueFactory<LocalTime>() {
-        @Override
-        public void decrement(int i) {
-        }
-
-        @Override
-        public void increment(int i) {
-        }
-    };
 
 // TODO *баг на архиве после максимизирования и обратного минимизирования невозможно заново максимизировать - не работает
 //  из-за изменения размера окон просмотра изображений в архиве - требуется дороботка баг*
@@ -155,17 +146,13 @@ public class HomeSceneController {
         jurTrevRes.setCellValueFactory(new PropertyValueFactory<Accident, String>("result"));
         jurtrevTable.setItems(accidentsData);
 
-
-
         mxbtnView.setFitWidth(18);
         mxbtnView.setFitHeight(18);
         maxBtn.setGraphic(mxbtnView);
         ivProsmotr0.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("icon/VSTU-logo.png")));
 
-        /* не работает
         choiceBoxForChooseFiles.getItems().addAll("Файл", "Время", "Лицо");
-        choiceBoxForType.getItems().addAll("Все", "Трев. вход", "Движение", "Постоянно", "Ручная", "I-кадр видео", "Видео анализ");*/
-
+        choiceBoxForType.getItems().addAll("Все", "Трев. вход", "Движение", "Постоянно", "Ручная", "I-кадр видео", "Видео анализ");
 
         imgV1.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
 //        imArh1.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
@@ -202,8 +189,24 @@ public class HomeSceneController {
         chooseMusicTrev9.setText("D:\\VMS\\sound\\Russian\\diskerror.wav");
         chooseMusicTrev10.setText("D:\\VMS\\sound\\Russian\\carshapedetect.wav");
 
-        adminLogField.setText("admin");
-        adminPassField.setText("admin");
+        choiceBoxForProg1.getItems().addAll("30 дней", "60 дней", "90 дней");
+        choiceBoxForProg1.setValue("30 дней");
+        choiceBoxForProg2.getItems().addAll("30000", "60000", "90000");
+        choiceBoxForProg2.setValue("30000");
+        choiceBoxForProg3.getItems().addAll("1", "2", "3", "4", "5", "6", "7");
+        choiceBoxForProg3.setValue("4");
+        choiceBoxForProg4.getItems().addAll("AVI/H265", "MP4", "Элементарный поток");
+        choiceBoxForProg4.setValue("AVI/H265");
+        choiceBoxForProg5.getItems().addAll("H264/H265", "AVI", "MP4");
+        choiceBoxForProg5.setValue("H264/H265");
+        choiceBoxForProg6.getItems().addAll("PNG", "BMP", "JPG");
+        choiceBoxForProg6.setValue("JPG");
+        choiceBoxForProg7.getItems().addAll("По умолчанию", "Direct", "GDI");
+        choiceBoxForProg7.setValue("По умолчанию");
+        textFieldForProg1.setText("D:/VMS/data/users/admin/pictures");
+        textFieldForProg2.setText("D:/VMS/data/users/admin/downloads");
+        textFieldForProg3.setText("D:/VMS/data/users/admin/log");
+        fileChooserForProg.setInitialDirectory(new File("D:\\VMS\\data\\users\\admin"));
     }
 
 
@@ -255,6 +258,7 @@ public class HomeSceneController {
         anchorPaneJurTrev.setVisible(false);
         anchorPaneTrev.setVisible(false);
         anchorPanePolz.setVisible(false);
+        anchorPaneProg.setVisible(false);
     }
 
     public void hboxDeleteLast(AnchorPane anchorPane) {
@@ -400,7 +404,6 @@ public class HomeSceneController {
     public void prosmotr(ActionEvent event) {
         prosmotrBtnUpper();
         anchorPaneProsmotr.setVisible(true);
-
         //prosmotrFX .setVisible(true);
         anchorPaneUst.setVisible(false);
         anchorPaneArh.setVisible(false);
@@ -409,6 +412,7 @@ public class HomeSceneController {
         anchorPaneJurTrev.setVisible(false);
         anchorPaneTrev.setVisible(false);
         anchorPanePolz.setVisible(false);
+        anchorPaneProg.setVisible(false);
         hboxDeleteLast(anchorPaneProsmotr);
     }
 
@@ -569,6 +573,7 @@ public class HomeSceneController {
         anchorPaneJurTrev.setVisible(false);
         anchorPaneTrev.setVisible(false);
         anchorPanePolz.setVisible(false);
+        anchorPaneProg.setVisible(false);
         hboxDeleteLast(anchorPaneArh);
     }
 
@@ -587,23 +592,18 @@ public class HomeSceneController {
             if (arhGP.getPrefWidth() == 1200) {
                 rightPaneForArh.setPrefHeight(620);
                 arhCamPane.setLayoutX(360);
-
             }
             if (arhGP.getPrefWidth() == 1486) {
                 rightPaneForArh.setPrefHeight(770);
                 arhCamPane.setLayoutX(600);
-
             }
         } // ust ACTION
         if (checkBoxForArhAll.isVisible() == true) {
             if (arhGP.getPrefWidth() == 1200) {
                 rightPaneForArh.setPrefHeight(570);
                 arhCamPane.setLayoutX(500);
-
             }
             if (arhGP.getPrefWidth() == 1486) {
-
-
                 rightPaneForArh.setPrefHeight(730);
                 arhCamPane.setLayoutX(750);
             }
@@ -622,8 +622,6 @@ public class HomeSceneController {
             radioForArhVideo.setVisible(false);
             buttonForArhDownload.setVisible(false);
             // ArhToggle();
-
-
         }
     }
 
@@ -639,7 +637,6 @@ public class HomeSceneController {
             radioForArhVideo.setVisible(true);
             buttonForArhDownload.setVisible(true);
             //ArhToggle();
-
         }
     }
 
@@ -732,6 +729,7 @@ public class HomeSceneController {
         anchorPaneJurTrev.setVisible(false);
         anchorPaneTrev.setVisible(false);
         anchorPanePolz.setVisible(false);
+        anchorPaneProg.setVisible(false);
         hboxDeleteLast(anchorPaneZap);
     }
 
@@ -769,6 +767,7 @@ public class HomeSceneController {
         anchorPaneJurTrev.setVisible(false);
         anchorPaneTrev.setVisible(false);
         anchorPanePolz.setVisible(false);
+        anchorPaneProg.setVisible(false);
         hboxDeleteLast(anchorPaneProsmotr);
     }
 
@@ -802,6 +801,7 @@ public class HomeSceneController {
         anchorPaneZap.setVisible(false);
         anchorPaneJurTrev.setVisible(false);
         anchorPanePolz.setVisible(false);
+        anchorPaneProg.setVisible(false);
         hboxDeleteLast(anchorPaneTrev);
     }
 
@@ -985,6 +985,7 @@ public class HomeSceneController {
         anchorPaneJurTrev.setVisible(false);
         anchorPaneTrev.setVisible(false);
         anchorPanePolz.setVisible(false);
+        anchorPaneProg.setVisible(false);
         hboxDeleteLast(anchorPaneJur);
     }
 
@@ -1083,6 +1084,7 @@ public class HomeSceneController {
         anchorPaneArh.setVisible(false);
         anchorPaneZap.setVisible(false);
         anchorPaneJur.setVisible(false);
+        anchorPaneProg.setVisible(false);
         hboxDeleteLast(anchorPaneJurTrev);
     }
 
@@ -1141,6 +1143,7 @@ public class HomeSceneController {
         anchorPaneJurTrev.setVisible(false);
         anchorPaneTrev.setVisible(false);
         anchorPanePolz.setVisible(false);
+        anchorPaneProg.setVisible(false);
         hboxDeleteLast(anchorPaneUst);
     }
 
@@ -1174,8 +1177,15 @@ public class HomeSceneController {
 
     public void prog(ActionEvent event) {
         ProgBtnUpper();
-        //   anchorPaneProg.setVisible(true);
-        System.out.println("prog ne rabotaet");
+        anchorPaneProg.setVisible(true);
+        anchorPaneUst.setVisible(false);
+        anchorPaneProsmotr.setVisible(false);
+        anchorPaneArh.setVisible(false);
+        anchorPaneZap.setVisible(false);
+        anchorPaneJur.setVisible(false);
+        anchorPaneJurTrev.setVisible(false);
+        anchorPaneTrev.setVisible(false);
+        anchorPanePolz.setVisible(false);
         hboxDeleteLast(anchorPaneProg);
     }
 
@@ -1185,6 +1195,33 @@ public class HomeSceneController {
 
     public void ProgCloseOff(MouseEvent event) {
         ProgClose.setVisible(false);
+    }
+
+    @FXML
+    void resetAll(MouseEvent event) {
+        choiceBoxForProg1.setValue("30 дней");
+        choiceBoxForProg2.setValue("30000");
+        choiceBoxForProg3.setValue("4");
+        choiceBoxForProg4.setValue("AVI/H265");
+        choiceBoxForProg5.setValue("H264/H265");
+        choiceBoxForProg6.setValue("JPG");
+        choiceBoxForProg7.setValue("По умолчанию");
+        checkBoxForProg1.setSelected(false);
+        checkBoxForProg2.setSelected(false);
+        checkBoxForProg3.setSelected(false);
+        checkBoxForProg4.setSelected(false);
+        checkBoxForProg5.setSelected(false);
+        checkBoxForProg6.setSelected(false);
+        checkBoxForProg7.setSelected(false);
+        checkBoxForProg8.setSelected(false);
+        checkBoxForProg9.setSelected(false);
+        checkBoxForProg10.setSelected(false);
+    }
+
+    FileChooser fileChooserForProg = new FileChooser();
+    @FXML
+    void lookForProg(MouseEvent event) {
+        File file = fileChooserForProg.showOpenDialog(new Stage());
     }
 
     //==================== Пользователи ================================================
