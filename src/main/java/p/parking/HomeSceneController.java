@@ -7,10 +7,7 @@ import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -50,7 +47,7 @@ public class HomeSceneController {
     @FXML
     AnchorPane anchorPaneProsmotr, anchorPaneUst, anchorPaneArh, anchorPaneZap, anchorPaneJur, anchorPaneJurTrev, anchorPaneTrev,
             anchorPaneTur, anchorPaneProg, anchorPanePolz, homePanel, baseAnchorPane, othersAnchorPane, settingAP, camBtnPane, camRightPane,
-            rightPaneForArh, trevogaPane, jurTrevBtnSchalgPane, newPolz1, newPolz2,baseAnchorPane112,baseAnchorPane111, polzUtilAP;
+            rightPaneForArh, trevogaPane, jurTrevBtnSchalgPane, newPolz1, newPolz2, baseAnchorPane112, baseAnchorPane111, polzUtilAP;
     @FXML
     Pane basePane, basePane1, basePane11, zapBtnPane;
     @FXML
@@ -60,8 +57,8 @@ public class HomeSceneController {
     @FXML
     Button prosmotrClose, UstClose, ArhClose, ZapClose, JurClose, JurTrevClose, TrevClose, TurClose,
             PolzClose, ProgClose, buttonForArhDownload, buttonForSevenCam, buttonForFourCam, buttonForNineCam, buttonForOneCam, maxBtn,
-            prosmotrBtnUp, UstBtnUp, ArhBtnUp, ZapBtnUp, JurBtnUp, JurTrevBtnUp,TrevBtnUp, TurBtnUp, PolzBtnUp, ProgBtnUp, btnSplitArh,
-            trevPrimBtn, btnNewPolz, lookBtnForProg1, lookBtnForProg2, lookBtnForProg3, btnResetProg,  trevPrimBtn1;
+            prosmotrBtnUp, UstBtnUp, ArhBtnUp, ZapBtnUp, JurBtnUp, JurTrevBtnUp, TrevBtnUp, TurBtnUp, PolzBtnUp, ProgBtnUp, btnSplitArh,
+            trevPrimBtn, btnNewPolz, lookBtnForProg1, lookBtnForProg2, lookBtnForProg3, btnResetProg, trevPrimBtn1;
     @FXML
     TextField chooseMusicTrev1, chooseMusicTrev2, chooseMusicTrev3, chooseMusicTrev4, chooseMusicTrev5, chooseMusicTrev6,
             chooseMusicTrev7, chooseMusicTrev8, chooseMusicTrev9, chooseMusicTrev10, adminPodtvField, secLogField,
@@ -116,9 +113,9 @@ public class HomeSceneController {
     TableColumn jurUPrim, jurPCPrim;
     @FXML
     Label
-            arhLabel, turLabel, progLabel, polzLabel,jurLabel,zapLabel, jurTrevLabel;
+            arhLabel, turLabel, progLabel, polzLabel, jurLabel, zapLabel, jurTrevLabel;
     @FXML
-    Button arhBtn, turBtn, progBtn, polzBtn,jurBtn,zapBtn, jurTrevBtn;
+    Button arhBtn, turBtn, progBtn, polzBtn, jurBtn, zapBtn, jurTrevBtn;
     /*==================================== Колонки таблицы журнала тревог ==========================================*/
     private ObservableList<Accident> accidentsData = FXCollections.observableArrayList();
     @FXML
@@ -137,13 +134,14 @@ public class HomeSceneController {
     private TableColumn<Accident, String> jurTrevRes;
 
     /*=============================================================================================================*/
-boolean isAdmin;
-public boolean start() throws IOException {
-    FileInputStream inputStream = new FileInputStream("parol.txt");
-    byte[] buffer = new byte[1024];
-    int bytesRead = inputStream.read(buffer);
-    return isAdmin = new String(buffer, 0, bytesRead).equals("true");
-}
+    boolean isAdmin;
+
+    public boolean start() throws IOException {
+        FileInputStream inputStream = new FileInputStream("parol.txt");
+        byte[] buffer = new byte[1024];
+        int bytesRead = inputStream.read(buffer);
+        return isAdmin = new String(buffer, 0, bytesRead).equals("true");
+    }
 
 
 // TODO *баг на архиве после максимизирования и обратного минимизирования невозможно заново максимизировать - не работает
@@ -151,14 +149,16 @@ public boolean start() throws IOException {
 
     //TODO увеличить размер шрифта в таблицах  - jurTrevType.setStyle("-fx-font-size: 22px;"); / сделать их непередвигаемыми
     //TODO сделать таблицы для устройств devices / журнала log / журнала тревогог accidents
-    //TODO максимизировать окна
+
+
 
     public void initialize() throws IOException {
         start();
         if (!isAdmin) {
             securityLoad();
         }
-        initAccidents();
+        //accidents
+        TimerInitAccidents();
         jurTrevNum.setCellValueFactory(new PropertyValueFactory<Accident, Integer>("num"));
         jurTrevStat.setCellValueFactory(new PropertyValueFactory<Accident, String>("status"));
         jurTrevType.setCellValueFactory(new PropertyValueFactory<Accident, String>("type"));
@@ -166,15 +166,16 @@ public boolean start() throws IOException {
         jurTrevUst.setCellValueFactory(new PropertyValueFactory<Accident, String>("ustr"));
         jurTrevRes.setCellValueFactory(new PropertyValueFactory<Accident, String>("result"));
         jurtrevTable.setItems(accidentsData);
+        //device
+
+        //Log
 
         mxbtnView.setFitWidth(18);
         mxbtnView.setFitHeight(18);
         maxBtn.setGraphic(mxbtnView);
         ivProsmotr0.setImage(new Image(getClass().getResourceAsStream("icon/VSTU-logo.png")));
-
         choiceBoxForChooseFiles.getItems().addAll("Файл", "Время", "Лицо");
         choiceBoxForType.getItems().addAll("Все", "Трев. вход", "Движение", "Постоянно", "Ручная", "I-кадр видео", "Видео анализ");
-
         imgV1.setImage(new Image(getClass().getResourceAsStream("photo/pop3.jpg")));
 //        imArh1.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
 //        imArh2.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
@@ -258,6 +259,7 @@ public boolean start() throws IOException {
             hboxDeleteWhenMinimize();
         }
     }
+
     public void minimizeWindow(ActionEvent event) {
         stage = (Stage) homePanel.getScene().getWindow();
         stage.setIconified(true);
@@ -334,6 +336,7 @@ public boolean start() throws IOException {
         othersAnchorPane.setLayoutY(725);
         othersAnchorPane.setPrefHeight(300);
     }
+
     public void securityLoad() {//arhBtn, turBtn, progBtn, polzBtn,jurBtn,zapBtn, jurTrevBtn
         homePanel.setPrefHeight(900);
         arhBtn.setVisible(false);
@@ -824,14 +827,16 @@ public boolean start() throws IOException {
     }
 
     //==================== ================================================
-     public void trevMinimize(){
-         anchorPaneTrev.setPadding(new Insets(0, 0, 0, 0));
-         trevPrimBtn.setLayoutX(625);
+    public void trevMinimize() {
+        anchorPaneTrev.setPadding(new Insets(0, 0, 0, 0));
+        trevPrimBtn.setLayoutX(625);
     }
-    public void trevMaximize(){
+
+    public void trevMaximize() {
         anchorPaneTrev.setPadding(new Insets(0, 0, 35, 0));
         trevPrimBtn.setLayoutX(825);
     }
+
     public void TrevBtnUpper() {
         if (hBox.getChildren().contains(TrevSmallPane)) {
         } else {
@@ -1074,21 +1079,44 @@ public boolean start() throws IOException {
 
     /*==================================== Журнал тревог ==========================================*/
     /*==================================== Accidents  ==========================================*///TODO
-    List<String> list = List.of("АОЛД", "lsdjf", "Sasga");
+    List<String> resultList = List.of("АОЛД", "lsdjf", "Sasga");
+    List<String> statusList = List.of("Все", "Трев. вход", "Движение", "Постоянно", "Ручная", "I-кадр видео", "Видео анализ");
+    List<String> typeList = List.of("Все", "Трев. вход", "Движение", "Постоянно", "Ручная", "I-кадр видео", "Видео анализ");
+    List<String> ustrList = List.of("Камера 1");
     Random random = new Random();
 
     private void initAccidents() {
-        String temp = list.get(random.nextInt(3));
-        accidentsData.add(new Accident(getNum(), "Состояние", "Тип", getTime(), "Устранение", temp));
-        accidentsData.add(new Accident(getNum(), "Состояние", "Тип", getTime(), "Устранение", "Результат"));
+        String result = resultList.get(random.nextInt(3));
+        accidentsData.add(new Accident(accidentGetNum(), "Состояние", "Тип", accidentGetTime(), "Устранение", result));
+        System.out.println(accidentGetTime());
     }
 
-    private String getTime() {
+    private String accidentGetTime() {
         return new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(Calendar.getInstance().getTime());
     }
 
-    private int getNum() {
+    private int accidentGetNum() {
         return accidentsData.size() + 1;
+    }
+
+    public void TimerInitAccidents() {
+        Timer timer = new Timer();
+        TimerTask accidentsRun = new TimerTask() {
+            @Override
+            public void run() {
+                initAccidents();
+            }
+        };
+        TimerTask accidentsStop = new TimerTask() {
+            @Override
+            public void run() {
+                System.out.println("Accidents timer is out");
+                timer.cancel();
+            }
+        };
+        timer.schedule(accidentsRun, 0, 10000); // период
+        timer.schedule(accidentsStop,  20000, 1); // время конца
+
     }
 
     /************************************************************************/
@@ -1210,17 +1238,19 @@ public boolean start() throws IOException {
     }
 
     //==================== Программа ================================================
-     public void progMinimize(){
-         btnResetProg.setLayoutX(720);
-         trevPrimBtn1.setLayoutX(530);
-         anchorPaneProg.setPadding(new Insets(0, 0, 0, 0));
+    public void progMinimize() {
+        btnResetProg.setLayoutX(720);
+        trevPrimBtn1.setLayoutX(530);
+        anchorPaneProg.setPadding(new Insets(0, 0, 0, 0));
 
     }
-    public void progMaximize(){
+
+    public void progMaximize() {
         btnResetProg.setLayoutX(920);
         trevPrimBtn1.setLayoutX(730);
         anchorPaneProg.setPadding(new Insets(0, 0, 35, 0));
     }
+
     public void ProgBtnUpper() {
         if (hBox.getChildren().contains(ProgSmallPane)) {
         } else {
@@ -1278,20 +1308,23 @@ public boolean start() throws IOException {
     }
 
     FileChooser fileChooserForProg = new FileChooser();
+
     @FXML
     void lookForProg(MouseEvent event) {
         File file = fileChooserForProg.showOpenDialog(new Stage());
     }
 
     //==================== Пользователи ================================================
-     public void polzMinimize(){
+    public void polzMinimize() {
         polzUtilAP.setLayoutX(0);
         polzUtilAP.setLayoutY(44);
     }
-    public void polzMaximize(){
+
+    public void polzMaximize() {
         polzUtilAP.setLayoutX(200);
         polzUtilAP.setLayoutY(144);
     }
+
     @FXML
     void addNewPolz(MouseEvent event) {
         if (!newPolz1.isVisible()) {
