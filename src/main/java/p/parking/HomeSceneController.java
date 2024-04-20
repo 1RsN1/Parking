@@ -1167,6 +1167,8 @@ public class HomeSceneController {
         anchorPaneZap.setVisible(false);
         anchorPaneJur.setVisible(false);
         anchorPaneProg.setVisible(false);
+        anchorPanePolz.setVisible(false);
+        anchorPaneTrev.setVisible(false);
         hboxDeleteLast(anchorPaneJurTrev);
     }
 
@@ -1417,6 +1419,7 @@ public class HomeSceneController {
         anchorPaneZap.setVisible(false);
         anchorPaneJurTrev.setVisible(false);
         anchorPaneTrev.setVisible(false);
+        anchorPaneProg.setVisible(false);
         hboxDeleteLast(anchorPanePolz);
     }
 
