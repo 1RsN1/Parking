@@ -106,10 +106,6 @@ public class HomeSceneController {
     @FXML
     Label NameOfEquipment, textIfWrongPolz;
     @FXML
-    TableView<?> tableViewForJurPC;
-    @FXML
-    TableView<?> tableViewForJurUstr;
-    @FXML
     TableColumn jurUPrim, jurPCPrim;
     @FXML
     Label
@@ -132,6 +128,78 @@ public class HomeSceneController {
     private TableColumn<Accident, String> jurTrevUst;
     @FXML
     private TableColumn<Accident, String> jurTrevRes;
+    /*==================================== Колонки таблицы устройств верхняя ==========================================*/
+    private ObservableList<DeviceUpTable> deviceUpData = FXCollections.observableArrayList();
+    @FXML
+    private TableView<DeviceUpTable> ustUpTableV;
+    @FXML
+    private TableColumn<DeviceUpTable, String> nameUp;
+    @FXML
+    private TableColumn<DeviceUpTable, String> cloudIDUp;
+    @FXML
+    private TableColumn<DeviceUpTable, String> portUp;
+    @FXML
+    private TableColumn<DeviceUpTable, String> protocol;
+    @FXML
+    private TableColumn<DeviceUpTable, String> groupUp;
+    /*==================================== Колонки таблицы устройств нижняя ==========================================*/
+    private ObservableList<DeviceDownTable> deviceDownData = FXCollections.observableArrayList();
+    @FXML
+    private TableView<DeviceDownTable> ustDownTableV;
+    @FXML
+    private TableColumn<DeviceDownTable, String> nameDown;
+    @FXML
+    private TableColumn<DeviceDownTable, String> cloudIDDown;
+    @FXML
+    private TableColumn<DeviceDownTable, String> portDown;
+    @FXML
+    private TableColumn<DeviceDownTable, String> version;
+    @FXML
+    private TableColumn<DeviceDownTable, String> groupDown;
+    @FXML
+    private TableColumn<DeviceDownTable, String> status;
+    @FXML
+    private TableColumn<DeviceDownTable, String> security;
+    @FXML
+    private TableColumn<DeviceDownTable, String> recording;
+    @FXML
+    private TableColumn<DeviceDownTable, String> connection;
+    @FXML
+    private TableColumn<DeviceDownTable, String> operation;
+    /*==================================== Колонки таблицы журнала PC ==========================================*/
+
+    /*==================================== Колонки таблицы журнала ustr==========================================*/
+
+    private ObservableList<TableJurPC> tableJursPC = FXCollections.observableArrayList();
+    private ObservableList<TableJurUstr> tableJursUstr = FXCollections.observableArrayList();
+    @FXML
+    private TableView<TableJurPC> tableViewForJurPC;
+    @FXML
+    private TableView<TableJurUstr> tableViewForJurUstr;
+    @FXML
+    private TableColumn<TableJurPC, Integer> numberColumnPC;
+    @FXML
+    private TableColumn<TableJurUstr, Integer> numberColumnUstr;
+    @FXML
+    private TableColumn<TableJurPC, String> timeColumnPC;
+    @FXML
+    private TableColumn<TableJurUstr, String> timeColumnUstr;
+    @FXML
+    private TableColumn<TableJurPC, String> polzColumnPC;
+    @FXML
+    private TableColumn<TableJurUstr, String> polzColumnUstr;
+    @FXML
+    private TableColumn<TableJurPC, String> typeColumnPC;
+    @FXML
+    private TableColumn<TableJurUstr, String> typeColumnUstr;
+    @FXML
+    private TableColumn<TableJurPC, String> ustrColumnPC;
+    @FXML
+    private TableColumn<TableJurPC, String> chanelColumnPC;
+    @FXML
+    private TableColumn<TableJurPC, String> noteColumnPC;
+    @FXML
+    private TableColumn<TableJurUstr, String> noteColumnUstr;
 
     /*=============================================================================================================*/
     boolean isAdmin;
@@ -140,7 +208,7 @@ public class HomeSceneController {
         FileInputStream inputStream = new FileInputStream("parol.txt");
         byte[] buffer = new byte[1024];
         int bytesRead = inputStream.read(buffer);
-        return isAdmin = new String(buffer, 0, bytesRead).equals("true");
+        return isAdmin = new String(buffer, 0, bytesRead).equals("true");//TODO попробовать убрать сравнение
     }
 
 
@@ -149,7 +217,6 @@ public class HomeSceneController {
 
     //TODO увеличить размер шрифта в таблицах  - jurTrevType.setStyle("-fx-font-size: 22px;"); / сделать их непередвигаемыми
     //TODO сделать таблицы для устройств devices / журнала log / журнала тревогог accidents
-
 
 
     public void initialize() throws IOException {
@@ -166,9 +233,47 @@ public class HomeSceneController {
         jurTrevUst.setCellValueFactory(new PropertyValueFactory<Accident, String>("ustr"));
         jurTrevRes.setCellValueFactory(new PropertyValueFactory<Accident, String>("result"));
         jurtrevTable.setItems(accidentsData);
-        //device
+        //deviceUp
+       initDeviceUp();
+        nameUp.setCellValueFactory(new PropertyValueFactory<DeviceUpTable, String>("name"));
+        cloudIDUp.setCellValueFactory(new PropertyValueFactory<DeviceUpTable, String>("cloudID"));
+       portUp.setCellValueFactory(new PropertyValueFactory<DeviceUpTable, String>("IPport"));
+        protocol.setCellValueFactory(new PropertyValueFactory<DeviceUpTable, String>("protocol"));
+        groupUp.setCellValueFactory(new PropertyValueFactory<DeviceUpTable, String>("group"));
+        ustUpTableV.setItems(deviceUpData);
+        //device down
+        initDeviceDown();
+        nameDown.setCellValueFactory(new PropertyValueFactory<DeviceDownTable, String>("name"));
+        cloudIDDown.setCellValueFactory(new PropertyValueFactory<DeviceDownTable, String>("cloudID"));
+        portDown.setCellValueFactory(new PropertyValueFactory<DeviceDownTable, String>("IPport"));
+        version.setCellValueFactory(new PropertyValueFactory<DeviceDownTable, String>("version"));
+        groupDown.setCellValueFactory(new PropertyValueFactory<DeviceDownTable, String>("group"));
+        status.setCellValueFactory(new PropertyValueFactory<DeviceDownTable, String>("status"));
+        security.setCellValueFactory(new PropertyValueFactory<DeviceDownTable, String>("security"));
+        recording.setCellValueFactory(new PropertyValueFactory<DeviceDownTable, String>("recording"));
+        connection.setCellValueFactory(new PropertyValueFactory<DeviceDownTable, String>("connection"));
+        operation.setCellValueFactory(new PropertyValueFactory<DeviceDownTable, String>("operation"));
+        ustDownTableV.setItems(deviceDownData);
 
         //Log
+        /*
+        initTableJurPC();
+       initTableJurUstr();
+        numberColumnPC.setCellValueFactory(new PropertyValueFactory<TableJur, Integer>("numberPC"));
+        numberColumnUstr.setCellValueFactory(new PropertyValueFactory<TableJur, Integer>("numberUstr"));
+        timeColumnPC.setCellValueFactory(new PropertyValueFactory<TableJur, String>("timePC"));
+        timeColumnUstr.setCellValueFactory(new PropertyValueFactory<TableJur, String>("timeUstr"));
+        polzColumnPC.setCellValueFactory(new PropertyValueFactory<TableJur, String>("polzPC"));
+        polzColumnUstr.setCellValueFactory(new PropertyValueFactory<TableJur, String>("polzUstr"));
+        typeColumnPC.setCellValueFactory(new PropertyValueFactory<TableJur, String>("typePC"));
+        typeColumnUstr.setCellValueFactory(new PropertyValueFactory<TableJur, String>("typeUstr"));
+        ustrColumnPC.setCellValueFactory(new PropertyValueFactory<TableJur, String>("ustr"));
+        chanelColumnPC.setCellValueFactory(new PropertyValueFactory<TableJur, String>("chanel"));
+        noteColumnPC.setCellValueFactory(new PropertyValueFactory<TableJur, String>("notePC"));
+        noteColumnUstr.setCellValueFactory(new PropertyValueFactory<TableJur, String>("noteUstr"));
+        tableViewForJurPC.setItems(tableJursPC);
+        tableViewForJurUstr.setItems(tableJursUstr);*/
+        //
 
         mxbtnView.setFitWidth(18);
         mxbtnView.setFitHeight(18);
@@ -1005,6 +1110,17 @@ public class HomeSceneController {
     }
 
     /*==================================== Журнал ==========================================*///TODO
+   /* private void initTableJurPC() {
+        tableJursPC.add(new TableJur(1, "12", "Admin", "Авария", "192.168.128.0", "3", "Решено"));
+        tableJursPC.add(new TableJur(2, "12", "Security", "Угон", "192.168.128.1", "1", "Не решено"));
+        tableJursPC.add(new TableJur(3, "12", "Security", "Авария", "192.168.128.2", "2", "Решено"));
+    }
+    private void initTableJurUstr() {
+        tableJursUstr.add(new TableJur(1, "12", "Security", "Авария","Решено"));
+        tableJursUstr.add(new TableJur(2, "12", "Security", "Авария","В процессе"));
+        tableJursUstr.add(new TableJur(3, "12", "Admin", "Авария","Решено"));
+    }*/
+    /*==============================================================================*///
     public void jurMinimize() {
         anchorPaneJur.setPadding(new Insets(0, 0, 0, 0));
         jurAn1.setLayoutX(595);
@@ -1115,7 +1231,7 @@ public class HomeSceneController {
             }
         };
         timer.schedule(accidentsRun, 0, 10000); // период
-        timer.schedule(accidentsStop,  20000, 1); // время конца
+        timer.schedule(accidentsStop, 20000, 1); // время конца
 
     }
 
@@ -1189,7 +1305,49 @@ public class HomeSceneController {
     }
 
     /************************************** Остальное ******************************************************************/
-    //==================== Устройства================================================ TODO
+    //==================== Устройства================================================
+    //==================== DeviceUp================================================
+    List<String> nameList = List.of("Камера 1", "Камера 2 ", "Камера 3");
+    List<String> cloudIDList = List.of("1", "2", "3");
+    List<String> iPPortList = List.of("127.00.01.01", "127.00.01.02", "127.00.01.03");
+    List<String> protocolList = List.of("TCP/IP");
+    List<String> groupList = List.of("Камеры парковки");
+
+
+    private void initDeviceUp() {
+        deviceUpData.add(new DeviceUpTable(nameList.get(0), cloudIDList.get(0), iPPortList.get(0),
+                protocolList.get(0), groupList.get(0)));
+       /* deviceUpData.add(new DeviceUpTable(nameList.get(2), cloudIDList.get(2), iPPortList.get(2),
+                protocolList.get(1), groupList.get(1)));
+        deviceUpData.add(new DeviceUpTable(nameList.get(3), cloudIDList.get(3), iPPortList.get(3),
+                protocolList.get(1), groupList.get(1)));*/
+    }
+
+    //==================== DeviceDown================================================
+    List<String> versionList = List.of("1.0");
+    List<String> deviceStatusList = List.of("Все", "Трев. вход", "Движение", "Постоянно", "Ручная", "I-кадр видео", "Видео анализ");
+    List<String> securityList = List.of("Все", "Трев. вход", "Движение", "Постоянно", "Ручная", "I-кадр видео", "Видео анализ");
+    List<String> recordingList = List.of("Запись идёт", "Нет записи");
+    List<String> connectionList = List.of("Подключено", "Нет подлкючения");
+    List<String> operationList = List.of("Все", "Трев. вход", "Движение", "Постоянно", "Ручная", "I-кадр видео", "Видео анализ");
+
+    private void initDeviceDown() {
+        //
+        deviceDownData.add(new DeviceDownTable(nameList.get(0), cloudIDList.get(0), "124.00.01.01", versionList.get(0),
+                groupList.get(0), deviceStatusList.get(0), securityList.get(0), recordingList.get(0),
+                connectionList.get(0), operationList.get(0)));
+        /*
+        deviceDownData.add(new DeviceDownTable(nameList.get(1), cloudIDList.get(1), iPPortList.get(1), versionList.get(1),
+                groupList.get(1), deviceStatusList.get(1), securityList.get(1), recordingList.get(1),
+                connectionList.get(1), operationList.get(1)));
+
+        deviceDownData.add(new DeviceDownTable(nameList.get(1), cloudIDList.get(1), iPPortList.get(1), versionList.get(1),
+                groupList.get(1), deviceStatusList.get(1), securityList.get(1), recordingList.get(1),
+                connectionList.get(1), operationList.get(1)));*/
+
+    }
+    //==========================================================================================
+
     public void ustMinimize() {
         anchorPaneUst.setPadding(new Insets(0, 0, 0, 0));
         ustAnch1.setPrefHeight(405);
