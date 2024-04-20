@@ -8,7 +8,7 @@ public class TableJurUstr {
     private String polzUstr;
 
     private String typeUstr;
-    private String ustr;
+
 
 
     private String noteUstr;
@@ -65,13 +65,7 @@ public class TableJurUstr {
         this.typeUstr = typeUstr;
     }
 
-    public String getUstr() {
-        return ustr;
-    }
 
-    public void setUstr(String ustr) {
-        this.ustr = ustr;
-    }
 
 
     public String getNoteUstr() {

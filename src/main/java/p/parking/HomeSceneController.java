@@ -166,12 +166,12 @@ public class HomeSceneController {
     private TableColumn<DeviceDownTable, String> connection;
     @FXML
     private TableColumn<DeviceDownTable, String> operation;
-    /*==================================== Колонки таблицы журнала PC ==========================================*/
 
-    /*==================================== Колонки таблицы журнала ustr==========================================*/
 
-    private ObservableList<TableJurPC> tableJursPC = FXCollections.observableArrayList();
-    private ObservableList<TableJurUstr> tableJursUstr = FXCollections.observableArrayList();
+    /*==================================== Колонки таблицы журнала==========================================*/
+
+    private ObservableList<TableJurPC> tableJurPCData = FXCollections.observableArrayList();
+    private ObservableList<TableJurUstr> tableJursUstrData = FXCollections.observableArrayList();
     @FXML
     private TableView<TableJurPC> tableViewForJurPC;
     @FXML
@@ -224,6 +224,7 @@ public class HomeSceneController {
         if (!isAdmin) {
             securityLoad();
         }
+
         //accidents
         TimerInitAccidents();
         jurTrevNum.setCellValueFactory(new PropertyValueFactory<Accident, Integer>("num"));
@@ -234,10 +235,10 @@ public class HomeSceneController {
         jurTrevRes.setCellValueFactory(new PropertyValueFactory<Accident, String>("result"));
         jurtrevTable.setItems(accidentsData);
         //deviceUp
-       initDeviceUp();
+        initDeviceUp();
         nameUp.setCellValueFactory(new PropertyValueFactory<DeviceUpTable, String>("name"));
         cloudIDUp.setCellValueFactory(new PropertyValueFactory<DeviceUpTable, String>("cloudID"));
-       portUp.setCellValueFactory(new PropertyValueFactory<DeviceUpTable, String>("IPport"));
+        portUp.setCellValueFactory(new PropertyValueFactory<DeviceUpTable, String>("IPport"));
         protocol.setCellValueFactory(new PropertyValueFactory<DeviceUpTable, String>("protocol"));
         groupUp.setCellValueFactory(new PropertyValueFactory<DeviceUpTable, String>("group"));
         ustUpTableV.setItems(deviceUpData);
@@ -254,27 +255,24 @@ public class HomeSceneController {
         connection.setCellValueFactory(new PropertyValueFactory<DeviceDownTable, String>("connection"));
         operation.setCellValueFactory(new PropertyValueFactory<DeviceDownTable, String>("operation"));
         ustDownTableV.setItems(deviceDownData);
-
         //Log
-        /*
         initTableJurPC();
-       initTableJurUstr();
-        numberColumnPC.setCellValueFactory(new PropertyValueFactory<TableJur, Integer>("numberPC"));
-        numberColumnUstr.setCellValueFactory(new PropertyValueFactory<TableJur, Integer>("numberUstr"));
-        timeColumnPC.setCellValueFactory(new PropertyValueFactory<TableJur, String>("timePC"));
-        timeColumnUstr.setCellValueFactory(new PropertyValueFactory<TableJur, String>("timeUstr"));
-        polzColumnPC.setCellValueFactory(new PropertyValueFactory<TableJur, String>("polzPC"));
-        polzColumnUstr.setCellValueFactory(new PropertyValueFactory<TableJur, String>("polzUstr"));
-        typeColumnPC.setCellValueFactory(new PropertyValueFactory<TableJur, String>("typePC"));
-        typeColumnUstr.setCellValueFactory(new PropertyValueFactory<TableJur, String>("typeUstr"));
-        ustrColumnPC.setCellValueFactory(new PropertyValueFactory<TableJur, String>("ustr"));
-        chanelColumnPC.setCellValueFactory(new PropertyValueFactory<TableJur, String>("chanel"));
-        noteColumnPC.setCellValueFactory(new PropertyValueFactory<TableJur, String>("notePC"));
-        noteColumnUstr.setCellValueFactory(new PropertyValueFactory<TableJur, String>("noteUstr"));
-        tableViewForJurPC.setItems(tableJursPC);
-        tableViewForJurUstr.setItems(tableJursUstr);*/
+        initTableJurUstr();
+        numberColumnPC.setCellValueFactory(new PropertyValueFactory<TableJurPC, Integer>("numberPC"));
+        numberColumnUstr.setCellValueFactory(new PropertyValueFactory<TableJurUstr, Integer>("numberUstr"));
+        timeColumnPC.setCellValueFactory(new PropertyValueFactory<TableJurPC, String>("timePC"));
+        timeColumnUstr.setCellValueFactory(new PropertyValueFactory<TableJurUstr, String>("timeUstr"));
+        polzColumnPC.setCellValueFactory(new PropertyValueFactory<TableJurPC, String>("polzPC"));
+        polzColumnUstr.setCellValueFactory(new PropertyValueFactory<TableJurUstr, String>("polzUstr"));
+        typeColumnPC.setCellValueFactory(new PropertyValueFactory<TableJurPC, String>("typePC"));
+        typeColumnUstr.setCellValueFactory(new PropertyValueFactory<TableJurUstr, String>("typeUstr"));
+        ustrColumnPC.setCellValueFactory(new PropertyValueFactory<TableJurPC, String>("ustr"));
+        chanelColumnPC.setCellValueFactory(new PropertyValueFactory<TableJurPC, String>("chanel"));
+        noteColumnPC.setCellValueFactory(new PropertyValueFactory<TableJurPC, String>("notePC"));
+        noteColumnUstr.setCellValueFactory(new PropertyValueFactory<TableJurUstr, String>("noteUstr"));
+        tableViewForJurPC.setItems(tableJurPCData);
+        tableViewForJurUstr.setItems(tableJursUstrData);
         //
-
         mxbtnView.setFitWidth(18);
         mxbtnView.setFitHeight(18);
         maxBtn.setGraphic(mxbtnView);
@@ -1110,16 +1108,20 @@ public class HomeSceneController {
     }
 
     /*==================================== Журнал ==========================================*///TODO
-   /* private void initTableJurPC() {
-        tableJursPC.add(new TableJur(1, "12", "Admin", "Авария", "192.168.128.0", "3", "Решено"));
-        tableJursPC.add(new TableJur(2, "12", "Security", "Угон", "192.168.128.1", "1", "Не решено"));
-        tableJursPC.add(new TableJur(3, "12", "Security", "Авария", "192.168.128.2", "2", "Решено"));
+    private void initTableJurPC() {
+        tableJurPCData.add(new TableJurPC(1, "12", "Admin", "Авария", "192.168.128.0", "3", "Решено"));
+        tableJurPCData.add(new TableJurPC(2, "12", "Security", "Угон", "192.168.128.1", "1", "Не решено"));
+        tableJurPCData.add(new TableJurPC(3, "12", "Security", "Авария", "192.168.128.2", "2", "Решено"));
+        System.out.println("tableJUrInit");
+
     }
+
     private void initTableJurUstr() {
-        tableJursUstr.add(new TableJur(1, "12", "Security", "Авария","Решено"));
-        tableJursUstr.add(new TableJur(2, "12", "Security", "Авария","В процессе"));
-        tableJursUstr.add(new TableJur(3, "12", "Admin", "Авария","Решено"));
-    }*/
+        tableJursUstrData.add(new TableJurUstr(1, "12", "Security", "Авария", "Решено"));
+        tableJursUstrData.add(new TableJurUstr(2, "12", "Security", "Авария", "В процессе"));
+        tableJursUstrData.add(new TableJurUstr(3, "12", "Admin", "Авария", "Решено"));
+    }
+
     /*==============================================================================*///
     public void jurMinimize() {
         anchorPaneJur.setPadding(new Insets(0, 0, 0, 0));
