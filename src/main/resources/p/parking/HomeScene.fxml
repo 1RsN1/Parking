@@ -79,7 +79,7 @@
             </AnchorPane>
             <Pane fx:id="basePane" prefHeight="200.0" prefWidth="1000.0">
                <children>
-                  <Button layoutX="330.0" layoutY="66.0" mnemonicParsing="false" onAction="#zap" prefHeight="90.0" prefWidth="90.0">
+                  <Button fx:id="zapBtn" layoutX="330.0" layoutY="66.0" mnemonicParsing="false" onAction="#zap" prefHeight="90.0" prefWidth="90.0">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -88,7 +88,7 @@
                         <String fx:value="buttomHover" />
                      </styleClass>
                   </Button>
-                  <Button layoutX="190.0" layoutY="66.0" mnemonicParsing="false" onAction="#arh" prefHeight="90.0" prefWidth="90.0">
+                  <Button fx:id="arhBtn" layoutX="190.0" layoutY="66.0" mnemonicParsing="false" onAction="#arh" prefHeight="90.0" prefWidth="90.0">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -97,7 +97,7 @@
                         <String fx:value="buttomHover" />
                      </styleClass>
                   </Button>
-                  <Button layoutX="50.0" layoutY="66.0" mnemonicParsing="false" onAction="#prosmotr" prefHeight="90.0" prefWidth="90.0">
+                  <Button fx:id="prosmotrBtn" layoutX="50.0" layoutY="66.0" mnemonicParsing="false" onAction="#prosmotr" prefHeight="90.0" prefWidth="90.0">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -106,7 +106,7 @@
                         <String fx:value="buttomHover" />
                      </styleClass>
                   </Button>
-                  <Label alignment="TOP_CENTER" layoutX="50.0" layoutY="166.0" prefWidth="90.0" styleClass="inputsubtitle" text="Просмотр" textAlignment="CENTER">
+                  <Label fx:id="prosmotrLabel" alignment="TOP_CENTER" layoutX="50.0" layoutY="166.0" prefWidth="90.0" styleClass="inputsubtitle" text="Просмотр" textAlignment="CENTER">
                      <font>
                         <Font name="Calibri Bold" size="18.0" />
                      </font>
@@ -118,7 +118,7 @@
                         </DropShadow>
                      </effect>
                   </Label>
-                  <Label alignment="TOP_CENTER" layoutX="190.0" layoutY="166.0" prefWidth="90.0" styleClass="inputsubtitle" text="Архив" textAlignment="CENTER">
+                  <Label fx:id="arhLabel" alignment="TOP_CENTER" layoutX="190.0" layoutY="166.0" prefWidth="90.0" styleClass="inputsubtitle" text="Архив" textAlignment="CENTER">
                      <font>
                         <Font name="Calibri Bold" size="18.0" />
                      </font>
@@ -166,7 +166,7 @@
             </AnchorPane>
             <Pane fx:id="basePane1" prefHeight="200.0" prefWidth="1000.0">
                <children>
-                  <Button layoutX="50.0" layoutY="66.0" mnemonicParsing="false" onAction="#trev" prefHeight="90.0" prefWidth="90.0">
+                  <Button fx:id="trevBtn" layoutX="50.0" layoutY="66.0" mnemonicParsing="false" onAction="#trev" prefHeight="90.0" prefWidth="90.0">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -175,7 +175,7 @@
                         <String fx:value="buttomHover" />
                      </styleClass>
                   </Button>
-                  <Label alignment="TOP_CENTER" layoutX="26.0" layoutY="166.0" prefWidth="138.0" styleClass="inputsubtitle" text="Настройка тревог" textAlignment="CENTER">
+                  <Label fx:id="trevLabel" alignment="TOP_CENTER" layoutX="26.0" layoutY="166.0" prefWidth="138.0" styleClass="inputsubtitle" text="Настройка тревог" textAlignment="CENTER">
                      <font>
                         <Font name="Calibri Bold" size="18.0" />
                      </font>
@@ -187,7 +187,7 @@
                         </DropShadow>
                      </effect>
                   </Label>
-                  <Button layoutX="330.0" layoutY="66.0" mnemonicParsing="false" onAction="#jurTrev" prefHeight="90.0" prefWidth="90.0">
+                  <Button fx:id="jurTrevBtn" layoutX="330.0" layoutY="66.0" mnemonicParsing="false" onAction="#jurTrev" prefHeight="90.0" prefWidth="90.0">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -196,7 +196,7 @@
                         <String fx:value="buttomHover" />
                      </styleClass>
                   </Button>
-                  <Button layoutX="190.0" layoutY="66.0" mnemonicParsing="false" onAction="#jur" prefHeight="90.0" prefWidth="90.0">
+                  <Button fx:id="jurBtn" layoutX="190.0" layoutY="66.0" mnemonicParsing="false" onAction="#jur" prefHeight="90.0" prefWidth="90.0">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -205,7 +205,7 @@
                         <String fx:value="buttomHover" />
                      </styleClass>
                   </Button>
-                  <Label alignment="TOP_CENTER" layoutX="190.0" layoutY="166.0" prefWidth="90.0" styleClass="inputsubtitle" text="Журнал" textAlignment="CENTER">
+                  <Label fx:id="jurLabel" alignment="TOP_CENTER" layoutX="190.0" layoutY="166.0" prefWidth="90.0" styleClass="inputsubtitle" text="Журнал" textAlignment="CENTER">
                      <font>
                         <Font name="Calibri Bold" size="18.0" />
                      </font>
@@ -217,7 +217,7 @@
                         </DropShadow>
                      </effect>
                   </Label>
-                  <Label alignment="TOP_CENTER" layoutX="318.0" layoutY="166.0" styleClass="inputsubtitle" text="Журнал тревог" textAlignment="CENTER">
+                  <Label fx:id="jurTrevLabel" alignment="TOP_CENTER" layoutX="318.0" layoutY="166.0" styleClass="inputsubtitle" text="Журнал тревог" textAlignment="CENTER">
                      <font>
                         <Font name="Calibri Bold" size="18.0" />
                      </font>
@@ -253,7 +253,7 @@
             </AnchorPane>
             <Pane fx:id="basePane11" prefHeight="200.0" prefWidth="1000.0">
                <children>
-                  <Button layoutX="190.0" layoutY="66.0" mnemonicParsing="false" onAction="#prog" prefHeight="90.0" prefWidth="90.0">
+                  <Button fx:id="progBtn" layoutX="190.0" layoutY="66.0" mnemonicParsing="false" onAction="#prog" prefHeight="90.0" prefWidth="90.0">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -262,7 +262,7 @@
                         <String fx:value="buttomHover" />
                      </styleClass>
                   </Button>
-                  <Label alignment="TOP_CENTER" layoutX="190.0" layoutY="166.0" styleClass="inputsubtitle" text="Программа" textAlignment="CENTER">
+                  <Label fx:id="progLabel" alignment="TOP_CENTER" layoutX="190.0" layoutY="166.0" styleClass="inputsubtitle" text="Программа" textAlignment="CENTER">
                      <font>
                         <Font name="Calibri Bold" size="18.0" />
                      </font>
@@ -274,7 +274,7 @@
                         </DropShadow>
                      </effect>
                   </Label>
-                  <Button layoutX="50.0" layoutY="66.0" mnemonicParsing="false" onAction="#ust" prefHeight="90.0" prefWidth="90.0">
+                  <Button fx:id="ustBtn" layoutX="50.0" layoutY="66.0" mnemonicParsing="false" onAction="#ust" prefHeight="90.0" prefWidth="90.0">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -283,7 +283,7 @@
                         <String fx:value="buttomHover" />
                      </styleClass>
                   </Button>
-                  <Label layoutX="50.0" layoutY="166.0" prefWidth="90.0" styleClass="inputsubtitle" text="Устройства">
+                  <Label fx:id="ustLabel" layoutX="50.0" layoutY="166.0" prefWidth="90.0" styleClass="inputsubtitle" text="Устройства">
                      <font>
                         <Font name="Calibri Bold" size="18.0" />
                      </font>
@@ -295,7 +295,7 @@
                         </DropShadow>
                      </effect>
                   </Label>
-                  <Button layoutX="330.0" layoutY="66.0" mnemonicParsing="false" onAction="#polz" prefHeight="90.0" prefWidth="90.0">
+                  <Button fx:id="polzBtn" layoutX="330.0" layoutY="66.0" mnemonicParsing="false" onAction="#polz" prefHeight="90.0" prefWidth="90.0">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -304,7 +304,7 @@
                         <String fx:value="buttomHover" />
                      </styleClass>
                   </Button>
-                  <Label alignment="TOP_CENTER" layoutX="320.0" layoutY="166.0" styleClass="inputsubtitle" text="Пользователи" textAlignment="CENTER">
+                  <Label fx:id="polzLabel" alignment="TOP_CENTER" layoutX="320.0" layoutY="166.0" styleClass="inputsubtitle" text="Пользователи" textAlignment="CENTER">
                      <font>
                         <Font name="Calibri Bold" size="18.0" />
                      </font>
@@ -1079,7 +1079,7 @@
             </Pane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="anchorPaneJur" layoutY="75.0" prefHeight="825.0" prefWidth="1440.0" styleClass="home" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
+      <AnchorPane fx:id="anchorPaneJur" layoutY="75.0" prefHeight="825.0" prefWidth="1440.0" styleClass="home" visible="false" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
          <children>
             <ToggleButton fx:id="toggleForJurUstr" layoutX="100.0" layoutY="25.0" mnemonicParsing="false" onAction="#toggleForJurUstrAction" prefHeight="32.0" prefWidth="100.0" style="-fx-background-insets: 0;" styleClass="btnForArhRight" text="Устройство" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="25.0">
                <font>

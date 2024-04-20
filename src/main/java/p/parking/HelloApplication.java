@@ -14,7 +14,6 @@ import java.io.IOException;
 import java.util.Objects;
 
 public class HelloApplication extends Application {
-    boolean admin = true;
     Image imgIconier = new Image(Objects.requireNonNull(getClass().getResourceAsStream("icon/VSTU-logo - Copy.png")));
 
     private static Stage stg;
@@ -66,10 +65,7 @@ public class HelloApplication extends Application {
 
     }
 
-    public boolean setAdmin(boolean admin) {
-        this.admin = admin;
-        return admin;
-    }
+
 
     public static void main(String[] args) {
         launch();

@@ -224,7 +224,6 @@ public class HomeSceneController {
         if (!isAdmin) {
             securityLoad();
         }
-
         //accidents
         TimerInitAccidents();
         jurTrevNum.setCellValueFactory(new PropertyValueFactory<Accident, Integer>("num"));
@@ -441,13 +440,13 @@ public class HomeSceneController {
     }
 
     public void securityLoad() {//arhBtn, turBtn, progBtn, polzBtn,jurBtn,zapBtn, jurTrevBtn
-        homePanel.setPrefHeight(900);
+       /* homePanel.setPrefHeight(900);
         arhBtn.setVisible(false);
         turBtn.setVisible(false);
         progBtn.setVisible(false);
         polzBtn.setVisible(false);
         arhLabel.setVisible(false);
-        turLabel.setVisible(false);
+       turLabel.setVisible(false);
         progLabel.setVisible(false);
         polzLabel.setVisible(false);
         basePane.getChildren().add(jurBtn);
@@ -463,7 +462,7 @@ public class HomeSceneController {
         jurTrevBtn.setLayoutX(205);
         jurTrevBtn.setLayoutY(66);
         jurTrevLabel.setLayoutX(190);
-        jurTrevLabel.setLayoutY(166);
+        jurTrevLabel.setLayoutY(166);*/
     }
 
     /************************************** Основное ******************************************************************
