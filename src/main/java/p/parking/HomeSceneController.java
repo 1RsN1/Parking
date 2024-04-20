@@ -1,6 +1,8 @@
 package p.parking;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
@@ -15,6 +17,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
@@ -40,13 +43,14 @@ public class HomeSceneController {
     @FXML
     Stage stage;
 
+
     @FXML
     ImageView imgV1, imgV41, imgV42, imgV43, imgV44, imgV71, imgV72, imgV73, imgV74, imgV75, imgV76,
             imgV77, imgV91, imgV92, imgV93, imgV94, imgV95, imgV96, imgV97, imgV98, imgV99, ivProsmotr0, imArh1, imArh2, imArh3, imArh4;
     @FXML
     AnchorPane anchorPaneProsmotr, anchorPaneUst, anchorPaneArh, anchorPaneZap, anchorPaneJur, anchorPaneJurTrev, anchorPaneTrev,
             anchorPaneTur, anchorPaneProg, anchorPanePolz, homePanel, baseAnchorPane, othersAnchorPane, settingAP, camBtnPane, camRightPane,
-            rightPaneForArh, trevogaPane, jurTrevBtnSchalgPane, newPolz1, newPolz2;
+            rightPaneForArh, trevogaPane, jurTrevBtnSchalgPane, newPolz1, newPolz2,baseAnchorPane112,baseAnchorPane111, polzUtilAP;
     @FXML
     Pane basePane, basePane1, basePane11, zapBtnPane;
     @FXML
@@ -57,7 +61,7 @@ public class HomeSceneController {
     Button prosmotrClose, UstClose, ArhClose, ZapClose, JurClose, JurTrevClose, TrevClose, TurClose,
             PolzClose, ProgClose, buttonForArhDownload, buttonForSevenCam, buttonForFourCam, buttonForNineCam, buttonForOneCam, maxBtn,
             prosmotrBtnUp, UstBtnUp, ArhBtnUp, ZapBtnUp, JurBtnUp, JurTrevBtnUp,TrevBtnUp, TurBtnUp, PolzBtnUp, ProgBtnUp, btnSplitArh,
-            trevPrimBtn, btnNewPolz, lookBtnForProg1, lookBtnForProg2, lookBtnForProg3;
+            trevPrimBtn, btnNewPolz, lookBtnForProg1, lookBtnForProg2, lookBtnForProg3, btnResetProg,  trevPrimBtn1;
     @FXML
     TextField chooseMusicTrev1, chooseMusicTrev2, chooseMusicTrev3, chooseMusicTrev4, chooseMusicTrev5, chooseMusicTrev6,
             chooseMusicTrev7, chooseMusicTrev8, chooseMusicTrev9, chooseMusicTrev10, adminPodtvField, secLogField,
@@ -110,6 +114,11 @@ public class HomeSceneController {
     TableView<?> tableViewForJurUstr;
     @FXML
     TableColumn jurUPrim, jurPCPrim;
+    @FXML
+    Label
+            arhLabel, turLabel, progLabel, polzLabel,jurLabel,zapLabel, jurTrevLabel;
+    @FXML
+    Button arhBtn, turBtn, progBtn, polzBtn,jurBtn,zapBtn, jurTrevBtn;
     /*==================================== Колонки таблицы журнала тревог ==========================================*/
     private ObservableList<Accident> accidentsData = FXCollections.observableArrayList();
     @FXML
@@ -128,6 +137,14 @@ public class HomeSceneController {
     private TableColumn<Accident, String> jurTrevRes;
 
     /*=============================================================================================================*/
+boolean isAdmin;
+public boolean start() throws IOException {
+    FileInputStream inputStream = new FileInputStream("parol.txt");
+    byte[] buffer = new byte[1024];
+    int bytesRead = inputStream.read(buffer);
+    return isAdmin = new String(buffer, 0, bytesRead).equals("true");
+}
+
 
 // TODO *баг на архиве после максимизирования и обратного минимизирования невозможно заново максимизировать - не работает
 //  из-за изменения размера окон просмотра изображений в архиве - требуется дороботка баг*
@@ -136,7 +153,11 @@ public class HomeSceneController {
     //TODO сделать таблицы для устройств devices / журнала log / журнала тревогог accidents
     //TODO максимизировать окна
 
-    public void initialize() {
+    public void initialize() throws IOException {
+        start();
+        if (!isAdmin) {
+            securityLoad();
+        }
         initAccidents();
         jurTrevNum.setCellValueFactory(new PropertyValueFactory<Accident, Integer>("num"));
         jurTrevStat.setCellValueFactory(new PropertyValueFactory<Accident, String>("status"));
@@ -149,12 +170,12 @@ public class HomeSceneController {
         mxbtnView.setFitWidth(18);
         mxbtnView.setFitHeight(18);
         maxBtn.setGraphic(mxbtnView);
-        ivProsmotr0.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("icon/VSTU-logo.png")));
+        ivProsmotr0.setImage(new Image(getClass().getResourceAsStream("icon/VSTU-logo.png")));
 
         choiceBoxForChooseFiles.getItems().addAll("Файл", "Время", "Лицо");
         choiceBoxForType.getItems().addAll("Все", "Трев. вход", "Движение", "Постоянно", "Ручная", "I-кадр видео", "Видео анализ");
 
-        imgV1.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
+        imgV1.setImage(new Image(getClass().getResourceAsStream("photo/pop3.jpg")));
 //        imArh1.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
 //        imArh2.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
 //        imArh3.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
@@ -217,17 +238,23 @@ public class HomeSceneController {
             prosmotrMaximize();
             arhMaximize();
             zapMaximize();
+            trevMaximize();
             jurMaximize();
             JurTrevMaximize();
             ustMaximize();
+            progMaximize();
+            polzMaximize();
         } else {
             glavnayaMinimize();
             prosmotrMinimize();
             arhMinimize();
             zapMinimize();
+            trevMinimize();
             jurMinimize();
             JurTrevMinimize();
             ustMinimize();
+            progMinimize();
+            polzMinimize();
             hboxDeleteWhenMinimize();
         }
     }
@@ -306,6 +333,31 @@ public class HomeSceneController {
         basePane1.setLayoutY(23);
         othersAnchorPane.setLayoutY(725);
         othersAnchorPane.setPrefHeight(300);
+    }
+    public void securityLoad() {//arhBtn, turBtn, progBtn, polzBtn,jurBtn,zapBtn, jurTrevBtn
+        homePanel.setPrefHeight(900);
+        arhBtn.setVisible(false);
+        turBtn.setVisible(false);
+        progBtn.setVisible(false);
+        polzBtn.setVisible(false);
+        arhLabel.setVisible(false);
+        turLabel.setVisible(false);
+        progLabel.setVisible(false);
+        polzLabel.setVisible(false);
+        basePane.getChildren().add(jurBtn);
+        basePane.getChildren().add(jurLabel);
+        jurBtn.setLayoutX(190);
+        jurBtn.setLayoutY(66);
+        jurLabel.setLayoutX(190);
+        jurLabel.setLayoutY(166);
+        zapBtn.setLayoutX(345);
+        zapBtn.setLayoutY(66);
+        zapLabel.setLayoutX(330);
+        zapLabel.setLayoutY(166);
+        jurTrevBtn.setLayoutX(205);
+        jurTrevBtn.setLayoutY(66);
+        jurTrevLabel.setLayoutX(190);
+        jurTrevLabel.setLayoutY(166);
     }
 
     /************************************** Основное ******************************************************************
@@ -772,12 +824,14 @@ public class HomeSceneController {
     }
 
     //==================== ================================================
-     /*public void prosmotrMinimize(){
-
+     public void trevMinimize(){
+         anchorPaneTrev.setPadding(new Insets(0, 0, 0, 0));
+         trevPrimBtn.setLayoutX(625);
     }
-    public void prosmotrMaximize(){
-
-    }*/
+    public void trevMaximize(){
+        anchorPaneTrev.setPadding(new Insets(0, 0, 35, 0));
+        trevPrimBtn.setLayoutX(825);
+    }
     public void TrevBtnUpper() {
         if (hBox.getChildren().contains(TrevSmallPane)) {
         } else {
@@ -1097,11 +1151,11 @@ public class HomeSceneController {
     }
 
     public void schlagOff(ActionEvent event) {
-        imgV1.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/schlagOff.jpg")));
+        imgV1.setImage(new Image(getClass().getResourceAsStream("photo/schlagOff.jpg")));
     }
 
     public void schlagOn(ActionEvent event) {
-        imgV1.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/schlagOn.jpg")));
+        imgV1.setImage(new Image(getClass().getResourceAsStream("photo/schlagOn.jpg")));
     }
 
     /************************************** Остальное ******************************************************************/
@@ -1156,12 +1210,17 @@ public class HomeSceneController {
     }
 
     //==================== Программа ================================================
-     /*public void prosmotrMinimize(){
+     public void progMinimize(){
+         btnResetProg.setLayoutX(720);
+         trevPrimBtn1.setLayoutX(530);
+         anchorPaneProg.setPadding(new Insets(0, 0, 0, 0));
 
     }
-    public void prosmotrMaximize(){
-
-    }*/
+    public void progMaximize(){
+        btnResetProg.setLayoutX(920);
+        trevPrimBtn1.setLayoutX(730);
+        anchorPaneProg.setPadding(new Insets(0, 0, 35, 0));
+    }
     public void ProgBtnUpper() {
         if (hBox.getChildren().contains(ProgSmallPane)) {
         } else {
@@ -1225,12 +1284,14 @@ public class HomeSceneController {
     }
 
     //==================== Пользователи ================================================
-     /*public void prosmotrMinimize(){
-
+     public void polzMinimize(){
+        polzUtilAP.setLayoutX(0);
+        polzUtilAP.setLayoutY(44);
     }
-    public void prosmotrMaximize(){
-
-    }*/
+    public void polzMaximize(){
+        polzUtilAP.setLayoutX(200);
+        polzUtilAP.setLayoutY(144);
+    }
     @FXML
     void addNewPolz(MouseEvent event) {
         if (!newPolz1.isVisible()) {

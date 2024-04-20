@@ -13,6 +13,8 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Objects;
 
@@ -39,12 +41,18 @@ public class AuthorizationController {
     private Label wrongLogIn;
     @FXML
     void userLogIn() throws IOException {
+        File myFile = new File("parol.txt");
+        myFile.createNewFile();
         checkLogin();
     }
 
     private void checkLogin() throws IOException {
         HelloApplication hl = new HelloApplication();
         if(userName.getText().equals("admin") && passwordField.getText().equals("admin")) {
+            FileOutputStream outputStream = new FileOutputStream("parol.txt");
+            byte[] buffer = "true".getBytes();
+            outputStream.write(buffer);
+            outputStream.close();
             hl.changeSceneForAdmin();
         } else if(userName.getText().isEmpty() && passwordField.getText().isEmpty()) {
             wrongLogIn.setText("Введите ваши данные");
@@ -52,7 +60,12 @@ public class AuthorizationController {
             wrongLogIn.setText("Неправильное имя или пароль");
         }
         if(userName.getText().equals("security") && passwordField.getText().equals("security")) {
+            FileOutputStream outputStream = new FileOutputStream("parol.txt");
+            byte[] buffer = "false".getBytes();
+            outputStream.write(buffer);
+            outputStream.close();
             hl.changeSceneForSecurity();
+
         } else if(userName.getText().isEmpty() && passwordField.getText().isEmpty()) {
             wrongLogIn.setText("Введите ваши данные");
         } else {
