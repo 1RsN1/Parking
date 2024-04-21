@@ -104,14 +104,14 @@ public class HomeSceneController {
     RadioButton radioForArhDop, radioForArhMain, radioForArhPhoto, radioForArhVideo;
 
     @FXML
-    Label NameOfEquipment, textIfWrongPolz;
+    Label NameOfEquipment, textIfWrongPolz,trevLabel;
     @FXML
     TableColumn jurUPrim, jurPCPrim;
     @FXML
     Label
             arhLabel, turLabel, progLabel, polzLabel, jurLabel, zapLabel, jurTrevLabel;
     @FXML
-    Button arhBtn, turBtn, progBtn, polzBtn, jurBtn, zapBtn, jurTrevBtn;
+    Button arhBtn,  progBtn, polzBtn, jurBtn, zapBtn, jurTrevBtn,trevBtn;
     /*==================================== Колонки таблицы журнала тревог ==========================================*/
     private ObservableList<Accident> accidentsData = FXCollections.observableArrayList();
     @FXML
@@ -439,30 +439,17 @@ public class HomeSceneController {
         othersAnchorPane.setPrefHeight(300);
     }
 
-    public void securityLoad() {//arhBtn, turBtn, progBtn, polzBtn,jurBtn,zapBtn, jurTrevBtn
-       /* homePanel.setPrefHeight(900);
-        arhBtn.setVisible(false);
-        turBtn.setVisible(false);
-        progBtn.setVisible(false);
-        polzBtn.setVisible(false);
-        arhLabel.setVisible(false);
-       turLabel.setVisible(false);
-        progLabel.setVisible(false);
-        polzLabel.setVisible(false);
-        basePane.getChildren().add(jurBtn);
-        basePane.getChildren().add(jurLabel);
-        jurBtn.setLayoutX(190);
-        jurBtn.setLayoutY(66);
-        jurLabel.setLayoutX(190);
-        jurLabel.setLayoutY(166);
-        zapBtn.setLayoutX(345);
-        zapBtn.setLayoutY(66);
-        zapLabel.setLayoutX(330);
-        zapLabel.setLayoutY(166);
-        jurTrevBtn.setLayoutX(205);
-        jurTrevBtn.setLayoutY(66);
-        jurTrevLabel.setLayoutX(190);
-        jurTrevLabel.setLayoutY(166);*/
+    public void securityLoad() {
+       polzBtn.setVisible(false);
+       progBtn.setVisible(false);
+       polzLabel.setVisible(false);
+       progLabel.setVisible(false);
+       trevBtn.setVisible(false);
+       trevLabel.setVisible(false);
+       jurBtn.setLayoutX(50);
+       jurLabel.setLayoutX(50);
+       jurTrevBtn.setLayoutX(190);
+       jurTrevLabel.setLayoutX(180);
     }
 
     /************************************** Основное ******************************************************************
