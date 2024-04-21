@@ -81,7 +81,7 @@ public class HomeSceneController {
     ImageView mxbtnView = new ImageView(new Image(getClass().getResourceAsStream("icon/mxmz.png")));
 
     @FXML
-    DatePicker datePickerBeginning, datePickerEnd;
+    DatePicker datePickerBeginning, datePickerEnd, datePickerArh1, datePickerArh2;
 
     @FXML
     ChoiceBox<String> choiceBoxForChooseFiles, choiceBoxForType, choiceBoxForProg1, choiceBoxForProg2, choiceBoxForProg3,
@@ -276,8 +276,15 @@ public class HomeSceneController {
         mxbtnView.setFitHeight(18);
         maxBtn.setGraphic(mxbtnView);
         ivProsmotr0.setImage(new Image(getClass().getResourceAsStream("icon/VSTU-logo.png")));
+        //Zap
         choiceBoxForChooseFiles.getItems().addAll("Файл", "Время", "Лицо");
+        choiceBoxForChooseFiles.setValue("Файл");
         choiceBoxForType.getItems().addAll("Все", "Трев. вход", "Движение", "Постоянно", "Ручная", "I-кадр видео", "Видео анализ");
+        choiceBoxForType.setValue("Все");
+        //Arh
+        datePickerArh1.setAccessibleText("13:35:12");
+        datePickerArh2.setAccessibleText("13:45:12");
+
         imgV1.setImage(new Image(getClass().getResourceAsStream("photo/pop3.jpg")));
 //        imArh1.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
 //        imArh2.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
@@ -301,7 +308,7 @@ public class HomeSceneController {
         imgV97.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/7.jpg")));
         imgV98.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/8.jpg")));
         imgV99.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/9.jpg")));*/
-
+        //Trev
         chooseMusicTrev1.setText("D:\\VMS\\sound\\Russian\\motion.wav");
         chooseMusicTrev2.setText("D:\\VMS\\sound\\Russian\\cover.wav");
         chooseMusicTrev3.setText("D:\\VMS\\sound\\Russian\\outAlarm.wav");
@@ -312,7 +319,7 @@ public class HomeSceneController {
         chooseMusicTrev8.setText("D:\\VMS\\sound\\Russian\\diskfull.wav");
         chooseMusicTrev9.setText("D:\\VMS\\sound\\Russian\\diskerror.wav");
         chooseMusicTrev10.setText("D:\\VMS\\sound\\Russian\\carshapedetect.wav");
-
+        //Prog
         choiceBoxForProg1.getItems().addAll("30 дней", "60 дней", "90 дней");
         choiceBoxForProg1.setValue("30 дней");
         choiceBoxForProg2.getItems().addAll("30000", "60000", "90000");
@@ -660,6 +667,7 @@ public class HomeSceneController {
             imArh4.setFitWidth(600);*/
         arhToggle();
     }
+
     public void arhMaximize() {
         arhCamPane.setLayoutX(610);
         anchorPaneArh.setPadding(new Insets(0, 0, 20, 0));
@@ -683,15 +691,6 @@ public class HomeSceneController {
         LocalDateTime time = datePickerBeginning.getValue().atTime(0, 0, 0);
     }
 
-    @FXML
-    void getChoiceBoxForFiles(MouseEvent event) {
-
-    }
-
-    @FXML
-    void getChoiceBoxForType(MouseEvent event) {
-
-    }
 
     public void ArhBtnUpper() {
         if (hBox.getChildren().contains(ArhSmallPane)) {
