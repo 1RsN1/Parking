@@ -660,7 +660,6 @@ public class HomeSceneController {
             imArh4.setFitWidth(600);*/
         arhToggle();
     }
-
     public void arhMaximize() {
         arhCamPane.setLayoutX(610);
         anchorPaneArh.setPadding(new Insets(0, 0, 20, 0));
