@@ -38,7 +38,6 @@ public class DeviceUpTable {
 
     public String getIPport() {
         return IPport;
-
     }
 
     public void setIPport(String IPport) {

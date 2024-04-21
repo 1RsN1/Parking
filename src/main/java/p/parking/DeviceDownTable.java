@@ -4,7 +4,6 @@ public class DeviceDownTable {
     private String name;
     private String cloudID;
     private String IPport;
-
     private String version;
     private String group;
     private String status;
@@ -26,10 +25,7 @@ public class DeviceDownTable {
         this.connection = connection;
         this.operation = operation;
     }
-    public DeviceDownTable() {
-
-    }
-
+    public DeviceDownTable() {}
     public String getName() {
         return name;
     }
@@ -44,7 +40,6 @@ public class DeviceDownTable {
     }
     public String getIPport() {
         return IPport;
-
     }
     public void setIPport(String IPport) {
         this.IPport = IPport;
@@ -60,7 +55,6 @@ public class DeviceDownTable {
     }
     public void setGroup(String group) {
         this.group = group;
-
     }
     public String getStatus() {
         return status;
@@ -71,7 +65,6 @@ public class DeviceDownTable {
     public String getSecurity() {
         return security;
     }
-
     public void setSecurity(String security) {
         this.security = security;
     }
@@ -87,7 +80,6 @@ public class DeviceDownTable {
     public void setConnection(String connection) {
         this.connection = connection;
     }
-
     public String getOperation() {
         return operation;
     }

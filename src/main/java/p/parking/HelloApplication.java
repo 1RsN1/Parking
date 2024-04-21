@@ -30,11 +30,7 @@ public class HelloApplication extends Application {
         stage.getIcons().add(imgIconier);
         stage.setScene(scene);
         stage.show();
-
-
-
     }
-
     public void changeSceneForAdmin() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("HomeScene.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1440, 900);
@@ -47,10 +43,8 @@ public class HelloApplication extends Application {
         stage.setScene(scene);
         stg.close();
         stage.show();
-
-
-
-    }public void changeSceneForSecurity() throws IOException {
+    }
+    public void changeSceneForSecurity() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("HomeScene.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1440, 900);
         Stage stage = new Stage();
@@ -62,11 +56,7 @@ public class HelloApplication extends Application {
         stage.setScene(scene);
         stg.close();
         stage.show();
-
     }
-
-
-
     public static void main(String[] args) {
         launch();
     }

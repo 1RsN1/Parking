@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.util.*;
 
 import javafx.collections.FXCollections;
@@ -14,7 +13,6 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
@@ -87,9 +85,7 @@ public class HomeSceneController {
     ChoiceBox<String> choiceBoxForChooseFiles, choiceBoxForType, choiceBoxForProg1, choiceBoxForProg2, choiceBoxForProg3,
             choiceBoxForProg4, choiceBoxForProg5, choiceBoxForProg6, choiceBoxForProg7;
     @FXML
-    ChoiceBox<?> choiceBoxForJur;
-    @FXML
-    ChoiceBox<?> choiceBoxForJurEq;
+    ChoiceBox<String> choiceBoxForJurEq;
 
     @FXML
     ToggleGroup RadioForArhFirst, RadioForArhSecond, RadioForZap1, RadioForZap2, ToggleForArhPane, ToggleForJurPane;
@@ -225,7 +221,7 @@ public class HomeSceneController {
             securityLoad();
         }
         //accidents
-        TimerInitAccidents();
+        initTableJurTrev();
         jurTrevNum.setCellValueFactory(new PropertyValueFactory<Accident, Integer>("num"));
         jurTrevStat.setCellValueFactory(new PropertyValueFactory<Accident, String>("status"));
         jurTrevType.setCellValueFactory(new PropertyValueFactory<Accident, String>("type"));
@@ -281,17 +277,15 @@ public class HomeSceneController {
         choiceBoxForChooseFiles.setValue("Файл");
         choiceBoxForType.getItems().addAll("Все", "Трев. вход", "Движение", "Постоянно", "Ручная", "I-кадр видео", "Видео анализ");
         choiceBoxForType.setValue("Все");
-        //Arh
-        datePickerArh1.setAccessibleText("13:35:12");
-        datePickerArh2.setAccessibleText("13:45:12");
-
+        choiceBoxForJurEq.getItems().addAll("Камера 1", "Камера 2", "Камера 3");
+        choiceBoxForJurEq.setValue("Камера 1");
         imgV1.setImage(new Image(getClass().getResourceAsStream("photo/pop3.jpg")));
-//        imArh1.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
-//        imArh2.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
-//        imArh3.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
-//        imArh4.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
+        imArh1.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
+        imArh2.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
+        imArh3.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
+        imArh4.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
 
-        /*
+
         imgV71.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/1.jpg")));
         imgV72.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/2.jpg")));
         imgV73.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/3.jpg")));
@@ -307,7 +301,7 @@ public class HomeSceneController {
         imgV96.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/6.jpg")));
         imgV97.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/7.jpg")));
         imgV98.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/8.jpg")));
-        imgV99.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/9.jpg")));*/
+        imgV99.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/9.jpg")));
         //Trev
         chooseMusicTrev1.setText("D:\\VMS\\sound\\Russian\\motion.wav");
         chooseMusicTrev2.setText("D:\\VMS\\sound\\Russian\\cover.wav");
@@ -1093,17 +1087,23 @@ public class HomeSceneController {
 
     /*==================================== Журнал ==========================================*///TODO
     private void initTableJurPC() {
-        tableJurPCData.add(new TableJurPC(1, "12", "Admin", "Авария", "192.168.128.0", "3", "Решено"));
-        tableJurPCData.add(new TableJurPC(2, "12", "Security", "Угон", "192.168.128.1", "1", "Не решено"));
-        tableJurPCData.add(new TableJurPC(3, "12", "Security", "Авария", "192.168.128.2", "2", "Решено"));
+        tableJurPCData.add(new TableJurPC(1, accidentGetTime(), "Admin", typeList.get(randomResultAndType()),
+                iPPortList.get(0), "1", noteList.get(randomResultAndType())));
+        tableJurPCData.add(new TableJurPC(2, accidentGetTime(), "Security", typeList.get(randomResultAndType()),
+                iPPortList.get(1), "2", noteList.get(randomResultAndType())));
+        tableJurPCData.add(new TableJurPC(3, accidentGetTime(), "Security", typeList.get(randomResultAndType()),
+                iPPortList.get(2), "3", noteList.get(randomResultAndType())));
         System.out.println("tableJUrInit");
 
     }
 
     private void initTableJurUstr() {
-        tableJursUstrData.add(new TableJurUstr(1, "12", "Security", "Авария", "Решено"));
-        tableJursUstrData.add(new TableJurUstr(2, "12", "Security", "Авария", "В процессе"));
-        tableJursUstrData.add(new TableJurUstr(3, "12", "Admin", "Авария", "Решено"));
+        tableJursUstrData.add(new TableJurUstr(1, accidentGetTime(), "Security", typeList.get(randomResultAndType()),
+                noteList.get(randomResultAndType())));
+        tableJursUstrData.add(new TableJurUstr(2, accidentGetTime(), "Security", typeList.get(randomResultAndType()),
+                noteList.get(randomResultAndType())));
+        tableJursUstrData.add(new TableJurUstr(3, accidentGetTime(), "Admin", typeList.get(randomResultAndType()),
+                noteList.get(randomResultAndType())));
     }
 
     /*==============================================================================*///
@@ -1181,51 +1181,29 @@ public class HomeSceneController {
 
     /*==================================== Журнал тревог ==========================================*/
     /*==================================== Accidents  ==========================================*///TODO
-    List<String> resultList = List.of("АОЛД", "lsdjf", "Sasga");
-    List<String> statusList = List.of("Все", "Трев. вход", "Движение", "Постоянно", "Ручная", "I-кадр видео", "Видео анализ");
-    List<String> typeList = List.of("Все", "Трев. вход", "Движение", "Постоянно", "Ручная", "I-кадр видео", "Видео анализ");
-    List<String> ustrList = List.of("Камера 1");
     Random random = new Random();
-
-    private void initAccidents() {
-        String result = resultList.get(random.nextInt(3));
-        accidentsData.add(new Accident(accidentGetNum(), "Состояние", "Тип", accidentGetTime(), "Устранение", result));
-        System.out.println(accidentGetTime());
+    private void initTableJurTrev() {
+        accidentsData.add(new Accident(accidentGetNum(), deviceStatusList.get(randomStatus()), typeList.get(randomResultAndType()),
+                accidentGetTime(), iPPortList.get(0), resultList.get(randomResultAndType())));
+        accidentsData.add(new Accident(accidentGetNum(), deviceStatusList.get(randomStatus()), typeList.get(randomResultAndType()),
+                accidentGetTime(), iPPortList.get(1), resultList.get(randomResultAndType())));
+        accidentsData.add(new Accident(accidentGetNum(), deviceStatusList.get(randomStatus()), typeList.get(randomResultAndType()),
+                accidentGetTime(), iPPortList.get(2), resultList.get(randomResultAndType())));
     }
 
     private String accidentGetTime() {
-        return new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(Calendar.getInstance().getTime());
+        int randomHour = random.nextInt(7, 13);
+        int randomMin = random.nextInt(30);
+//        return new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(Calendar.getInstance().getTime());
+        return randomHour + ":" + randomMin + ":" + random.nextInt(59) + " 22/04/2024";
     }
-
     private int accidentGetNum() {
         return accidentsData.size() + 1;
     }
 
-    public void TimerInitAccidents() {
-        Timer timer = new Timer();
-        TimerTask accidentsRun = new TimerTask() {
-            @Override
-            public void run() {
-                initAccidents();
-            }
-        };
-        TimerTask accidentsStop = new TimerTask() {
-            @Override
-            public void run() {
-                System.out.println("Accidents timer is out");
-                timer.cancel();
-            }
-        };
-        timer.schedule(accidentsRun, 0, 10000); // период
-        timer.schedule(accidentsStop, 20000, 1); // время конца
-
-    }
-
     /************************************************************************/
-
-
     public void JurTrevBtnUpper() {
-        if (hBox.getChildren().contains(JurTrevSmallPane)) {
+        if(hBox.getChildren().contains(JurTrevSmallPane)) {
         } else {
             hBox.getChildren().addFirst(JurTrevSmallPane);
             JurTrevBtnUp.setVisible(true);
@@ -1298,38 +1276,40 @@ public class HomeSceneController {
     List<String> iPPortList = List.of("127.00.01.01", "127.00.01.02", "127.00.01.03");
     List<String> protocolList = List.of("TCP/IP");
     List<String> groupList = List.of("Камеры парковки");
-
-
-    private void initDeviceUp() {
-        deviceUpData.add(new DeviceUpTable(nameList.get(0), cloudIDList.get(0), iPPortList.get(0),
-                protocolList.get(0), groupList.get(0)));
-       /* deviceUpData.add(new DeviceUpTable(nameList.get(2), cloudIDList.get(2), iPPortList.get(2),
-                protocolList.get(1), groupList.get(1)));
-        deviceUpData.add(new DeviceUpTable(nameList.get(3), cloudIDList.get(3), iPPortList.get(3),
-                protocolList.get(1), groupList.get(1)));*/
-    }
-
-    //==================== DeviceDown================================================
     List<String> versionList = List.of("1.0");
     List<String> deviceStatusList = List.of("Все", "Трев. вход", "Движение", "Постоянно", "Ручная", "I-кадр видео", "Видео анализ");
     List<String> securityList = List.of("Все", "Трев. вход", "Движение", "Постоянно", "Ручная", "I-кадр видео", "Видео анализ");
     List<String> recordingList = List.of("Запись идёт", "Нет записи");
-    List<String> connectionList = List.of("Подключено", "Нет подлкючения");
+    List<String> connectionList = List.of("Подключено", "Нет подключения");
     List<String> operationList = List.of("Все", "Трев. вход", "Движение", "Постоянно", "Ручная", "I-кадр видео", "Видео анализ");
-
+    List<String> resultList = List.of("Решено без участия полиции", "Решено при участии полиции", "Решено при участии полиции и врачей");
+    List<String> typeList = List.of("Авария", "Угон", "Несчастный случай");
+    List<String> noteList = List.of("Решено", "Не решено", "В процессе");
+    public int randomResultAndType() {
+        return random.nextInt(3);
+    }
+    public int randomStatus() {
+        return random.nextInt(6);
+    }
+    private void initDeviceUp() {
+        deviceUpData.add(new DeviceUpTable(nameList.get(0), cloudIDList.get(0), iPPortList.get(0),
+                protocolList.get(0), groupList.get(0)));
+        deviceUpData.add(new DeviceUpTable(nameList.get(1), cloudIDList.get(1), iPPortList.get(1),
+                protocolList.get(0), groupList.get(0)));
+        deviceUpData.add(new DeviceUpTable(nameList.get(2), cloudIDList.get(2), iPPortList.get(2),
+                protocolList.get(0), groupList.get(0)));
+    }
+    //==================== DeviceDown================================================
     private void initDeviceDown() {
-        //
-        deviceDownData.add(new DeviceDownTable(nameList.get(0), cloudIDList.get(0), "124.00.01.01", versionList.get(0),
+        deviceDownData.add(new DeviceDownTable(nameList.get(0), cloudIDList.get(0), iPPortList.get(0), versionList.get(0),
                 groupList.get(0), deviceStatusList.get(0), securityList.get(0), recordingList.get(0),
                 connectionList.get(0), operationList.get(0)));
-        /*
-        deviceDownData.add(new DeviceDownTable(nameList.get(1), cloudIDList.get(1), iPPortList.get(1), versionList.get(1),
-                groupList.get(1), deviceStatusList.get(1), securityList.get(1), recordingList.get(1),
-                connectionList.get(1), operationList.get(1)));
-
-        deviceDownData.add(new DeviceDownTable(nameList.get(1), cloudIDList.get(1), iPPortList.get(1), versionList.get(1),
-                groupList.get(1), deviceStatusList.get(1), securityList.get(1), recordingList.get(1),
-                connectionList.get(1), operationList.get(1)));*/
+        deviceDownData.add(new DeviceDownTable(nameList.get(1), cloudIDList.get(1), iPPortList.get(1), versionList.get(0),
+                groupList.get(0), deviceStatusList.get(4), securityList.get(2), recordingList.get(0),
+                connectionList.get(0), operationList.get(1)));
+        deviceDownData.add(new DeviceDownTable(nameList.get(2), cloudIDList.get(2), iPPortList.get(2), versionList.get(0),
+                groupList.get(0), deviceStatusList.get(6), securityList.get(3), recordingList.get(0),
+                connectionList.get(0), operationList.get(5)));
 
     }
     //==========================================================================================
