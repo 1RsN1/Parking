@@ -611,7 +611,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </ToggleButton>
-                  <ToggleButton fx:id="toggleForArhPC" mnemonicParsing="false" onAction="#toggleForArhPCAction" prefHeight="32.0" prefWidth="80.0" style="-fx-background-insets: 0;" styleClass="btnForArhRight" text="ПК" toggleGroup="$ToggleForArhPane" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="25.0">
+                  <ToggleButton fx:id="toggleForArhPC" disable="true" mnemonicParsing="false" onAction="#toggleForArhPCAction" prefHeight="32.0" prefWidth="80.0" style="-fx-background-insets: 0;" styleClass="btnForArhRight" text="ПК" toggleGroup="$ToggleForArhPane" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="25.0">
                      <font>
                         <Font name="Calibri" size="14.0" />
                      </font>
