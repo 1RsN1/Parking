@@ -37,6 +37,7 @@
 
 .tableViewCenter {
     -fx-text-alignment: center;
+    -fx-font-size: 16px;
 }
 
 .choiceBox {

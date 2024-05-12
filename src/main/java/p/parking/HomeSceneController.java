@@ -100,14 +100,18 @@ public class HomeSceneController {
     RadioButton radioForArhDop, radioForArhMain, radioForArhPhoto, radioForArhVideo;
 
     @FXML
-    Label NameOfEquipment, textIfWrongPolz,trevLabel;
-    @FXML
-    TableColumn jurUPrim, jurPCPrim;
+    Label NameOfEquipment, textIfWrongPolz, trevLabel;
+    /*@FXML
+    TableColumn jurUPrim, jurPCPrim;*/
     @FXML
     Label
             arhLabel, turLabel, progLabel, polzLabel, jurLabel, zapLabel, jurTrevLabel;
     @FXML
-    Button arhBtn,  progBtn, polzBtn, jurBtn, zapBtn, jurTrevBtn,trevBtn;
+    Button arhBtn, progBtn, polzBtn, jurBtn, zapBtn, jurTrevBtn, trevBtn;
+    @FXML
+    GridPane prosmotrGP4, prosmotrGP9;
+    @FXML
+    ImageView imArh11, imArh21,imArh31,imArh41, imArh411,imArh311,imArh111,imArh2111,imArh211,imArh1111,imArh3111,imArh4111,imArh2112;
     /*==================================== Колонки таблицы журнала тревог ==========================================*/
     private ObservableList<Accident> accidentsData = FXCollections.observableArrayList();
     @FXML
@@ -284,24 +288,21 @@ public class HomeSceneController {
         imArh2.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
         imArh3.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
         imArh4.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
+        imgV1.setImage(new Image(getClass().getResourceAsStream("photo/pop3.jpg")));
+        imArh11.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
+        imArh21.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
+        imArh31.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
+        imArh41.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
+        imArh411.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
+        imArh311.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
+        imArh111.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
+        imArh2111.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
+        imArh211.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
+        imArh1111.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
+        imArh3111.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
+        imArh4111.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
+        imArh2112.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/pop3.jpg")));
 
-
-        imgV71.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/1.jpg")));
-        imgV72.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/2.jpg")));
-        imgV73.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/3.jpg")));
-        imgV74.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/4.jpg")));
-        imgV75.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/5.jpg")));
-        imgV76.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/6.jpg")));
-        imgV77.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/7.jpg")));
-        imgV91.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/1.jpg")));
-        imgV92.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/2.jpg")));
-        imgV93.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/3.jpg")));
-        imgV94.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/4.jpg")));
-        imgV95.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/5.jpg")));
-        imgV96.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/6.jpg")));
-        imgV97.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/7.jpg")));
-        imgV98.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/8.jpg")));
-        imgV99.setImage(new javafx.scene.image.Image(getClass().getResourceAsStream("photo/9.jpg")));
         //Trev
         chooseMusicTrev1.setText("D:\\VMS\\sound\\Russian\\motion.wav");
         chooseMusicTrev2.setText("D:\\VMS\\sound\\Russian\\cover.wav");
@@ -441,16 +442,16 @@ public class HomeSceneController {
     }
 
     public void securityLoad() {
-       polzBtn.setVisible(false);
-       progBtn.setVisible(false);
-       polzLabel.setVisible(false);
-       progLabel.setVisible(false);
-       trevBtn.setVisible(false);
-       trevLabel.setVisible(false);
-       jurBtn.setLayoutX(50);
-       jurLabel.setLayoutX(50);
-       jurTrevBtn.setLayoutX(190);
-       jurTrevLabel.setLayoutX(180);
+        polzBtn.setVisible(false);
+        progBtn.setVisible(false);
+        polzLabel.setVisible(false);
+        progLabel.setVisible(false);
+        trevBtn.setVisible(false);
+        trevLabel.setVisible(false);
+        jurBtn.setLayoutX(50);
+        jurLabel.setLayoutX(50);
+        jurTrevBtn.setLayoutX(190);
+        jurTrevLabel.setLayoutX(180);
     }
 
     /************************************** Основное ******************************************************************
@@ -458,13 +459,44 @@ public class HomeSceneController {
     public void prosmotrMinimize() {
         basePane11.setLayoutY(-2);
         camRightPane.setPrefHeight(700);
-        camRightPane.setLayoutX(1278);
+        camRightPane.setLayoutX(1280);
         camBtnPane.setPrefWidth(730);
         camBtnPane.setLayoutY(740);
         camBtnPane.setLayoutX(313);
         btnSplitRightPane.setPrefHeight(700);
         btnSplitRightPane.setLayoutX(1262);
         imgV1.setFitHeight(690);
+        imArh11.setFitHeight(350);
+        imArh11.setFitWidth(600);
+        imArh21.setFitHeight(600);
+        imArh21.setFitWidth(600);
+        imArh31.setFitHeight(350);
+        imArh31.setFitWidth(600);
+        imArh41.setFitHeight(350);
+        imArh41.setFitWidth(600);
+        //
+        imArh411.setFitHeight(226);
+        imArh411.setFitWidth(405);
+        imArh311.setFitHeight(226);
+        imArh311.setFitWidth(405);
+        imArh111.setFitHeight(226);
+        imArh111.setFitWidth(405);
+        imArh2111.setFitHeight(226);
+        imArh2111.setFitWidth(405);
+        imArh211.setFitHeight(226);
+        imArh211.setFitWidth(405);
+        imArh1111.setFitHeight(226);
+        imArh1111.setFitWidth(405);
+        imArh3111.setFitHeight(226);
+        imArh3111.setFitWidth(405);
+        imArh4111.setFitHeight(226);
+        imArh4111.setFitWidth(405);
+        imArh2112.setFitHeight(226);
+        imArh2112.setFitWidth(405);
+        prosmotrGP9.setPrefWidth(1200);
+        prosmotrGP9.setPrefHeight(674);
+        prosmotrGP4.setPrefWidth(1200);
+        prosmotrGP4.setPrefHeight(674);
         splitCamBool();
     }
 
@@ -477,6 +509,37 @@ public class HomeSceneController {
         camBtnPane.setLayoutY(885);
         camBtnPane.setLayoutX(585);
         imgV1.setFitHeight(850);
+        imArh11.setFitHeight(418);
+        imArh11.setFitWidth(1000);
+        imArh21.setFitHeight(418);
+        imArh21.setFitWidth(1000);
+        imArh31.setFitHeight(418);
+        imArh31.setFitWidth(1000);
+        imArh41.setFitHeight(418);
+        imArh41.setFitWidth(1000);
+        //
+        imArh411.setFitHeight(280);
+        imArh411.setFitWidth(505);
+        imArh311.setFitHeight(280);
+        imArh311.setFitWidth(505);
+        imArh111.setFitHeight(280);
+        imArh111.setFitWidth(505);
+        imArh2111.setFitHeight(280);
+        imArh2111.setFitWidth(505);
+        imArh211.setFitHeight(280);
+        imArh211.setFitWidth(505);
+        imArh1111.setFitHeight(280);
+        imArh1111.setFitWidth(505);
+        imArh3111.setFitHeight(280);
+        imArh3111.setFitWidth(505);
+        imArh4111.setFitHeight(280);
+        imArh4111.setFitWidth(505);
+        imArh2112.setFitHeight(280);
+        imArh2112.setFitWidth(505);
+        prosmotrGP4.setPrefWidth(1486);
+        prosmotrGP4.setPrefHeight(836);
+        prosmotrGP9.setPrefHeight(836);
+        prosmotrGP9.setPrefWidth(1486);
         splitCamBool();
     }
 
@@ -487,24 +550,32 @@ public class HomeSceneController {
             if (camRightPane.isVisible() == true) {
                 camRightPane.setVisible(false);
                 btnSplitRightPane.setLayoutX(1897.5);
-
+                //prosmotrGP4.setPadding(new Insets(-20, 140, 0, 220));
+                prosmotrGP4.setLayoutX(220);
+                prosmotrGP9.setLayoutX(220);
                 prosmotrGP1.setPadding(new Insets(-20, 140, 0, 220));
             } else {
                 camRightPane.setVisible(true);
                 btnSplitRightPane.setLayoutX(1739);
-
+              //  prosmotrGP4.setPadding(new Insets(-20, 200, 0, 0));
+                prosmotrGP4.setLayoutX(20);
+                prosmotrGP9.setLayoutX(20);
                 prosmotrGP1.setPadding(new Insets(-20, 200, 0, 0));
             }
         } else {
             if (camRightPane.isVisible() == true) {
                 camRightPane.setVisible(false);
                 btnSplitRightPane.setLayoutX(1417.5);
-
+               // prosmotrGP4.setPadding(new Insets(0, 90, 0, 90));
+                prosmotrGP4.setLayoutX(90);
+                prosmotrGP9.setLayoutX(90);
                 prosmotrGP1.setPadding(new Insets(0, 90, 0, 90));
             } else {
                 camRightPane.setVisible(true);
                 btnSplitRightPane.setLayoutX(1262);
-
+               // prosmotrGP4.setPadding(new Insets(0, 200, 0, 0));
+                prosmotrGP4.setLayoutX(20);
+                prosmotrGP9.setLayoutX(20);
                 prosmotrGP1.setPadding(new Insets(0, 200, 0, 0));
             }
         }
@@ -515,24 +586,32 @@ public class HomeSceneController {
             if (camRightPane.isVisible() == false) {
                 btnSplitRightPane.setLayoutX(1897.5);
                 imgV1.setFitWidth(1885);
-
+               // prosmotrGP4.setPadding(new Insets(-20, 140, 0, 220));
+                prosmotrGP4.setLayoutX(220);
+                prosmotrGP9.setLayoutX(220);
                 prosmotrGP1.setPadding(new Insets(-20, 140, 0, 220));
             } else {
                 btnSplitRightPane.setLayoutX(1739);
                 imgV1.setFitWidth(1710);
-
+               // prosmotrGP4.setPadding(new Insets(-20, 200, 0, 0));
+                prosmotrGP4.setLayoutX(20);
+                prosmotrGP9.setLayoutX(20);
                 prosmotrGP1.setPadding(new Insets(-20, 200, 0, 0));
             }
         } else {
             if (camRightPane.isVisible() == false) {
                 btnSplitRightPane.setLayoutX(1417.5);
                 imgV1.setFitWidth(1405);
-
+               // prosmotrGP4.setPadding(new Insets(0, 90, 0, 90));
+                prosmotrGP4.setLayoutX(90);
+                prosmotrGP9.setLayoutX(90);
                 prosmotrGP1.setPadding(new Insets(0, 90, 0, 90));
             } else {
-
                 btnSplitRightPane.setLayoutX(1262);
                 imgV1.setFitWidth(1230);
+                //prosmotrGP4.setPadding(new Insets(0, 200, 0, 0));
+                prosmotrGP4.setLayoutX(20);
+                prosmotrGP9.setLayoutX(20);
                 prosmotrGP1.setPadding(new Insets(0, 200, 0, 0));
             }
         }
@@ -577,35 +656,24 @@ public class HomeSceneController {
     }
 
     @FXML
-    void clickedForFourCam(MouseEvent event) {
-        paneWithFourCam.setVisible(true);
-        paneWithOneCam.setVisible(false);
-        paneWithSevenCam.setVisible(false);
-        paneWithNineCam.setVisible(false);
+    void clickedForOneCam(ActionEvent event) {
+        prosmotrGP1.setVisible(true);
+        prosmotrGP4.setVisible(false);
+        prosmotrGP9.setVisible(false);
     }
 
     @FXML
-    void clickedForOneCam(MouseEvent event) {
-        paneWithOneCam.setVisible(true);
-        paneWithFourCam.setVisible(false);
-        paneWithSevenCam.setVisible(false);
-        paneWithNineCam.setVisible(false);
+    void clickedForFourCam(ActionEvent event) {
+        prosmotrGP9.setVisible(false);
+        prosmotrGP4.setVisible(true);
+        prosmotrGP1.setVisible(false);
     }
 
     @FXML
-    void clickedForSevenCam(MouseEvent event) {
-        paneWithSevenCam.setVisible(true);
-        paneWithOneCam.setVisible(false);
-        paneWithFourCam.setVisible(false);
-        paneWithNineCam.setVisible(false);
-    }
-
-    @FXML
-    void clickedForNineCam(MouseEvent event) {
-        paneWithNineCam.setVisible(true);
-        paneWithOneCam.setVisible(false);
-        paneWithFourCam.setVisible(false);
-        paneWithSevenCam.setVisible(false);
+    void clickedForNineCam(ActionEvent event) {
+        prosmotrGP9.setVisible(true);
+        prosmotrGP4.setVisible(false);
+        prosmotrGP1.setVisible(false);
     }
 
     /*==================================== Тур ==========================================*/
@@ -651,14 +719,14 @@ public class HomeSceneController {
         arhGP.setPrefHeight(674);
         arhSlider.setPadding(new Insets(0, 220, 0, 0));
         splitArhBool();
-            /*imArh1.setFitHeight(350);
-            imArh1.setFitWidth(600);
-            imArh2.setFitHeight(600);
-            imArh2.setFitWidth(600);
-            imArh3.setFitHeight(350);
-            imArh3.setFitWidth(600);
-            imArh4.setFitHeight(350);
-            imArh4.setFitWidth(600);*/
+        imArh1.setFitHeight(350);
+        imArh1.setFitWidth(600);
+        imArh2.setFitHeight(600);
+        imArh2.setFitWidth(600);
+        imArh3.setFitHeight(350);
+        imArh3.setFitWidth(600);
+        imArh4.setFitHeight(350);
+        imArh4.setFitWidth(600);
         arhToggle();
     }
 
@@ -669,14 +737,14 @@ public class HomeSceneController {
         arhGP.setPrefHeight(836);
         arhSlider.setPadding(new Insets(0, 300, 0, 0));
         splitArhBool();
-           /* imArh1.setFitHeight(418);
-            imArh1.setFitWidth(1000);
-            imArh2.setFitHeight(418);
-            imArh2.setFitWidth(1000);
-            imArh3.setFitHeight(418);
-            imArh3.setFitWidth(1000);
-            imArh4.setFitHeight(418);
-            imArh4.setFitWidth(1000);*/
+        imArh1.setFitHeight(418);
+        imArh1.setFitWidth(1000);
+        imArh2.setFitHeight(418);
+        imArh2.setFitWidth(1000);
+        imArh3.setFitHeight(418);
+        imArh3.setFitWidth(1000);
+        imArh4.setFitHeight(418);
+        imArh4.setFitWidth(1000);
         arhToggle();
     }
 
@@ -1111,16 +1179,18 @@ public class HomeSceneController {
         anchorPaneJur.setPadding(new Insets(0, 0, 0, 0));
         jurAn1.setLayoutX(595);
         jurAn11.setLayoutX(640);
-        jurPCPrim.setPrefWidth(300);
-        jurUPrim.setPrefWidth(300);
+        // jurPCPrim.setPrefWidth(300);
+        //jurUPrim.setPrefWidth(300);
+        noteColumnUstr.setPrefWidth(300);
     }
 
     public void jurMaximize() {
         anchorPaneJur.setPadding(new Insets(0, 0, 30, 0));
         jurAn1.setLayoutX(835);
         jurAn11.setLayoutX(880);
-        jurPCPrim.setPrefWidth(900);
-        jurUPrim.setPrefWidth(900);
+        //jurPCPrim.setPrefWidth(900);
+        //jurUPrim.setPrefWidth(900);
+        noteColumnUstr.setPrefWidth(900);
     }
 
     public void JurBtnUpper() {
@@ -1182,6 +1252,7 @@ public class HomeSceneController {
     /*==================================== Журнал тревог ==========================================*/
     /*==================================== Accidents  ==========================================*///TODO
     Random random = new Random();
+
     private void initTableJurTrev() {
         accidentsData.add(new Accident(accidentGetNum(), deviceStatusList.get(randomStatus()), typeList.get(randomResultAndType()),
                 accidentGetTime(), iPPortList.get(0), resultList.get(randomResultAndType())));
@@ -1194,16 +1265,18 @@ public class HomeSceneController {
     private String accidentGetTime() {
         int randomHour = random.nextInt(7, 13);
         int randomMin = random.nextInt(30);
-//        return new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(Calendar.getInstance().getTime());
-        return randomHour + ":" + randomMin + ":" + random.nextInt(59) + " 22/04/2024";
+        // return new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(Calendar.getInstance().getTime());
+        return randomHour + ":" + randomMin + ":" + random.nextInt(59) + " 13/05/2024";
+
     }
+
     private int accidentGetNum() {
         return accidentsData.size() + 1;
     }
 
     /************************************************************************/
     public void JurTrevBtnUpper() {
-        if(hBox.getChildren().contains(JurTrevSmallPane)) {
+        if (hBox.getChildren().contains(JurTrevSmallPane)) {
         } else {
             hBox.getChildren().addFirst(JurTrevSmallPane);
             JurTrevBtnUp.setVisible(true);
@@ -1285,12 +1358,15 @@ public class HomeSceneController {
     List<String> resultList = List.of("Решено без участия полиции", "Решено при участии полиции", "Решено при участии полиции и врачей");
     List<String> typeList = List.of("Авария", "Угон", "Несчастный случай");
     List<String> noteList = List.of("Решено", "Не решено", "В процессе");
+
     public int randomResultAndType() {
         return random.nextInt(3);
     }
+
     public int randomStatus() {
         return random.nextInt(6);
     }
+
     private void initDeviceUp() {
         deviceUpData.add(new DeviceUpTable(nameList.get(0), cloudIDList.get(0), iPPortList.get(0),
                 protocolList.get(0), groupList.get(0)));
@@ -1299,6 +1375,7 @@ public class HomeSceneController {
         deviceUpData.add(new DeviceUpTable(nameList.get(2), cloudIDList.get(2), iPPortList.get(2),
                 protocolList.get(0), groupList.get(0)));
     }
+
     //==================== DeviceDown================================================
     private void initDeviceDown() {
         deviceDownData.add(new DeviceDownTable(nameList.get(0), cloudIDList.get(0), iPPortList.get(0), versionList.get(0),
@@ -1367,11 +1444,13 @@ public class HomeSceneController {
     public void progMinimize() {
         btnResetProg.setLayoutX(720);
         trevPrimBtn1.setLayoutX(530);
+        System.out.println("progMinimize");
         anchorPaneProg.setPadding(new Insets(0, 0, 0, 0));
 
     }
 
     public void progMaximize() {
+        System.out.println("progMaximize");
         btnResetProg.setLayoutX(920);
         trevPrimBtn1.setLayoutX(730);
         anchorPaneProg.setPadding(new Insets(0, 0, 35, 0));
@@ -1442,13 +1521,14 @@ public class HomeSceneController {
 
     //==================== Пользователи ================================================
     public void polzMinimize() {
-        polzUtilAP.setLayoutX(0);
-        polzUtilAP.setLayoutY(44);
+        polzUtilAP.setLayoutX(55);
+        polzUtilAP.setLayoutY(204);
+
     }
 
     public void polzMaximize() {
         polzUtilAP.setLayoutX(200);
-        polzUtilAP.setLayoutY(144);
+        polzUtilAP.setLayoutY(300);
     }
 
     @FXML
